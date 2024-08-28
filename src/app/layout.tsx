@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type {Metadata} from "next";
 import "./globals.css";
+import localFont from 'next/font/local';
 
-const inter = Inter({ subsets: ["latin"] });
+const pretendardFont = localFont({
+  src: './PretendardVariable.woff2',
+  variable: '--font-pretendard',
+});
 
 export const metadata: Metadata = {
   title: "YoursAI",
@@ -16,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`font-sans ${pretendardFont.variable} relative`}>{children}</body>
     </html>
   );
 }

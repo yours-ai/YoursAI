@@ -13,6 +13,22 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Apple SD Gothic Neo',
+          'var(--font-pretendard)',
+          'Roboto',
+          'Noto Sans KR',
+          'Segoe UI',
+          'Malgun Gothic',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol',
+          'sans',
+        ],
+      },
     },
   },
   plugins: [
