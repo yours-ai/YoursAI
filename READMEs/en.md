@@ -8,7 +8,7 @@
   <img src="TODO" alt="Thumbnail">
 </picture>
 
-Easy-to-use character roleplaying frontend for hackers.
+Simple yet fully customizable character role-playing frontend.
 
 ## Dependencies
 
