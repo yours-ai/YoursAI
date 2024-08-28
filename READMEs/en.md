@@ -8,7 +8,7 @@
   <img src="TODO" alt="Thumbnail">
 </picture>
 
-간편하고 모바일 친화적인 오픈소스 AI 채팅 프론트엔드.
+Easy-to-use character roleplaying frontend for hackers.
 
 ## Dependencies
 
