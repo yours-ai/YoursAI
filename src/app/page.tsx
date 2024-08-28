@@ -5,13 +5,13 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="z-10 flex w-full max-w-5xl justify-center">
-        <article className="prose p-10 text-center lg:prose-xl">
+      <div className="z-10 flex w-full max-w-5xl justify-center lg:pt-20">
+        <article className="prose px-10 text-center lg:prose-xl">
           <Image
             src="/logo.png"
             alt="Logo"
-            width="300"
-            height="300"
+            width="250"
+            height="250"
             className="mx-auto"
           />
           <h1>YoursAI</h1>
