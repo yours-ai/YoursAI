@@ -1,13 +1,18 @@
 import React from "react";
-import LanguageContent from "@/app/start/contents/LanguageContent";
-import DataContent from "@/app/start/contents/DataContent";
 
-function Sheet() {
+interface Props {
+  content: React.ReactNode;
+  description: React.ReactNode;
+}
+
+function Sheet({ content, description }: Props) {
   return (
     <div className="relative flex h-[500px] w-[700px] flex-col items-center rounded-[10px] bg-menuBackground p-[9px]">
-      {/*<LanguageContent />*/}
-      <DataContent />
+      {content}
       <div className="absolute bottom-[49px] h-px w-[calc(100%-9px-9px)] bg-black/10" />
+      <div className="absolute top-[520px] text-center text-20p font-bold leading-[25px] text-white">
+        {description}
+      </div>
     </div>
   );
 }

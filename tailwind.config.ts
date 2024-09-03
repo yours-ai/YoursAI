@@ -18,6 +18,7 @@ const config: Config = {
         accentBlue: "#007AFF",
       },
       fontSize: {
+        "13p": "13px",
         "20p": "20px",
         "25p": "25px",
       },
