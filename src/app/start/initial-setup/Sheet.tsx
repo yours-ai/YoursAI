@@ -5,7 +5,7 @@ import SetupControlButton from "@/components/SetupControlButton";
 
 interface Props {
   content: React.ReactNode;
-  description: React.ReactNode;
+  description?: React.ReactNode;
 }
 
 function Sheet({ content, description }: Props) {
