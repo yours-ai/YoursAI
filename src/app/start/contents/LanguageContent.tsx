@@ -1,10 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { PiGlobe, PiArrowRightBold } from "react-icons/pi";
+import { PiGlobe } from "react-icons/pi";
 import SettingTitle from "@/components/SettingTitle";
-import useStepsStore from "@/stores/setupStepStore";
-import useSetupStepsStore from "@/stores/setupStepStore";
 
 interface Props {
   isSelected: boolean;
@@ -26,7 +24,6 @@ const LanguageItem = ({ isSelected, language, onClick }: Props) => {
 };
 
 function LanguageContent() {
-  const { increase } = useSetupStepsStore();
   const [selectedLanguage, setSelectedLanguage] = useState<Languages>("한국어");
   const handleLanguageClick = (language: Languages) => {
     setSelectedLanguage(language);
@@ -45,12 +42,6 @@ function LanguageContent() {
           language="English"
           onClick={() => handleLanguageClick("English")}
         />
-      </div>
-      <div
-        className="absolute bottom-[12px] right-[19px] cursor-pointer text-black/50 hover:text-black/70"
-        onClick={increase}
-      >
-        <PiArrowRightBold className="text-[24px] " />
       </div>
     </>
   );
