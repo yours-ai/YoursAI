@@ -5,6 +5,8 @@ import Sheet from "@/app/start/initial-setup/Sheet";
 import LanguageContent from "@/app/start/contents/LanguageContent";
 import DataContent from "@/app/start/contents/DataContent";
 import useStepsStore from "@/stores/setupStepStore";
+import ThemeContent from "@/app/start/contents/ThemeContent";
+import TalkStyleContent from "@/app/start/contents/TalkStyleContent";
 
 const steps = [
   <Sheet
@@ -29,6 +31,8 @@ const steps = [
       </p>
     }
   />,
+  <Sheet key={3} content={<ThemeContent />} />,
+  <Sheet key={4} content={<TalkStyleContent />} />,
 ];
 
 function Page() {
