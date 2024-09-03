@@ -13,6 +13,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        menuBackground: "#E0E0E0",
+        accentBlue: "#007AFF",
+      },
+      fontSize: {
+        "20p": "20px",
+        "25p": "25px",
+      },
       fontFamily: {
         sans: [
           "-apple-system",
