@@ -52,7 +52,7 @@ function SetupControlButton({
             ? "뒤로"
             : start
               ? "시작하기"
-              : upload
+              : upload && !custom
                 ? "업로드"
                 : custom
                   ? custom
