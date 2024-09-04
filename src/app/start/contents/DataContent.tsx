@@ -1,6 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import SettingTitle from "@/components/SettingTitle";
-import { PiCloudArrowDown } from "react-icons/pi";
+import { PiCloudArrowDown, PiQuestionBold } from "react-icons/pi";
+import {
+  arrow,
+  autoUpdate,
+  flip,
+  offset,
+  shift,
+  useDismiss,
+  useFloating,
+  useHover,
+  useInteractions,
+  useRole,
+} from "@floating-ui/react";
 
 interface Props {
   isSelected: boolean;
@@ -17,10 +29,9 @@ const selectedOptionStyle = {
 };
 
 const nonSelectedOptionStyle = {
-  border: "0.5px solid rgba(0, 0, 0, 0.15)",
   backgroundColor: "white",
   boxShadow:
-    "inset 0px 0px 2px 0px rgba(0, 0, 0, 0.10), inset 0px 0px 2px 0px rgba(0, 0, 0, 0.10)",
+    "inset 0 0 0 0.5px rgba(0, 0, 0, 0.15), inset 0 1px 2px 0 rgba(0, 0, 0, 0.10), inset 0 0 2px 0 rgba(0, 0, 0, 0.10)",
 };
 
 const disabledSelectedOptionStyle = {
@@ -31,6 +42,74 @@ const disabledSelectedOptionStyle = {
 };
 
 type DataOptions = "default" | "local" | "cloud";
+
+const Tooltip = ({ children }: { children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const arrowRef = useRef(null);
+  const { refs, context, strategy, x, y, middlewareData } = useFloating({
+    open: isOpen,
+    onOpenChange: setIsOpen,
+    middleware: [
+      offset(15),
+      flip(),
+      shift(),
+      arrow({ element: arrowRef, padding: 10 }),
+    ],
+    whileElementsMounted: autoUpdate,
+    placement: "bottom-start",
+  });
+  const hover = useHover(context, { delay: { open: 200, close: 0 } });
+  const dismiss = useDismiss(context);
+  const role = useRole(context, {
+    role: "tooltip",
+  });
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    hover,
+    dismiss,
+    role,
+  ]);
+
+  return (
+    <>
+      <div ref={refs.setReference} {...getReferenceProps()}>
+        {children}
+      </div>
+      {isOpen && (
+        <div
+          ref={refs.setFloating}
+          className={`rounded-[10px] bg-white px-[7px] py-[6px] text-13p leading-[16px]`}
+          style={{
+            width: "max-content",
+            position: strategy,
+            top: y ?? 0,
+            left: x + 25 ?? 0,
+            zIndex: 10,
+            boxShadow:
+              "0px 8px 40px 0px rgba(0, 0, 0, 0.25), 0px 0px 3px 0px rgba(0, 0, 0, 0.55), 0px 0px 3px 0px rgba(255, 255, 255, 0.10)",
+          }}
+          {...getFloatingProps()}
+        >
+          아직 지원되지 않습니다.
+          <div
+            ref={arrowRef}
+            style={{
+              position: "absolute",
+              width: "12px",
+              height: "12px",
+              background: "white",
+              transform: "rotate(45deg)",
+              bottom: "75%",
+              left: "15%",
+              zIndex: 2,
+              marginLeft: "1px",
+              borderRadius: "2px",
+            }}
+          />
+        </div>
+      )}
+    </>
+  );
+};
 
 const DataOption = ({ isSelected, option, isDisabled, onClick }: Props) => {
   return (
@@ -75,11 +154,13 @@ function DataContent() {
           option="네, 로컬에서 불러올게요"
           onClick={() => handleOptionClick("local")}
         />
-        <DataOption
-          isSelected={selectedOption === "cloud"}
-          isDisabled
-          option="네, 클라우드에서 불러올게요"
-        />
+        <Tooltip>
+          <DataOption
+            isSelected={selectedOption === "cloud"}
+            isDisabled
+            option="네, 클라우드에서 불러올게요"
+          />
+        </Tooltip>
       </div>
     </>
   );
