@@ -8,6 +8,8 @@ import useStepsStore from "@/stores/setupStepStore";
 import ThemeContent from "@/app/start/contents/ThemeContent";
 import TalkStyleContent from "@/app/start/contents/TalkStyleContent";
 import ApiKeyContent from "@/app/start/contents/ApiKeyContent";
+import TranslateContent from "@/app/start/contents/TranslateContent";
+import TypingSimulationContent from "@/app/start/contents/TypingSimulationContent";
 
 const steps = [
   <Sheet
@@ -35,6 +37,8 @@ const steps = [
   <Sheet key={3} content={<ThemeContent />} />,
   <Sheet key={4} content={<TalkStyleContent />} />,
   <Sheet key={5} content={<ApiKeyContent />} />,
+  <Sheet key={6} content={<TranslateContent />} />,
+  <Sheet key={7} content={<TypingSimulationContent />} />,
 ];
 
 function Page() {
