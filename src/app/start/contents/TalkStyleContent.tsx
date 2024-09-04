@@ -24,12 +24,12 @@ const CustomStyleFormRows = [
   {
     rowTitle: "대화 스타일 파일",
     rowDescription: "Risu 스타일의 프롬프트 템플릿도 지원합니다.",
-    action: <SetupControlButton custom="업로드" />,
+    action: <SetupControlButton upload />,
   },
   {
     rowTitle: "(선택) 모듈 파일",
     rowDescription: "Risu 스타일의 모듈 파일도 지원합니다.",
-    action: <SetupControlButton custom="업로드" />,
+    action: <SetupControlButton upload />,
   },
 ];
 
