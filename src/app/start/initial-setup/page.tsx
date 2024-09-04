@@ -10,6 +10,7 @@ import TalkStyleContent from "@/app/start/contents/TalkStyleContent";
 import ApiKeyContent from "@/app/start/contents/ApiKeyContent";
 import TranslateContent from "@/app/start/contents/TranslateContent";
 import TypingSimulationContent from "@/app/start/contents/TypingSimulationContent";
+import NameContent from "@/app/start/contents/NameContent";
 
 const steps = [
   <Sheet
@@ -39,6 +40,7 @@ const steps = [
   <Sheet key={5} content={<ApiKeyContent />} />,
   <Sheet key={6} content={<TranslateContent />} />,
   <Sheet key={7} content={<TypingSimulationContent />} />,
+  <Sheet key={8} content={<NameContent />} />,
 ];
 
 function Page() {
