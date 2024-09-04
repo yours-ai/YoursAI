@@ -12,7 +12,7 @@ interface SetupForm {
 
 const SetupFormRow = ({ rowTitle, rowDescription, action }: SetupFormRow) => {
   return (
-    <div className="relative flex w-full items-center justify-between py-[10px]">
+    <div className="flex w-full items-center justify-between py-[10px]">
       <div className="flex flex-col">
         <div className="text-13p leading-[16px]">{rowTitle}</div>
         {rowDescription && (
@@ -21,7 +21,7 @@ const SetupFormRow = ({ rowTitle, rowDescription, action }: SetupFormRow) => {
           </div>
         )}
       </div>
-      {action}
+      <div className="my-[-10px]">{action}</div>
     </div>
   );
 };

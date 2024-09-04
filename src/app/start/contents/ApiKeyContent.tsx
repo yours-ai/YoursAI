@@ -7,7 +7,7 @@ const apiKeyFormRowList = [
     rowTitle: "OpenAI API Key",
     action: (
       <input
-        className="absolute right-0 rounded-[5px] bg-transparent px-[8px] py-[4px] text-13p leading-[16px] text-black/50 outline-0"
+        className="rounded-[5px] bg-transparent px-[8px] py-[4px] text-13p leading-[16px] text-black/50 outline-0"
         style={{ border: "1px solid rgba(0,0,0, 0.1)" }}
         placeholder="API Key를 입력하세요"
       ></input>
