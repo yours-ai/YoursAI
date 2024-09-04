@@ -27,7 +27,11 @@ function Sheet({ content, description }: Props) {
             )}
             <div className="flex gap-[10px]">
               <SetupControlButton goBack />
-              <SetupControlButton />
+              {step === 7 ? (
+                <SetupControlButton start />
+              ) : (
+                <SetupControlButton />
+              )}
             </div>
           </>
         )}
