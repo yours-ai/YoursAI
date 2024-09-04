@@ -5,6 +5,8 @@ import SettingTitle from "@/components/SettingTitle";
 import SegmentedControlBar from "@/components/SegmentedControlBar";
 import SegmentBoard from "@/components/SegmentBoard";
 import SetupControlButton from "@/components/SetupControlButton";
+import { PiQuestionBold } from "react-icons/pi";
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 
 const styles = [
   {
@@ -54,7 +56,18 @@ function TalkStyleContent() {
   const [index, setIndex] = useState<number>(0);
   return (
     <>
-      <SettingTitle title="대화 스타일 고르기" />
+      <div className="relative z-40 flex items-center">
+        <SettingTitle title="대화 스타일 고르기" />
+        <Popover>
+          <PopoverButton>
+            <PiQuestionBold className="absolute bottom-[8px] right-[-24px] text-[15px] text-black/50" />
+          </PopoverButton>
+          <PopoverPanel anchor="bottom start" className="relative z-40">
+            <p>기존의 프롬프트 템플릿과 같습니다</p>
+          </PopoverPanel>
+        </Popover>
+      </div>
+
       <div className="mt-[24px] flex flex-col items-center gap-[17px]">
         <SegmentedControlBar segments={styles} setIndex={setIndex} />
         {styles[index].content}
