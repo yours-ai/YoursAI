@@ -1,25 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SettingTitle from "@/components/SettingTitle";
 import SetupForm from "@/components/SetupForm";
 import { SetupContentProps } from "@/app/start/contents/ThemeContent";
 
-const apiKeyFormRowList = [
-  {
-    rowTitle: "OpenAI API Key",
-    action: (
-      <input
-        className="rounded-[5px] bg-transparent px-[8px] py-[4px] text-13p leading-[16px] text-black outline-0 placeholder:text-black/50"
-        style={{ border: "1px solid rgba(0,0,0, 0.1)" }}
-        placeholder="API Key를 입력하세요"
-      ></input>
-    ),
-  },
-];
-
 function ApiKeyContent({ setBtnDisabled }: SetupContentProps) {
+  const [inputValue, setInputValue] = useState<string>("");
   useEffect(() => {
-    setBtnDisabled(false);
-  }, [setBtnDisabled]);
+    if (inputValue === "") {
+      setBtnDisabled(true);
+    } else {
+      setBtnDisabled(false);
+    }
+  }, [setBtnDisabled, inputValue]);
+
+  const apiKeyFormRowList = [
+    {
+      rowTitle: "OpenAI API Key",
+      action: (
+        <input
+          value={inputValue}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+          }}
+          className="rounded-[5px] bg-transparent px-[8px] py-[4px] text-13p leading-[16px] text-black outline-0 placeholder:text-black/50"
+          style={{ border: "1px solid rgba(0,0,0, 0.1)" }}
+          placeholder="API Key를 입력하세요"
+        ></input>
+      ),
+    },
+  ];
+
   return (
     <>
       <SettingTitle title="LLM API Key 입력" />
