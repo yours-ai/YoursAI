@@ -44,8 +44,16 @@ function Page() {
       content={<ThemeContent setBtnDisabled={setBtnDisabled} />}
       btnDisabled={btnDisabled}
     />,
-    <Sheet key={4} content={<TalkStyleContent />} />,
-    <Sheet key={5} content={<ApiKeyContent />} />,
+    <Sheet
+      key={4}
+      content={<TalkStyleContent setBtnDisabled={setBtnDisabled} />}
+      btnDisabled={btnDisabled}
+    />,
+    <Sheet
+      key={5}
+      content={<ApiKeyContent setBtnDisabled={setBtnDisabled} />}
+      btnDisabled={btnDisabled}
+    />,
     <Sheet key={6} content={<TranslateContent />} />,
     <Sheet key={7} content={<TypingSimulationContent />} />,
     <Sheet key={8} content={<NameContent />} />,

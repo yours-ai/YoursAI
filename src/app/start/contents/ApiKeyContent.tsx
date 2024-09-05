@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SettingTitle from "@/components/SettingTitle";
 import SetupForm from "@/components/SetupForm";
+import { SetupContentProps } from "@/app/start/contents/ThemeContent";
 
 const apiKeyFormRowList = [
   {
@@ -15,7 +16,10 @@ const apiKeyFormRowList = [
   },
 ];
 
-function ApiKeyContent() {
+function ApiKeyContent({ setBtnDisabled }: SetupContentProps) {
+  useEffect(() => {
+    setBtnDisabled(false);
+  }, [setBtnDisabled]);
   return (
     <>
       <SettingTitle title="LLM API Key 입력" />

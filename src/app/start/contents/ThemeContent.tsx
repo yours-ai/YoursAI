@@ -6,6 +6,10 @@ import SegmentedControlBar from "@/components/SegmentedControlBar";
 import SegmentBoard from "@/components/SegmentBoard";
 import SetupControlButton from "@/components/SetupControlButton";
 
+export interface SetupContentProps {
+  setBtnDisabled: React.Dispatch<SetStateAction<boolean>>;
+}
+
 const themes = [
   {
     title: '"그" 과일 테마',
@@ -28,11 +32,7 @@ const themes = [
   },
 ];
 
-function ThemeContent({
-  setBtnDisabled,
-}: {
-  setBtnDisabled: React.Dispatch<SetStateAction<boolean>>;
-}) {
+function ThemeContent({ setBtnDisabled }: SetupContentProps) {
   const [index, setIndex] = useState<number>(0);
   useEffect(() => {
     if (index === 3) {

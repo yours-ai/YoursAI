@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SettingTitle from "@/components/SettingTitle";
 import SegmentedControlBar from "@/components/SegmentedControlBar";
 import SegmentBoard from "@/components/SegmentBoard";
@@ -19,6 +19,7 @@ import {
   useRole,
 } from "@floating-ui/react";
 import SetupForm from "@/components/SetupForm";
+import { SetupContentProps } from "@/app/start/contents/ThemeContent";
 
 const CustomStyleFormRows = [
   {
@@ -148,8 +149,15 @@ const Tooltip = () => {
   );
 };
 
-function TalkStyleContent() {
+function TalkStyleContent({ setBtnDisabled }: SetupContentProps) {
   const [index, setIndex] = useState<number>(0);
+  useEffect(() => {
+    if (index === 3) {
+      setBtnDisabled(true);
+    } else {
+      setBtnDisabled(false);
+    }
+  }, [index, setBtnDisabled]);
   return (
     <>
       <div className="relative z-40 flex items-center">
