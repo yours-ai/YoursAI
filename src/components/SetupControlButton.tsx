@@ -8,11 +8,13 @@ function SetupControlButton({
   start,
   upload,
   custom,
+  disabled,
 }: {
   goBack?: boolean;
   start?: boolean;
   upload?: boolean;
   custom?: string;
+  disabled?: boolean;
 }) {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
@@ -24,27 +26,29 @@ function SetupControlButton({
   };
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]; // Get the first selected file
+    const file = event.target.files?.[0];
     if (file) {
-      setFileName(file.name); // Set the file name in state
+      setFileName(file.name);
     }
   };
   return (
     <div className="flex flex-col items-end">
       <div
-        className={`flex select-none ${custom ? "" : "w-[60px]"} ${start ? "bg-accentBlue bg-gradient-to-b from-[rgba(255,255,255,0.17)] to-[rgba(255,255,255,0)] text-white" : "bg-white"} cursor-pointer items-center justify-center rounded-[5px]  px-[7px] py-[3px] active:bg-gradient-to-b active:from-[#F3F4F6] active:to-[#E5E7EB]`}
+        className={`flex select-none ${custom ? "" : "w-[60px]"} ${start ? "bg-accentBlue bg-gradient-to-b from-[rgba(255,255,255,0.17)] to-[rgba(255,255,255,0)] text-white" : "bg-white"} ${disabled ? "cursor-default bg-white/50 text-black/25" : ""} cursor-pointer items-center justify-center rounded-[5px]  px-[7px] py-[3px] active:bg-gradient-to-b active:from-[#F3F4F6] active:to-[#E5E7EB]`}
         style={{
           boxShadow:
             "0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.30), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.05)",
         }}
         onClick={
-          goBack
-            ? decrease
-            : start
-              ? () => console.log("hello")
-              : upload
-                ? handleUploadClick
-                : increase
+          disabled
+            ? () => {}
+            : goBack
+              ? decrease
+              : start
+                ? () => console.log("hello")
+                : upload
+                  ? handleUploadClick
+                  : increase
         }
       >
         <span className="text-13p leading-[16px]">

@@ -7,6 +7,7 @@ import AlertButton from "@/components/AlertButton";
 interface Props {
   content: React.ReactNode;
   description?: React.ReactNode;
+  btnDisabled?: boolean;
 }
 
 const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
@@ -38,7 +39,7 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
   );
 };
 
-function Sheet({ content, description }: Props) {
+function Sheet({ content, description, btnDisabled }: Props) {
   const { step } = useSetupStepsStore();
   const [allDefaultStartModalOpen, setAllDefaultStartModalOpen] =
     useState<boolean>(false);
@@ -73,7 +74,7 @@ function Sheet({ content, description }: Props) {
               {step === 7 ? (
                 <SetupControlButton start />
               ) : (
-                <SetupControlButton />
+                <SetupControlButton disabled={btnDisabled} />
               )}
             </div>
           </>

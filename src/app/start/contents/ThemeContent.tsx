@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 import SettingTitle from "@/components/SettingTitle";
 import SegmentedControlBar from "@/components/SegmentedControlBar";
 import SegmentBoard from "@/components/SegmentBoard";
@@ -28,8 +28,20 @@ const themes = [
   },
 ];
 
-function ThemeContent() {
+function ThemeContent({
+  setBtnDisabled,
+}: {
+  setBtnDisabled: React.Dispatch<SetStateAction<boolean>>;
+}) {
   const [index, setIndex] = useState<number>(0);
+  useEffect(() => {
+    if (index === 3) {
+      setBtnDisabled(true);
+    } else {
+      setBtnDisabled(false);
+    }
+  }, [index, setBtnDisabled]);
+
   return (
     <>
       <SettingTitle title="테마 고르기" />
