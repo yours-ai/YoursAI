@@ -34,7 +34,7 @@ function SetupControlButton({
   return (
     <div className="flex flex-col items-end">
       <div
-        className={`flex select-none ${custom ? "" : "w-[60px]"} ${start ? "bg-accentBlue bg-gradient-to-b from-[rgba(255,255,255,0.17)] to-[rgba(255,255,255,0)] text-white" : "bg-white"} ${disabled ? "cursor-default bg-white/50 text-black/25" : ""} cursor-pointer items-center justify-center rounded-[5px]  px-[7px] py-[3px] active:bg-gradient-to-b active:from-[#F3F4F6] active:to-[#E5E7EB]`}
+        className={`flex select-none ${custom ? "" : "w-[60px]"} ${start ? "bg-accentBlue bg-gradient-to-b from-[rgba(255,255,255,0.17)] to-[rgba(255,255,255,0)] text-white active:from-[#0073E6] active:to-[#0066CC] active:text-white/90" : "bg-white"} ${disabled ? "cursor-default bg-white/50 text-black/25" : ""} cursor-pointer items-center justify-center rounded-[5px]  px-[7px] py-[3px] active:bg-gradient-to-b active:from-[#F3F4F6] active:to-[#E5E7EB]`}
         style={{
           boxShadow:
             "0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.30), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.05)",
