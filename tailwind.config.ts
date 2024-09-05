@@ -16,6 +16,7 @@ const config: Config = {
       colors: {
         menuBackground: "#E0E0E0",
         accentBlue: "#007AFF",
+        blankAlert: "rgba(0,0,0,0.015)",
       },
       fontSize: {
         "11p": "11px",
