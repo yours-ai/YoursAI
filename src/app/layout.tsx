@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import { GlobalConfigProvider } from "@/reducers/globalConfig/context";
 
 const pretendardFont = localFont({
   src: "./PretendardVariable.woff2",
@@ -18,10 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${pretendardFont.variable} relative`}>
-        {children}
-      </body>
-    </html>
+    <GlobalConfigProvider>
+      <html lang="en">
+        <body className={`font-sans ${pretendardFont.variable} relative`}>
+          {children}
+        </body>
+      </html>
+    </GlobalConfigProvider>
   );
 }
