@@ -63,7 +63,7 @@ function Sheet({ content, description }: Props) {
                 className="cursor-pointer px-[7px] text-13p leading-[16px] text-accentBlue"
                 onClick={handleAllDefaultStart}
               >
-                모두 기본 값으로 시작
+                모두 기본값으로 시작
               </div>
             ) : (
               <div />

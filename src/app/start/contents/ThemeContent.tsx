@@ -22,7 +22,7 @@ const themes = [
     title: "커스텀 테마",
     content: (
       <div className="flex h-[223px] w-[421px] items-center justify-center">
-        <SetupControlButton custom="커스텀 테마 파일 업로드 하기" upload />
+        <SetupControlButton custom="커스텀 테마 파일 업로드하기" upload />
       </div>
     ),
   },
