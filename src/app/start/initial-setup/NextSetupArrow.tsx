@@ -1,15 +1,13 @@
 import React from "react";
 import { PiArrowRightBold } from "react-icons/pi";
-import useSetupStepsStore from "@/stores/setupStepStore";
 
-function NextSetupArrow() {
-  const { increase } = useSetupStepsStore();
+function NextSetupArrow({ onClick }: { onClick: () => void }) {
   return (
     <>
       <div />
       <div
         className="mr-[10px] cursor-pointer text-black/50 hover:text-black/70"
-        onClick={increase}
+        onClick={onClick}
       >
         <PiArrowRightBold className="text-[24px] " />
       </div>

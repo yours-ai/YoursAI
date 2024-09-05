@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import useSetupStepsStore from "@/stores/setupStepStore";
+import React, { SetStateAction, useState } from "react";
 import NextSetupArrow from "@/app/start/initial-setup/NextSetupArrow";
 import SetupControlButton from "@/components/SetupControlButton";
 import AlertButton from "@/components/AlertButton";
 
 interface Props {
+  step: number;
+  setStep: React.Dispatch<SetStateAction<number>>;
   content: React.ReactNode;
   description?: React.ReactNode;
   btnDisabled?: boolean;
@@ -39,8 +40,7 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
   );
 };
 
-function Sheet({ content, description, btnDisabled }: Props) {
-  const { step } = useSetupStepsStore();
+function Sheet({ step, setStep, content, description, btnDisabled }: Props) {
   const [allDefaultStartModalOpen, setAllDefaultStartModalOpen] =
     useState<boolean>(false);
   const handleAllDefaultStart = () => {
@@ -56,7 +56,7 @@ function Sheet({ content, description, btnDisabled }: Props) {
       <div className="flex flex-col items-center">{content}</div>
       <div className="flex h-[49px] w-full items-center justify-between border-t border-black/10">
         {step === 0 ? (
-          <NextSetupArrow />
+          <NextSetupArrow onClick={() => setStep((prev) => prev + 1)} />
         ) : (
           <>
             {step === 1 ? (
@@ -70,11 +70,17 @@ function Sheet({ content, description, btnDisabled }: Props) {
               <div />
             )}
             <div className="flex gap-[10px]">
-              <SetupControlButton goBack />
+              <SetupControlButton
+                onClick={() => setStep((prev) => prev - 1)}
+                goBack
+              />
               {step === 7 ? (
                 <SetupControlButton start />
               ) : (
-                <SetupControlButton disabled={btnDisabled} />
+                <SetupControlButton
+                  onClick={() => setStep((prev) => prev + 1)}
+                  disabled={btnDisabled}
+                />
               )}
             </div>
           </>

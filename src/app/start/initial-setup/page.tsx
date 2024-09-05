@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Sheet from "@/app/start/initial-setup/Sheet";
 import LanguageContent from "@/app/start/contents/LanguageContent";
 import DataContent from "@/app/start/contents/DataContent";
-import useStepsStore from "@/stores/setupStepStore";
 import ThemeContent from "@/app/start/contents/ThemeContent";
 import TalkStyleContent from "@/app/start/contents/TalkStyleContent";
 import ApiKeyContent from "@/app/start/contents/ApiKeyContent";
@@ -13,12 +12,14 @@ import TypingSimulationContent from "@/app/start/contents/TypingSimulationConten
 import NameContent from "@/app/start/contents/NameContent";
 
 function Page() {
-  const { step } = useStepsStore();
+  const [step, setStep] = useState<number>(0);
   const [btnDisabled, setBtnDisabled] = useState<boolean>(false);
 
   const steps = [
     <Sheet
       key={1}
+      step={step}
+      setStep={setStep}
       content={<LanguageContent />}
       description={
         <p>
@@ -30,6 +31,8 @@ function Page() {
     />,
     <Sheet
       key={2}
+      step={step}
+      setStep={setStep}
       content={<DataContent />}
       description={
         <p>
@@ -41,22 +44,38 @@ function Page() {
     />,
     <Sheet
       key={3}
+      step={step}
+      setStep={setStep}
       content={<ThemeContent setBtnDisabled={setBtnDisabled} />}
       btnDisabled={btnDisabled}
     />,
     <Sheet
       key={4}
+      step={step}
+      setStep={setStep}
       content={<TalkStyleContent setBtnDisabled={setBtnDisabled} />}
       btnDisabled={btnDisabled}
     />,
     <Sheet
       key={5}
+      step={step}
+      setStep={setStep}
       content={<ApiKeyContent setBtnDisabled={setBtnDisabled} />}
       btnDisabled={btnDisabled}
     />,
-    <Sheet key={6} content={<TranslateContent />} />,
-    <Sheet key={7} content={<TypingSimulationContent />} />,
-    <Sheet key={8} content={<NameContent />} />,
+    <Sheet
+      key={6}
+      step={step}
+      setStep={setStep}
+      content={<TranslateContent />}
+    />,
+    <Sheet
+      key={7}
+      step={step}
+      setStep={setStep}
+      content={<TypingSimulationContent />}
+    />,
+    <Sheet key={8} step={step} setStep={setStep} content={<NameContent />} />,
   ];
 
   return <>{steps[step]}</>;

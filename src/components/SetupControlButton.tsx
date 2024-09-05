@@ -1,15 +1,16 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import useSetupStepsStore from "@/stores/setupStepStore";
 
 function SetupControlButton({
+  onClick,
   goBack,
   start,
   upload,
   custom,
   disabled,
 }: {
+  onClick?: () => void;
   goBack?: boolean;
   start?: boolean;
   upload?: boolean;
@@ -18,7 +19,6 @@ function SetupControlButton({
 }) {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
-  const { increase, decrease } = useSetupStepsStore();
   const handleUploadClick = () => {
     if (fileInputRef.current) {
       fileInputRef.current.click();
@@ -43,12 +43,12 @@ function SetupControlButton({
           disabled
             ? () => {}
             : goBack
-              ? decrease
+              ? onClick
               : start
                 ? () => console.log("hello")
                 : upload
                   ? handleUploadClick
-                  : increase
+                  : onClick
         }
       >
         <span className="text-13p leading-[16px]">
