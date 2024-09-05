@@ -35,10 +35,9 @@ const nonSelectedOptionStyle = {
 };
 
 const disabledSelectedOptionStyle = {
-  border: "none",
   backgroundColor: "rgba(255, 255, 255, 0.5)",
   boxShadow:
-    "0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.15), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.03)",
+    "inset 0 0 0 0.5px rgba(0, 0, 0, 0.08), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 2px 0px rgba(0, 0, 0, 0.05)",
 };
 
 type DataOptions = "default" | "local" | "cloud";
