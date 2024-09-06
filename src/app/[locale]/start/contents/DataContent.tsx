@@ -170,7 +170,7 @@ function DataContent() {
           />
         </Tooltip>
       </div>
-      <div className="absolute top-[521px] text-center text-20p font-bold leading-[25px] text-white">
+      <div className="absolute top-[521px] text-center text-20p font-semibold leading-[25px] text-white">
         {description}
       </div>
     </>
