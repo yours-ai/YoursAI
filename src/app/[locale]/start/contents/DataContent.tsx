@@ -161,6 +161,13 @@ function DataContent() {
           />
         </Tooltip>
       </div>
+      <div className="absolute top-[521px] text-center text-20p font-bold leading-[25px] text-white">
+        <p>
+          채팅 내역, 설정 등 모든 데이터는
+          <br />
+          언제든지 파일로 백업하고 되돌릴 수 있습니다.
+        </p>
+      </div>
     </>
   );
 }

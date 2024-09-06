@@ -43,7 +43,7 @@ function LanguageContent() {
           onClick={() => handleLanguageClick("English")}
         />
       </div>
-      <div className="absolute">
+      <div className="absolute top-[521px] text-center text-20p font-bold leading-[25px] text-white">
         <p>
           계속한다고 해서 무슨 약관에 동의하는 건 아닙니다.
           <br />

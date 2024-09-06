@@ -7,7 +7,6 @@ interface Props {
   step: number;
   setStep: React.Dispatch<SetStateAction<number>>;
   content: React.ReactNode;
-  description?: React.ReactNode;
   btnDisabled?: boolean;
 }
 
@@ -40,7 +39,7 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
   );
 };
 
-function Sheet({ step, setStep, content, description, btnDisabled }: Props) {
+function Sheet({ step, setStep, content, btnDisabled }: Props) {
   const [allDefaultStartModalOpen, setAllDefaultStartModalOpen] =
     useState<boolean>(false);
   const handleAllDefaultStart = () => {
@@ -85,9 +84,6 @@ function Sheet({ step, setStep, content, description, btnDisabled }: Props) {
             </div>
           </>
         )}
-      </div>
-      <div className="absolute top-[520px] text-center text-20p font-bold leading-[25px] text-white">
-        {description}
       </div>
     </div>
   );
