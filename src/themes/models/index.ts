@@ -1,6 +1,7 @@
 import { type ButtonProps } from "./Button";
 import theFruitTheme from "@/themes/theFruit";
 import chocolateTheme from "@/themes/chocolate";
+import { FriendDetailProps } from "@/themes/models/FriendDetail";
 
 export interface Theme {
   name: string;
@@ -10,7 +11,7 @@ export interface Theme {
     Button: React.ComponentType<ButtonProps>;
     EmptySpace: React.ComponentType;
     FriendList: React.ComponentType;
-    FriendDetail: React.ComponentType;
+    FriendDetail: React.ComponentType<FriendDetailProps>;
   };
 }
 
@@ -20,3 +21,14 @@ export const BundledThemes: Record<AvailableBundledThemes, Theme> = {
   theFruit: theFruitTheme,
   chocolate: chocolateTheme,
 };
+
+export interface Character {
+  firstName: string;
+  shortDescription: string;
+  image: string;
+  creator: {
+    name: string;
+    introduction: string;
+  };
+  hasChatted: boolean;
+}
