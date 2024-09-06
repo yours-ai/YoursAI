@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
-import Image from "next/image";
 
 function AreYouThereBubble() {
   const [isPrompt, setIsPrompt] = useState<boolean>(false);

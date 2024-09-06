@@ -1,46 +1,31 @@
 "use client";
+
+interface Character {
+  firstName: string;
+  shortDescription: string;
+  image: string;
+  creator: {
+    name: string;
+    introduction: string;
+  };
+}
+
 import { useTheme } from "@/hooks/useTheme";
-import { useGlobalConfig } from "@/reducers/globalConfig/context";
-import { AvailableBundledThemes, BundledThemes } from "@/themes/models";
+import { useState } from "react";
 
 export default function FriendsPage() {
   const {
-    name,
-    description,
-    components: { Button },
+    components: { FriendList, FriendDetail, EmptySpace },
   } = useTheme();
 
-  const [config, dispatch] = useGlobalConfig();
+  const [clickedFriend, setClickedFriend] = useState<Character | null>(null);
+
   return (
     <>
-      <div>
-        <select
-          className="select select-bordered w-full max-w-xs"
-          onChange={(event) => {
-            dispatch({
-              type: "SET_THEME",
-              to: {
-                type: "bundled",
-                name: event.target.value as AvailableBundledThemes,
-              },
-            });
-          }}
-        >
-          {Object.entries(BundledThemes).map(([id, theme]) => (
-            <option
-              key={id}
-              value={id}
-              selected={
-                config.theme.type === "bundled" && config.theme.name === id
-              }
-            >
-              {theme.name}
-            </option>
-          ))}
-        </select>
+      <div className="flex size-full flex-row justify-between">
+        <FriendList />
+        {clickedFriend ? <FriendDetail /> : <EmptySpace />}
       </div>
-      <p>{description}</p>
-      <Button>{name}</Button>
     </>
   );
 }

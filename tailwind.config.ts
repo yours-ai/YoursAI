@@ -18,6 +18,13 @@ const config: Config = {
         menuBackground: "#E0E0E0",
         accentBlue: "#007AFF",
         blankAlert: "rgba(0,0,0,0.015)",
+        quinary: "rgba(0,0,0,0.05)",
+        emptyBackground: "#F2F2F7",
+        border: "rgba(198, 198, 200, 0.6)",
+        tabUnselected: "#999999",
+        secondary: "rgba(0,0,0,0.5)",
+        primaryLabel: "#000000",
+        red: "#FF3B30",
       },
       fontSize: {
         "11p": "11px",

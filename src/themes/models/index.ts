@@ -8,6 +8,9 @@ export interface Theme {
   creator?: string;
   components: {
     Button: React.ComponentType<ButtonProps>;
+    EmptySpace: React.ComponentType;
+    FriendList: React.ComponentType;
+    FriendDetail: React.ComponentType;
   };
 }
 
