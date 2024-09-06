@@ -1,0 +1,14 @@
+{
+  "title": "<p>All set!<br></br>Lastly, how should we call you?</p>",
+  "name": {
+    "label": "Name",
+    "placeholder": {
+      "first": "First name",
+      "second": "Last name"
+    }
+  },
+  "intro": {
+    "label": "Intro(optional)",
+    "placeholder": "Things you’d like the character to know about you"
+  }
+}

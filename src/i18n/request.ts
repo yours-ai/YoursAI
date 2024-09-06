@@ -12,6 +12,11 @@ export default getRequestConfig(async ({ locale }) => {
     "start/initial-setup/sheet",
     "start/content/languageContent",
     "start/content/dataContent",
+    "start/content/themeContent",
+    "start/content/talkStyleContent",
+    "start/content/apiKeyContent",
+    "start/content/typingSimulationContent",
+    "start/content/nameContent",
   ];
 
   const messages: Record<string, any> = {};

@@ -20,65 +20,9 @@ import {
 } from "@floating-ui/react";
 import SetupForm from "@/components/SetupForm";
 import { SetupContentProps } from "@/app/[locale]/start/contents/ThemeContent";
+import { useTranslations } from "next-intl";
 
-const CustomStyleFormRows = [
-  {
-    rowTitle: "대화 스타일 파일",
-    rowDescription: "Risu 스타일의 프롬프트 템플릿도 지원합니다.",
-    action: <SetupControlButton upload />,
-  },
-  {
-    rowTitle: "(선택) 모듈 파일",
-    rowDescription: "Risu 스타일의 모듈 파일도 지원합니다.",
-    action: <SetupControlButton upload />,
-  },
-];
-
-const styles = [
-  {
-    title: "밸런스 (권장)",
-    content: <SegmentBoard />,
-    description: (
-      <p>
-        캐릭터가 적절히 대화 길이를 조절합니다.
-        <br />
-        종종 전지적 시점에서 이야기하기도 합니다.
-      </p>
-    ),
-  },
-  {
-    title: "소설형",
-    content: <SegmentBoard />,
-    description: (
-      <p>
-        당신이 짧게 이야기해도 캐릭터는 길게 이야기합니다.
-        <br />
-        자주 전지적 시점에서 이야기합니다.
-      </p>
-    ),
-  },
-  {
-    title: "현실형",
-    content: <SegmentBoard />,
-    description: (
-      <p>
-        현실의 대화와 비슷합니다.
-        <br />
-        캐릭터의 속마음을 알기는 어렵습니다.
-      </p>
-    ),
-  },
-  {
-    title: "커스텀",
-    content: (
-      <div className="mt-[14px]">
-        <SetupForm setupFormRows={CustomStyleFormRows} />
-      </div>
-    ),
-  },
-];
-
-const Tooltip = () => {
+const Tooltip = ({ content }: { content: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef(null);
   const { refs, floatingStyles, context, strategy, x, y, middlewareData } =
@@ -125,9 +69,7 @@ const Tooltip = () => {
           }}
           {...getFloatingProps()}
         >
-          RisuAi에 익숙하다면,
-          <br />
-          기존의 프롬프트 템플릿과 같습니다.
+          {content}
           <div
             ref={arrowRef}
             style={{
@@ -150,6 +92,14 @@ const Tooltip = () => {
 };
 
 function TalkStyleContent({ setBtnDisabled }: SetupContentProps) {
+  const t = useTranslations("start/content/talkStyleContent");
+  const richText = (key: string) => {
+    return t.rich(key, {
+      p: (chunk) => <p>{chunk}</p>,
+      br: () => <br></br>,
+    });
+  };
+  console.log(richText("info"));
   const [index, setIndex] = useState<number>(0);
   useEffect(() => {
     if (index === 3) {
@@ -158,12 +108,52 @@ function TalkStyleContent({ setBtnDisabled }: SetupContentProps) {
       setBtnDisabled(false);
     }
   }, [index, setBtnDisabled]);
+
+  const CustomStyleFormRows = [
+    {
+      rowTitle: t("styles.custom.styleFile.name"),
+      rowDescription: t("styles.custom.styleFile.description"),
+      action: <SetupControlButton upload />,
+    },
+    {
+      rowTitle: t("styles.custom.moduleFile.name"),
+      rowDescription: t("styles.custom.moduleFile.description"),
+      action: <SetupControlButton upload />,
+    },
+  ];
+
+  const styles = [
+    {
+      title: t("styles.balanced.name"),
+      content: <SegmentBoard />,
+      description: richText("styles.balanced.description"),
+    },
+    {
+      title: t("styles.novel.name"),
+      content: <SegmentBoard />,
+      description: richText("styles.novel.description"),
+    },
+    {
+      title: t("styles.realistic.name"),
+      content: <SegmentBoard />,
+      description: richText("styles.realistic.description"),
+    },
+    {
+      title: t("styles.custom.name"),
+      content: (
+        <div className="mt-[14px]">
+          <SetupForm setupFormRows={CustomStyleFormRows} />
+        </div>
+      ),
+    },
+  ];
+
   return (
     <>
       <div className="relative z-40 flex items-center">
-        <SettingTitle title="대화 스타일 고르기" />
+        <SettingTitle title={t("title")} />
         <div className="absolute bottom-[8px] right-[-30px]">
-          <Tooltip />
+          <Tooltip content={richText("info")} />
         </div>
       </div>
 

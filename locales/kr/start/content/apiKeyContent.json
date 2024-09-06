@@ -1,0 +1,6 @@
+{
+  "title": "LLM API Key 입력",
+  "leftText": "사용하고 있는 커스텀 대화 스타일",
+  "rightText": "이 OpenAI API Key를 필요로 합니다.",
+  "keyInputPlaceholder": "API Key를 입력하세요"
+}

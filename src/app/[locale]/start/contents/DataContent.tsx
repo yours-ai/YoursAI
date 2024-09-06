@@ -140,6 +140,10 @@ const DataOption = ({ isSelected, option, isDisabled, onClick }: Props) => {
 
 function DataContent() {
   const t = useTranslations("start/content/dataContent");
+  const description = t.rich("description", {
+    p: (chunk) => <p>{chunk}</p>,
+    br: () => <br></br>,
+  });
   const [selectedOption, setSelectedOption] = useState<DataOptions>("default");
   const handleOptionClick = (option: DataOptions) => {
     setSelectedOption(option);
@@ -167,11 +171,7 @@ function DataContent() {
         </Tooltip>
       </div>
       <div className="absolute top-[521px] text-center text-20p font-bold leading-[25px] text-white">
-        <p>
-          {t("description.firstText")}
-          <br />
-          {t("description.secondText")}
-        </p>
+        {description}
       </div>
     </>
   );

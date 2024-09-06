@@ -26,6 +26,10 @@ const LanguageItem = ({ isSelected, language, onClick }: Props) => {
 
 function LanguageContent() {
   const t = useTranslations("start/content/languageContent");
+  const description = t.rich("description", {
+    p: (chunks) => <p>{chunks}</p>,
+    br: () => <br></br>,
+  });
   const [selectedLanguage, setSelectedLanguage] = useState<Languages>("한국어");
   const handleLanguageClick = (language: Languages) => {
     setSelectedLanguage(language);
@@ -46,11 +50,7 @@ function LanguageContent() {
         />
       </div>
       <div className="absolute top-[521px] text-center text-20p font-bold leading-[25px] text-white">
-        <p>
-          {t("description.firstText")}
-          <br />
-          {t("description.secondText")}
-        </p>
+        {description}
       </div>
     </>
   );

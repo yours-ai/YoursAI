@@ -1,0 +1,6 @@
+{
+  "title": "LLM API Key",
+  "leftText": "The uploaded",
+  "rightText": "requires an OpenAI API Key.",
+  "keyInputPlaceholder": "Type your API Key"
+}
