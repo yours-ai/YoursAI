@@ -1,10 +1,11 @@
 import { BundledThemes, Theme } from "@/themes/models";
-import { useGlobalConfig } from "@/reducers/globalConfig/context";
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
 
 export const useTheme = (): Theme => {
-  const [globalConfig] = useGlobalConfig();
-  if (globalConfig.theme.type === "bundled") {
-    return BundledThemes[globalConfig.theme.name];
+  const theme = useSelector((state: RootState) => state.globalConfig.theme);
+  if (theme.type === "bundled") {
+    return BundledThemes[theme.id];
   }
-  return eval(globalConfig.theme.script).default;
+  return eval(theme.script).default;
 };

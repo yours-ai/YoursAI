@@ -3,6 +3,7 @@ import theFruitTheme from "@/themes/theFruit";
 import chocolateTheme from "@/themes/chocolate";
 
 export interface Theme {
+  id: string;
   name: string;
   description?: string;
   creator?: string;

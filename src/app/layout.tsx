@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
-import { GlobalConfigProvider } from "@/reducers/globalConfig/context";
+import StoreProvider from "@/app/StateProvider";
+import ThemeCheck from "@/components/ThemeCheck";
 
 const pretendardFont = localFont({
   src: "./PretendardVariable.woff2",
@@ -19,12 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <GlobalConfigProvider>
-      <html lang="en">
-        <body className={`font-sans ${pretendardFont.variable} relative`}>
-          {children}
-        </body>
-      </html>
-    </GlobalConfigProvider>
+    <StoreProvider>
+      <ThemeCheck>
+        <html lang="en">
+          <body className={`font-sans ${pretendardFont.variable} relative`}>
+            {children}
+          </body>
+        </html>
+      </ThemeCheck>
+    </StoreProvider>
   );
 }
