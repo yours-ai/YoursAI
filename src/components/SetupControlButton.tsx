@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 function SetupControlButton({
   onClick,
@@ -17,6 +18,7 @@ function SetupControlButton({
   custom?: string;
   disabled?: boolean;
 }) {
+  const t = useTranslations("components/setupControlButton");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
   const handleUploadClick = () => {
@@ -53,14 +55,14 @@ function SetupControlButton({
       >
         <span className="text-13p leading-[16px]">
           {goBack
-            ? "뒤로"
+            ? t("goBack")
             : start
-              ? "시작하기"
+              ? t("start")
               : upload && !custom
-                ? "업로드"
+                ? t("upload")
                 : custom
                   ? custom
-                  : "계속하기"}
+                  : t("next")}
         </span>
       </div>
       {fileName && (

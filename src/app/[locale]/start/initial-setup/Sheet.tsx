@@ -12,6 +12,10 @@ interface Props {
 }
 
 const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
+  const t = useTranslations("start/initial-setup/allDefaultStart");
+  const description = t.rich("description", {
+    br: () => <br></br>,
+  });
   return (
     <div className="absolute inset-0 rounded-[10px] bg-white/50">
       <div className="absolute inset-0 flex items-center justify-center rounded-[10px] bg-gradient-to-t from-black/20 to-black/20">
@@ -23,16 +27,16 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
           }}
         >
           <div className="flex flex-col items-center gap-[10px]">
-            <div className="text-13p font-bold">모두 기본값으로 시작</div>
-            <div className="text-11p">
-              이 기능은 익숙한 사용자에게만 권장됩니다.
-              <br />
-              계속하시겠어요?
-            </div>
+            <div className="text-13p font-bold">{t("title")}</div>
+            <div className="text-11p">{description}</div>
           </div>
           <div className="mt-[16px] flex gap-[8px]">
-            <AlertButton isBlank label="아니요" onClick={onClose} />
-            <AlertButton label="네" />
+            <AlertButton
+              isBlank
+              label={t("alertButton.left")}
+              onClick={onClose}
+            />
+            <AlertButton label={t("alertButton.right")} />
           </div>
         </div>
       </div>

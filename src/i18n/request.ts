@@ -8,6 +8,7 @@ export default getRequestConfig(async ({ locale }) => {
   const filesToLoad = [
     "start/page",
     "start/areYouThere",
+    "start/initial-setup/allDefaultStart",
     "start/initial-setup/page",
     "start/initial-setup/sheet",
     "start/content/languageContent",
@@ -17,6 +18,7 @@ export default getRequestConfig(async ({ locale }) => {
     "start/content/apiKeyContent",
     "start/content/typingSimulationContent",
     "start/content/nameContent",
+    "components/setupControlButton",
   ];
 
   const messages: Record<string, any> = {};
