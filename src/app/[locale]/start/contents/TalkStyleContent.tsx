@@ -38,7 +38,7 @@ const Tooltip = ({ content }: { content: React.ReactNode }) => {
       whileElementsMounted: autoUpdate,
       placement: "top-start",
     });
-  const hover = useHover(context, { delay: { open: 200, close: 0 } });
+  const hover = useHover(context, { delay: { open: 0, close: 0 } });
   const dismiss = useDismiss(context);
   const role = useRole(context, {
     role: "tooltip",
