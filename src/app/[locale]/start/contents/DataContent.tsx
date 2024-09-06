@@ -13,6 +13,7 @@ import {
   useInteractions,
   useRole,
 } from "@floating-ui/react";
+import { useTranslations } from "next-intl";
 
 interface Props {
   isSelected: boolean;
@@ -42,7 +43,13 @@ const disabledSelectedOptionStyle = {
 
 type DataOptions = "default" | "local" | "cloud";
 
-const Tooltip = ({ children }: { children: React.ReactNode }) => {
+const Tooltip = ({
+  children,
+  content,
+}: {
+  children: React.ReactNode;
+  content: string;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef(null);
   const { refs, context, strategy, x, y, middlewareData } = useFloating({
@@ -88,7 +95,7 @@ const Tooltip = ({ children }: { children: React.ReactNode }) => {
           }}
           {...getFloatingProps()}
         >
-          아직 지원되지 않습니다.
+          {content}
           <div
             ref={arrowRef}
             style={{
@@ -132,40 +139,38 @@ const DataOption = ({ isSelected, option, isDisabled, onClick }: Props) => {
 };
 
 function DataContent() {
+  const t = useTranslations("start/content/dataContent");
   const [selectedOption, setSelectedOption] = useState<DataOptions>("default");
   const handleOptionClick = (option: DataOptions) => {
     setSelectedOption(option);
   };
   return (
     <>
-      <SettingTitle
-        icon={<PiCloudArrowDown />}
-        title="불러올 데이터가 있나요?"
-      />
+      <SettingTitle icon={<PiCloudArrowDown />} title={t("title")} />
       <div className="mt-[83px] flex flex-col gap-[17px]">
         <DataOption
           isSelected={selectedOption === "default"}
-          option="아니요, 처음부터 설정할게요"
+          option={t("options.default")}
           onClick={() => handleOptionClick("default")}
         />
         <DataOption
           isSelected={selectedOption === "local"}
-          option="네, 로컬에서 불러올게요"
+          option={t("options.local")}
           onClick={() => handleOptionClick("local")}
         />
-        <Tooltip>
+        <Tooltip content={t("options.noSupport")}>
           <DataOption
             isSelected={selectedOption === "cloud"}
             isDisabled
-            option="네, 클라우드에서 불러올게요"
+            option={t("options.cloud")}
           />
         </Tooltip>
       </div>
       <div className="absolute top-[521px] text-center text-20p font-bold leading-[25px] text-white">
         <p>
-          채팅 내역, 설정 등 모든 데이터는
+          {t("description.firstText")}
           <br />
-          언제든지 파일로 백업하고 되돌릴 수 있습니다.
+          {t("description.secondText")}
         </p>
       </div>
     </>

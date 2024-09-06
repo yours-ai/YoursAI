@@ -10,6 +10,8 @@ export default getRequestConfig(async ({ locale }) => {
     "start/areYouThere",
     "start/initial-setup/page",
     "start/initial-setup/sheet",
+    "start/content/languageContent",
+    "start/content/dataContent",
   ];
 
   const messages: Record<string, any> = {};

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { PiGlobe } from "react-icons/pi";
 import SettingTitle from "@/components/SettingTitle";
+import { useTranslations } from "next-intl";
 
 interface Props {
   isSelected: boolean;
@@ -24,13 +25,14 @@ const LanguageItem = ({ isSelected, language, onClick }: Props) => {
 };
 
 function LanguageContent() {
+  const t = useTranslations("start/content/languageContent");
   const [selectedLanguage, setSelectedLanguage] = useState<Languages>("한국어");
   const handleLanguageClick = (language: Languages) => {
     setSelectedLanguage(language);
   };
   return (
     <>
-      <SettingTitle icon={<PiGlobe />} title="언어 선택" />
+      <SettingTitle icon={<PiGlobe />} title={t("title")} />
       <div className="mt-[26px] h-[177px] w-[170px] bg-white">
         <LanguageItem
           isSelected={selectedLanguage === "한국어"}
@@ -45,9 +47,9 @@ function LanguageContent() {
       </div>
       <div className="absolute top-[521px] text-center text-20p font-bold leading-[25px] text-white">
         <p>
-          계속한다고 해서 무슨 약관에 동의하는 건 아닙니다.
+          {t("description.firstText")}
           <br />
-          어차피 모든 데이터는 로컬에만 저장됩니다.
+          {t("description.secondText")}
         </p>
       </div>
     </>

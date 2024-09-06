@@ -2,6 +2,7 @@ import React, { SetStateAction, useState } from "react";
 import NextSetupArrow from "@/app/[locale]/start/initial-setup/NextSetupArrow";
 import SetupControlButton from "@/components/SetupControlButton";
 import AlertButton from "@/components/AlertButton";
+import { useTranslations } from "next-intl";
 
 interface Props {
   step: number;
@@ -40,6 +41,7 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
 };
 
 function Sheet({ step, setStep, content, btnDisabled }: Props) {
+  const t = useTranslations("start/initial-setup/sheet");
   const [allDefaultStartModalOpen, setAllDefaultStartModalOpen] =
     useState<boolean>(false);
   const handleAllDefaultStart = () => {
@@ -63,7 +65,7 @@ function Sheet({ step, setStep, content, btnDisabled }: Props) {
                 className="cursor-pointer px-[7px] text-13p leading-[16px] text-accentBlue"
                 onClick={handleAllDefaultStart}
               >
-                모두 기본값으로 시작
+                {t("startWithDefault")}
               </div>
             ) : (
               <div />

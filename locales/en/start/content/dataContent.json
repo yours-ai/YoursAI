@@ -1,0 +1,13 @@
+{
+  "title": "Have any data to load?",
+  "options": {
+    "default": "No, I will setup from scratch",
+    "local": "Yes, I will load it from local storage",
+    "cloud": "Yes, I will load it from cloud",
+    "noSupport": "Not supported yet"
+  },
+  "description": {
+    "firstText": "All data, including chat history and settings,",
+    "secondText": "can be backed up and restored from a file at any time."
+  }
+}
