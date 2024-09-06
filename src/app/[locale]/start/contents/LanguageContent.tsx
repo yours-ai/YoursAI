@@ -43,6 +43,13 @@ function LanguageContent() {
           onClick={() => handleLanguageClick("English")}
         />
       </div>
+      <div className="absolute">
+        <p>
+          계속한다고 해서 무슨 약관에 동의하는 건 아닙니다.
+          <br />
+          어차피 모든 데이터는 로컬에만 저장됩니다.
+        </p>
+      </div>
     </>
   );
 }

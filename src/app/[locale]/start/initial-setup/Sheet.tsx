@@ -1,5 +1,5 @@
 import React, { SetStateAction, useState } from "react";
-import NextSetupArrow from "@/app/start/initial-setup/NextSetupArrow";
+import NextSetupArrow from "@/app/[locale]/start/initial-setup/NextSetupArrow";
 import SetupControlButton from "@/components/SetupControlButton";
 import AlertButton from "@/components/AlertButton";
 

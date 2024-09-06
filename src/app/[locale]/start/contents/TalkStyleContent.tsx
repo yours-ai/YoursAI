@@ -19,7 +19,7 @@ import {
   useRole,
 } from "@floating-ui/react";
 import SetupForm from "@/components/SetupForm";
-import { SetupContentProps } from "@/app/start/contents/ThemeContent";
+import { SetupContentProps } from "@/app/[locale]/start/contents/ThemeContent";
 
 const CustomStyleFormRows = [
   {

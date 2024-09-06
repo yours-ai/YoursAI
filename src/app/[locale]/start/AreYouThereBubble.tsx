@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
-import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 function AreYouThereBubble() {
+  const t = useTranslations("start/areYouThere");
   const [isPrompt, setIsPrompt] = useState<boolean>(false);
   const [animationComplete, setAnimationComplete] = useState<boolean>(false);
   return (
@@ -13,7 +14,7 @@ function AreYouThereBubble() {
         {!animationComplete ? (
           <TypeAnimation
             sequence={[
-              "*...은 떨리는 얼굴로 말했다*",
+              t("systemPrompt"),
               1000,
               () => {
                 setIsPrompt(true);
@@ -24,22 +25,24 @@ function AreYouThereBubble() {
             cursor={false}
           />
         ) : (
-          <span>...은 떨리는 얼굴로 말했다</span>
+          <span>{t("systemPromptItalics")}</span>
         )}
       </div>
-      <TypeAnimation
-        sequence={[
-          "",
-          2300,
-          "계시나요?",
-          1000,
-          () => {
-            console.log("sequence completed");
-          },
-        ]}
-        wrapper="span"
-        cursor={false}
-      />
+      {isPrompt ? (
+        <TypeAnimation
+          sequence={[
+            // "",
+            // 2300,
+            t("conversation"),
+            1000,
+            () => {
+              console.log("sequence completed");
+            },
+          ]}
+          wrapper="span"
+          cursor={false}
+        />
+      ) : null}
     </div>
   );
 }

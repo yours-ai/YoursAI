@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SettingTitle from "@/components/SettingTitle";
 import SetupForm from "@/components/SetupForm";
-import { SetupContentProps } from "@/app/start/contents/ThemeContent";
+import { SetupContentProps } from "@/app/[locale]/start/contents/ThemeContent";
 
 function ApiKeyContent({ setBtnDisabled }: SetupContentProps) {
   const [inputValue, setInputValue] = useState<string>("");

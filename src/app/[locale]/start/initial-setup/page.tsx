@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import Sheet from "@/app/start/initial-setup/Sheet";
-import LanguageContent from "@/app/start/contents/LanguageContent";
-import DataContent from "@/app/start/contents/DataContent";
-import ThemeContent from "@/app/start/contents/ThemeContent";
-import TalkStyleContent from "@/app/start/contents/TalkStyleContent";
-import ApiKeyContent from "@/app/start/contents/ApiKeyContent";
-import TranslateContent from "@/app/start/contents/TranslateContent";
-import TypingSimulationContent from "@/app/start/contents/TypingSimulationContent";
-import NameContent from "@/app/start/contents/NameContent";
+import Sheet from "@/app/[locale]/start/initial-setup/Sheet";
+import LanguageContent from "@/app/[locale]/start/contents/LanguageContent";
+import DataContent from "@/app/[locale]/start/contents/DataContent";
+import ThemeContent from "@/app/[locale]/start/contents/ThemeContent";
+import TalkStyleContent from "@/app/[locale]/start/contents/TalkStyleContent";
+import ApiKeyContent from "@/app/[locale]/start/contents/ApiKeyContent";
+import TranslateContent from "@/app/[locale]/start/contents/TranslateContent";
+import TypingSimulationContent from "@/app/[locale]/start/contents/TypingSimulationContent";
+import NameContent from "@/app/[locale]/start/contents/NameContent";
 
 function Page() {
   const [step, setStep] = useState<number>(0);
