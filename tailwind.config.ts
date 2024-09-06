@@ -22,6 +22,7 @@ const config: Config = {
         emptyBackground: "#F2F2F7",
         border: "rgba(198, 198, 200, 0.6)",
         tabUnselected: "#999999",
+        selected: "#D1D1D6",
         buttonBg: "rgba(0,0,0,0.4)",
         secondary: "rgba(0,0,0,0.5)",
         primaryLabel: "#000000",

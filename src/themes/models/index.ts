@@ -2,6 +2,7 @@ import { type ButtonProps } from "./Button";
 import theFruitTheme from "@/themes/theFruit";
 import chocolateTheme from "@/themes/chocolate";
 import { FriendDetailProps } from "@/themes/models/FriendDetail";
+import { FriendListProps } from "@/themes/models/FriendList";
 
 export interface Theme {
   name: string;
@@ -10,7 +11,7 @@ export interface Theme {
   components: {
     Button: React.ComponentType<ButtonProps>;
     EmptySpace: React.ComponentType;
-    FriendList: React.ComponentType;
+    FriendList: React.ComponentType<FriendListProps>;
     FriendDetail: React.ComponentType<FriendDetailProps>;
   };
 }

@@ -4,7 +4,7 @@ import { FriendDetailProps } from "@/themes/models/FriendDetail";
 
 export default function FriendDetail({ selectedCharacter }: FriendDetailProps) {
   return (
-    <div className="flex size-full flex-col">
+    <div className="ml-px flex size-full flex-col">
       <FriendDetailHeader selectedCharacter={selectedCharacter} />
       <FriendDetailInfo selectedCharacter={selectedCharacter} />
     </div>

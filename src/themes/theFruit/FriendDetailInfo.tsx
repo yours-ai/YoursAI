@@ -2,7 +2,7 @@ import { Character } from "@/themes/models";
 
 function DetailRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex flex-col justify-start border-b border-border p-2.5">
+    <div className="flex min-w-[320px] flex-col justify-start border-b border-border p-2.5">
       <div className="text-14p">{label}</div>
       <div className="text-16p text-accentBlue">{value}</div>
     </div>
@@ -25,9 +25,12 @@ export default function FriendDetailInfo({
           label="제작자 한줄소개"
           value={selectedCharacter.creator.introduction}
         />
-        <div className="p-2.5 text-14p text-red" onClick={deleteCharacter}>
+        <button
+          className="cursor-pointer p-2.5 text-14p text-red"
+          onClick={deleteCharacter}
+        >
           캐릭터 삭제
-        </div>
+        </button>
       </div>
     </div>
   );
