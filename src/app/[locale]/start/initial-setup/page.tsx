@@ -59,9 +59,6 @@ function Page() {
     <Sheet key={8} step={step} setStep={setStep} content={<NameContent />} />,
   ];
 
-  const userLanguage = navigator.language;
-  console.log("언어:", userLanguage, typeof userLanguage);
-
   return <>{steps[step]}</>;
 }
 
