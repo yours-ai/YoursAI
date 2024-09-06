@@ -99,7 +99,6 @@ function TalkStyleContent({ setBtnDisabled }: SetupContentProps) {
       br: () => <br></br>,
     });
   };
-  console.log(richText("info"));
   const [index, setIndex] = useState<number>(0);
   useEffect(() => {
     if (index === 3) {

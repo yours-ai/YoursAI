@@ -36,7 +36,7 @@ function SetupForm({ setupFormRows }: SetupForm) {
       }}
     >
       {setupFormRows.map((row, index) => (
-        <>
+        <div key={index}>
           {index !== 0 ? (
             <div
               className="h-px w-full"
@@ -44,12 +44,11 @@ function SetupForm({ setupFormRows }: SetupForm) {
             />
           ) : null}
           <SetupFormRow
-            key={index}
             rowTitle={row.rowTitle}
             rowDescription={row.rowDescription}
             action={row.action}
           />
-        </>
+        </div>
       ))}
     </div>
   );
