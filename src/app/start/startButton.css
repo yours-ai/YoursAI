@@ -1,8 +1,0 @@
-.start-button:hover > div {
-  border-color: rgba(255, 255, 255, 0.7);
-}
-
-.start-button:hover > span,
-.start-button:hover > div > * {
-  color: rgba(255, 255, 255, 0.7);
-}
