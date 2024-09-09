@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./routes";
 import Main from "./routes/main.tsx";
 import Setup from "./routes/setup.tsx";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
     path: "/main",
     element: <Main />,
   },
+
   {
     path: "/setup",
     element: <Setup />,

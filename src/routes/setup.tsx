@@ -1,3 +1,3 @@
 export default function Setup() {
-  return <div>This is setup!</div>
+  return <div className="text-red-600">This is setup!</div>;
 }

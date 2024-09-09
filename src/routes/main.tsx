@@ -1,3 +1,3 @@
 export default function Main() {
-  return <div>This is main!</div>;
+  return <div className="text-blue-600">This is main!</div>;
 }
