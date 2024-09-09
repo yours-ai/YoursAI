@@ -1,23 +1,28 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Index from "./routes";
-import Main from "./routes/main.tsx";
-import Setup from "./routes/setup.tsx";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Index />,
+    lazy: () => import("./routes"),
   },
   {
     path: "/main",
-    element: <Main />,
+    lazy: () => import("./routes/main"),
   },
   {
     path: "/setup",
-    element: <Setup />,
+    lazy: () => import("./routes/setup"),
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" />,
   },
 ]);
 
