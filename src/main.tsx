@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import "pretendard/dist/web/static/pretendard.css";
+import Layout from "@/Layout";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Layout>
+      <RouterProvider router={router} />
+    </Layout>
   </StrictMode>,
 );
