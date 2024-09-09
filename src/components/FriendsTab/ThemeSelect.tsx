@@ -2,7 +2,7 @@ import {
   AvailableBundledThemes,
   BundledThemes,
 } from "@/components/themes/models";
-import { setTheme } from "@/redux/features/globalConfig/globalConfigSlice.ts";
+import { setTheme } from "@/redux/features/globalConfig/slice.ts";
 import { useAppDispatch } from "@/hooks/useAppStore.ts";
 
 export interface Props {

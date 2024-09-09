@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import globalConfigReducer from "@/redux/features/globalConfig/globalConfigSlice.ts";
+import globalConfigReducer from "@/redux/features/globalConfig/slice.ts";
 import storage from "redux-persist-indexeddb-storage"; // defaults to localStorage for web
 import {
   FLUSH,
