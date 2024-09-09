@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import "pretendard/dist/web/static/pretendard.css";
+import "./utils/i18n.ts";
 
 const router = createBrowserRouter([
   {

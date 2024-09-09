@@ -1,5 +1,12 @@
+import SetupLayout from "@/components/SetupLayout.tsx";
+
 export function Component() {
-  return <div className="text-red-600">This is setup!</div>;
+  // const { t } = useTranslation("setup/setupPage");
+  return (
+    <SetupLayout>
+      <div>hi!</div>
+    </SetupLayout>
+  );
 }
 
 Component.displayName = "SetupPage";

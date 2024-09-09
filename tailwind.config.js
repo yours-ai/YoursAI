@@ -4,6 +4,13 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontSize: {
+        "11p": "11px",
+        "13p": "13px",
+        "16p": "16px",
+        "20p": "20px",
+        "32p": "32px",
+      },
       fontFamily: {
         sans: [
           "Pretendard",
@@ -22,5 +29,5 @@ export default {
       },
     },
   },
-  plugins: [require("daisyui"), require('@tailwindcss/typography')],
+  plugins: [require("daisyui"), require("@tailwindcss/typography")],
 };
