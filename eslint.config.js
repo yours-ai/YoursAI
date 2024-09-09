@@ -1,25 +1,28 @@
 import js from "@eslint/js";
 import globals from "globals";
-import importPlugin from "eslint-plugin-import";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import tseslint from "typescript-eslint";
+import {
+  config as tseslintConfig,
+  configs as tslintConfigs,
+} from "typescript-eslint";
 import eslintConfigPrettierRecommended from "eslint-plugin-prettier/recommended";
 import tailwind from "eslint-plugin-tailwindcss";
 
-export default tseslint.config(
+export default tseslintConfig(
   { ignores: ["dist"] },
   {
-    settings: {
-      "import/resolver": {
-        typescript: true,
-        node: true,
-      },
-    },
+    files: ["**/*.{js,jsx}"],
+    extends: [js.configs.recommended, eslintConfigPrettierRecommended],
   },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],
+    extends: [
+      js.configs.recommended,
+      ...tslintConfigs.recommended,
+      ...tailwind.configs["flat/recommended"],
+      eslintConfigPrettierRecommended,
+    ],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -47,20 +50,7 @@ export default tseslint.config(
           ignoreRestSiblings: true,
         },
       ],
-    },
-  },
-  importPlugin.flatConfigs.recommended,
-  importPlugin.flatConfigs.typescript,
-  {
-    rules: {
-      "import/order": "error",
-    },
-  },
-  ...tailwind.configs["flat/recommended"],
-  {
-    rules: {
       "tailwindcss/classnames-order": "error",
     },
   },
-  eslintConfigPrettierRecommended,
 );
