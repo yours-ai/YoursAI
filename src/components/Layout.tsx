@@ -3,5 +3,5 @@ export interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  return <main className="relative font-sans">{children}</main>;
+  return <div className="relative font-sans">{children}</div>;
 }

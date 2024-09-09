@@ -7,8 +7,8 @@ export function Component() {
     <Layout>
       <main className="flex min-h-screen flex-col items-center justify-between">
         <div className="z-10 flex w-full max-w-5xl justify-center lg:pt-20">
-          <article className="prose lg:prose-xl px-10 text-center">
-            <img src="/logo.png" alt="Logo" className="mx-auto" />
+          <article className="prose px-10 text-center lg:prose-xl">
+            <img src="/logo.png" alt="Logo" className="mx-auto size-52" />
             <h1>YoursAI</h1>
             <a href="https://github.com/yours-ai/YoursAI">
               <button className="btn btn-lg">
