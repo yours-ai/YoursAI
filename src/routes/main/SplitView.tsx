@@ -1,21 +1,20 @@
 import { use100vh } from "react-div-100vh";
+import { Outlet } from "react-router-dom";
+import { useRef } from "react";
 
 export interface SplitViewProps {
   primary: "left" | "right";
-  leftPane?: React.ReactNode;
   leftNav?: React.ReactNode;
   leftNavHeight?: number;
-  rightPane?: React.ReactNode;
 }
 
 export default function SplitView({
-  leftPane,
   leftNav,
   leftNavHeight = 58,
-  rightPane,
   primary,
 }: SplitViewProps) {
   const height = use100vh();
+  const leftPaneDiv = useRef<HTMLDivElement>(null);
 
   return (
     <div className="relative flex">
@@ -27,16 +26,15 @@ export default function SplitView({
           <div
             className="absolute inset-x-0 top-0 overflow-auto"
             style={{ bottom: leftNavHeight }}
-          >
-            {leftPane}
-          </div>
+            ref={leftPaneDiv}
+          />
           <div className="absolute inset-x-0 bottom-0">{leftNav}</div>
         </div>
       </div>
       <div
         className={`min-h-screen grow ${primary === "right" ? "" : "hidden tablet:block"}`}
       >
-        {rightPane}
+        <Outlet context={{ leftPaneDiv }} />
       </div>
     </div>
   );

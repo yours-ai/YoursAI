@@ -16,47 +16,49 @@ const router = createBrowserRouter([
   },
   {
     path: "/main",
-    element: <Navigate to="/main/friends" />,
-  },
-  {
-    path: "/main/friends",
-    lazy: () => import("./routes/main/friends/page.tsx"),
+    lazy: () => import("./routes/main/page.tsx"),
     children: [
-      {
-        path: "/main/friends/:friendId",
-        lazy: () => import("@/routes/main/friends/[:friendId]/page.tsx"),
-      },
       {
         path: "/main/friends",
-        lazy: () => import("./routes/main/empty.tsx"),
-      },
-    ],
-  },
-  {
-    path: "/main/messages",
-    lazy: () => import("./routes/main/messages/page.tsx"),
-    children: [
-      {
-        path: "/main/messages/:chatRoomId",
-        lazy: () => import("@/routes/main/messages/[:chatRoomId]/page.tsx"),
+        lazy: () => import("./routes/main/friends/page.tsx"),
+        children: [
+          {
+            path: "/main/friends/:friendId",
+            lazy: () => import("@/routes/main/friends/[:friendId]/page.tsx"),
+          },
+          {
+            path: "/main/friends",
+            lazy: () => import("./routes/main/empty.tsx"),
+          },
+        ],
       },
       {
         path: "/main/messages",
-        lazy: () => import("./routes/main/empty.tsx"),
-      },
-    ],
-  },
-  {
-    path: "/main/settings",
-    lazy: () => import("./routes/main/settings/page.tsx"),
-    children: [
-      {
-        path: "/main/settings/:settingsId",
-        lazy: () => import("@/routes/main/settings/[:settingsId]/page.tsx"),
+        lazy: () => import("./routes/main/messages/page.tsx"),
+        children: [
+          {
+            path: "/main/messages/:chatRoomId",
+            lazy: () => import("@/routes/main/messages/[:chatRoomId]/page.tsx"),
+          },
+          {
+            path: "/main/messages",
+            lazy: () => import("./routes/main/empty.tsx"),
+          },
+        ],
       },
       {
         path: "/main/settings",
-        lazy: () => import("./routes/main/empty.tsx"),
+        lazy: () => import("./routes/main/settings/page.tsx"),
+        children: [
+          {
+            path: "/main/settings/:settingsId",
+            lazy: () => import("@/routes/main/settings/[:settingsId]/page.tsx"),
+          },
+          {
+            path: "/main/settings",
+            lazy: () => import("./routes/main/empty.tsx"),
+          },
+        ],
       },
     ],
   },
