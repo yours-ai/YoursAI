@@ -2,15 +2,13 @@ import SettingTitle from "@/components/SettingTitle";
 import { Trans, useTranslation } from "react-i18next";
 
 function NameContent() {
-  const { t } = useTranslation("start/content/nameContent");
+  const { t } = useTranslation("setup/contents/nameContent");
   return (
     <>
       <SettingTitle
         title={
-          <Trans key="title">
-            <p>
-              설정이 모두 끝났어요!<br></br>마지막으로, 어떻게 불러드릴까요?
-            </p>
+          <Trans i18nKey="title" t={t}>
+            설정이 모두 끝났어요!<br></br>마지막으로, 어떻게 불러드릴까요?
           </Trans>
         }
       />
