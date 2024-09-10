@@ -95,7 +95,8 @@ const Tooltip = ({
           }}
           {...getFloatingProps()}
         >
-          {content}
+          <p className="relative z-20">{content}</p>
+
           <div
             ref={arrowRef}
             style={{
@@ -109,8 +110,11 @@ const Tooltip = ({
               zIndex: 2,
               marginLeft: "1px",
               borderRadius: "2px",
+              boxShadow:
+                "0px 8px 40px 0px rgba(0, 0, 0, 0.25), 0px 0px 3px 0px rgba(0, 0, 0, 0.55), 0px 0px 3px 0px rgba(255, 255, 255, 0.10)",
             }}
           />
+          <div className="absolute inset-0 z-10 rounded-[10px] bg-white" />
         </div>
       )}
     </>

@@ -80,8 +80,11 @@ const Tooltip = ({ content }: { content: React.ReactNode }) => {
               left: middlewareData.arrow?.x ?? 0,
               marginLeft: "1px",
               borderRadius: "2px",
+              boxShadow:
+                "0px 8px 40px 0px rgba(0, 0, 0, 0.25), 0px 0px 3px 0px rgba(0, 0, 0, 0.55), 0px 0px 3px 0px rgba(255, 255, 255, 0.10)",
             }}
-          />
+          ></div>
+          <div className="absolute inset-0 z-10 rounded-[10px] bg-white"></div>
         </div>
       )}
     </>
@@ -159,9 +162,11 @@ function ConversationStyleContent({ setBtnDisabled }: SetupContentProps) {
         <div className="absolute bottom-[8px] right-[-30px]">
           <Tooltip
             content={
-              <Trans i18nKey="info" t={t}>
-                RisuAI에 익숙하다면,<br></br>기존의 프롬프트 템플릿과 같습니다
-              </Trans>
+              <p className="relative z-20">
+                <Trans i18nKey="info" t={t}>
+                  RisuAI에 익숙하다면,<br></br>기존의 프롬프트 템플릿과 같습니다
+                </Trans>
+              </p>
             }
           />
         </div>
