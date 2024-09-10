@@ -4,6 +4,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        'tablet': '926px',
+        'desktop': '1276px',
+      },
       fontFamily: {
         sans: [
           "Pretendard",
