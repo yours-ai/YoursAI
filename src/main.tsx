@@ -19,10 +19,6 @@ const router = createBrowserRouter([
     element: <Navigate to="/main/friends" />,
   },
   {
-    path: "/main/layouttest",
-    lazy: () => import("./routes/main/layouttestpage.tsx"),
-  },
-  {
     path: "/main/friends",
     lazy: () => import("./routes/main/friends/page.tsx"),
     children: [
