@@ -1,6 +1,6 @@
 {
   "title": "Start with defaults",
-  "description": "Only recommended for experienced users.<br></br>Would you like to proceed?",
+  "description": "Only recommended for experienced users.<1></1>Would you like to proceed?",
   "alertButton" : {
     "left": "Cancel",
     "right": "Yes"

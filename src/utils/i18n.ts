@@ -8,9 +8,11 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    lng: "en",
-    fallbackLng: "en",
+    fallbackLng: "kr",
     debug: true,
+    detection: {
+      order: ["navigator"],
+    },
 
     interpolation: {
       escapeValue: false,

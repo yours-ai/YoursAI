@@ -26,7 +26,7 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
           <div className="flex flex-col items-center gap-[10px]">
             <div className="text-13p font-bold">{t("title")}</div>
             <div className="text-11p">
-              <Trans key="description">
+              <Trans i18nKey="description" t={t}>
                 이 기능은 익숙한 사용자에게만 권장됩니다.<br></br>
                 계속하시겠어요?
               </Trans>
