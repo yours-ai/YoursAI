@@ -9,6 +9,7 @@ interface Props {
   setStep: React.Dispatch<SetStateAction<number>>;
   content: React.ReactNode;
   btnDisabled?: boolean;
+  last?: boolean;
 }
 
 const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
@@ -46,7 +47,7 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
   );
 };
 
-function Sheet({ step, setStep, content, btnDisabled }: Props) {
+function Sheet({ step, setStep, content, btnDisabled, last }: Props) {
   const { t } = useTranslation("components/sheet");
   const [allDefaultStartModalOpen, setAllDefaultStartModalOpen] =
     useState<boolean>(false);
@@ -66,7 +67,7 @@ function Sheet({ step, setStep, content, btnDisabled }: Props) {
           <NextSetupArrow onClick={() => setStep((prev) => prev + 1)} />
         ) : (
           <>
-            {step === 1 ? (
+            {step === 2 ? (
               <div
                 className="cursor-pointer px-[7px] text-13p leading-[16px] text-accentBlue"
                 onClick={handleAllDefaultStart}
@@ -81,7 +82,7 @@ function Sheet({ step, setStep, content, btnDisabled }: Props) {
                 onClick={() => setStep((prev) => prev - 1)}
                 goBack
               />
-              {step === 7 ? (
+              {last ? (
                 <SetupControlButton start />
               ) : (
                 <SetupControlButton

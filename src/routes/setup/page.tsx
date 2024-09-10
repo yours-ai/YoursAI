@@ -61,7 +61,13 @@ export function Component() {
       setStep={setStep}
       content={<TypingSimulationContent />}
     />,
-    <Sheet key={8} step={step} setStep={setStep} content={<NameContent />} />,
+    <Sheet
+      key={8}
+      step={step}
+      setStep={setStep}
+      content={<NameContent />}
+      last
+    />,
   ];
 
   const stepsNoTranslationStep = steps.filter(

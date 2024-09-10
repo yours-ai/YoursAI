@@ -12,8 +12,14 @@ function NameContent() {
           </Trans>
         }
       />
-      <div className="mt-[56px] flex w-[263px] flex-col gap-[21px] text-13p leading-[16px]">
+      <div className="mt-[56px] flex w-[263px] flex-col gap-[21px] overflow-visible text-13p leading-[16px]">
         <div className="relative flex w-full gap-[22px]">
+          <div
+            className="absolute bottom-[3px] right-0 text-13p leading-[16px]"
+            style={{ transform: "translateX(-280px)", whiteSpace: "nowrap" }}
+          >
+            {t("name.label")}:
+          </div>
           <input
             type="text"
             className="w-1/2 rounded-[5px] px-[7px] py-[3px] outline-0 placeholder:text-black/25"
@@ -32,9 +38,6 @@ function NameContent() {
                 "0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.30), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.05)",
             }}
           />
-          <div className="absolute bottom-[3px] right-[280px] text-13p leading-[16px]">
-            {t("name.label")}:
-          </div>
         </div>
         <div className="relative">
           <textarea
@@ -46,7 +49,10 @@ function NameContent() {
                 "0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.30), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.05)",
             }}
           />
-          <div className="absolute right-[280px] top-[3px] text-13p leading-[16px]">
+          <div
+            className="absolute right-0 top-[3px] text-13p leading-[16px]"
+            style={{ transform: "translateX(-280px)", whiteSpace: "nowrap" }}
+          >
             {t("intro.label")}:
           </div>
         </div>
