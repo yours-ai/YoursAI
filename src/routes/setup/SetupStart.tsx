@@ -4,7 +4,6 @@ import { PiArrowRightBold } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
 import { SetStateAction } from "react";
 import "./startButton.css";
-import i18n from "i18next";
 
 interface Props {
   step: number;
@@ -12,7 +11,6 @@ interface Props {
 }
 
 function SetupStart({ setStep }: Props) {
-  console.log("현재 설정된 언어:", i18n.language);
   const { t } = useTranslation("setup/setupPage");
   return (
     <div className="flex flex-col gap-[200px]">

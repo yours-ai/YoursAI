@@ -85,7 +85,9 @@ function Sheet({ step, setStep, content, btnDisabled }: Props) {
                 <SetupControlButton start />
               ) : (
                 <SetupControlButton
-                  onClick={() => setStep((prev) => prev + 1)}
+                  onClick={() => {
+                    setStep((prev) => prev + 1);
+                  }}
                   disabled={btnDisabled}
                 />
               )}
