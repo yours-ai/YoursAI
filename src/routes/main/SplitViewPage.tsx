@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom";
-import { OutletContext } from "@/routes/main/page.tsx";
 import { createPortal } from "react-dom";
+import { OutletContext } from "@/routes/main/SplitView.tsx";
 
 export interface Props {
   leftPane?: React.ReactNode;
