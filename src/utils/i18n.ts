@@ -8,7 +8,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "kr",
+    fallbackLng: "en",
     debug: true,
     detection: {
       order: ["navigator"],

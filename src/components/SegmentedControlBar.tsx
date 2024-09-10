@@ -30,7 +30,7 @@ function SegmentedControlBar({ segments, setIndex }: SegmentedControlBarProps) {
             setSelected(index);
             setIndex(index);
           }}
-          className={`relative flex size-full items-center justify-center rounded-[5px] text-13p leading-[16px] ${index === selected ? "selected-button" : index !== 0 ? "unselected-button" : ""} cursor-pointer duration-200`}
+          className={`relative flex size-full items-center justify-center rounded-[5px] text-13p leading-[16px] ${index === selected ? "selected-button" : index !== 0 ? "unselected-button" : ""} cursor-pointer select-none duration-200`}
           style={{ zIndex: selected === index ? 10 : 1 }}
         >
           {segment.title}
