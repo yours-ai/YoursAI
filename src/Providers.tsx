@@ -6,7 +6,7 @@ export interface Props {
   children?: React.ReactNode;
 }
 
-export default function Layout({ children }: Props) {
+export default function Providers({ children }: Props) {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

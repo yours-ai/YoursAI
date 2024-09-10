@@ -7,20 +7,20 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import "pretendard/dist/web/static/pretendard.css";
-import Layout from "@/Layout";
+import Providers from "@/Providers.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    lazy: () => import("./routes"),
+    lazy: () => import("./routes/page.tsx"),
   },
   {
     path: "/main",
-    lazy: () => import("./routes/main"),
+    lazy: () => import("./routes/main/page.tsx"),
   },
   {
     path: "/setup",
-    lazy: () => import("./routes/setup"),
+    lazy: () => import("./routes/setup/page.tsx"),
   },
   {
     path: "*",
@@ -30,8 +30,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Layout>
+    <Providers>
       <RouterProvider router={router} />
-    </Layout>
+    </Providers>
   </StrictMode>,
 );

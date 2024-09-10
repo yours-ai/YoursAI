@@ -1,8 +1,6 @@
-import Layout from "@/Layout.tsx";
-
 export function Component() {
   // TODO: redirect to setup if not setup, else redirect to main
-  return <Layout>hello this is main page</Layout>;
+  return <div>hello this is index page</div>;
 }
 
 Component.displayName = "IndexPage";
