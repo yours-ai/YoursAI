@@ -1,7 +1,8 @@
 import { PiGlobe } from "react-icons/pi";
 import SettingTitle from "@/components/SettingTitle";
 import { Trans, useTranslation } from "react-i18next";
-
+import i18n from "i18next";
+import { useMemo, useState } from "react";
 interface Props {
   isSelected: boolean;
   language: string;
@@ -20,25 +21,27 @@ const LanguageItem = ({ isSelected, language, onClick }: Props) => {
 };
 
 function LanguageContent() {
-  // const { locale }: { locale: string } = useParams();
   const { t } = useTranslation("setup/contents/languageContent");
-  // const [selectedLanguage, setSelectedLanguage] = useState<string>(locale);
-  // const handleLanguageClick = (language: string) => {
-  //   setSelectedLanguage(language);
-  // };
+  const locale = useMemo(() => {
+    return i18n.language;
+  }, []);
+  const [selectedLanguage, setSelectedLanguage] = useState<string>(locale);
+  const handleLanguageClick = (language: string) => {
+    setSelectedLanguage(language);
+  };
   return (
     <>
       <SettingTitle icon={<PiGlobe />} title={t("title")} />
       <div className="mt-[26px] h-[177px] w-[170px] bg-white">
         <LanguageItem
-          isSelected={true}
+          isSelected={selectedLanguage === "ko"}
           language="한국어"
-          // onClick={() => handleLanguageClick("kr")}
+          onClick={() => handleLanguageClick("ko")}
         />
         <LanguageItem
-          isSelected={false}
+          isSelected={selectedLanguage.startsWith("en")}
           language="English"
-          // onClick={() => handleLanguageClick("en")}
+          onClick={() => handleLanguageClick("en")}
         />
       </div>
       <div className="absolute top-[521px] text-center text-20p font-semibold leading-[25px] text-white">
