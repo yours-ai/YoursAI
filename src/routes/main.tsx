@@ -1,5 +1,7 @@
+import FriendsTab from "@/components/FriendsTab/FriendsTab.tsx";
+
 export function Component() {
-  return <div className="text-blue-600">This is main!</div>;
+  return <FriendsTab />;
 }
 
 Component.displayName = "MainPage";

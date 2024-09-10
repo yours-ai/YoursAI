@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Layout from "@/Layout.tsx";
 
 export function Component() {
   // TODO: redirect to setup if not setup, else redirect to main
