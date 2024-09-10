@@ -1,0 +1,13 @@
+{
+  "title": "Wanna use Typing Simulation?",
+  "choices": {
+    "yes": {
+      "label": "Yes (Recommended)",
+      "description": "<p>It shows the character's dialogue<br></br>as if written by a real person - easy to read and realistic.</p>"
+    },
+    "no": {
+      "label": "No",
+      "description": "<p>It shows the character's lines ASAP.<br></br>Feels a bit robotic, but keeps the conversation flow quick.</p>"
+    }
+  }
+}

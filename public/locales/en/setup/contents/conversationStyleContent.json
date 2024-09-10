@@ -1,0 +1,29 @@
+{
+  "title": "Conversation Style",
+  "info": "<p>Same as<br></br>RisuAI's prompt template</p>",
+  "styles": {
+    "balanced": {
+      "name": "Balanced(Rec)",
+      "description": "<p>The character adjusts conversation length<br></br>and occasionally uses and omniscient perspective.</p>"
+    },
+    "novel": {
+      "name": "Novel",
+      "description": "<p>Your short replies get long responses,<br></br>often with an omniscient touch.</p>"
+    },
+    "realistic": {
+      "name": "Realistic",
+      "description": "<p>It’s like a real conversation,<br></br>hard to know what the character is really thinking.</p>"
+    },
+    "custom": {
+      "name": "Custom",
+      "styleFile" : {
+        "name": "Converation style file",
+        "description": "Supports Risu-style prompt templates as well."
+      },
+      "moduleFile": {
+        "name": "(optional) Module file",
+        "description": "Supports Risu-style modules as well."
+      }
+    }
+  }
+}

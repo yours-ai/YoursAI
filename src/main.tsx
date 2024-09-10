@@ -16,11 +16,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/main",
-    lazy: () => import("./routes/main"),
+    lazy: () => import("./routes/main/page.tsx"),
   },
   {
     path: "/setup",
-    lazy: () => import("./routes/setup"),
+    lazy: () => import("./routes/setup/page.tsx"),
   },
   {
     path: "*",

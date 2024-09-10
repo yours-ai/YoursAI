@@ -1,0 +1,14 @@
+{
+  "title": "<p>설정이 모두 끝났어요!<br></br>마지막으로, 어떻게 불러드릴까요?</p>",
+  "name": {
+    "label": "이름",
+    "placeholder": {
+      "first": "성",
+      "second": "이름"
+    }
+  },
+  "intro": {
+    "label": "소개(선택)",
+    "placeholder": "캐릭터가 당신에 대해 알았으면 하는 것"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "title": "테마 고르기",
+  "themes": {
+    "fruit": {"name": "\"그\" 과일 테마", "description": "가장 기본적이고, 깔끔한 느낌"},
+    "chocolate": {"name": "초콜릿 테마", "description": "설빙 오레오 초코 빙수"},
+    "navy": {"name": "Navy 테마", "description": "선배님 멋져용"},
+    "custom": {"name": "커스텀 테마", "upload": "커스텀 테마 파일 업로드하기"}
+  }
+}

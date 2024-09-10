@@ -11,6 +11,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.23",
     "i18next": "^23.14.0",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.1",
