@@ -47,7 +47,7 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
 };
 
 function Sheet({ step, setStep, content, btnDisabled }: Props) {
-  const { t } = useTranslation("setup/components/sheet");
+  const { t } = useTranslation("components/sheet");
   const [allDefaultStartModalOpen, setAllDefaultStartModalOpen] =
     useState<boolean>(false);
   const handleAllDefaultStart = () => {

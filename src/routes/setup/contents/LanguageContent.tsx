@@ -42,11 +42,10 @@ function LanguageContent() {
         />
       </div>
       <div className="absolute top-[521px] text-center text-20p font-semibold leading-[25px] text-white">
-        <Trans key="description">
-          <p>
-            계속한다고 해서 무슨 약관에 동의하는 건 아닙니다.<br></br>어차피
-            모든 데이터는 로컬에만 저장됩니다.
-          </p>
+        <Trans i18nKey="description" t={t}>
+          계속한다고 해서 무슨 약관에 동의하는 건 아닙니다.
+          <br />
+          어차피 모든 데이터는 로컬에만 저장됩니다.
         </Trans>
       </div>
     </>

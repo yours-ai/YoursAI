@@ -167,11 +167,9 @@ function DataContent() {
         </Tooltip>
       </div>
       <div className="absolute top-[521px] text-center text-20p font-semibold leading-[25px] text-white">
-        <Trans key="description">
-          <p>
-            채팅 내역, 설정 등 모든 데이터는<br></br>언제든지 파일로 백업하고
-            되돌릴 수 있습니다.
-          </p>
+        <Trans i18nKey="description" t={t}>
+          채팅 내역, 설정 등 모든 데이터는<br></br>언제든지 파일로 백업하고
+          되돌릴 수 있습니다.
         </Trans>
       </div>
     </>
