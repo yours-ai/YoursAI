@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 dev-dist/
+
+.env
+.env*
