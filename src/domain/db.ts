@@ -18,5 +18,6 @@ export const getDb = () => {
   db.on("populate", async () => {
     await db.promptTemplates.bulkPut(initialPromptTemplates);
   });
+
   return db;
 };
