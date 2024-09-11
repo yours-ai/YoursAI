@@ -19,6 +19,7 @@ export default {
         "16p": "16px",
         "20p": "20px",
         "25p": "25px",
+        "34p": "34px",
       },
       screens: {
         tablet: "926px",
