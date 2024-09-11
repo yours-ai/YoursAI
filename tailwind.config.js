@@ -22,6 +22,10 @@ export default {
         "20p": "20px",
         "25p": "25px",
         "34p": "34px",
+        "heading-1": ["36px", "41px"],
+        "heading-4": "18px",
+        body: ["16px", "22px"],
+        lgBody: ["18px", "22px"],
       },
       screens: {
         tablet: "926px",
