@@ -6,14 +6,13 @@ export const getTestDb = (): { getDbInstance: () => Db } => {
   let db: Db;
 
   beforeEach(() => {
-    db = getDb(); // Initialize the database before each test
+    db = getDb();
   });
 
   afterEach(async () => {
-    await db.delete(); // Clean up the database after each test
+    await db.delete();
   });
 
-  // Expose the database instance getter to the test functions
   return {
     getDbInstance: () => db,
   };
