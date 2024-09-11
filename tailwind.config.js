@@ -9,8 +9,11 @@ export default {
         accentBlue: "#007AFF",
         blankAlert: "rgba(0,0,0,0.015)",
         emptyBackground: "#F2F2F7",
+        tabUnselected: "#999999",
+        tabHovered: "#7B7B7B",
       },
       fontSize: {
+        "10p": "10px",
         "11p": "11px",
         "13p": "13px",
         "16p": "16px",
