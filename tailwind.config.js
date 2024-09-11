@@ -16,6 +16,10 @@ export default {
         "20p": "20px",
         "25p": "25px",
       },
+      screens: {
+        'tablet': '926px',
+        'desktop': '1276px',
+      },
       fontFamily: {
         sans: [
           "Pretendard",
@@ -34,5 +38,5 @@ export default {
       },
     },
   },
-  plugins: [require("daisyui"), require("@tailwindcss/typography")],
+  plugins: [],
 };
