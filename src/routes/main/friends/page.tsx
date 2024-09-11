@@ -2,6 +2,7 @@ import { Outlet, useOutletContext } from "react-router-dom";
 import SplitViewPage from "@/routes/main/SplitViewPage.tsx";
 import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
 import FriendsList from "@/routes/main/friends/FriendsList.tsx";
+import TabTitle from "@/components/TabTitle.tsx";
 
 export interface Character {
   name: string;
@@ -40,7 +41,7 @@ export function Component() {
     <SplitViewPage
       leftPane={
         <div>
-          <div className="mb-[20px] mt-10 pl-4 text-34p font-bold">친구</div>
+          <TabTitle title="친구" />
           <div className="w-full px-4">
             {characters.length > 0 ? (
               <FriendsList characters={characters} />
