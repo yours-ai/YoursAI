@@ -42,7 +42,7 @@ export function Component() {
       leftPane={
         <div>
           <TabTitle title="친구" />
-          <div className="w-full px-4">
+          <div className="mt-[12px] w-full px-4">
             {characters.length > 0 ? (
               <FriendsList characters={characters} />
             ) : (

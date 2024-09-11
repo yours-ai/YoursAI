@@ -148,7 +148,7 @@ export function Component() {
       leftPane={
         <div>
           <TabTitle title="메시지" />
-          <div className="w-full px-4">
+          <div className="mt-[12px] w-full px-4">
             {messages.length > 0 ? (
               <MessageItemList messages={messages} />
             ) : (
