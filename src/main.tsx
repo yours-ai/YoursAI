@@ -41,6 +41,11 @@ const router = createBrowserRouter([
             lazy: () => import("@/routes/main/messages/[:chatRoomId]/page.tsx"),
           },
           {
+            path: "/main/messages/:chatRoomId/settings",
+            lazy: () =>
+              import("@/routes/main/messages/[:chatRoomId]/settings/page.tsx"),
+          },
+          {
             path: "/main/messages",
             lazy: () => import("./routes/main/empty.tsx"),
           },

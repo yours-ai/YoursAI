@@ -22,9 +22,11 @@ export function Component() {
             <PiCaretRight className="text-[12px]" />
           </div>
         </div>
-        <div className="text-24p text-accentBlue">
-          <PiListBold />
-        </div>
+        <Link to="settings">
+          <div className="text-24p text-accentBlue">
+            <PiListBold />
+          </div>
+        </Link>
       </div>
       <Link to="../">Back</Link>
     </div>
