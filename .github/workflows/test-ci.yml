@@ -4,9 +4,11 @@ on:
   [push, pull_request]
 
 jobs:
-  build:
+  test:
     name: vitest
     runs-on: ubuntu-latest
+    env:
+      VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
     strategy:
       matrix:
         node-version: [20]
@@ -21,8 +23,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
-      - name: Generate .env file
-        run: echo "VITE_OPENAI_API_KEY=${{ secrets.VITE_OPENAI_API_KEY }}" >> .env
       - name: Install dependencies
         run: pnpm install
       - name: Run tests
