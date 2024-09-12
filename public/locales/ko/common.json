@@ -1,0 +1,11 @@
+{
+  "sheet": {
+    "startWithDefault": "모두 기본값으로 시작"
+  },
+  "setupControlButton" : {
+    "goBack": "뒤로",
+    "start": "시작하기",
+    "upload": "업로드",
+    "next": "계속하기"
+  }
+}
