@@ -28,7 +28,7 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
       arrow({ element: arrowRef, padding: 10 }),
     ],
     whileElementsMounted: autoUpdate,
-    placement: "bottom-start",
+    placement: "bottom",
   });
   const hover = useHover(context, { delay: { open: 0, close: 0 } });
   const dismiss = useDismiss(context);
@@ -53,7 +53,7 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
           width: "max-content",
           position: strategy,
           top: y ?? 0,
-          left: x - 80,
+          left: x,
           zIndex: 10,
           boxShadow:
             "0px 8px 40px 0px rgba(0, 0, 0, 0.25), 0px 0px 3px 0px rgba(0, 0, 0, 0.55), 0px 0px 3px 0px rgba(255, 255, 255, 0.10)",
@@ -90,6 +90,7 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
               ]}
               wrapper="span"
               cursor={false}
+              style={{ display: "inline-block", textAlign: "center" }}
             />
           ) : null}
         </p>
