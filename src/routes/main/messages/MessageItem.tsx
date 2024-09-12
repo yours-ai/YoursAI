@@ -9,18 +9,20 @@ function MessageItem({ name, image, message, time }: Message) {
           <div className="flex h-full w-[62px] items-center justify-center">
             <img
               src={image}
-              className="size-[54px] rounded-full object-cover object-center"
+              className="size-[56px] rounded-full object-cover object-center"
               alt="message-image"
             />
           </div>
           <div className="flex w-full flex-col">
             <div className="flex justify-between">
-              <span className="text-17p font-semibold leading-[22px]">
+              <span className="text-18p font-semibold leading-[22px]">
                 {name}
               </span>
-              <span className="text-15p text-black/50">{time}</span>
+              <span className="text-16p leading-[20px] text-black/50">
+                {time}
+              </span>
             </div>
-            <div className="line-clamp-2 text-ellipsis text-15p leading-[20px] text-black/50">
+            <div className="line-clamp-2 text-ellipsis text-16p leading-[20px] text-black/50">
               {message}
             </div>
           </div>

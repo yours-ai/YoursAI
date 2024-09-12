@@ -3,7 +3,7 @@ import { Character } from "@/routes/main/friends/page.tsx";
 
 function FriendsList({ characters }: { characters: Character[] }) {
   return (
-    <div className="grid w-full grid-cols-2 gap-[16px]">
+    <div className="grid w-full grid-cols-2 gap-[10px]">
       {characters.map((character, index) => (
         <FriendCard
           key={index}

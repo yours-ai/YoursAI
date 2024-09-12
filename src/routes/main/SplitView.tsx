@@ -24,7 +24,7 @@ export default function SplitView({
   return (
     <div className="relative flex">
       <div
-        className={`sticky top-0 tablet:basis-2/6 desktop:basis-1/4 ${primary === "left" ? "grow tablet:grow-0" : "hidden tablet:block"}`}
+        className={`sticky top-0 border-r border-border tablet:basis-2/6 desktop:basis-1/4 ${primary === "left" ? "grow tablet:grow-0" : "hidden tablet:block"}`}
         style={{ height: height ?? undefined }}
       >
         <div className="relative size-full">
