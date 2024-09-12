@@ -15,7 +15,7 @@ import {
 } from "@floating-ui/react";
 
 function AreYouThereBubble({ children }: { children: React.ReactNode }) {
-  const { t } = useTranslation("setup/areYouThere");
+  const { t } = useTranslation("pages/setup");
   const [isPrompt, setIsPrompt] = useState<boolean>(false);
   const [animationComplete, setAnimationComplete] = useState<boolean>(false);
   const arrowRef = useRef(null);
@@ -65,7 +65,7 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
             {!animationComplete ? (
               <TypeAnimation
                 sequence={[
-                  t("systemPrompt"),
+                  t("setupStart.bubble.systemPrompt"),
                   1000,
                   () => {
                     setIsPrompt(true);
@@ -77,13 +77,15 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
                 className="leading-[30px]"
               />
             ) : (
-              <span className="leading-[30px]">{t("systemPromptItalics")}</span>
+              <span className="leading-[30px]">
+                {t("setupStart.bubble.systemPromptItalics")}
+              </span>
             )}
           </div>
           {isPrompt ? (
             <TypeAnimation
               sequence={[
-                t("conversation"),
+                t("setupStart.bubble.conversation"),
                 1000,
                 () => {
                   console.log("sequence completed");
@@ -118,43 +120,6 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
       </div>
     </>
   );
-
-  //   <div className="relative rounded-[10px] bg-[#E9E9E9]/70 px-[17px] py-[9px] text-20p">
-  //     <div className={`${isPrompt ? "italic text-blue-800" : ""}`}>
-  //       {!animationComplete ? (
-  //         <TypeAnimation
-  //           sequence={[
-  //             t("systemPrompt"),
-  //             1000,
-  //             () => {
-  //               setIsPrompt(true);
-  //               setAnimationComplete(true);
-  //             },
-  //           ]}
-  //           wrapper="span"
-  //           cursor={false}
-  //         />
-  //       ) : (
-  //         <span>{t("systemPromptItalics")}</span>
-  //       )}
-  //     </div>
-  //     {isPrompt ? (
-  //       <TypeAnimation
-  //         sequence={[
-  //           // "",
-  //           // 2300,
-  //           t("conversation"),
-  //           1000,
-  //           () => {
-  //             console.log("sequence completed");
-  //           },
-  //         ]}
-  //         wrapper="span"
-  //         cursor={false}
-  //       />
-  //     ) : null}
-  //   </div>
-  // );
 }
 
 export default AreYouThereBubble;

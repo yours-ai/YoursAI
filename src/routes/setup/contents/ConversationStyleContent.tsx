@@ -92,7 +92,7 @@ const Tooltip = ({ content }: { content: React.ReactNode }) => {
 };
 
 function ConversationStyleContent({ setBtnDisabled }: SetupContentProps) {
-  const { t } = useTranslation("setup/contents/conversationStyleContent");
+  const { t } = useTranslation("pages/setup");
   const [index, setIndex] = useState<number>(0);
   useEffect(() => {
     if (index === 3) {
@@ -104,49 +104,62 @@ function ConversationStyleContent({ setBtnDisabled }: SetupContentProps) {
 
   const CustomStyleFormRows = [
     {
-      rowTitle: t("styles.custom.styleFile.name"),
-      rowDescription: t("styles.custom.styleFile.description"),
+      rowTitle: t("conversationStyleContent.styles.custom.styleFile.name"),
+      rowDescription: t(
+        "conversationStyleContent.styles.custom.styleFile.description",
+      ),
       action: <SetupControlButton upload />,
     },
     {
-      rowTitle: t("styles.custom.moduleFile.name"),
-      rowDescription: t("styles.custom.moduleFile.description"),
+      rowTitle: t("conversationStyleContent.styles.custom.moduleFile.name"),
+      rowDescription: t(
+        "conversationStyleContent.styles.custom.moduleFile.description",
+      ),
       action: <SetupControlButton upload />,
     },
   ];
 
   const styles = [
     {
-      title: t("styles.balanced.name"),
+      title: t("conversationStyleContent.styles.balanced.name"),
       content: <SegmentBoard />,
       description: (
-        <Trans i18nKey="styles.balanced.description" t={t}>
+        <Trans
+          i18nKey="conversationStyleContent.styles.balanced.description"
+          t={t}
+        >
           캐릭터가 적절히 대화 길이를 조절합니다.<br></br>종종 전지겆시점에서
           이야기하기도 합니다.
         </Trans>
       ),
     },
     {
-      title: t("styles.novel.name"),
+      title: t("conversationStyleContent.styles.novel.name"),
       content: <SegmentBoard />,
       description: (
-        <Trans i18nKey="styles.novel.description" t={t}>
+        <Trans
+          i18nKey="conversationStyleContent.styles.novel.description"
+          t={t}
+        >
           당신이 짧게 이야기해도 캐릭터는 길게 이야기합니다.<br></br>자주 전지적
           시점에서 이야기합니다.
         </Trans>
       ),
     },
     {
-      title: t("styles.realistic.name"),
+      title: t("conversationStyleContent.styles.realistic.name"),
       content: <SegmentBoard />,
       description: (
-        <Trans i18nKey="styles.realistic.description" t={t}>
+        <Trans
+          i18nKey="conversationStyleContent.styles.realistic.description"
+          t={t}
+        >
           현실의 대화와 비슷합니다.<br></br>캐릭터의 속마음을 알기는 어렵습니다.
         </Trans>
       ),
     },
     {
-      title: t("styles.custom.name"),
+      title: t("conversationStyleContent.styles.custom.name"),
       content: (
         <div className="mt-[14px]">
           <SetupForm setupFormRows={CustomStyleFormRows} />
@@ -158,12 +171,12 @@ function ConversationStyleContent({ setBtnDisabled }: SetupContentProps) {
   return (
     <>
       <div className="relative z-40 flex items-center">
-        <SettingTitle title={t("title")} />
+        <SettingTitle title={t("conversationStyleContent.title")} />
         <div className="absolute bottom-[8px] right-[-30px]">
           <Tooltip
             content={
               <p className="relative z-20">
-                <Trans i18nKey="info" t={t}>
+                <Trans i18nKey="conversationStyleContent.info" t={t}>
                   RisuAI에 익숙하다면,<br></br>기존의 프롬프트 템플릿과 같습니다
                 </Trans>
               </p>

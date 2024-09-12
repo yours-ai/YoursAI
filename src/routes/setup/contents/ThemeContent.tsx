@@ -10,7 +10,7 @@ export interface SetupContentProps {
 }
 
 function ThemeContent({ setBtnDisabled }: SetupContentProps) {
-  const { t } = useTranslation("setup/contents/themeContent");
+  const { t } = useTranslation("pages/setup");
   const [index, setIndex] = useState<number>(0);
   useEffect(() => {
     if (index === 3) {
@@ -22,25 +22,28 @@ function ThemeContent({ setBtnDisabled }: SetupContentProps) {
 
   const themes = [
     {
-      title: t("themes.fruit.name"),
+      title: t("themeContent.themes.fruit.name"),
       content: <SegmentBoard />,
-      description: t("themes.fruit.description"),
+      description: t("themeContent.themes.fruit.description"),
     },
     {
-      title: t("themes.chocolate.name"),
+      title: t("themeContent.themes.chocolate.name"),
       content: <SegmentBoard />,
-      description: t("themes.chocolate.description"),
+      description: t("themeContent.themes.chocolate.description"),
     },
     {
-      title: t("themes.navy.name"),
+      title: t("themeContent.themes.navy.name"),
       content: <SegmentBoard />,
-      description: t("themes.navy.description"),
+      description: t("themeContent.themes.navy.description"),
     },
     {
-      title: t("themes.custom.name"),
+      title: t("themeContent.themes.custom.name"),
       content: (
         <div className="flex h-[223px] w-[421px] items-center justify-center">
-          <SetupControlButton custom={t("themes.custom.upload")} upload />
+          <SetupControlButton
+            custom={t("themeContent.themes.custom.upload")}
+            upload
+          />
         </div>
       ),
     },
@@ -48,7 +51,7 @@ function ThemeContent({ setBtnDisabled }: SetupContentProps) {
 
   return (
     <>
-      <SettingTitle title={t("title")} />
+      <SettingTitle title={t("themeContent.title")} />
       <div className="mt-[24px] flex flex-col items-center gap-[17px]">
         <SegmentedControlBar segments={themes} setIndex={setIndex} />
         {themes[index].content}

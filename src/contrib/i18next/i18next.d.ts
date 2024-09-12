@@ -1,11 +1,13 @@
 import "i18next";
-import setupAreYouThere from "@/../public/locales/en/setup/areYouThere.json";
+import setup from "@/../public/locales/ko/pages/setup.json";
+import common from "@/../public/locales/ko/common.json";
 
 declare module "i18next" {
   interface CustomTypeOptions {
-    defaultNS: "setup/AreYouThere";
+    defaultNS: "pages/setup";
     resources: {
-      "setup/areYouThere": typeof setupAreYouThere;
+      "pages/setup": typeof setup;
+      common: typeof common;
     };
   }
 }

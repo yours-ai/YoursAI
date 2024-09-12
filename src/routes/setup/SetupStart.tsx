@@ -11,7 +11,7 @@ interface Props {
 }
 
 function SetupStart({ setStep }: Props) {
-  const { t } = useTranslation("setup/setupPage");
+  const { t } = useTranslation("pages/setup");
   return (
     <div className="flex flex-col gap-[200px]">
       <div className="flex flex-col items-center">
@@ -34,7 +34,7 @@ function SetupStart({ setStep }: Props) {
           <PiArrowRightBold className="duration-200" />
         </div>
         <span className="text-20p leading-[20px] duration-200">
-          {t("text")}
+          {t("setupStart.text")}
         </span>
       </div>
     </div>

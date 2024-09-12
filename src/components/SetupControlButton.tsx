@@ -16,7 +16,7 @@ function SetupControlButton({
   custom?: string;
   disabled?: boolean;
 }) {
-  const { t } = useTranslation("components/setupControlButton");
+  const { t } = useTranslation("common");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
   const handleUploadClick = () => {
@@ -53,14 +53,14 @@ function SetupControlButton({
       >
         <span className="text-13p leading-[16px]">
           {goBack
-            ? t("goBack")
+            ? t("setupControlButton.goBack")
             : start
-              ? t("start")
+              ? t("setupControlButton.start")
               : upload && !custom
-                ? t("upload")
+                ? t("setupControlButton.upload")
                 : custom
                   ? custom
-                  : t("next")}
+                  : t("setupControlButton.next")}
         </span>
       </div>
       {fileName && (

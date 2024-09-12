@@ -13,7 +13,7 @@ interface Props {
 }
 
 const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
-  const { t } = useTranslation("setup/allDefaultStart");
+  const { t } = useTranslation("pages/setup");
   return (
     <div className="absolute inset-0 rounded-[10px] bg-white/50">
       <div className="absolute inset-0 flex items-center justify-center rounded-[10px] bg-gradient-to-t from-black/20 to-black/20">
@@ -25,9 +25,11 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
           }}
         >
           <div className="flex flex-col items-center gap-[10px]">
-            <div className="text-13p font-bold">{t("title")}</div>
+            <div className="text-13p font-bold">
+              {t("allDefaultStart.title")}
+            </div>
             <div className="text-11p">
-              <Trans i18nKey="description" t={t}>
+              <Trans i18nKey="allDefaultStart.description" t={t}>
                 이 기능은 익숙한 사용자에게만 권장됩니다.<br></br>
                 계속하시겠어요?
               </Trans>
@@ -36,10 +38,10 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
           <div className="mt-[16px] flex gap-[8px]">
             <AlertButton
               isBlank
-              label={t("alertButton.left")}
+              label={t("allDefaultStart.alertButton.left")}
               onClick={onClose}
             />
-            <AlertButton label={t("alertButton.right")} />
+            <AlertButton label={t("allDefaultStart.alertButton.right")} />
           </div>
         </div>
       </div>
@@ -48,7 +50,7 @@ const AllDefaultStartModal = ({ onClose }: { onClose: () => void }) => {
 };
 
 function Sheet({ step, setStep, content, btnDisabled, last }: Props) {
-  const { t } = useTranslation("components/sheet");
+  const { t } = useTranslation("common");
   const [allDefaultStartModalOpen, setAllDefaultStartModalOpen] =
     useState<boolean>(false);
   const handleAllDefaultStart = () => {
@@ -72,7 +74,7 @@ function Sheet({ step, setStep, content, btnDisabled, last }: Props) {
                 className="cursor-pointer px-[7px] text-13p leading-[16px] text-accentBlue"
                 onClick={handleAllDefaultStart}
               >
-                {t("startWithDefault")}
+                {t("sheet.startWithDefault")}
               </div>
             ) : (
               <div />

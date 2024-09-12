@@ -143,35 +143,38 @@ const DataOption = ({ isSelected, option, isDisabled, onClick }: Props) => {
 };
 
 function DataContent() {
-  const { t } = useTranslation("setup/contents/dataContent");
+  const { t } = useTranslation("pages/setup");
   const [selectedOption, setSelectedOption] = useState<DataOptions>("default");
   const handleOptionClick = (option: DataOptions) => {
     setSelectedOption(option);
   };
   return (
     <>
-      <SettingTitle icon={<PiCloudArrowDown />} title={t("title")} />
+      <SettingTitle
+        icon={<PiCloudArrowDown />}
+        title={t("dataContent.title")}
+      />
       <div className="mt-[83px] flex flex-col gap-[17px]">
         <DataOption
           isSelected={selectedOption === "default"}
-          option={t("options.default")}
+          option={t("dataContent.options.default")}
           onClick={() => handleOptionClick("default")}
         />
         <DataOption
           isSelected={selectedOption === "local"}
-          option={t("options.local")}
+          option={t("dataContent.options.local")}
           onClick={() => handleOptionClick("local")}
         />
-        <Tooltip content={t("options.noSupport")}>
+        <Tooltip content={t("dataContent.options.noSupport")}>
           <DataOption
             isSelected={selectedOption === "cloud"}
             isDisabled
-            option={t("options.cloud")}
+            option={t("dataContent.options.cloud")}
           />
         </Tooltip>
       </div>
       <div className="absolute top-[521px] text-center text-20p font-semibold leading-[25px] text-white">
-        <Trans i18nKey="description" t={t}>
+        <Trans i18nKey="dataContent.description" t={t}>
           채팅 내역, 설정 등 모든 데이터는<br></br>언제든지 파일로 백업하고
           되돌릴 수 있습니다.
         </Trans>
