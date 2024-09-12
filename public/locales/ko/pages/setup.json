@@ -1,0 +1,103 @@
+{
+  "setupStart": {
+    "text": "시작하기",
+    "bubble": {
+      "systemPrompt": "*...은 떨리는 얼굴로 살며시 말했다*",
+      "systemPromptItalics": "...은 떨리는 얼굴로 살며시 말했다",
+      "conversation": "계시나요?"
+    }
+  },
+  "allDefaultStart": {
+    "title": "모두 기본값으로 시작",
+    "description": "이 기능은 익숙한 사용자에게만 권장됩니다.<1></1>계속하시겠어요?",
+    "alertButton" : {
+      "left": "아니요",
+      "right": "네"
+    }
+  },
+  "apiKeyContent": {
+    "title": "LLM API Key 입력",
+    "leftText": "사용하고 있는 커스텀 대화 스타일",
+    "rightText": "이 OpenAI API Key를 필요로 합니다.",
+    "keyInputPlaceholder": "API Key를 입력하세요"
+  },
+  "conversationStyleContent": {
+    "title": "대화 스타일 고르기",
+    "info": "RisuAI에 익숙하다면,<1></1>기존의 프롬프트 템플릿과 같습니다",
+    "styles": {
+      "balanced": {
+        "name": "밸런스 (권장)",
+        "description": "캐릭터가 적절히 대화 길이를 조절합니다.<1></1>종종 전지적 시점에서 이야기하기도 합니다."
+      },
+      "novel": {
+        "name": "소설형",
+        "description": "당신이 짧게 이야기해도 캐릭터는 길게 이야기합니다.<1></1>자주 전지적 시점에서 이야기합니다."
+      },
+      "realistic": {
+        "name": "현실형",
+        "description": "현실의 대화와 비슷합니다.<1></1>캐릭터의 속마음을 알기는 어렵습니다."
+      },
+      "custom": {
+        "name": "커스텀",
+        "styleFile" : {
+          "name": "대화 스타일 파일",
+          "description": "Risu 스타일의 프롬프트 템플릿도 지원합니다."
+        },
+        "moduleFile": {
+          "name": "(선택) 모듈 파일",
+          "description": "Risu 스타일의 모듈 파일도 지원합니다."
+        }
+      }
+    }
+  },
+  "dataContent": {
+    "title": "불러올 데이터가 있나요?",
+    "options": {
+      "default": "아니요, 처음부터 설정할게요",
+      "local": "네, 로컬에서 불러올게요",
+      "cloud": "네, 클라우드에서 불러올게요",
+      "noSupport": "아직 지원되지 않습니다"
+    },
+    "description": "채팅 내역, 설정 등 모든 데이터는<1></1>언제든지 파일로 백업하고 되돌릴 수 있습니다."
+  },
+  "languageContent": {
+    "title": "언어 선택",
+    "description": "계속한다고 해서 무슨 약관에 동의하는 건 아닙니다.<1 />어차피 모든 데이터는 로컬에만 저장됩니다."
+  },
+  "nameContent": {
+    "title": "설정이 모두 끝났어요!<1></1>마지막으로, 어떻게 불러드릴까요?",
+    "name": {
+      "label": "이름",
+      "placeholder": {
+        "first": "성",
+        "second": "이름"
+      }
+    },
+    "intro": {
+      "label": "소개(선택)",
+      "placeholder": "캐릭터가 당신에 대해 알았으면 하는 것"
+    }
+  },
+  "themeContent": {
+    "title": "테마 고르기",
+    "themes": {
+      "fruit": {"name": "\"그\" 과일 테마", "description": "가장 기본적이고, 깔끔한 느낌"},
+      "chocolate": {"name": "초콜릿 테마", "description": "설빙 오레오 초코 빙수"},
+      "navy": {"name": "Navy 테마", "description": "선배님 멋져용"},
+      "custom": {"name": "커스텀 테마", "upload": "커스텀 테마 파일 업로드하기"}
+    }
+  },
+  "typingSimulationContent": {
+    "title": "타이핑 시뮬레이션을 사용할까요?",
+    "choices": {
+      "yes": {
+        "label": "네 (권장)",
+        "description": "실제 사람이 작성하는 것처럼 캐릭터의 대화를 보여줍니다.<1></1>읽기 편하고 현실감이 있습니다."
+      },
+      "no": {
+        "label": "아니요",
+        "description": "가능한 빠르게 캐릭터의 말을 보여줍니다.<1></1>다소 기계적이지만 빠르게 대화를 이어나갈 수 있습니다."
+      }
+    }
+  }
+}
