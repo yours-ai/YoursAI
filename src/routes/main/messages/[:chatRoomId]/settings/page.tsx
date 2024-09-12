@@ -4,8 +4,8 @@ import GroupedList from "@/components/GroupedList.tsx";
 
 export function Component() {
   const rows = [
-    { label: "대화 설정 커스텀", link: "./", content: "caret" },
-    { label: "탈옥 토글", content: <Switch checked={true} /> },
+    { label: "대화 설정 커스텀", link: "custom", tool: "caret" },
+    { label: "탈옥 토글", tool: <Switch checked={true} /> },
   ];
   return (
     <div className="size-full bg-emptyBackground">
@@ -30,7 +30,7 @@ export function Component() {
             {
               label: <p className="text-red">이 대화 지우기</p>,
               link: "./",
-              content: "caret",
+              tool: "caret",
             },
           ]}
         />
