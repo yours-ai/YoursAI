@@ -6,7 +6,7 @@ function MessageItem({ name, image, message, time }: Message) {
     <Link to={"/main/messages/123"}>
       <div className="flex w-full rounded-[10px] pl-[26px] pr-[16px] duration-150 hover:bg-[#C6C6C8]/60">
         <div className="flex h-[76px] w-full gap-[10px] border-b-[0.5px] border-[#C6C6C8]/60 py-[7px]">
-          <div className="flex h-full w-[62px] items-center justify-center">
+          <div className="flex h-full w-[62px] shrink-0 items-center justify-center">
             <img
               src={image}
               className="size-[56px] rounded-full object-cover object-center"
