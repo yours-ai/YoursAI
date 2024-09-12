@@ -1,9 +1,13 @@
 import { BundledThemes, Theme } from "@/components/themes/models";
-import { getGlobalConfig } from "@/domain/config/services.ts";
-import { useDexieQuery } from "@/hooks/useDexie.tsx";
+import { makeGlobalConfigService } from "@/domain/config/services.ts";
+import { useLiveQuery } from "dexie-react-hooks";
+import { useDb } from "@/contexts/DbContext.ts";
 
 export const useTheme = (): Theme | null => {
-  const globalConfig = useDexieQuery(getGlobalConfig);
+  const db = useDb();
+  const globalConfig = useLiveQuery(() =>
+    makeGlobalConfigService(db).getGlobalConfig(),
+  );
   if (!globalConfig) return null;
   const themeConfig = globalConfig.theme;
   if (themeConfig.type === "bundled") {

@@ -2,22 +2,25 @@ import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 import { Link, useParams } from "react-router-dom";
 import { AvailableLanguage, AvailableLanguages } from "@/locales/models.ts";
 import { useCurrentLanguage, useDynamicTranslation } from "@/locales/hooks.ts";
-import { useDexieMutation, useDexieQuery } from "@/hooks/useDexie.tsx";
-import {
-  getGlobalConfig,
-  updateGlobalConfig,
-} from "@/domain/config/services.ts";
+import { makeGlobalConfigService } from "@/domain/config/services.ts";
 import { BundledThemes } from "@/components/themes/models";
 import { AvailableBundledThemeId } from "@/domain/config/models.ts";
 import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import { useLiveQuery } from "dexie-react-hooks";
+import { useDb } from "@/contexts/DbContext.ts";
+import { useMutation } from "@tanstack/react-query";
 
 export function Component() {
   const { settingsId } = useParams();
+  const { getGlobalConfig, updateGlobalConfig } =
+    makeGlobalConfigService(useDb());
   useRightPrimaryPage();
   const language = useCurrentLanguage();
   const { t } = useDynamicTranslation();
-  const globalConfig = useDexieQuery(getGlobalConfig);
-  const mutation = useDexieMutation(updateGlobalConfig);
+  const globalConfig = useLiveQuery(getGlobalConfig);
+  const mutation = useMutation({
+    mutationFn: updateGlobalConfig,
+  });
 
   return (
     <div className="size-full">

@@ -2,9 +2,10 @@ import { PiGlobe } from "react-icons/pi";
 import SettingTitle from "@/components/SettingTitle";
 import { Trans, useTranslation } from "react-i18next";
 import { AvailableLanguages, LanguageDisplays } from "@/locales/models.ts";
-import { useDexieMutation } from "@/hooks/useDexie.tsx";
-import { updateGlobalConfig } from "@/domain/config/services.ts";
+import { makeGlobalConfigService } from "@/domain/config/services.ts";
 import { useCurrentLanguage } from "@/locales/hooks.ts";
+import { useMutation } from "@tanstack/react-query";
+import { useDb } from "@/contexts/DbContext.ts";
 
 interface Props {
   isSelected: boolean;
@@ -26,8 +27,8 @@ const LanguageItem = ({ isSelected, language, onClick }: Props) => {
 function LanguageContent() {
   const { t } = useTranslation("pages/setup");
   const currentLang = useCurrentLanguage();
-  const mutation = useDexieMutation(updateGlobalConfig, {
-    onError: console.log,
+  const mutation = useMutation({
+    mutationFn: makeGlobalConfigService(useDb()).updateGlobalConfig,
   });
   return (
     <>

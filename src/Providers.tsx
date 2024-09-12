@@ -3,9 +3,18 @@ import { Provider } from "react-redux";
 import DbContextProvider from "@/contexts/DbContextProvider.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SyncLocale from "@/locales/SyncLocale.tsx";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
+import ErrorText from "@/components/ErrorText.tsx";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    mutations: {
+      onError(error) {
+        toast.error(<ErrorText error={error} />);
+      },
+    },
+  },
+});
 
 export interface Props {
   children?: React.ReactNode;
