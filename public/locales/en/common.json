@@ -1,0 +1,11 @@
+{
+  "sheet": {
+    "startWithDefault": "Start with defaults"
+  },
+  "setupControlButton": {
+    "goBack": "Back",
+    "start": "Start",
+    "upload": "Upload",
+    "next": "Next"
+  }
+}
