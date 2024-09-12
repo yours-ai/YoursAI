@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
       - name: Generate .env file
-        run: echo "VITE_OPENAI_API_KEY=${{ secrets.VITE_OPENAI_API_KEY }} >> .env
+        run: echo "VITE_OPENAI_API_KEY=${{ secrets.VITE_OPENAI_API_KEY }}" >> .env
       - name: Install dependencies
         run: pnpm install
       - name: Run tests
