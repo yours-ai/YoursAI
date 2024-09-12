@@ -128,7 +128,7 @@ function ConversationStyleContent({ setBtnDisabled }: SetupContentProps) {
           i18nKey="conversationStyleContent.styles.balanced.description"
           t={t}
         >
-          캐릭터가 적절히 대화 길이를 조절합니다.<br></br>종종 전지겆시점에서
+          캐릭터가 적절히 대화 길이를 조절합니다.<br></br>종종 전지적 시점에서
           이야기하기도 합니다.
         </Trans>
       ),
