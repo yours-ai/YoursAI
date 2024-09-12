@@ -11,7 +11,6 @@ export type Translatable<T> = Required<Record<typeof DefaultLocale, T>> &
 
 export type TranslatableString = Translatable<string>;
 
-// Zod schema conversion
 export const translatableStringSchema = z.object({
   en: z.string(),
   ko: z.string().optional(),
