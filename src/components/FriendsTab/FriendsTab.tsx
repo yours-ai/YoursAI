@@ -2,12 +2,14 @@ import ThemeSelect from "@/components/FriendsTab/ThemeSelect";
 import { useTheme } from "@/hooks/useTheme.ts";
 
 export default function FriendsTab() {
+  const theme = useTheme();
+  if (!theme) return null;
   const {
     id: currentThemeId,
     name,
     description,
     components: { Button },
-  } = useTheme();
+  } = theme;
   return (
     <>
       <div>

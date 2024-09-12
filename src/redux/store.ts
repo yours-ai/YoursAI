@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import globalConfigReducer from "@/redux/features/globalConfig/slice.ts";
+import { characterChatGenerateSlice } from "@/redux/features/characterChatGenerate/slice.ts";
 
 export const store = configureStore({
   reducer: {
-    globalConfig: globalConfigReducer,
+    characterChatGenerate: characterChatGenerateSlice.reducer,
   },
 });
 

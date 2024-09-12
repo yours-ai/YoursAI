@@ -1,5 +1,6 @@
 import { store } from "@/redux/store.ts";
 import { Provider } from "react-redux";
+import DbContextProvider from "@/contexts/DbContextProvider.tsx";
 
 export interface Props {
   children?: React.ReactNode;
@@ -8,7 +9,9 @@ export interface Props {
 export default function Providers({ children }: Props) {
   return (
     <Provider store={store}>
-      <div className="relative font-sans">{children}</div>
+      <DbContextProvider>
+        <div className="relative font-sans">{children}</div>
+      </DbContextProvider>
     </Provider>
   );
 }

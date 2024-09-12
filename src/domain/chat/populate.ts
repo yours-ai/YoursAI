@@ -67,6 +67,6 @@ export const initialPromptTemplates: PromptTemplate[] = [
   },
 ];
 
-export const populate = async (tx: Transaction) => {
+export const chatPopulate = async (tx: Transaction) => {
   await tx.table("promptTemplates").bulkPut(initialPromptTemplates);
 };
