@@ -48,7 +48,7 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
       </div>
       <div
         ref={refs.setFloating}
-        className={`rounded-[10px] bg-white px-[17px] py-[10px] text-25p leading-[30px]`}
+        className={`rounded-[10px] bg-white px-[17px] pb-[17px] pt-[10px] text-25p leading-[30px]`}
         style={{
           width: "max-content",
           position: strategy,
@@ -74,9 +74,10 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
                 ]}
                 wrapper="span"
                 cursor={false}
+                className="leading-[30px]"
               />
             ) : (
-              <span>{t("systemPromptItalics")}</span>
+              <span className="leading-[30px]">{t("systemPromptItalics")}</span>
             )}
           </div>
           {isPrompt ? (
@@ -90,6 +91,7 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
               ]}
               wrapper="span"
               cursor={false}
+              className="leading-[30px]"
               style={{ display: "inline-block", textAlign: "center" }}
             />
           ) : null}
