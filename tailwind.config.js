@@ -12,6 +12,7 @@ export default {
         tabUnselected: "#999999",
         tabHovered: "#7B7B7B",
         border: "rgba(198,198,200,0.6)",
+        red: "#FF3B30",
       },
       fontSize: {
         "10p": "10px",
