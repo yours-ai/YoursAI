@@ -14,7 +14,16 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^2.2.7
         version: 2.2.7(react-redux@9.1.2(@types/react@18.3.5)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+      dexie:
+        specifier: ^4.0.8
+        version: 4.0.8
+      dexie-react-hooks:
+        specifier: ^1.1.7
+        version: 1.1.7(@types/react@18.3.5)(dexie@4.0.8)(react@18.3.1)
+>>>>>>> Stashed changes
       i18next:
         specifier: ^23.14.0
         version: 23.14.0
@@ -24,6 +33,7 @@ importers:
       i18next-http-backend:
         specifier: ^2.6.1
         version: 2.6.1
+<<<<<<< Updated upstream
 =======
       dexie:
         specifier: ^4.0.8
@@ -35,6 +45,11 @@ importers:
         specifier: ^4.58.2
         version: 4.58.2
 >>>>>>> dev
+=======
+      openai:
+        specifier: ^4.58.2
+        version: 4.58.2
+>>>>>>> Stashed changes
       pretendard:
         specifier: ^1.3.9
         version: 1.3.9
@@ -63,6 +78,7 @@ importers:
       react-type-animation:
         specifier: ^3.2.0
         version: 3.2.0(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+<<<<<<< Updated upstream
       redux-persist:
         specifier: ^6.0.0
         version: 6.0.0(react@18.3.1)(redux@5.0.1)
@@ -74,6 +90,11 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
 >>>>>>> dev
+=======
+      yup:
+        specifier: ^1.4.0
+        version: 1.4.0
+>>>>>>> Stashed changes
     devDependencies:
       '@eslint/js':
         specifier: ^9.9.0
@@ -2289,13 +2310,19 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> Stashed changes
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
 
+<<<<<<< Updated upstream
 >>>>>>> dev
+=======
+>>>>>>> Stashed changes
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -2509,6 +2536,9 @@ packages:
   property-expr@2.0.6:
     resolution: {integrity: sha512-SVtmxhRE/CGkn3eZY1T6pC8Nln6Fr/lu1mKSgRud0eC73whjGfoAogbn78LkD8aFL0zz3bAFerKSnOl7NlErBA==}
 >>>>>>> dev
+
+  property-expr@2.0.6:
+    resolution: {integrity: sha512-SVtmxhRE/CGkn3eZY1T6pC8Nln6Fr/lu1mKSgRud0eC73whjGfoAogbn78LkD8aFL0zz3bAFerKSnOl7NlErBA==}
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -2905,12 +2935,18 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
   toposort@2.0.2:
     resolution: {integrity: sha512-0a5EOkAUp8D4moMi2W8ZF8jcga7BgZd91O/yabJCFY8az+XSzeGyTKs0Aoo897iV1Nj6guFq8orWDS96z91oGg==}
 
 >>>>>>> dev
+=======
+  toposort@2.0.2:
+    resolution: {integrity: sha512-0a5EOkAUp8D4moMi2W8ZF8jcga7BgZd91O/yabJCFY8az+XSzeGyTKs0Aoo897iV1Nj6guFq8orWDS96z91oGg==}
+
+>>>>>>> Stashed changes
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
 
@@ -3092,7 +3128,35 @@ packages:
       terser:
         optional: true
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+  vitest@2.0.5:
+    resolution: {integrity: sha512-8GUxONfauuIdeSl5f9GTgVEpg5BTOlplET4WEDaeY2QBiN8wSm68vxN/tb5z405OwppfoCavnwXafiaYBC/xOA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@edge-runtime/vm': '*'
+      '@types/node': ^18.0.0 || >=20.0.0
+      '@vitest/browser': 2.0.5
+      '@vitest/ui': 2.0.5
+      happy-dom: '*'
+      jsdom: '*'
+    peerDependenciesMeta:
+      '@edge-runtime/vm':
+        optional: true
+      '@types/node':
+        optional: true
+      '@vitest/browser':
+        optional: true
+      '@vitest/ui':
+        optional: true
+      happy-dom:
+        optional: true
+      jsdom:
+        optional: true
+
+>>>>>>> Stashed changes
   void-elements@3.1.0:
     resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
     engines: {node: '>=0.10.0'}
@@ -3126,6 +3190,10 @@ packages:
     resolution: {integrity: sha512-QW95TCTaHmsYfHDybGMwO5IJIM93I/6vTRk+daHTWFPhwh+C8Cg7j7XyKrwrj8Ib6vYXe0ocYNrmzY4xAAN6ug==}
     engines: {node: '>= 14'}
 >>>>>>> dev
+
+  web-streams-polyfill@4.0.0-beta.3:
+    resolution: {integrity: sha512-QW95TCTaHmsYfHDybGMwO5IJIM93I/6vTRk+daHTWFPhwh+C8Cg7j7XyKrwrj8Ib6vYXe0ocYNrmzY4xAAN6ug==}
+    engines: {node: '>= 14'}
 
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
@@ -5577,11 +5645,16 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
   node-domexception@1.0.0: {}
 
 >>>>>>> dev
+=======
+  node-domexception@1.0.0: {}
+
+>>>>>>> Stashed changes
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
@@ -5753,6 +5826,8 @@ snapshots:
 =======
   property-expr@2.0.6: {}
 >>>>>>> dev
+
+  property-expr@2.0.6: {}
 
   punycode@2.3.1: {}
 
@@ -6191,11 +6266,16 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
   toposort@2.0.2: {}
 
 >>>>>>> dev
+=======
+  toposort@2.0.2: {}
+
+>>>>>>> Stashed changes
   tr46@0.0.3: {}
 
   tr46@1.0.1:
@@ -6363,7 +6443,43 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.31.6
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+  vitest@2.0.5(@types/node@18.19.50)(terser@5.31.6):
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@vitest/expect': 2.0.5
+      '@vitest/pretty-format': 2.0.5
+      '@vitest/runner': 2.0.5
+      '@vitest/snapshot': 2.0.5
+      '@vitest/spy': 2.0.5
+      '@vitest/utils': 2.0.5
+      chai: 5.1.1
+      debug: 4.3.7
+      execa: 8.0.1
+      magic-string: 0.30.11
+      pathe: 1.1.2
+      std-env: 3.7.0
+      tinybench: 2.9.0
+      tinypool: 1.0.1
+      tinyrainbow: 1.2.0
+      vite: 5.4.3(@types/node@18.19.50)(terser@5.31.6)
+      vite-node: 2.0.5(@types/node@18.19.50)(terser@5.31.6)
+      why-is-node-running: 2.3.0
+    optionalDependencies:
+      '@types/node': 18.19.50
+    transitivePeerDependencies:
+      - less
+      - lightningcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+
+>>>>>>> Stashed changes
   void-elements@3.1.0: {}
 =======
   vitest@2.0.5(@types/node@18.19.50)(terser@5.31.6):
@@ -6401,6 +6517,8 @@ snapshots:
 
   web-streams-polyfill@4.0.0-beta.3: {}
 >>>>>>> dev
+
+  web-streams-polyfill@4.0.0-beta.3: {}
 
   webidl-conversions@3.0.1: {}
 
