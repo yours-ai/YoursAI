@@ -1,7 +1,8 @@
 import { z } from "zod";
 import { availableLanguageSchema } from "@/locales/models.ts";
 
-export const AvailableBundledThemeIds = ["theFruit"] as const; // TODO: Add more themes
+export const AvailableBundledThemeIds = ["theFruit", "chocolate"] as const; // TODO: Add more themes
+export type AvailableBundledThemeId = (typeof AvailableBundledThemeIds)[number];
 
 export const bundledThemeConfigSchema = z.object({
   type: z.literal("bundled"),

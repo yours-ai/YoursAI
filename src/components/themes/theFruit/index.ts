@@ -5,8 +5,14 @@ import { Theme } from "@/components/themes/models";
 
 const theFruitTheme: Theme = {
   id: "theFruit",
-  name: '"그" 과일 테마',
-  description: "가장 기본적이고, 깔끔한 느낌.",
+  name: {
+    en: '"The" fruit theme',
+    ko: '"그" 과일 테마',
+  },
+  description: {
+    en: "The most basic and clean feeling.",
+    ko: "가장 기본적이고, 깔끔한 느낌.",
+  },
   components: {
     Button,
     TabNavigation,

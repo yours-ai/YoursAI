@@ -9,13 +9,13 @@ import {
 import { useDb } from "@/contexts/DbContext.ts";
 
 export const useDynamicTranslation = () => {
-  const { i18n } = useTranslation();
+  const language = useCurrentLanguage();
   return {
     t: useCallback(
       <T>(translatable: Translatable<T>) => {
-        return translatable[i18n.language as keyof typeof translatable];
+        return translatable[language];
       },
-      [i18n.language],
+      [language],
     ),
   };
 };
@@ -25,7 +25,7 @@ export const useCurrentLanguage = (): AvailableLanguage => {
   return i18n.language as AvailableLanguage;
 };
 
-export const useUpdateLocale = () => {
+export const useUpdateLanguage = () => {
   const db = useDb();
   return useCallback(
     async (language: AvailableLanguage) => {
