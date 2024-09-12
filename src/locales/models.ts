@@ -1,17 +1,19 @@
 import { z } from "zod";
 
-export const DefaultLocale = "en" as const;
-export const AvailableLocales = ["en", "ko"] as const;
+export const DefaultLanguage = "en" as const;
+export const AvailableLanguages = ["en", "ko"] as const;
 
-export type AvailableLocale = (typeof AvailableLocales)[number];
+export const availableLanguageSchema = z.enum(AvailableLanguages);
 
-// Only DefaultLocale is required, others are optional
-export type Translatable<T> = Required<Record<typeof DefaultLocale, T>> &
-  Partial<Record<Exclude<AvailableLocale, typeof DefaultLocale>, T>>;
-
-export type TranslatableString = Translatable<string>;
+export type AvailableLanguage = z.infer<typeof availableLanguageSchema>;
 
 export const translatableStringSchema = z.object({
   en: z.string(),
   ko: z.string().optional(),
 });
+
+// Only DefaultLocale is required, others are optional
+export type Translatable<T> = Required<Record<typeof DefaultLanguage, T>> &
+  Partial<Record<Exclude<AvailableLanguage, typeof DefaultLanguage>, T>>;
+
+export type TranslatableString = Translatable<string>;

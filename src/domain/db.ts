@@ -6,7 +6,7 @@ import { GlobalConfig } from "@/domain/config/models.ts";
 
 export type Db = Dexie & {
   promptTemplates: EntityTable<PromptTemplate, "uuid">;
-  globalConfigs: EntityTable<GlobalConfig>;
+  globalConfigs: EntityTable<GlobalConfig, "id">;
 };
 
 export const getDb = () => {
@@ -14,7 +14,7 @@ export const getDb = () => {
 
   db.version(1).stores({
     promptTemplates: "uuid",
-    globalConfigs: "++",
+    globalConfigs: "id",
   });
 
   db.on("populate", async (tx) => {

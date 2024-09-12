@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { availableLanguageSchema } from "@/locales/models.ts";
 
 export const AvailableBundledThemeIds = ["theFruit"] as const; // TODO: Add more themes
 
@@ -17,8 +18,12 @@ export const themeConfigSchema = z.union([
   uploadedThemeConfigSchema,
 ]);
 
+export const GlobalConfigId = "oneAndOnly";
+
 export const globalConfigSchema = z.object({
+  id: z.enum([GlobalConfigId]),
   theme: themeConfigSchema,
+  language: z.union([availableLanguageSchema, z.null()]),
 });
 
 export type ThemeConfig = z.infer<typeof themeConfigSchema>;
