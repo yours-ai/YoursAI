@@ -1,8 +1,27 @@
 import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import { useLiveQuery } from "dexie-react-hooks";
+import { makeGlobalConfigService } from "@/domain/config/services.ts";
+import { useDb } from "@/contexts/DbContext.ts";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Component() {
-  // TODO: redirect to setup if not setup, else redirect to main
-  return <div>hello this is index page</div>;
+  const globalConfig = useLiveQuery(
+    makeGlobalConfigService(useDb()).getGlobalConfig,
+  );
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (globalConfig?.hasDoneSetup != null) {
+      if (!globalConfig.hasDoneSetup) {
+        navigate("/setup");
+      } else {
+        navigate("/main");
+      }
+    }
+  }, [globalConfig, navigate]);
+
+  return <></>;
 }
 
 export const ErrorBoundary = DefaultErrorBoundary;

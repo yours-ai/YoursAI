@@ -8,6 +8,7 @@ export const initialGlobalConfig: GlobalConfig = {
     id: "theFruit",
   },
   language: null, // to initialize with the browser's language using i18next
+  hasDoneSetup: false,
 };
 
 export const configPopulate = async (tx: Transaction) => {

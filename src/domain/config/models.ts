@@ -25,6 +25,7 @@ export const globalConfigSchema = z.object({
   id: z.enum([GlobalConfigId]),
   theme: themeConfigSchema,
   language: z.union([availableLanguageSchema, z.null()]),
+  hasDoneSetup: z.boolean(),
 });
 
 export type ThemeConfig = z.infer<typeof themeConfigSchema>;
