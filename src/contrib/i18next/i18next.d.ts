@@ -4,7 +4,7 @@ import common from "@/../public/locales/ko/common.json";
 
 declare module "i18next" {
   interface CustomTypeOptions {
-    defaultNS: "pages/setup";
+    defaultNS: "common";
     resources: {
       "pages/setup": typeof setup;
       common: typeof common;

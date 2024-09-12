@@ -17,6 +17,7 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    defaultNS: "common",
   });
 
 export default i18n;
