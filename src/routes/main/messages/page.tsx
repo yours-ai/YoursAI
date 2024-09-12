@@ -1,6 +1,7 @@
 import { Link, Outlet, useOutletContext } from "react-router-dom";
 import SplitViewPage from "@/routes/main/SplitViewPage.tsx";
 import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
+import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
 
 export function Component() {
   useLeftPrimaryPage("/main/messages");
@@ -20,3 +21,5 @@ export function Component() {
 }
 
 Component.displayName = "MessagesPage";
+
+export const ErrorBoundary = DefaultErrorBoundary;

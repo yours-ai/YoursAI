@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import DbContextProvider from "@/contexts/DbContextProvider.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SyncLocale from "@/locales/SyncLocale.tsx";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ export default function Providers({ children }: Props) {
         <QueryClientProvider client={queryClient}>
           <SyncLocale>
             <div className="relative font-sans">{children}</div>
+            <Toaster />
           </SyncLocale>
         </QueryClientProvider>
       </DbContextProvider>

@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { AvailableLanguage, Translatable } from "@/locales/models.ts";
 import { useTranslation } from "react-i18next";
-import { useDexieQuery } from "@/hooks/useDexieQuery.ts";
+import { useDexieQuery } from "@/hooks/useDexie.tsx";
 import {
   getGlobalConfig,
   updateGlobalConfig,

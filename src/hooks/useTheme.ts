@@ -1,6 +1,6 @@
 import { BundledThemes, Theme } from "@/components/themes/models";
 import { getGlobalConfig } from "@/domain/config/services.ts";
-import { useDexieQuery } from "@/hooks/useDexieQuery.ts";
+import { useDexieQuery } from "@/hooks/useDexie.tsx";
 
 export const useTheme = (): Theme | null => {
   const globalConfig = useDexieQuery(getGlobalConfig);

@@ -2,6 +2,7 @@ import SplitView from "./SplitView.tsx";
 import { useTheme } from "@/hooks/useTheme.ts";
 import { useEffect } from "react";
 import { useMatch, useNavigate } from "react-router-dom";
+import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
 
 export function Component() {
   const match = useMatch("/main");
@@ -21,3 +22,5 @@ export function Component() {
   } = theme;
   return <SplitView leftNav={<TabNavigation />} />;
 }
+
+export const ErrorBoundary = DefaultErrorBoundary;

@@ -11,6 +11,7 @@ import TranslateContent from "@/routes/setup/contents/TranslateContent.tsx";
 import TypingSimulationContent from "@/routes/setup/contents/TypingSimulationContent.tsx";
 import NameContent from "@/routes/setup/contents/NameContent.tsx";
 import i18n from "i18next";
+import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
 
 export function Component() {
   const locale = useMemo(() => {
@@ -87,4 +88,5 @@ export function Component() {
   );
 }
 
+export const ErrorBoundary = DefaultErrorBoundary;
 Component.displayName = "SetupPage";
