@@ -6,6 +6,7 @@ import TabTitle from "@/components/TabTitle.tsx";
 import TabAction from "@/components/TabAction.tsx";
 import { useState } from "react";
 import { Button } from "konsta/react";
+import { useTranslation } from "react-i18next";
 
 export interface Character {
   name: string;
@@ -40,6 +41,7 @@ export function Component() {
   useLeftPrimaryPage("/main/friends");
   const outletContext = useOutletContext();
   const [fileModalOpened, setFileModalOpened] = useState<boolean>(false);
+  const { t } = useTranslation("pages/friends");
 
   const FileAddModal = () => {
     return (
@@ -50,32 +52,32 @@ export function Component() {
               className="cursor-pointer text-16p text-accentBlue hover:text-accentBlueHover"
               onClick={() => setFileModalOpened(false)}
             >
-              취소
+              {t("tabAction.addFileModal.cancel")}
             </span>
             <span className="text-18p font-semibold leading-[22px]">
-              캐릭터 파일로 추가
+              {t("tabAction.addFileModal.title")}
             </span>
             <span className="cursor-pointer text-16p text-accentBlue/30 hover:text-accentBlueHover">
-              완료
+              {t("tabAction.addFileModal.done")}
             </span>
           </div>
           <div className="mt-[28px] flex flex-col gap-[28px] px-[46px] pb-[24px]">
             <span className="text-center text-16p leading-[16px]">
-              Risu, Tavern의 Character Card (.png, .json) 포맷을 지원합니다.
+              {t("tabAction.addFileModal.content.one")}
             </span>
             <div className="flex justify-center">
-              <Button className="h-[50px] w-[86px] rounded-[12px] duration-150 hover:bg-accentBlueHover">
-                <span className="text-18p leading-[22px]">업로드</span>
+              <Button className="h-[50px] w-fit rounded-[12px] px-[20px] duration-150 hover:bg-accentBlueHover">
+                <span className="text-18p leading-[22px]">
+                  {t("tabAction.addFileModal.upload")}
+                </span>
               </Button>
             </div>
 
             <div className="flex flex-col text-14p">
               <span className="font-bold">
-                어디서 캐릭터 파일을 다운 받을 수 있나요?
+                {t("tabAction.addFileModal.content.two")}
               </span>
-              <span>
-                다양한 커뮤니티에서 유저 제작 캐릭터 파일이 공유되고 있습니다.
-              </span>
+              <span>{t("tabAction.addFileModal.content.three")}</span>
               <div className="flex flex-col text-accentBlue underline duration-150 ">
                 <a className="hover:text-accentBlueHover" href="#">
                   아카라이브 AI 채팅 채널
@@ -90,7 +92,7 @@ export function Component() {
                   https://realm.risuai.net/
                 </a>
               </div>
-              <span>다운로드 받고 즐기세요!</span>
+              <span>{t("tabAction.addFileModal.content.four")}</span>
             </div>
           </div>
         </div>
@@ -104,16 +106,16 @@ export function Component() {
         leftPane={
           <div>
             <TabAction
-              action="새 캐릭터 추가"
+              action={t("tabAction.title")}
               setFileModalOpened={setFileModalOpened}
             />
-            <TabTitle title="친구" />
+            <TabTitle title={t("tabTitle")} />
             <div className="mt-[12px] w-full px-4">
               {characters.length > 0 ? (
                 <FriendsList characters={characters} />
               ) : (
                 <div className="mt-[50px] w-full text-center text-16p">
-                  <span className="text-black/50">아직 친구가 없습니다...</span>
+                  <span className="text-black/50">{t("empty")}</span>
                   🥲
                 </div>
               )}

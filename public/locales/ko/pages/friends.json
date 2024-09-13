@@ -1,0 +1,24 @@
+{
+  "tabAction": {
+    "title": "새 캐릭터 추가",
+    "options": {
+      "option1": "파일로 추가",
+      "option2": "직접 만들기"
+    },
+    "addFileModal": {
+      "title": "캐릭터 파일로 추가",
+      "cancel": "취소",
+      "done": "완료",
+      "upload": "업로드",
+      "content":{
+        "one": "Risu, Tavern의 Character Card (.png, .json) 포맷을 지원합니다.",
+        "two": "어디서 캐릭터 파일을 다운 받을 수 있나요?",
+        "three": "다양한 커뮤니티에서 유저 제작 캐릭터 카드 파일이 공유되고 있습니다.",
+        "four": "다운로드 받고, 즐기세요!"
+      }
+    },
+    "noSupportToast": "아직 지원되지 않습니다.<1></1>스튜디오 페이지가 개발 중에 있어요!"
+  },
+  "tabTitle": "친구",
+  "empty": "아직 친구가 없습니다..."
+}

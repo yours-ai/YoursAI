@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { List, ListItem, Popover } from "konsta/react";
 import { PiImages, PiPenNib } from "react-icons/pi";
 import toast, { Toaster } from "react-hot-toast";
+import { Trans, useTranslation } from "react-i18next";
 
 function TabAction({
   action,
@@ -11,6 +12,7 @@ function TabAction({
   setFileModalOpened?: Dispatch<SetStateAction<boolean>>;
 }) {
   const [popoverOpened, setPopoverOpened] = useState<boolean>(false);
+  const { t } = useTranslation("pages/friends");
 
   const popoverTargetRef = useRef<HTMLElement | null>(null);
   const openPopover = (targetRef: HTMLElement | string | null) => {
@@ -41,7 +43,7 @@ function TabAction({
       >
         <List nested>
           <ListItem
-            title="파일로 추가"
+            title={t("tabAction.options.option1")}
             link
             after={<PiImages className="text-20p text-black" />}
             onClick={() => {
@@ -52,17 +54,17 @@ function TabAction({
             }}
           />
           <ListItem
-            title="직접 만들기"
+            title={t("tabAction.options.option2")}
             link
             after={<PiPenNib className="text-20p text-black" />}
             onClick={() => {
               setPopoverOpened(false);
               toast.error(
-                <p>
+                <Trans t={t} i18nKey="tabAction.noSupportToast">
                   아직 지원되지 않습니다.
-                  <br />
-                  스튜디오 페이지가 개발 중에 있어요!🤘
-                </p>,
+                  <br></br>
+                  스튜디오 페이지가 개발 중에 있어요!
+                </Trans>,
               );
             }}
           />
