@@ -11,9 +11,12 @@ function TabAction({
 }) {
   const [popoverOpened, setPopoverOpened] = useState<boolean>(false);
 
-  const popoverTargetRef = useRef(null);
-  const openPopover = (targetRef) => {
-    popoverTargetRef.current = targetRef;
+  const popoverTargetRef = useRef<HTMLElement | null>(null);
+  const openPopover = (targetRef: HTMLElement | string | null) => {
+    popoverTargetRef.current =
+      typeof targetRef === "string"
+        ? document.querySelector(targetRef)
+        : targetRef;
     setPopoverOpened(true);
   };
   return (
