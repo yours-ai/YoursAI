@@ -26,7 +26,7 @@ export default function Providers({ children }: Props) {
       <DbContextProvider>
         <QueryClientProvider client={queryClient}>
           <SyncLocale>
-            <div className="relative font-sans">{children}</div>
+            <div className="relative size-full font-sans">{children}</div>
             <Toaster />
           </SyncLocale>
         </QueryClientProvider>

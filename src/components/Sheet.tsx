@@ -57,46 +57,54 @@ function Sheet({ step, setStep, content, btnDisabled, last }: Props) {
     startTransition(() => setAllDefaultStartModalOpen(true));
   };
   return (
-    <div className="relative flex size-full flex-col items-center justify-between bg-menuBackground px-[9px] pt-[9px] tablet:h-[500px] tablet:w-[700px] tablet:rounded-[10px]">
-      {allDefaultStartModalOpen && (
-        <AllDefaultStartModal
-          onClose={() => setAllDefaultStartModalOpen(false)}
-        />
-      )}
-      <div className="flex w-full flex-col items-center">{content}</div>
-      <div className="flex h-[49px] w-full items-center justify-between border-t border-black/10">
-        {step === 0 ? (
-          <NextSetupArrow onClick={() => setStep((prev) => prev + 1)} />
-        ) : (
-          <>
-            {step === 2 ? (
-              <div
-                className="cursor-pointer px-[7px] text-13p leading-[16px] text-accentBlue"
-                onClick={handleAllDefaultStart}
-              >
-                {t("sheet.startWithDefault")}
-              </div>
-            ) : (
-              <div />
-            )}
-            <div className="flex gap-[10px]">
-              <SetupControlButton
-                onClick={() => setStep((prev) => prev - 1)}
-                goBack
-              />
-              {last ? (
-                <SetupControlButton start />
-              ) : (
-                <SetupControlButton
-                  onClick={() => {
-                    setStep((prev) => prev + 1);
-                  }}
-                  disabled={btnDisabled}
-                />
-              )}
-            </div>
-          </>
+    <div
+      className="size-full bg-menuBackground tablet:h-[500px] tablet:w-[700px] tablet:rounded-[10px]"
+      style={{
+        padding:
+          "env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)",
+      }}
+    >
+      <div className="relative flex size-full flex-col items-center justify-between px-[9px] pt-[9px]">
+        {allDefaultStartModalOpen && (
+          <AllDefaultStartModal
+            onClose={() => setAllDefaultStartModalOpen(false)}
+          />
         )}
+        <div className="flex w-full flex-col items-center">{content}</div>
+        <div className="flex w-full items-center justify-between border-t border-black/10 py-3">
+          {step === 0 ? (
+            <NextSetupArrow onClick={() => setStep((prev) => prev + 1)} />
+          ) : (
+            <>
+              {step === 2 ? (
+                <div
+                  className="cursor-pointer px-[7px] text-13p leading-[16px] text-accentBlue"
+                  onClick={handleAllDefaultStart}
+                >
+                  {t("sheet.startWithDefault")}
+                </div>
+              ) : (
+                <div />
+              )}
+              <div className="flex gap-[10px]">
+                <SetupControlButton
+                  onClick={() => setStep((prev) => prev - 1)}
+                  goBack
+                />
+                {last ? (
+                  <SetupControlButton start />
+                ) : (
+                  <SetupControlButton
+                    onClick={() => {
+                      setStep((prev) => prev + 1);
+                    }}
+                    disabled={btnDisabled}
+                  />
+                )}
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
