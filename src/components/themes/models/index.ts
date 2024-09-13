@@ -3,7 +3,7 @@ import theFruitTheme from "@/components/themes/theFruit";
 import chocolateTheme from "@/components/themes/chocolate";
 import { AvailableBundledThemeId } from "@/domain/config/models.ts";
 import { TranslatableString } from "@/locales/models.ts";
-import { ChatRoomProps } from "@/components/themes/models/ChatRoom.ts";
+import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
 
 export interface Theme {
   id: string;
@@ -15,7 +15,7 @@ export interface Theme {
     TabNavigation: React.ComponentType;
     EmptyPane: React.ComponentType;
     MessageList: React.ComponentType;
-    ChatRoom: React.ComponentType<ChatRoomProps>;
+    MessageRoom: React.ComponentType<MessageRoomProps>;
   };
 }
 

@@ -7,7 +7,7 @@ interface Props {
   onClick: () => void;
 }
 
-export default function ChatListItem({
+export default function MessageListItem({
   isSelected = false,
   assignment,
   onClick,

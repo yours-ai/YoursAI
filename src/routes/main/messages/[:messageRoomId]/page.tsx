@@ -4,17 +4,17 @@ import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
 import { useTheme } from "@/hooks/useTheme.ts";
 
 export function Component() {
-  const { chatRoomId } = useParams();
+  const { messageRoomId } = useParams();
   useRightPrimaryPage();
   const theme = useTheme();
   if (!theme) return null;
   const {
-    components: { ChatRoom },
+    components: { MessageRoom },
   } = theme;
 
-  return <ChatRoom chatRoomId={chatRoomId} />;
+  return <MessageRoom messageRoomId={messageRoomId} />;
 }
 
-Component.displayName = "ChatroomPage";
+Component.displayName = "MessageRoomPage";
 
 export const ErrorBoundary = DefaultErrorBoundary;

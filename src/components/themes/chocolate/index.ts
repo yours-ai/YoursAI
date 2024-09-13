@@ -1,7 +1,7 @@
 import { Theme } from "@/components/themes/models";
 import theFruitTheme from "@/components/themes/theFruit";
 import EmptyPane from "@/components/themes/chocolate/EmptyPane.tsx";
-import ChatRoom from "@/components/themes/chocolate/ChatRoom.tsx";
+import MessageRoom from "@/components/themes/chocolate/MessageRoom.tsx";
 import MessageList from "@/components/themes/chocolate/MessageList.tsx";
 
 const chocolateTheme: Theme = {
@@ -16,9 +16,9 @@ const chocolateTheme: Theme = {
   },
   components: {
     ...theFruitTheme.components, // TODO: implement it
-    EmptyPane: EmptyPane,
-    MessageList: MessageList,
-    ChatRoom: ChatRoom,
+    EmptyPane,
+    MessageList,
+    MessageRoom,
   },
 };
 

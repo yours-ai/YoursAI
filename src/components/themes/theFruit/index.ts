@@ -3,7 +3,7 @@ import TabNavigation from "./TabNavigation.tsx";
 import EmptyPane from "./EmptyPane.tsx";
 import { Theme } from "@/components/themes/models";
 import MessageList from "@/components/themes/chocolate/MessageList.tsx";
-import ChatRoom from "@/components/themes/chocolate/ChatRoom.tsx";
+import MessageRoom from "@/components/themes/chocolate/MessageRoom.tsx";
 
 const theFruitTheme: Theme = {
   id: "theFruit",
@@ -20,7 +20,7 @@ const theFruitTheme: Theme = {
     TabNavigation,
     EmptyPane,
     MessageList, // TODO: Change to theFruitMessageList
-    ChatRoom, // TODO: Change to theFruitChatRoom
+    MessageRoom, // TODO: Change to theFruitMessageRoom
   },
 };
 
