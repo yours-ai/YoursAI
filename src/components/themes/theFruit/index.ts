@@ -2,6 +2,8 @@ import Button from "./Button.tsx";
 import TabNavigation from "./TabNavigation.tsx";
 import EmptyPane from "./EmptyPane.tsx";
 import { Theme } from "@/components/themes/models";
+import MessageList from "@/components/themes/chocolate/MessageList.tsx";
+import ChatRoom from "@/components/themes/chocolate/ChatRoom.tsx";
 
 const theFruitTheme: Theme = {
   id: "theFruit",
@@ -17,6 +19,8 @@ const theFruitTheme: Theme = {
     Button,
     TabNavigation,
     EmptyPane,
+    MessageList, // TODO: Change to theFruitMessageList
+    ChatRoom, // TODO: Change to theFruitChatRoom
   },
 };
 
