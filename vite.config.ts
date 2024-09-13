@@ -15,8 +15,9 @@ export default defineConfig({
         short_name: "YoursAI",
         description:
           "Simple yet fully customizable character role-playing frontend.",
-        display: "standalone",
+        display: "fullscreen",
         orientation: "portrait",
+        background_color: "#ffffff",
         theme_color: "#ffffff",
         icons: [
           {
