@@ -13,6 +13,7 @@ export default konstaConfig({
       colors: {
         menuBackground: "#E0E0E0",
         accentBlue: "#007AFF",
+        accentBlueHover: "#005CC1",
         blankAlert: "rgba(0,0,0,0.015)",
         emptyBackground: "#F2F2F7",
         tabUnselected: "#999999",

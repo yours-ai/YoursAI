@@ -3,6 +3,7 @@ import SplitViewPage from "@/routes/main/SplitViewPage.tsx";
 import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
 import FriendsList from "@/routes/main/friends/FriendsList.tsx";
 import TabTitle from "@/components/TabTitle.tsx";
+import TabAction from "@/components/TabAction.tsx";
 
 export interface Character {
   name: string;
@@ -41,6 +42,7 @@ export function Component() {
     <SplitViewPage
       leftPane={
         <div>
+          <TabAction action="새 캐릭터 추가" />
           <TabTitle title="친구" />
           <div className="mt-[12px] w-full px-4">
             {characters.length > 0 ? (

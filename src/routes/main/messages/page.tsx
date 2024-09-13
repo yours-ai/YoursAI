@@ -3,6 +3,7 @@ import SplitViewPage from "@/routes/main/SplitViewPage.tsx";
 import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
 import TabTitle from "@/components/TabTitle.tsx";
 import MessageItemList from "@/routes/main/messages/MessageItemList.tsx";
+import TabAction from "@/components/TabAction.tsx";
 
 export interface Message {
   name: string;
@@ -147,6 +148,7 @@ export function Component() {
     <SplitViewPage
       leftPane={
         <div>
+          <TabAction action="편집" />
           <TabTitle title="메시지" />
           <div className="mt-[12px] w-full px-4">
             {messages.length > 0 ? (
