@@ -1,9 +1,16 @@
-import { useRef, useState } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { List, ListItem, Popover } from "konsta/react";
 import { PiImages, PiPenNib } from "react-icons/pi";
 
-function TabAction({ action }: { action: string }) {
+function TabAction({
+  action,
+  setFileModalOpened,
+}: {
+  action: string;
+  setFileModalOpened?: Dispatch<SetStateAction<boolean>>;
+}) {
   const [popoverOpened, setPopoverOpened] = useState<boolean>(false);
+
   const popoverTargetRef = useRef(null);
   const openPopover = (targetRef) => {
     popoverTargetRef.current = targetRef;
@@ -33,6 +40,12 @@ function TabAction({ action }: { action: string }) {
             title="파일로 추가"
             link
             after={<PiImages className="text-20p text-black" />}
+            onClick={() => {
+              setPopoverOpened(false);
+              if (setFileModalOpened) {
+                setFileModalOpened(true);
+              }
+            }}
           />
           <ListItem
             title="직접 만들기"
