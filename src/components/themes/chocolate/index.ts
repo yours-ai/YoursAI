@@ -1,5 +1,6 @@
 import { Theme } from "@/components/themes/models";
 import theFruitTheme from "@/components/themes/theFruit";
+import EmptyPane from "@/components/themes/chocolate/EmptyPane.tsx";
 
 const chocolateTheme: Theme = {
   id: "chocolate",
@@ -13,6 +14,7 @@ const chocolateTheme: Theme = {
   },
   components: {
     ...theFruitTheme.components, // TODO: implement it
+    EmptyPane: EmptyPane,
   },
 };
 
