@@ -89,7 +89,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Providers>
-      <App>
+      <App theme="ios">
         <RouterProvider router={router} />
       </App>
     </Providers>
