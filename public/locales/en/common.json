@@ -7,5 +7,10 @@
     "start": "Start",
     "upload": "Upload",
     "next": "Next"
+  },
+  "tabNavigation": {
+    "friends": "Friends",
+    "messages": "Messages",
+    "settings": "Settings"
   }
 }
