@@ -3,9 +3,11 @@ import { ListItem, Toggle } from "konsta/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ListContainer from "@/components/ListContainer.tsx";
+import { useTranslation } from "react-i18next";
 
 export function Component() {
   const [checked, setChecked] = useState(false);
+  const { t } = useTranslation("pages/msg");
   return (
     <div className="size-full bg-emptyBackground">
       <div className="relative flex w-full items-center justify-center border-b border-border py-[18px]">
@@ -19,16 +21,16 @@ export function Component() {
           <PiCaretLeftBold />
         </div>
         <span className="text-20p font-semibold leading-[22px]">
-          세나와 7월 11일 오전 6:48에 시작한 대화
+          {t("settings.title")}
         </span>
       </div>
       <div className="flex size-full flex-col gap-[20px] px-[190px] pt-[32px]">
         <ListContainer>
           <Link to="custom">
-            <ListItem title="대화 설정 커스텀" link />
+            <ListItem title={t("settings.custom.label")} link />
           </Link>
           <ListItem
-            title="Item 2"
+            title={t("settings.jailbreak")}
             after={
               <Toggle
                 className="-my-1 k-color-green"
@@ -39,7 +41,10 @@ export function Component() {
           />
         </ListContainer>
         <ListContainer>
-          <ListItem title={<p className="text-red">이 대화 지우기</p>} link />
+          <ListItem
+            title={<p className="text-red">{t("settings.delete")}</p>}
+            link
+          />
         </ListContainer>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
 import TabTitle from "@/components/TabTitle.tsx";
 import MessageItemList from "@/routes/main/messages/MessageItemList.tsx";
 import TabAction from "@/components/TabAction.tsx";
+import { useTranslation } from "react-i18next";
 
 export interface Message {
   name: string;
@@ -143,26 +144,23 @@ const messages = [
 export function Component() {
   useLeftPrimaryPage("/main/messages");
   const outletContext = useOutletContext();
+  const { t } = useTranslation("pages/msg");
 
   return (
     <SplitViewPage
       leftPane={
         <div>
-          <TabAction action="편집" />
-          <TabTitle title="메시지" />
+          <TabAction action={t("tabAction.title")} />
+          <TabTitle title={t("tabTitle")} />
           <div className="mt-[12px] w-full px-4">
             {messages.length > 0 ? (
               <MessageItemList messages={messages} />
             ) : (
               <div className="mt-[50px] w-full text-center text-16p">
-                <span className="text-black/50">
-                  아직 나눈 대화가 없습니다...
-                </span>
+                <span className="text-black/50">{t("empty.one")}</span>
                 🥲
                 <br />
-                <span className="text-black/50">
-                  친구탭에서 새로운 대화를 시작해보세요!
-                </span>
+                <span className="text-black/50">{t("empty.two")}</span>
               </div>
             )}
           </div>
