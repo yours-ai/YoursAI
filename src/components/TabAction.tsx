@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { List, ListItem, Popover } from "konsta/react";
 import { PiImages, PiPenNib } from "react-icons/pi";
+import toast, { Toaster } from "react-hot-toast";
 
 function TabAction({
   action,
@@ -54,9 +55,20 @@ function TabAction({
             title="직접 만들기"
             link
             after={<PiPenNib className="text-20p text-black" />}
+            onClick={() => {
+              setPopoverOpened(false);
+              toast.error(
+                <p>
+                  아직 지원되지 않습니다.
+                  <br />
+                  스튜디오 페이지가 개발 중에 있어요!🤘
+                </p>,
+              );
+            }}
           />
         </List>
       </Popover>
+      <Toaster />
     </>
   );
 }
