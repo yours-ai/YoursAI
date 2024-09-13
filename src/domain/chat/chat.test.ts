@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import OpenAI from "openai";
-import { initialPromptTemplates } from "@/domain/chat/models.ts";
-import { getTestDb } from "@/domain/testHelpers.ts";
+import { getTestDb } from "@/domain/utils/testDb.ts";
+import { initialPromptTemplates } from "@/domain/chat/populate.ts";
 
 const { getDbInstance } = getTestDb();
 

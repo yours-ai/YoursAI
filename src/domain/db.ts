@@ -1,11 +1,12 @@
 import Dexie, { type EntityTable } from "dexie";
-import {
-  initialPromptTemplates,
-  type PromptTemplate,
-} from "@/domain/chat/models.ts";
+import { type PromptTemplate } from "@/domain/chat/models.ts";
+import { chatPopulate } from "@/domain/chat/populate.ts";
+import { configPopulate } from "@/domain/config/populate.ts";
+import { GlobalConfig } from "@/domain/config/models.ts";
 
 export type Db = Dexie & {
   promptTemplates: EntityTable<PromptTemplate, "uuid">;
+  globalConfigs: EntityTable<GlobalConfig, "id">;
 };
 
 export const getDb = () => {
@@ -13,10 +14,11 @@ export const getDb = () => {
 
   db.version(1).stores({
     promptTemplates: "uuid",
+    globalConfigs: "id",
   });
 
-  db.on("populate", async () => {
-    await db.promptTemplates.bulkPut(initialPromptTemplates);
+  db.on("populate", async (tx) => {
+    await Promise.all([chatPopulate(tx), configPopulate(tx)]);
   });
 
   return db;

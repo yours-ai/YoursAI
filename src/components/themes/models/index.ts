@@ -1,10 +1,13 @@
 import { type ButtonProps } from "./Button.ts";
 import theFruitTheme from "@/components/themes/theFruit";
+import chocolateTheme from "@/components/themes/chocolate";
+import { AvailableBundledThemeId } from "@/domain/config/models.ts";
+import { TranslatableString } from "@/locales/models.ts";
 
 export interface Theme {
   id: string;
-  name: string;
-  description?: string;
+  name: TranslatableString;
+  description?: TranslatableString;
   creator?: string;
   components: {
     Button: React.ComponentType<ButtonProps>;
@@ -13,9 +16,7 @@ export interface Theme {
   };
 }
 
-// export type AvailableBundledThemes = "theFruit" | "chocolate" | "navy";  // TODO
-export type AvailableBundledThemes = "theFruit";
-export const BundledThemes: Record<AvailableBundledThemes, Theme> = {
+export const BundledThemes: Record<AvailableBundledThemeId, Theme> = {
   theFruit: theFruitTheme,
-  // chocolate: chocolateTheme,
+  chocolate: chocolateTheme,
 };

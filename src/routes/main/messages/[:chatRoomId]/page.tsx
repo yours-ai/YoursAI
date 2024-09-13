@@ -1,5 +1,6 @@
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 import { Link, useParams } from "react-router-dom";
+import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
 
 export function Component() {
   const { chatRoomId } = useParams();
@@ -16,3 +17,5 @@ export function Component() {
 }
 
 Component.displayName = "ChatroomPage";
+
+export const ErrorBoundary = DefaultErrorBoundary;
