@@ -32,6 +32,9 @@ importers:
       i18next-http-backend:
         specifier: ^2.6.1
         version: 2.6.1
+      konsta:
+        specifier: ^4.0.0
+        version: 4.0.0
       openai:
         specifier: ^4.58.2
         version: 4.59.0
@@ -2277,6 +2280,10 @@ packages:
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
+
+  konsta@4.0.0:
+    resolution: {integrity: sha512-kxDkE/jiVItTePFJLNhathvbI9pJIMP024EAgES9cxDmqnyAAwO0fPxVivCX/dfcjxvBpsdQnsN1HEUoS98XBQ==}
+    engines: {node: '>= 4.7.0'}
 
   leven@3.1.0:
     resolution: {integrity: sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==}
@@ -5755,6 +5762,8 @@ snapshots:
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
+
+  konsta@4.0.0: {}
 
   leven@3.1.0: {}
 

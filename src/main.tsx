@@ -9,6 +9,7 @@ import "./index.css";
 import "pretendard/dist/web/static/pretendard.css";
 import Providers from "@/Providers.tsx";
 import "@/contrib/i18next/i18n.ts";
+import { App } from "konsta/react";
 
 const router = createBrowserRouter([
   {
@@ -88,7 +89,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Providers>
-      <RouterProvider router={router} />
+      <App>
+        <RouterProvider router={router} />
+      </App>
     </Providers>
   </StrictMode>,
 );
