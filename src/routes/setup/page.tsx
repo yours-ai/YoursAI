@@ -12,6 +12,7 @@ import TypingSimulationContent from "@/routes/setup/contents/TypingSimulationCon
 import NameContent from "@/routes/setup/contents/NameContent.tsx";
 import i18n from "i18next";
 import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import { DefaultLanguage } from "@/locales/models.ts";
 
 export function Component() {
   const locale = useMemo(() => {
@@ -82,7 +83,9 @@ export function Component() {
   return (
     <SetupLayout>
       <Suspense fallback={<div />}>
-        {locale === "ko" ? steps[step] : stepsNoTranslationStep[step]}
+        {locale !== DefaultLanguage
+          ? steps[step]
+          : stepsNoTranslationStep[step]}
       </Suspense>
     </SetupLayout>
   );

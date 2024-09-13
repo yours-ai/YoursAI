@@ -57,13 +57,13 @@ function Sheet({ step, setStep, content, btnDisabled, last }: Props) {
     startTransition(() => setAllDefaultStartModalOpen(true));
   };
   return (
-    <div className="relative flex h-[500px] w-[700px] flex-col items-center justify-between rounded-[10px] bg-menuBackground px-[9px] pt-[9px]">
+    <div className="relative flex size-full flex-col items-center justify-between bg-menuBackground px-[9px] pt-[9px] tablet:h-[500px] tablet:w-[700px] tablet:rounded-[10px]">
       {allDefaultStartModalOpen && (
         <AllDefaultStartModal
           onClose={() => setAllDefaultStartModalOpen(false)}
         />
       )}
-      <div className="flex flex-col items-center">{content}</div>
+      <div className="flex w-full flex-col items-center">{content}</div>
       <div className="flex h-[49px] w-full items-center justify-between border-t border-black/10">
         {step === 0 ? (
           <NextSetupArrow onClick={() => setStep((prev) => prev + 1)} />

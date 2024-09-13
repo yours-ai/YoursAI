@@ -16,7 +16,7 @@ function SegmentedControlBar({ segments, setIndex }: SegmentedControlBarProps) {
   const [selected, setSelected] = useState<number>(0);
   return (
     <div
-      className="flex h-[22px] w-[400px] justify-around rounded-[6px] p-px"
+      className="flex h-[22px] w-full max-w-[400px] justify-around rounded-[6px] p-px"
       style={{
         backgroundColor: "rgba(0, 0, 0, 0.01)",
         boxShadow:

@@ -173,7 +173,7 @@ function DataContent() {
           />
         </Tooltip>
       </div>
-      <div className="absolute top-[521px] text-center text-20p font-semibold leading-[25px] text-white">
+      <div className="absolute top-[521px] text-center text-[18px] font-semibold leading-[25px] tablet:text-20p tablet:text-white">
         <Trans i18nKey="dataContent.description" t={t}>
           채팅 내역, 설정 등 모든 데이터는<br></br>언제든지 파일로 백업하고
           되돌릴 수 있습니다.

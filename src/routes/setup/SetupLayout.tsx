@@ -1,8 +1,10 @@
 import React from "react";
+import { use100vh } from "react-div-100vh";
 
 function SetupLayout({ children }: { children: React.ReactNode }) {
+  const vh = use100vh();
   return (
-    <div className="relative h-screen w-full ">
+    <div className="relative w-full " style={{ height: vh ?? undefined }}>
       <img
         src="/start-wallpaper.png"
         alt="bg-wallpaper"

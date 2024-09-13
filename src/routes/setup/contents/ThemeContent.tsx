@@ -52,7 +52,7 @@ function ThemeContent({ setBtnDisabled }: SetupContentProps) {
   return (
     <>
       <SettingTitle title={t("themeContent.title")} />
-      <div className="mt-[24px] flex flex-col items-center gap-[17px]">
+      <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
         <SegmentedControlBar segments={themes} setIndex={setIndex} />
         {themes[index].content}
         <div className="text-13p leading-[16px]">

@@ -43,7 +43,7 @@ function LanguageContent() {
           />
         ))}
       </div>
-      <div className="absolute top-[521px] text-center text-20p font-semibold leading-[25px] text-white">
+      <div className="absolute top-[521px] text-center text-[18px] font-semibold leading-[25px] tablet:text-20p tablet:text-white">
         <Trans i18nKey="languageContent.description" t={t}>
           계속한다고 해서 무슨 약관에 동의하는 건 아닙니다.
           <br />

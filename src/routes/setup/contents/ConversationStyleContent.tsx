@@ -185,7 +185,7 @@ function ConversationStyleContent({ setBtnDisabled }: SetupContentProps) {
         </div>
       </div>
 
-      <div className="mt-[24px] flex flex-col items-center gap-[17px]">
+      <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
         <SegmentedControlBar segments={styles} setIndex={setIndex} />
         {styles[index].content}
         <div className="text-center text-13p leading-[16px]">
