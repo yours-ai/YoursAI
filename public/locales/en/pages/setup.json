@@ -69,8 +69,8 @@
     "name": {
       "label": "Name",
       "placeholder": {
-        "first": "First name",
-        "second": "Last name"
+        "firstName": "First name",
+        "lastName": "Last name"
       }
     },
     "intro": {
@@ -82,6 +82,19 @@
     "title": "Themes",
     "themes": {
       "custom": {"name": "Custom", "upload": "Upload custom theme"}
+    }
+  },
+  "translateContent": {
+    "title": "",
+    "choices": {
+      "no": {
+        "label": "",
+        "description": ""
+      },
+      "yes": {
+        "label": "",
+        "description": ""
+      }
     }
   },
   "typingSimulationContent": {

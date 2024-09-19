@@ -2,7 +2,7 @@ import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 import { Link, useParams } from "react-router-dom";
 import { AvailableLanguage, AvailableLanguages } from "@/locales/models.ts";
 import { useCurrentLanguage, useDynamicTranslation } from "@/locales/hooks.ts";
-import { makeGlobalConfigService } from "@/domain/config/services.ts";
+import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 import { BundledThemes } from "@/components/themes/models";
 import { AvailableBundledThemeId } from "@/domain/config/models.ts";
 import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
@@ -13,7 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 export function Component() {
   const { settingsId } = useParams();
   const { getGlobalConfig, updateGlobalConfig } =
-    makeGlobalConfigService(useDb());
+    makeGlobalConfigRepository(useDb());
   useRightPrimaryPage();
   const language = useCurrentLanguage();
   const { t } = useDynamicTranslation();

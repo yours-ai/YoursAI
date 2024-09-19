@@ -7,14 +7,38 @@ import { Trans, useTranslation } from "react-i18next";
 import SetupForm from "@/components/macos/SetupForm.tsx";
 import Tooltip from "@/components/macos/Tooltip.tsx";
 import Sheet from "@/components/macos/Sheet.tsx";
+import { initialPromptTemplates } from "@/domain/chat/populate.ts";
+import { useMutation } from "@tanstack/react-query";
+import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
+import { useDb } from "@/contexts/DbContext.ts";
+import SegmentedControlBar from "@/components/macos/SegmentedControlBar.tsx";
+import { useDynamicTranslation } from "@/locales/hooks.ts";
+import { useLiveQuery } from "dexie-react-hooks";
+import { GlobalConfig } from "@/domain/config/models.ts";
 
 export interface Props {
+  config: GlobalConfig;
   setStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export default function ConversationStyleSheet({ setStep }: Props) {
+export default function ConversationStyleSheet({ config, setStep }: Props) {
   const { t } = useTranslation("pages/setup");
-  const [index, _setIndex] = useState<number>(0);
+  const [value, setValue] = useState<string>(
+    config.conversationConfig.promptTemplateId,
+  );
+  const mutation = useMutation({
+    mutationFn:
+      makeGlobalConfigRepository(useDb()).updateGlobalConversationConfig,
+    onSuccess() {
+      setStep((prev) => prev + 1);
+    },
+  });
+  const { t: dynamicT } = useDynamicTranslation();
+  const db = useDb();
+  const promptTemplate = useLiveQuery(
+    () => db.promptTemplates.get(value),
+    [value],
+  );
 
   const CustomStyleFormRows = [
     {
@@ -33,55 +57,6 @@ export default function ConversationStyleSheet({ setStep }: Props) {
     },
   ];
 
-  const styles = [
-    {
-      title: t("conversationStyleContent.styles.balanced.name"),
-      content: <SegmentBoard />,
-      description: (
-        <Trans
-          i18nKey="conversationStyleContent.styles.balanced.description"
-          t={t}
-        >
-          캐릭터가 적절히 대화 길이를 조절합니다.<br></br>종종 전지적 시점에서
-          이야기하기도 합니다.
-        </Trans>
-      ),
-    },
-    {
-      title: t("conversationStyleContent.styles.novel.name"),
-      content: <SegmentBoard />,
-      description: (
-        <Trans
-          i18nKey="conversationStyleContent.styles.novel.description"
-          t={t}
-        >
-          당신이 짧게 이야기해도 캐릭터는 길게 이야기합니다.<br></br>자주 전지적
-          시점에서 이야기합니다.
-        </Trans>
-      ),
-    },
-    {
-      title: t("conversationStyleContent.styles.realistic.name"),
-      content: <SegmentBoard />,
-      description: (
-        <Trans
-          i18nKey="conversationStyleContent.styles.realistic.description"
-          t={t}
-        >
-          현실의 대화와 비슷합니다.<br></br>캐릭터의 속마음을 알기는 어렵습니다.
-        </Trans>
-      ),
-    },
-    {
-      title: t("conversationStyleContent.styles.custom.name"),
-      content: (
-        <div className="mt-[14px]">
-          <SetupForm setupFormRows={CustomStyleFormRows} />
-        </div>
-      ),
-    },
-  ];
-
   return (
     <Sheet
       rightActions={
@@ -91,8 +66,16 @@ export default function ConversationStyleSheet({ setStep }: Props) {
             goBack
           />
           <SetupControlButton
+            disabled={value === "custom"}
             onClick={() => {
-              setStep((prev) => prev + 1);
+              if (!mutation.isPending) {
+                if (value !== "custom") {
+                  /* TODO: implement custom prompt template */
+                  mutation.mutate({
+                    promptTemplateId: value,
+                  });
+                }
+              }
             }}
           />
         </>
@@ -119,11 +102,40 @@ export default function ConversationStyleSheet({ setStep }: Props) {
           </div>
 
           <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
-            {/*<SegmentedControlBar options={styles} onChange={setIndex} />*/}
-            {styles[index].content}
-            <div className="text-center text-13p leading-[16px]">
-              {styles[index].description}
-            </div>
+            <SegmentedControlBar
+              options={[
+                ...initialPromptTemplates.map((template) => ({
+                  value: template.uuid,
+                  label: dynamicT(template.metadata.name),
+                })),
+                {
+                  value: "custom",
+                  label: t("conversationStyleContent.styles.custom.name"),
+                },
+              ]}
+              value={value}
+              onChange={setValue}
+            />
+            {value !== "custom" ? (
+              <>
+                <SegmentBoard
+                  imgBlob={
+                    promptTemplate?.metadata.descriptionImg
+                      ? dynamicT(promptTemplate?.metadata.descriptionImg)
+                      : undefined
+                  }
+                  alt={`description image for ${value}`}
+                />
+                <div className="text-center text-13p leading-[16px]">
+                  {promptTemplate?.metadata.description &&
+                    dynamicT(promptTemplate?.metadata.description)}
+                </div>
+              </>
+            ) : (
+              <div className="mt-[14px]">
+                <SetupForm setupFormRows={CustomStyleFormRows} />
+              </div>
+            )}
           </div>
         </>
       }

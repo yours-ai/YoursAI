@@ -5,25 +5,30 @@ import SegmentBoard from "@/components/macos/SegmentBoard.tsx";
 import SetupControlButton from "@/components/macos/SetupControlButton.tsx";
 import { useTranslation } from "react-i18next";
 import Sheet from "@/components/macos/Sheet.tsx";
-import { AvailableBundledThemeId } from "@/domain/config/models.ts";
+import {
+  AvailableBundledThemeId,
+  GlobalConfig,
+} from "@/domain/config/models.ts";
 import { BundledThemes } from "@/components/themes/models";
 import { useDynamicTranslation } from "@/locales/hooks.ts";
 import { useMutation } from "@tanstack/react-query";
-import { makeGlobalConfigService } from "@/domain/config/services.ts";
+import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 import { useDb } from "@/contexts/DbContext.ts";
 
 export interface Props {
   setStep: Dispatch<SetStateAction<number>>;
+  config: GlobalConfig;
 }
 
-export default function ThemeSheet({ setStep }: Props) {
+export default function ThemeSheet({ config, setStep }: Props) {
   const { t } = useTranslation("pages/setup");
+  const db = useDb();
   const [value, setValue] = useState<AvailableBundledThemeId | "custom">(
-    "theFruit",
+    config.theme.type === "bundled" ? config.theme.id : "custom",
   );
   const { t: dynamicT } = useDynamicTranslation();
   const mutation = useMutation({
-    mutationFn: makeGlobalConfigService(useDb()).updateGlobalConfig,
+    mutationFn: makeGlobalConfigRepository(db).updateGlobalConfig,
     onSuccess() {
       setStep((prev) => prev + 1);
     },
@@ -59,7 +64,7 @@ export default function ThemeSheet({ setStep }: Props) {
               </div>
             ) : (
               <SegmentBoard
-                img={
+                imgBlob={
                   BundledThemes[value].descriptionImg
                     ? dynamicT(BundledThemes[value].descriptionImg)
                     : undefined
@@ -84,6 +89,7 @@ export default function ThemeSheet({ setStep }: Props) {
             disabled={value === "custom" /* TODO: implement custom theme */}
             onClick={() =>
               value !== "custom" &&
+              !mutation.isPending &&
               mutation.mutate({
                 theme: {
                   type: "bundled",

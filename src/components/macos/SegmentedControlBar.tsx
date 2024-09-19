@@ -1,18 +1,18 @@
 import React, { SetStateAction } from "react";
 import "./segmentedControlBarButton.css";
 
-export interface Option<T extends React.Key> {
+export interface Option<T> {
   value: T;
-  label: string;
+  label: React.ReactNode;
 }
 
-export interface SegmentedControlBarProps<T extends React.Key> {
+export interface SegmentedControlBarProps<T> {
   options: Option<T>[];
   value: T;
   onChange: React.Dispatch<SetStateAction<T>>;
 }
 
-export default function SegmentedControlBar<T extends React.Key>({
+export default function SegmentedControlBar<T>({
   options,
   value,
   onChange,
@@ -28,7 +28,7 @@ export default function SegmentedControlBar<T extends React.Key>({
     >
       {options.map((option) => (
         <div
-          key={option.value}
+          key={String(option.value)}
           onClick={() => {
             onChange(option.value);
           }}

@@ -7,14 +7,15 @@ export const useImgBlob = (img?: Blob) => {
 
   useEffect(() => {
     if (img) {
-      setImgURL(URL.createObjectURL(img));
+      const objectURL = URL.createObjectURL(img);
+      setImgURL(objectURL);
+      return () => {
+        URL.revokeObjectURL(objectURL);
+      };
+    } else {
+      setImgURL(null); // img가 없으면 imgURL을 null로 설정
     }
-    return () => {
-      if (imgURL) {
-        URL.revokeObjectURL(imgURL);
-      }
-    };
-  }, [imgURL, img]);
+  }, [img]);
 
   return imgURL;
 };

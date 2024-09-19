@@ -1,5 +1,6 @@
 import { PromptTemplate } from "@/domain/chat/models.ts";
 import { Transaction } from "dexie";
+import { descriptionImgBlob } from "./descriptionImg.ts";
 
 export const initialPromptTemplates: PromptTemplate[] = [
   {
@@ -10,9 +11,13 @@ export const initialPromptTemplates: PromptTemplate[] = [
         ko: "밸런스",
       },
       creator: "narayo9",
-      creatorDescription: {
+      description: {
         ko: "당신의 대화에 맞게 캐릭터가 적절히 대화 길이를 조절합니다. 종종 전지적 시점에서 이야기하기도 합니다.",
         en: "The character adjusts conversation length and occasionally uses an omniscient perspective.",
+      },
+      descriptionImg: {
+        en: descriptionImgBlob,
+        ko: descriptionImgBlob,
       },
     },
     promptConfig: {
@@ -31,9 +36,13 @@ export const initialPromptTemplates: PromptTemplate[] = [
         ko: "소설형",
       },
       creator: "narayo9",
-      creatorDescription: {
+      description: {
         ko: "당신이 짧게 이야기해도 캐릭터는 길게 이야기합니다. 자주 전지적 시점에서 이야기합니다.",
         en: "The character speaks at length even if you speak briefly. Often tells stories from an omniscient perspective.",
+      },
+      descriptionImg: {
+        en: descriptionImgBlob,
+        ko: descriptionImgBlob,
       },
     },
     promptConfig: {
@@ -52,9 +61,13 @@ export const initialPromptTemplates: PromptTemplate[] = [
         en: "Realistic",
       },
       creator: "narayo9",
-      creatorDescription: {
+      description: {
         en: "It’s like a real conversation—hard to know what the character is really thinking.",
         ko: "현실의 대화와 비슷합니다. 캐릭터의 속마음을 알기는 어렵습니다.",
+      },
+      descriptionImg: {
+        en: descriptionImgBlob,
+        ko: descriptionImgBlob,
       },
     },
     promptConfig: {

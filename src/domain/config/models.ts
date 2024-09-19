@@ -19,12 +19,26 @@ export const themeConfigSchema = z.union([
   uploadedThemeConfigSchema,
 ]);
 
+export const personaSchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string(),
+  description: z.string(),
+});
+
+export const conversationConfigSchema = z.object({
+  promptTemplateId: z.string(),
+  doTranslation: z.boolean(),
+  doTypingSimulation: z.boolean(),
+  persona: personaSchema,
+});
+
 export const GlobalConfigId = "oneAndOnly";
 
 export const globalConfigSchema = z.object({
   id: z.enum([GlobalConfigId]),
   theme: themeConfigSchema,
   language: z.union([availableLanguageSchema, z.null()]),
+  conversationConfig: conversationConfigSchema,
   hasDoneSetup: z.boolean(),
 });
 

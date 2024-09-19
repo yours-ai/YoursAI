@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { AvailableLanguage, Translatable } from "@/locales/models.ts";
 import { useTranslation } from "react-i18next";
-import { makeGlobalConfigService } from "@/domain/config/services.ts";
+import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 import { useDb } from "@/contexts/DbContext.ts";
 import { useLiveQuery } from "dexie-react-hooks";
 
@@ -26,7 +26,7 @@ export const useUpdateLanguage = () => {
   const db = useDb();
   return useCallback(
     async (language: AvailableLanguage) => {
-      await makeGlobalConfigService(db).updateGlobalConfig({
+      await makeGlobalConfigRepository(db).updateGlobalConfig({
         language,
       });
     },
@@ -35,7 +35,7 @@ export const useUpdateLanguage = () => {
 };
 
 export const useLanguageSync = () => {
-  const service = makeGlobalConfigService(useDb());
+  const service = makeGlobalConfigRepository(useDb());
   const globalConfig = useLiveQuery(service.getGlobalConfig);
   const db = useDb();
   const { i18n } = useTranslation();

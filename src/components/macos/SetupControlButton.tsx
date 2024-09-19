@@ -45,7 +45,7 @@ function SetupControlButton({
             : goBack
               ? onClick
               : start
-                ? () => console.log("hello")
+                ? onClick
                 : upload
                   ? handleUploadClick
                   : onClick

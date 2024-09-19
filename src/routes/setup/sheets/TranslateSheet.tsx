@@ -3,56 +3,56 @@ import SettingTitle from "@/routes/setup/sheets/SettingTitle.tsx";
 import SegmentBoard from "@/components/macos/SegmentBoard.tsx";
 import Sheet from "@/components/macos/Sheet.tsx";
 import SetupControlButton from "@/components/macos/SetupControlButton.tsx";
-
-const translationChoices = [
-  {
-    title: "아니요 (권장)",
-    content: <SegmentBoard />,
-    description: (
-      <p>
-        따로 번역 기능을 사용하지 않습니다.
-        <br />
-        대화 내용이 그대로 LLM에 전달되어, 자연스러운 말투 구현에 도움을 줍니다.
-        <br />
-        토큰을 조금 더 사용하며, 덜 똑똑할 수 있습니다.
-      </p>
-    ),
-  },
-  {
-    title: "네",
-    content: <SegmentBoard />,
-    description: (
-      <p>
-        번역 기능을 제공합니다.
-        <br />
-        Google Translate로 번역이 이뤄집니다.
-        <br />
-        토큰을 덜 사용하지만 번역이 부자연스러울 수 있습니다.
-      </p>
-    ),
-  },
-];
+import { useTranslation } from "react-i18next";
+import SegmentedControlBar from "@/components/macos/SegmentedControlBar.tsx";
+import { useMutation } from "@tanstack/react-query";
+import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
+import { useDb } from "@/contexts/DbContext.ts";
+import { GlobalConfig } from "@/domain/config/models.ts";
 
 export interface Props {
+  config: GlobalConfig;
   setStep: Dispatch<SetStateAction<number>>;
 }
 
-export default function TranslateSheet({ setStep }: Props) {
-  const [index, _setIndex] = useState<number>(0);
+export default function TranslateSheet({ setStep, config }: Props) {
+  const { t } = useTranslation("pages/setup");
+  const [value, setValue] = useState<boolean>(
+    config.conversationConfig.doTranslation,
+  );
+  const mutation = useMutation({
+    mutationFn:
+      makeGlobalConfigRepository(useDb()).updateGlobalConversationConfig,
+    onSuccess() {
+      setStep((prev) => prev + 1);
+    },
+  });
 
   return (
     <Sheet
       content={
         <>
-          <SettingTitle title="이중 번역 기능을 사용할까요?" />
-          <div className="mt-[24px] flex flex-col gap-[17px]">
-            {/*<SegmentedControlBar*/}
-            {/*  options={translationChoices}*/}
-            {/*  onChange={setIndex}*/}
-            {/*/>*/}
-            {translationChoices[index].content}
-            <div className="text-center text-13p leading-[16px]">
-              {translationChoices[index].description}
+          <SettingTitle title={t("translateContent.title")} />
+          <div className="mt-[24px] flex flex-col items-center gap-[17px]">
+            <SegmentedControlBar
+              value={value}
+              options={[
+                {
+                  value: false,
+                  label: t("translateContent.choices.no.label"),
+                },
+                {
+                  value: true,
+                  label: t("translateContent.choices.yes.label"),
+                },
+              ]}
+              onChange={setValue}
+            />
+            <SegmentBoard imgSrc="/mocks/google-translation.png" />
+            <div className="max-w-[450px] text-center text-13p leading-[16px]">
+              {value
+                ? t("translateContent.choices.yes.description")
+                : t("translateContent.choices.no.description")}
             </div>
           </div>
         </>
@@ -65,7 +65,9 @@ export default function TranslateSheet({ setStep }: Props) {
           />
           <SetupControlButton
             onClick={() => {
-              setStep((prev) => prev + 1);
+              mutation.mutate({
+                doTranslation: value,
+              });
             }}
           />
         </>

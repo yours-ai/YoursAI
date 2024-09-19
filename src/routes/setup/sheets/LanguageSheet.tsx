@@ -2,7 +2,7 @@ import { PiGlobe } from "react-icons/pi";
 import SettingTitle from "@/routes/setup/sheets/SettingTitle.tsx";
 import { Trans, useTranslation } from "react-i18next";
 import { AvailableLanguages, LanguageDisplays } from "@/locales/models.ts";
-import { makeGlobalConfigService } from "@/domain/config/services.ts";
+import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 import { useCurrentLanguage } from "@/locales/hooks.ts";
 import { useMutation } from "@tanstack/react-query";
 import { useDb } from "@/contexts/DbContext.ts";
@@ -19,7 +19,7 @@ export default function LanguageSheet({ setStep }: Props) {
   const { t } = useTranslation("pages/setup");
   const currentLang = useCurrentLanguage();
   const mutation = useMutation({
-    mutationFn: makeGlobalConfigService(useDb()).updateGlobalConfig,
+    mutationFn: makeGlobalConfigRepository(useDb()).updateGlobalConfig,
   });
   return (
     <Sheet
