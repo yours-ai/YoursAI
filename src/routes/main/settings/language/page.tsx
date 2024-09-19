@@ -76,8 +76,12 @@ export function Component() {
       <Dialog
         opened={enOpened}
         onBackdropClick={() => setEnOpened(false)}
-        title="언어를 English로 변경하시겠어요?"
-        content="재시작이 필요합니다."
+        title={
+          <p className="text-16p font-semibold leading-[22px]">
+            언어를 English로 변경하시겠어요?
+          </p>
+        }
+        content={<p className="text-13p leading-[18x]">재시작이 필요합니다.</p>}
         buttons={
           <>
             <DialogButton onClick={() => setEnOpened(false)}>
@@ -88,6 +92,7 @@ export function Component() {
                 setSelectedLanguage("en");
                 setEnOpened(false);
               }}
+              className="font-semibold"
             >
               네
             </DialogButton>
