@@ -10,13 +10,18 @@ export interface Segment {
 export interface SegmentedControlBarProps {
   segments: Segment[];
   setIndex: React.Dispatch<SetStateAction<number>>;
+  flexible?: boolean;
 }
 
-function SegmentedControlBar({ segments, setIndex }: SegmentedControlBarProps) {
+function SegmentedControlBar({
+  segments,
+  setIndex,
+  flexible,
+}: SegmentedControlBarProps) {
   const [selected, setSelected] = useState<number>(0);
   return (
     <div
-      className="flex h-[22px] w-[400px] justify-around rounded-[6px] p-px"
+      className={`flex  ${flexible ? "h-[24px] w-full" : "h-[22px] w-[400px]"}  justify-around rounded-[6px] p-px`}
       style={{
         backgroundColor: "rgba(0, 0, 0, 0.01)",
         boxShadow:
@@ -30,7 +35,7 @@ function SegmentedControlBar({ segments, setIndex }: SegmentedControlBarProps) {
             setSelected(index);
             setIndex(index);
           }}
-          className={`relative flex size-full items-center justify-center rounded-[5px] text-13p leading-[16px] ${index === selected ? "selected-button" : index !== 0 ? "unselected-button" : ""} cursor-pointer select-none duration-200`}
+          className={`relative flex size-full items-center justify-center rounded-[5px] text-14p ${index === selected ? "selected-button" : index !== 0 ? "unselected-button" : ""} cursor-pointer select-none duration-200`}
           style={{ zIndex: selected === index ? 10 : 1 }}
         >
           {segment.title}
