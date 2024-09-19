@@ -1,11 +1,13 @@
 import SettingTopBar from "@/components/SettingTopBar.tsx";
 import ListContainer from "@/components/ListContainer.tsx";
-import { ListItem } from "konsta/react";
+import { Dialog, DialogButton, ListItem } from "konsta/react";
 import { useState } from "react";
 import { PiCheckBold } from "react-icons/pi";
 
 export function Component() {
   const [selectedLanguage, setSelectedLanguage] = useState<"ko" | "en">("ko"); // 추후 dynamic하게 바꿔야함
+  const [koOpened, setKoOpened] = useState<boolean>(false);
+  const [enOpened, setEnOpened] = useState<boolean>(false);
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title="언어" />
@@ -20,7 +22,11 @@ export function Component() {
                 <PiCheckBold className="text-24p text-accentBlue" />
               ) : null
             }
-            onClick={() => setSelectedLanguage("ko")}
+            onClick={() => {
+              if (selectedLanguage !== "ko") {
+                setKoOpened(true);
+              }
+            }}
           />
           <ListItem
             link
@@ -31,10 +37,63 @@ export function Component() {
                 <PiCheckBold className="text-24p text-accentBlue" />
               ) : null
             }
-            onClick={() => setSelectedLanguage("en")}
+            onClick={() => {
+              if (selectedLanguage !== "en") {
+                setEnOpened(true);
+              }
+            }}
           />
         </ListContainer>
       </div>
+      <Dialog
+        opened={koOpened}
+        onBackdropClick={() => setKoOpened(false)}
+        title={
+          <p className="text-16p font-semibold leading-[22px]">
+            언어를 한국어로 변경하시겠어요?
+          </p>
+        }
+        content={
+          <p className="text-13p leading-[18px]">재시작이 필요합니다.</p>
+        }
+        buttons={
+          <>
+            <DialogButton onClick={() => setKoOpened(false)}>
+              아니요
+            </DialogButton>
+            <DialogButton
+              onClick={() => {
+                setSelectedLanguage("ko");
+                setKoOpened(false);
+              }}
+              className="font-semibold"
+            >
+              네
+            </DialogButton>
+          </>
+        }
+      />
+      <Dialog
+        opened={enOpened}
+        onBackdropClick={() => setEnOpened(false)}
+        title="언어를 English로 변경하시겠어요?"
+        content="재시작이 필요합니다."
+        buttons={
+          <>
+            <DialogButton onClick={() => setEnOpened(false)}>
+              아니요
+            </DialogButton>
+            <DialogButton
+              onClick={() => {
+                setSelectedLanguage("en");
+                setEnOpened(false);
+              }}
+            >
+              네
+            </DialogButton>
+          </>
+        }
+      />
     </div>
   );
 }
