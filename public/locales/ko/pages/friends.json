@@ -20,5 +20,39 @@
     "noSupportToast": "아직 지원되지 않습니다.<1></1>스튜디오 페이지가 개발 중에 있어요!"
   },
   "tabTitle": "친구",
-  "empty": "아직 친구가 없습니다..."
+  "empty": "아직 친구가 없습니다...",
+  "friendButton": {
+    "continue": "이어서 대화",
+    "restart": "처음부터 대화",
+    "custom": "대화 설정 커스텀"
+  },
+  "contactItem": {
+    "creator": "제작자",
+    "creatorIntro": "제작자 한 줄 소개"
+  },
+  "delete": {
+    "label": "캐릭터 삭제",
+    "dialog": {
+      "title": "정말 캐릭터를 삭제하시겠어요?",
+      "content": "대화 기록이 완전히 삭제되어,<1></1>복구할 수 없습니다.",
+      "no": "아니요",
+      "yes": "네, 삭제할게요"
+    }
+  },
+  "settings": {
+    "title": "대화 설정 커스텀",
+    "description":"여기서 수정한 대화 설정은 현재 상대와의 모든 대화에 기본으로 적용됩니다.",
+    "options": {
+      "style": {
+        "label": "대화 스타일",
+        "choices": "소설형"
+      },
+      "typing": {
+        "label": "타이핑 시뮬레이션",
+        "choices": "사용"
+      },
+      "self-intro": "내 소개",
+      "default": "모두 기본값(글로벌 설정)으로 설정하기"
+    }
+  }
 }

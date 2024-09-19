@@ -7,6 +7,7 @@ import {
 } from "react-icons/pi";
 import { Dialog, DialogButton } from "konsta/react";
 import { Link, useParams } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 
 const FriendsButton = ({
   icon,
@@ -44,6 +45,7 @@ const ContactItem = ({
 
 export function Component() {
   const { friendId } = useParams();
+  const { t } = useTranslation("pages/friends");
   useRightPrimaryPage();
   const [deleteDialogOpened, setDeleteDialogOpened] = useState<boolean>(false);
 
@@ -60,30 +62,33 @@ export function Component() {
           <div className="flex gap-[10px]">
             <FriendsButton
               icon={<PiChatCircleFill />}
-              label="이어서 대화"
+              label={t("friendButton.continue")}
               disabled
             />
-            <FriendsButton icon={<PiPlusCircleFill />} label="처음부터 대화" />
+            <FriendsButton
+              icon={<PiPlusCircleFill />}
+              label={t("friendButton.restart")}
+            />
             <Link to="settings">
               <FriendsButton
                 icon={<PiGearSixFill />}
-                label="대화 설정 커스텀"
+                label={t("friendButton.custom")}
               />
             </Link>
           </div>
         </div>
       </div>
       <div className="mt-[22px] flex flex-col items-center">
-        <ContactItem label="제작자" content="narayo9" />
+        <ContactItem label={t("contactItem.creator")} content="narayo9" />
         <ContactItem
-          label="제작자 한 줄 소개"
+          label={t("contactItem.creatorIntro")}
           content="조용하고 따듯한 마음을 가진, 독서를 즐기는 소녀입니다."
         />
         <div
           className="w-[417px] cursor-pointer p-[10px] text-14p text-red duration-150 hover:text-redHover"
           onClick={() => setDeleteDialogOpened(true)}
         >
-          캐릭터 삭제
+          {t("delete.label")}
         </div>
       </div>
       <Dialog
@@ -91,26 +96,28 @@ export function Component() {
         onBackdropClick={() => setDeleteDialogOpened(false)}
         title={
           <p className="text-16p font-semibold leading-[22px]">
-            정말 캐릭터를 삭제하시겠어요?
+            {t("delete.dialog.title")}
           </p>
         }
         content={
           <p className="text-13p leading-[18x]">
-            대화 기록이 완전히 삭제되며,
-            <br />
-            복구할 수 없습니다.
+            <Trans t={t} i18nKey="delete.dialog.content">
+              대화 기록이 완전히 삭제되며,
+              <br></br>
+              복구할 수 없습니다.
+            </Trans>
           </p>
         }
         buttons={
           <>
             <DialogButton onClick={() => setDeleteDialogOpened(false)}>
-              아니요
+              {t("delete.dialog.no")}
             </DialogButton>
             <DialogButton
               onClick={() => setDeleteDialogOpened(false)}
               className="font-semibold text-red"
             >
-              네, 삭제할게요
+              {t("delete.dialog.yes")}
             </DialogButton>
           </>
         }

@@ -20,5 +20,39 @@
     "noSupportToast": "Not supported yet.<1></1>Studio page is in development!"
   },
   "tabTitle": "Friends",
-  "empty": "No friends yet..."
+  "empty": "No friends yet...",
+  "friendButton": {
+    "continue": "Continue Chat",
+    "restart": "Restart Chat",
+    "custom": "Customize"
+  },
+  "contactItem": {
+    "creator": "Creator",
+    "creatorIntro": "Profile"
+  },
+  "delete": {
+    "label": "Delete character",
+    "dialog": {
+      "title": "Proceed Deletion?",
+      "content": "Chat history will be<1></1>permanently deleted.",
+      "no": "No",
+      "yes": "Yes, proceed"
+    }
+  },
+  "settings": {
+    "title": "Chat Customization",
+    "description":"Any changes made here will be applied to all conversations with current character by default.",
+    "options": {
+      "style": {
+        "label": "Conversation Style",
+        "choices": "Novel"
+      },
+      "typing": {
+        "label": "Typing Simulation",
+        "choices": "Active"
+      },
+      "self-intro": "Persona",
+      "default": "Reset all as default (global settings)"
+    }
+  }
 }
