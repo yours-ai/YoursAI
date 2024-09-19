@@ -24,7 +24,7 @@ export function Component() {
           {t("settings.title")}
         </span>
       </div>
-      <div className="flex size-full flex-col gap-[20px] px-[190px] pt-[32px]">
+      <div className="flex w-full flex-col gap-[20px] px-[190px] pt-[32px]">
         <ListContainer>
           <Link to="custom">
             <ListItem title={t("settings.custom.label")} link />
