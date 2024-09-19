@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import ColorThief from "colorthief";
 import { Character } from "@/routes/main/friends/page.tsx";
+import { Link } from "react-router-dom";
 
 function FriendCard({ name, image, description }: Character) {
   const imgRef = useRef<HTMLImageElement | null>(null);
@@ -21,28 +22,30 @@ function FriendCard({ name, image, description }: Character) {
   }, []);
 
   return (
-    <div
-      className="flex w-full flex-col rounded-[8px]"
-      style={{ aspectRatio: "3/4" }}
-    >
-      <div className="h-3/5 w-full rounded-t-[8px]">
-        <img
-          ref={imgRef}
-          src={image}
-          alt="sena"
-          className="size-full rounded-t-[8px] object-cover object-center"
-        />
-      </div>
+    <Link to="sena">
       <div
-        className="flex h-2/5 flex-col items-center justify-center rounded-b-[8px] p-4"
-        style={{ background: gradient }}
+        className="flex w-full flex-col rounded-[8px]"
+        style={{ aspectRatio: "3/4" }}
       >
-        <span className="text-heading-4 font-semibold">{name}</span>
-        <span className="text-center text-body text-[#5D5D5D]">
-          {description}
-        </span>
+        <div className="h-3/5 w-full rounded-t-[8px]">
+          <img
+            ref={imgRef}
+            src={image}
+            alt="sena"
+            className="size-full rounded-t-[8px] object-cover object-center"
+          />
+        </div>
+        <div
+          className="flex h-2/5 flex-col items-center justify-center rounded-b-[8px] p-4"
+          style={{ background: gradient }}
+        >
+          <span className="text-heading-4 font-semibold">{name}</span>
+          <span className="text-center text-body text-[#5D5D5D]">
+            {description}
+          </span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

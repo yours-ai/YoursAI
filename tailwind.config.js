@@ -20,6 +20,7 @@ export default konstaConfig({
         tabHovered: "#7B7B7B",
         border: "rgba(198,198,200,0.6)",
         red: "#FF3B30",
+        redHover: "#FF0E00",
         green: "#4CD963",
       },
       fontSize: {
