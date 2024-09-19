@@ -10,7 +10,7 @@ export const useDynamicTranslation = () => {
   return {
     t: useCallback(
       <T>(translatable: Translatable<T>) => {
-        return translatable[language];
+        return translatable[language] as T;
       },
       [language],
     ),

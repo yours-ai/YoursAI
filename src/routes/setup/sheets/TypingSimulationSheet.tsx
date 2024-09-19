@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import SettingTitle from "@/routes/setup/sheets/SettingTitle.tsx";
-import SegmentedControlBar from "@/components/macos/SegmentedControlBar.tsx";
 import SegmentBoard from "@/components/macos/SegmentBoard.tsx";
 import { Trans, useTranslation } from "react-i18next";
 import Sheet from "@/components/macos/Sheet.tsx";
@@ -12,7 +11,7 @@ export interface Props {
 
 export default function TypingSimulationSheet({ setStep }: Props) {
   const { t } = useTranslation("pages/setup");
-  const [index, setIndex] = useState<number>(0);
+  const [index, _setIndex] = useState<number>(0);
 
   const typingSimulationChoices = [
     {
@@ -43,10 +42,10 @@ export default function TypingSimulationSheet({ setStep }: Props) {
         <>
           <SettingTitle title={t("typingSimulationContent.title")} />
           <div className="mt-[24px] flex flex-col gap-[17px]">
-            <SegmentedControlBar
-              segments={typingSimulationChoices}
-              setIndex={setIndex}
-            />
+            {/*<SegmentedControlBar*/}
+            {/*  options={typingSimulationChoices}*/}
+            {/*  onChange={setIndex}*/}
+            {/*/>*/}
             {typingSimulationChoices[index].content}
             <div className="text-center text-13p leading-[16px]">
               {typingSimulationChoices[index].description}

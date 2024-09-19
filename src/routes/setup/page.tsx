@@ -33,6 +33,7 @@ export function Component() {
     ],
     [currentLanguage],
   );
+
   return (
     <SetupLayout>
       <Suspense fallback={<div />}>{steps[step]}</Suspense>

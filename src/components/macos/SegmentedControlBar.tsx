@@ -1,19 +1,22 @@
-import React, { SetStateAction, useState } from "react";
+import React, { SetStateAction } from "react";
 import "./segmentedControlBarButton.css";
 
-export interface Segment {
-  title: string;
-  content: React.ReactNode;
-  description?: string | React.ReactNode;
+export interface Option<T extends React.Key> {
+  value: T;
+  label: string;
 }
 
-export interface SegmentedControlBarProps {
-  segments: Segment[];
-  setIndex: React.Dispatch<SetStateAction<number>>;
+export interface SegmentedControlBarProps<T extends React.Key> {
+  options: Option<T>[];
+  value: T;
+  onChange: React.Dispatch<SetStateAction<T>>;
 }
 
-function SegmentedControlBar({ segments, setIndex }: SegmentedControlBarProps) {
-  const [selected, setSelected] = useState<number>(0);
+export default function SegmentedControlBar<T extends React.Key>({
+  options,
+  value,
+  onChange,
+}: SegmentedControlBarProps<T>) {
   return (
     <div
       className="flex h-[22px] w-full max-w-[400px] justify-around rounded-[6px] p-px"
@@ -23,21 +26,18 @@ function SegmentedControlBar({ segments, setIndex }: SegmentedControlBarProps) {
           "inset 0px 0px 2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 4px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 2px 0px rgba(0, 0, 0, 0.05)",
       }}
     >
-      {segments.map((segment, index) => (
+      {options.map((option) => (
         <div
-          key={index}
+          key={option.value}
           onClick={() => {
-            setSelected(index);
-            setIndex(index);
+            onChange(option.value);
           }}
-          className={`relative flex size-full items-center justify-center rounded-[5px] text-13p leading-[16px] ${index === selected ? "selected-button" : index !== 0 ? "unselected-button" : ""} cursor-pointer select-none duration-200`}
-          style={{ zIndex: selected === index ? 10 : 1 }}
+          className={`relative flex size-full items-center justify-center rounded-[5px] text-13p leading-[16px] ${value === option.value ? "selected-button" : "unselected-button"} cursor-pointer select-none duration-200`}
+          style={{ zIndex: value === option.value ? 10 : 1 }}
         >
-          {segment.title}
+          {option.label}
         </div>
       ))}
     </div>
   );
 }
-
-export default SegmentedControlBar;

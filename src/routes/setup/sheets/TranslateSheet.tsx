@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import SettingTitle from "@/routes/setup/sheets/SettingTitle.tsx";
-import SegmentedControlBar from "@/components/macos/SegmentedControlBar.tsx";
 import SegmentBoard from "@/components/macos/SegmentBoard.tsx";
 import Sheet from "@/components/macos/Sheet.tsx";
 import SetupControlButton from "@/components/macos/SetupControlButton.tsx";
@@ -39,7 +38,7 @@ export interface Props {
 }
 
 export default function TranslateSheet({ setStep }: Props) {
-  const [index, setIndex] = useState<number>(0);
+  const [index, _setIndex] = useState<number>(0);
 
   return (
     <Sheet
@@ -47,10 +46,10 @@ export default function TranslateSheet({ setStep }: Props) {
         <>
           <SettingTitle title="이중 번역 기능을 사용할까요?" />
           <div className="mt-[24px] flex flex-col gap-[17px]">
-            <SegmentedControlBar
-              segments={translationChoices}
-              setIndex={setIndex}
-            />
+            {/*<SegmentedControlBar*/}
+            {/*  options={translationChoices}*/}
+            {/*  onChange={setIndex}*/}
+            {/*/>*/}
             {translationChoices[index].content}
             <div className="text-center text-13p leading-[16px]">
               {translationChoices[index].description}

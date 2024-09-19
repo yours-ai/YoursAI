@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import SettingTitle from "@/routes/setup/sheets/SettingTitle.tsx";
-import SegmentedControlBar from "@/components/macos/SegmentedControlBar.tsx";
 import SegmentBoard from "@/components/macos/SegmentBoard.tsx";
 import SetupControlButton from "@/components/macos/SetupControlButton.tsx";
 import { PiQuestionBold } from "react-icons/pi";
@@ -15,7 +14,7 @@ export interface Props {
 
 export default function ConversationStyleSheet({ setStep }: Props) {
   const { t } = useTranslation("pages/setup");
-  const [index, setIndex] = useState<number>(0);
+  const [index, _setIndex] = useState<number>(0);
 
   const CustomStyleFormRows = [
     {
@@ -120,7 +119,7 @@ export default function ConversationStyleSheet({ setStep }: Props) {
           </div>
 
           <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
-            <SegmentedControlBar segments={styles} setIndex={setIndex} />
+            {/*<SegmentedControlBar options={styles} onChange={setIndex} />*/}
             {styles[index].content}
             <div className="text-center text-13p leading-[16px]">
               {styles[index].description}

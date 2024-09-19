@@ -5,43 +5,29 @@ import SegmentBoard from "@/components/macos/SegmentBoard.tsx";
 import SetupControlButton from "@/components/macos/SetupControlButton.tsx";
 import { useTranslation } from "react-i18next";
 import Sheet from "@/components/macos/Sheet.tsx";
+import { AvailableBundledThemeId } from "@/domain/config/models.ts";
+import { BundledThemes } from "@/components/themes/models";
+import { useDynamicTranslation } from "@/locales/hooks.ts";
+import { useMutation } from "@tanstack/react-query";
+import { makeGlobalConfigService } from "@/domain/config/services.ts";
+import { useDb } from "@/contexts/DbContext.ts";
 
 export interface Props {
   setStep: Dispatch<SetStateAction<number>>;
 }
 
-function ThemeSheet({ setStep }: Props) {
+export default function ThemeSheet({ setStep }: Props) {
   const { t } = useTranslation("pages/setup");
-  const [index, setIndex] = useState(0);
-
-  const themes = [
-    {
-      title: t("themeContent.themes.fruit.name"),
-      content: <SegmentBoard />,
-      description: t("themeContent.themes.fruit.description"),
+  const [value, setValue] = useState<AvailableBundledThemeId | "custom">(
+    "theFruit",
+  );
+  const { t: dynamicT } = useDynamicTranslation();
+  const mutation = useMutation({
+    mutationFn: makeGlobalConfigService(useDb()).updateGlobalConfig,
+    onSuccess() {
+      setStep((prev) => prev + 1);
     },
-    {
-      title: t("themeContent.themes.chocolate.name"),
-      content: <SegmentBoard />,
-      description: t("themeContent.themes.chocolate.description"),
-    },
-    {
-      title: t("themeContent.themes.navy.name"),
-      content: <SegmentBoard />,
-      description: t("themeContent.themes.navy.description"),
-    },
-    {
-      title: t("themeContent.themes.custom.name"),
-      content: (
-        <div className="flex h-[223px] w-[421px] items-center justify-center">
-          <SetupControlButton
-            custom={t("themeContent.themes.custom.upload")}
-            upload
-          />
-        </div>
-      ),
-    },
-  ];
+  });
 
   return (
     <Sheet
@@ -49,10 +35,41 @@ function ThemeSheet({ setStep }: Props) {
         <>
           <SettingTitle title={t("themeContent.title")} />
           <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
-            <SegmentedControlBar segments={themes} setIndex={setIndex} />
-            {themes[index].content}
+            <SegmentedControlBar
+              value={value}
+              options={[
+                ...Object.values(BundledThemes).map((theme) => ({
+                  value: theme.id as AvailableBundledThemeId,
+                  label: dynamicT(theme.name),
+                })),
+                /* TODO: upload custom theme */
+                {
+                  value: "custom",
+                  label: t("themeContent.themes.custom.name"),
+                },
+              ]}
+              onChange={setValue}
+            />
+            {value === "custom" ? (
+              <div className="flex h-[223px] w-[421px] items-center justify-center">
+                <SetupControlButton
+                  custom={t("themeContent.themes.custom.upload")}
+                  upload
+                />
+              </div>
+            ) : (
+              <SegmentBoard
+                img={
+                  BundledThemes[value].descriptionImg
+                    ? dynamicT(BundledThemes[value].descriptionImg)
+                    : undefined
+                }
+              />
+            )}
             <div className="text-13p leading-[16px]">
-              {themes[index].description}
+              {value !== "custom" &&
+                BundledThemes[value].description &&
+                dynamicT(BundledThemes[value].description)}
             </div>
           </div>
         </>
@@ -64,14 +81,19 @@ function ThemeSheet({ setStep }: Props) {
             goBack
           />
           <SetupControlButton
-            onClick={() => {
-              setStep((prev) => prev + 1);
-            }}
+            disabled={value === "custom" /* TODO: implement custom theme */}
+            onClick={() =>
+              value !== "custom" &&
+              mutation.mutate({
+                theme: {
+                  type: "bundled",
+                  id: value,
+                },
+              })
+            }
           />
         </>
       }
     />
   );
 }
-
-export default ThemeSheet;
