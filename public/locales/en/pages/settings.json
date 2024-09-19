@@ -1,0 +1,39 @@
+{
+  "language": {
+    "title": "Language"
+  },
+  "themes": {
+    "title": "Themes",
+    "fruit": {"name": "\"The\" Fruit", "description": "The most basic and clean"},
+    "chocolate": {"name": "Chocolate", "description": "Sweet and warm like chocolate"},
+    "navy": {"name": "Navy", "description": "We love RisuAI!"},
+    "custom": {"name": "Custom", "upload": "Upload custom theme"}
+  },
+  "conversation": {
+    "title": "Customize Chat",
+    "description":"This is global chat setting. It can be overridden separately by settings in characters or chat rooms.”",
+    "options": {
+      "style": {
+        "label": "Conversation Style",
+        "choices": "Novel"
+      },
+      "typing": {
+        "label": "Typing Simulation",
+        "choices": "Active"
+      },
+      "self-intro": "Persona",
+      "default": "Reset all as default"
+    }
+  },
+  "data": {
+    "title": "Data Management",
+    "import": "Import data",
+    "export": "Export data",
+    "reset": "Delete all data and reset"
+  },
+  "dev": "What are the devs doing?",
+  "discord": "Discord Community",
+  "email": "E-mail",
+  "sponsor": "Sponsor",
+  "reset": "Reset all as default"
+}
