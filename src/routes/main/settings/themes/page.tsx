@@ -1,7 +1,7 @@
 import SettingTopBar from "@/components/SettingTopBar.tsx";
 import SegmentedControlBar from "@/components/SegmentedControlBar.tsx";
 import SegmentBoard from "@/components/SegmentBoard.tsx";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "konsta/react";
 
 export function Component() {
