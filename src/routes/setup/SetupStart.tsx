@@ -1,16 +1,14 @@
-import React from "react";
-import AreYouThereBubble from "@/components/AreYouThereBubble.tsx";
+import React, { SetStateAction } from "react";
+import AreYouThereBubble from "@/routes/setup/AreYouThereBubble.tsx";
 import { PiArrowRightBold } from "react-icons/pi";
 import { useTranslation } from "react-i18next";
-import { SetStateAction } from "react";
 import "./startButton.css";
 
-interface Props {
-  step: number;
+export interface Props {
   setStep: React.Dispatch<SetStateAction<number>>;
 }
 
-function SetupStart({ setStep }: Props) {
+export default function SetupStart({ setStep }: Props) {
   const { t } = useTranslation("pages/setup");
   return (
     <div className="flex size-full flex-col items-center tablet:w-[400px]">
@@ -40,5 +38,3 @@ function SetupStart({ setStep }: Props) {
     </div>
   );
 }
-
-export default SetupStart;

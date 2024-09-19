@@ -1,4 +1,4 @@
-import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 import { useLiveQuery } from "dexie-react-hooks";
 import { makeGlobalConfigService } from "@/domain/config/services.ts";
 import { useDb } from "@/contexts/DbContext.ts";

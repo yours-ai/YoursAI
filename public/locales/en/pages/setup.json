@@ -99,5 +99,8 @@
         "description": "It shows the character's lines ASAP.<1></1>Feels a bit robotic, but keeps the conversation flow quick."
       }
     }
+  },
+  "sheet": {
+    "startWithDefault": "Start with defaults"
   }
 }

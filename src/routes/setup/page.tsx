@@ -1,95 +1,45 @@
 import SetupLayout from "@/routes/setup/SetupLayout.tsx";
 import SetupStart from "@/routes/setup/SetupStart.tsx";
 import { Suspense, useMemo, useState } from "react";
-import Sheet from "@/components/Sheet.tsx";
-import LanguageContent from "@/routes/setup/contents/LanguageContent.tsx";
-import DataContent from "@/routes/setup/contents/DataContent.tsx";
-import ThemeContent from "@/routes/setup/contents/ThemeContent.tsx";
-import ConversationStyleContent from "@/routes/setup/contents/ConversationStyleContent.tsx";
-import ApiKeyContent from "@/routes/setup/contents/ApiKeyContent.tsx";
-import TranslateContent from "@/routes/setup/contents/TranslateContent.tsx";
-import TypingSimulationContent from "@/routes/setup/contents/TypingSimulationContent.tsx";
-import NameContent from "@/routes/setup/contents/NameContent.tsx";
-import i18n from "i18next";
-import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 import { DefaultLanguage } from "@/locales/models.ts";
+import LanguageSheet from "@/routes/setup/sheets/LanguageSheet.tsx";
+import DataSheet from "@/routes/setup/sheets/DataSheet.tsx";
+import ThemeSheet from "@/routes/setup/sheets/ThemeSheet.tsx";
+import ConversationStyleSheet from "@/routes/setup/sheets/ConversationStyleSheet.tsx";
+import { useCurrentLanguage } from "@/locales/hooks.ts";
+import ApiKeySheet from "@/routes/setup/sheets/ApiKeySheet.tsx";
+import TranslateSheet from "@/routes/setup/sheets/TranslateSheet.tsx";
+import TypingSimulationSheet from "@/routes/setup/sheets/TypingSimulationSheet.tsx";
+import NameSheet from "@/routes/setup/sheets/NameSheet.tsx";
 
 export function Component() {
-  const locale = useMemo(() => {
-    return i18n.language;
-  }, []);
+  const currentLanguage = useCurrentLanguage();
   const [step, setStep] = useState<number>(0);
-  const [btnDisabled, setBtnDisabled] = useState<boolean>(false);
 
-  const steps = [
-    <SetupStart key={0} step={step} setStep={setStep} />,
-    <Sheet
-      key={1}
-      step={step}
-      setStep={setStep}
-      content={<LanguageContent />}
-    />,
-    <Sheet key={2} step={step} setStep={setStep} content={<DataContent />} />,
-    <Sheet
-      key={3}
-      step={step}
-      setStep={setStep}
-      content={<ThemeContent setBtnDisabled={setBtnDisabled} />}
-      btnDisabled={btnDisabled}
-    />,
-    <Sheet
-      key={4}
-      step={step}
-      setStep={setStep}
-      content={<ConversationStyleContent setBtnDisabled={setBtnDisabled} />}
-      btnDisabled={btnDisabled}
-    />,
-    <Sheet
-      key={5}
-      step={step}
-      setStep={setStep}
-      content={<ApiKeyContent setBtnDisabled={setBtnDisabled} />}
-      btnDisabled={btnDisabled}
-    />,
-    <Sheet
-      key={6}
-      step={step}
-      setStep={setStep}
-      content={<TranslateContent />}
-    />,
-    <Sheet
-      key={7}
-      step={step}
-      setStep={setStep}
-      content={<TypingSimulationContent />}
-    />,
-    <Sheet
-      key={8}
-      step={step}
-      setStep={setStep}
-      content={<NameContent />}
-      last
-    />,
-  ];
-
-  const stepsNoTranslationStep = steps.filter(
-    (step) =>
-      !(
-        step.type === Sheet &&
-        step.props.content &&
-        step.props.content.type === TranslateContent
-      ),
+  const steps = useMemo(
+    () => [
+      <SetupStart key={0} setStep={setStep} />,
+      <LanguageSheet key={1} setStep={setStep} />,
+      <DataSheet key={2} setStep={setStep} />,
+      <ThemeSheet key={3} setStep={setStep} />,
+      <ConversationStyleSheet key={4} setStep={setStep} />,
+      <ApiKeySheet key={5} setStep={setStep} />,
+      ...(currentLanguage !== DefaultLanguage
+        ? [<TranslateSheet key={6} setStep={setStep} />]
+        : []),
+      <TypingSimulationSheet key={7} setStep={setStep} />,
+      <NameSheet key={8} setStep={setStep} />,
+    ],
+    [currentLanguage],
   );
   return (
     <SetupLayout>
-      <Suspense fallback={<div />}>
-        {locale !== DefaultLanguage
-          ? steps[step]
-          : stepsNoTranslationStep[step]}
-      </Suspense>
+      <Suspense fallback={<div />}>{steps[step]}</Suspense>
     </SetupLayout>
   );
 }
 
 export const ErrorBoundary = DefaultErrorBoundary;
+
 Component.displayName = "SetupPage";
