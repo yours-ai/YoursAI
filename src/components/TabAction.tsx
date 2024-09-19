@@ -26,7 +26,7 @@ function TabAction({
     <>
       <div className="w-full py-[19px] pl-4">
         <span
-          className="popover-target cursor-pointer text-18p leading-[22px] text-accentBlue duration-150 hover:text-accentBlueHover"
+          className={`${action === "none" ? "text-transparent" : "cursor-pointer text-accentBlue hover:text-accentBlueHover"} popover-target  select-none text-18p  leading-[22px] duration-150`}
           onClick={() => {
             openPopover(".popover-target");
           }}
