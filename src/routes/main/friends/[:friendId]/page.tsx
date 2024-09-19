@@ -6,7 +6,7 @@ import {
   PiPlusCircleFill,
 } from "react-icons/pi";
 import { Dialog, DialogButton } from "konsta/react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const FriendsButton = ({
   icon,
@@ -43,6 +43,7 @@ const ContactItem = ({
 };
 
 export function Component() {
+  const { friendId } = useParams();
   useRightPrimaryPage();
   const [deleteDialogOpened, setDeleteDialogOpened] = useState<boolean>(false);
 
@@ -55,7 +56,7 @@ export function Component() {
             alt="sena-profile-image"
             className="size-[120px] rounded-full object-cover object-center"
           />
-          <div className="text-[36px] text-white">세나</div>
+          <div className="text-[36px] text-white">{friendId}</div>
           <div className="flex gap-[10px]">
             <FriendsButton
               icon={<PiChatCircleFill />}

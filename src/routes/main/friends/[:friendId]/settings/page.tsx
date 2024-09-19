@@ -1,11 +1,13 @@
 import SettingTopBar from "@/components/SettingTopBar.tsx";
 import ListContainer from "@/components/ListContainer.tsx";
 import { ListItem } from "konsta/react";
+import { useParams } from "react-router-dom";
 
 export function Component() {
+  const { friendId } = useParams();
   return (
     <div className="size-full bg-emptyBackground">
-      <SettingTopBar title="세나 대화 설정 커스텀" enableBack />
+      <SettingTopBar title={`${friendId} 대화 설정 커스텀`} enableBack />
       <div className="flex w-full flex-col gap-[20px] px-[190px]">
         <div className="mt-[20px] pl-[15px] text-16p leading-[22px] text-black/50">
           여기서 수정한 대화 설정은 세나와의 모든 대화에 기본으로 적용됩니다.

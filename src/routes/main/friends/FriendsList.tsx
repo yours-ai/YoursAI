@@ -8,6 +8,7 @@ function FriendsList({ characters }: { characters: Character[] }) {
         <FriendCard
           key={index}
           name={character.name}
+          slug={character.slug}
           image={character.image}
           description={character.description}
         />
