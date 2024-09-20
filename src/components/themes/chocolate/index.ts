@@ -8,6 +8,11 @@ import MessageRoom from "@/components/themes/chocolate/MessageRoom.tsx";
 import MessageRoomSettings from "@/components/themes/chocolate/MessageRoomSettings.tsx";
 import MessageRoomSettingsCustom from "@/components/themes/chocolate/MessageRoomSettingsCustom.tsx";
 import { SettingList } from "@/components/themes/chocolate/SettingList.tsx";
+import { SettingLanguage } from "@/components/themes/chocolate/SettingLanguage.tsx";
+import { SettingThemes } from "@/components/themes/chocolate/SettingThemes.tsx";
+import { SettingData } from "@/components/themes/chocolate/SettingData.tsx";
+import { SettingConversation } from "@/components/themes/chocolate/SettingConversation.tsx";
+import { SettingSponsor } from "@/components/themes/chocolate/SettingSponsor.tsx";
 
 export default async function getTheChocolateTheme(): Promise<Theme> {
   const descriptionImgBlob = await fetchDescriptionImgBlob();
@@ -35,6 +40,11 @@ export default async function getTheChocolateTheme(): Promise<Theme> {
       MessageRoomSettings,
       MessageRoomSettingsCustom,
       SettingList,
+      SettingLanguage,
+      SettingThemes,
+      SettingData,
+      SettingConversation,
+      SettingSponsor,
     },
   };
 }

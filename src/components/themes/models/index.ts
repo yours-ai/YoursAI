@@ -22,6 +22,11 @@ export interface Theme {
     MessageRoomSettings: React.ComponentType<MessageRoomSettingsProps>;
     MessageRoomSettingsCustom: React.ComponentType<MessageRoomSettingsCustomProps>;
     SettingList: React.ComponentType;
+    SettingLanguage: React.ComponentType;
+    SettingThemes: React.ComponentType;
+    SettingConversation: React.ComponentType;
+    SettingData: React.ComponentType;
+    SettingSponsor: React.ComponentType;
   };
 }
 

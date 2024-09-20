@@ -67,12 +67,28 @@ const router = createBrowserRouter([
         lazy: () => import("./routes/main/settings/page.tsx"),
         children: [
           {
-            path: "/main/settings/:settingsId",
-            lazy: () => import("@/routes/main/settings/[:settingsId]/page.tsx"),
-          },
-          {
             path: "/main/settings",
             lazy: () => import("./routes/main/empty.tsx"),
+          },
+          {
+            path: "/main/settings/language",
+            lazy: () => import("./routes/main/settings/language/page.tsx"),
+          },
+          {
+            path: "/main/settings/themes",
+            lazy: () => import("./routes/main/settings/themes/page.tsx"),
+          },
+          {
+            path: "/main/settings/conversation",
+            lazy: () => import("./routes/main/settings/conversation/page.tsx"),
+          },
+          {
+            path: "/main/settings/data",
+            lazy: () => import("./routes/main/settings/data/page.tsx"),
+          },
+          {
+            path: "/main/settings/sponsor",
+            lazy: () => import("./routes/main/settings/sponsor/page.tsx"),
           },
         ],
       },
