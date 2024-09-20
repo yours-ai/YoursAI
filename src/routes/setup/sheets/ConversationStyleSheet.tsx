@@ -112,7 +112,7 @@ export default function ConversationStyleSheet({ config, setStep }: Props) {
               <SegmentedControlBar
                 options={[
                   ...initialPromptTemplates.map((template) => ({
-                    value: template.uuid,
+                    value: template.pk!,
                     label: dynamicT(template.metadata.name),
                   })),
                   {

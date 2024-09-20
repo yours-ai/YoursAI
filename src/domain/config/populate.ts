@@ -3,7 +3,7 @@ import { DefaultPromptTemplateUUID } from "@/domain/chat/populate.ts";
 import { Db } from "@/domain/db.ts";
 
 export const initialGlobalConfig: GlobalConfig = {
-  id: "oneAndOnly",
+  pk: "oneAndOnly",
   theme: {
     type: "bundled",
     id: "theFruit",

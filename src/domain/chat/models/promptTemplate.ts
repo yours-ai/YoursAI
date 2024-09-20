@@ -1,14 +1,17 @@
 import { z } from "zod";
 import { translatableStringSchema } from "@/locales/models.ts";
-import { pkSchema, translatableBlobSchema } from "@/contrib/zod/schemas.ts";
+import {
+  flatJsonSchemaSchema,
+  modelSchema,
+  translatableBlobSchema,
+} from "@/contrib/zod/schemas.ts";
 
 export const promptItemSchema = z.object({
   type: z.enum(["user", "assistant"]),
   content: z.string(),
 });
 
-export const llmSettingsSchema = z.object({
-  model: z.string(),
+export const optionalParamsSchema = z.object({
   frequency_penalty: z.number().min(-2).max(2).optional(),
   presence_penalty: z.number().min(-2).max(2).optional(),
   max_tokens: z.number().positive().optional(),
@@ -25,19 +28,22 @@ export const metadataSchema = z.object({
   descriptionImg: translatableBlobSchema.optional(),
 });
 
-export const promptConfigSchema = z.object({
-  llmParams: llmSettingsSchema,
-  maxContextTokens: z.number().positive(),
-  messageItems: z.array(promptItemSchema),
+export const functionSchema = z.object({
+  name: z.string().min(1),
+  description: z.string().min(1),
+  parameters: flatJsonSchemaSchema,
 });
 
-export const promptTemplateSchema = z.object({
-  uuid: pkSchema,
+export const promptTemplateSchema = modelSchema.extend({
   metadata: metadataSchema,
-  promptConfig: promptConfigSchema,
+  model: z.string(),
+  maxContextTokens: z.number().positive(),
+  function: functionSchema,
+  messageItems: z.array(promptItemSchema),
+  optionalParams: optionalParamsSchema.optional(),
   isInitial: z.boolean().optional(),
 });
 
 export type PromptItem = z.infer<typeof promptItemSchema>;
-export type LlmSettings = z.infer<typeof llmSettingsSchema>;
+export type LlmSettings = z.infer<typeof optionalParamsSchema>;
 export type PromptTemplate = z.infer<typeof promptTemplateSchema>;

@@ -35,7 +35,7 @@ export const conversationConfigSchema = z.object({
 export const GlobalConfigId = "oneAndOnly";
 
 export const globalConfigSchema = z.object({
-  id: z.enum([GlobalConfigId]),
+  pk: z.enum([GlobalConfigId]),
   theme: themeConfigSchema,
   language: z.union([availableLanguageSchema, z.null()]),
   conversationConfig: conversationConfigSchema,
