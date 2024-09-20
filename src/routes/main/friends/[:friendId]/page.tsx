@@ -1,19 +1,17 @@
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
+import { useTheme } from "@/hooks/useTheme.ts";
 
 export function Component() {
   const { friendId } = useParams();
   useRightPrimaryPage();
-
-  return (
-    <div className="size-full">
-      <div className="flex size-96 items-center justify-center bg-gray-200 text-3xl">
-        This is friends detail page for id: {friendId}
-      </div>
-      <Link to="../">Back</Link>
-    </div>
-  );
+  const theme = useTheme();
+  if (!theme) return null;
+  const {
+    components: { FriendDetail },
+  } = theme;
+  return <FriendDetail friendId={friendId} />;
 }
 
 Component.displayName = "FriendsDetailPage";

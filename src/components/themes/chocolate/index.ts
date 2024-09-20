@@ -13,6 +13,7 @@ import { SettingThemes } from "@/components/themes/chocolate/SettingThemes.tsx";
 import { SettingData } from "@/components/themes/chocolate/SettingData.tsx";
 import { SettingConversation } from "@/components/themes/chocolate/SettingConversation.tsx";
 import { SettingSponsor } from "@/components/themes/chocolate/SettingSponsor.tsx";
+import FriendDetail from "@/components/themes/chocolate/FriendDetail.tsx";
 
 export default async function getTheChocolateTheme(): Promise<Theme> {
   const descriptionImgBlob = await fetchDescriptionImgBlob();
@@ -45,6 +46,7 @@ export default async function getTheChocolateTheme(): Promise<Theme> {
       SettingData,
       SettingConversation,
       SettingSponsor,
+      FriendDetail,
     },
   };
 }
