@@ -30,9 +30,9 @@ function NavItem({ isActive, icon, label, path }: NavItemProps) {
 }
 
 export default function TabNavigation() {
-  const matchFriendsTab = useMatch(navigationPaths.friends);
-  const matchMessagesTab = useMatch(navigationPaths.messages);
-  const matchSettingsTab = useMatch(navigationPaths.settings);
+  const matchFriendsTab = useMatch(navigationPaths.friends + "/*");
+  const matchMessagesTab = useMatch(navigationPaths.messages + "/*");
+  const matchSettingsTab = useMatch(navigationPaths.settings + "/*");
   return (
     <div className="flex h-[58px] border-t-2 bg-[#F9F9FA]">
       <NavItem
