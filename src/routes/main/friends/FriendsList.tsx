@@ -29,7 +29,6 @@ function FriendsList({ characters }: { characters: Character[] }) {
       setChangeToSingleColumn(false);
     }
   }, [divWidth, setChangeToSingleColumn]);
-  console.log(isWidthInitialized);
 
   return (
     <div
