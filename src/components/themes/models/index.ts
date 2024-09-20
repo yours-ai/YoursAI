@@ -3,7 +3,6 @@ import getTheFruitTheme from "@/components/themes/theFruit";
 import getChocolateTheme from "@/components/themes/chocolate";
 import { AvailableBundledThemeId } from "@/domain/config/models.ts";
 import { Translatable, TranslatableString } from "@/locales/models.ts";
-import { TranslatableString } from "@/locales/models.ts";
 import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
 import { MessageRoomSettingsProps } from "@/components/themes/models/MessageRoomSettings.ts";
 import { MessageRoomSettingsCustomProps } from "@/components/themes/models/MessageRoomSettingsCustom.ts";

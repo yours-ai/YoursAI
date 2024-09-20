@@ -2,7 +2,7 @@ import { Link, PathMatch, useMatch } from "react-router-dom";
 import { BsPersonFill } from "react-icons/bs";
 import { IoChatbubble } from "react-icons/io5";
 import { FaGear } from "react-icons/fa6";
-import { navigationPaths } from "@/components/themes/models/constants.ts";
+import { navigationPaths } from "@/constants.ts";
 
 interface NavItemProps {
   isActive: PathMatch<string> | null;
