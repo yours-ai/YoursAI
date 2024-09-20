@@ -9,15 +9,19 @@ function FriendsList({ characters }: { characters: Character[] }) {
   );
   const [changeToSingleColumn, setChangeToSingleColumn] =
     useState<boolean>(false);
+  const [isWidthInitialized, setIsWidthInitialized] = useState<boolean>(false);
+
   useEffect(() => {
     const updateDivWidth = () => {
       if (divRef.current) {
         setDivWidth(divRef.current.offsetWidth);
+        setIsWidthInitialized(true);
       }
     };
     updateDivWidth();
     window.addEventListener("resize", updateDivWidth);
   }, []);
+
   useEffect(() => {
     if (divWidth && divWidth < 340) {
       setChangeToSingleColumn(true);
@@ -25,20 +29,26 @@ function FriendsList({ characters }: { characters: Character[] }) {
       setChangeToSingleColumn(false);
     }
   }, [divWidth, setChangeToSingleColumn]);
+  console.log(isWidthInitialized);
+
   return (
     <div
       ref={divRef}
       className={`grid w-full gap-[10px] ${changeToSingleColumn ? "grid-cols-1" : "grid-cols-2"}`}
     >
-      {characters.map((character, index) => (
-        <FriendCard
-          key={index}
-          name={character.name}
-          slug={character.slug}
-          image={character.image}
-          description={character.description}
-        />
-      ))}
+      {isWidthInitialized && (
+        <>
+          {characters.map((character, index) => (
+            <FriendCard
+              key={index}
+              name={character.name}
+              slug={character.slug}
+              image={character.image}
+              description={character.description}
+            />
+          ))}
+        </>
+      )}
     </div>
   );
 }
