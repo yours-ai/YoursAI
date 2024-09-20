@@ -33,27 +33,40 @@ export function Component() {
     }
   }, [config, db]);
 
-  const steps = useMemo(
-    () =>
-      [
-        <SetupStart key={0} setStep={setStep} />,
-        <LanguageSheet key={1} setStep={setStep} />,
-        <DataSheet key={2} setStep={setStep} />,
-        config && <ThemeSheet config={config} key={3} setStep={setStep} />,
-        config && (
-          <ConversationStyleSheet key={4} config={config} setStep={setStep} />
-        ),
-        needAPIKeySetup && <ApiKeySheet key={5} setStep={setStep} />,
-        config && currentLanguage !== DefaultLanguage && (
-          <TranslateSheet config={config} key={6} setStep={setStep} />
-        ),
-        config && (
-          <TypingSimulationSheet key={7} setStep={setStep} config={config} />
-        ),
-        config && <PersonaSheet config={config} key={8} setStep={setStep} />,
-      ].filter(Boolean),
-    [config, currentLanguage, needAPIKeySetup],
-  );
+  const steps = useMemo(() => {
+    const stepsLength = [
+      true,
+      true,
+      true,
+      Boolean(config),
+      Boolean(config),
+      Boolean(needAPIKeySetup),
+      Boolean(config && currentLanguage !== DefaultLanguage),
+      Boolean(config),
+      Boolean(config),
+    ].filter(Boolean).length;
+    return [
+      <SetupStart key={0} setStep={setStep} />,
+      <LanguageSheet key={1} setStep={setStep} />,
+      <DataSheet
+        key={2}
+        setStep={setStep}
+        goToLastStep={() => setStep(stepsLength - 1)}
+      />,
+      config && <ThemeSheet config={config} key={3} setStep={setStep} />,
+      config && (
+        <ConversationStyleSheet key={4} config={config} setStep={setStep} />
+      ),
+      needAPIKeySetup && <ApiKeySheet key={5} setStep={setStep} />,
+      config && currentLanguage !== DefaultLanguage && (
+        <TranslateSheet config={config} key={6} setStep={setStep} />
+      ),
+      config && (
+        <TypingSimulationSheet key={7} setStep={setStep} config={config} />
+      ),
+      config && <PersonaSheet config={config} key={8} setStep={setStep} />,
+    ].filter(Boolean);
+  }, [config, currentLanguage, needAPIKeySetup]);
 
   return (
     <SetupLayout>

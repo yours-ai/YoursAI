@@ -2,10 +2,11 @@ import { Trans, useTranslation } from "react-i18next";
 import AlertButton from "@/components/macos/AlertButton.tsx";
 
 export interface Props {
+  onYes: () => void;
   onClose: () => void;
 }
 
-export default function AllDefaultStartModal({ onClose }: Props) {
+export default function AllDefaultStartModal({ onClose, onYes }: Props) {
   const { t } = useTranslation("pages/setup");
   return (
     <div className="absolute inset-0 rounded-[10px] bg-white/50">
@@ -34,7 +35,10 @@ export default function AllDefaultStartModal({ onClose }: Props) {
               label={t("allDefaultStart.alertButton.left")}
               onClick={onClose}
             />
-            <AlertButton label={t("allDefaultStart.alertButton.right")} />
+            <AlertButton
+              label={t("allDefaultStart.alertButton.right")}
+              onClick={onYes}
+            />
           </div>
         </div>
       </div>

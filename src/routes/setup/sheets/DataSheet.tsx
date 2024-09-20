@@ -9,12 +9,13 @@ import Tooltip from "@/components/macos/Tooltip.tsx";
 import AllDefaultStartModal from "@/routes/setup/sheets/AllDefaultStartModal.tsx";
 
 export interface Props {
+  goToLastStep: () => void;
   setStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
 type DataOptions = "default" | "local" | "cloud";
 
-export default function DataSheet({ setStep }: Props) {
+export default function DataSheet({ setStep, goToLastStep }: Props) {
   const { t } = useTranslation("pages/setup");
   const [selectedOption, setSelectedOption] = useState<DataOptions>("default");
   const handleOptionClick = (option: DataOptions) => {
@@ -29,6 +30,7 @@ export default function DataSheet({ setStep }: Props) {
         allDefaultStartModalOpen && (
           <AllDefaultStartModal
             onClose={() => setAllDefaultStartModalOpen(false)}
+            onYes={goToLastStep}
           />
         )
       }
