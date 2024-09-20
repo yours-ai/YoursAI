@@ -13,7 +13,7 @@ importers:
         version: 0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@reduxjs/toolkit':
         specifier: ^2.2.7
-        version: 2.2.7(react-redux@9.1.2(@types/react@18.3.4)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.2.7(react-redux@9.1.2(@types/react@18.3.5)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@tanstack/react-query':
         specifier: ^5.55.4
         version: 5.55.4(react@18.3.1)
@@ -22,7 +22,7 @@ importers:
         version: 4.0.8
       dexie-react-hooks:
         specifier: ^1.1.7
-        version: 1.1.7(@types/react@18.3.4)(dexie@4.0.8)(react@18.3.1)
+        version: 1.1.7(@types/react@18.3.5)(dexie@4.0.8)(react@18.3.1)
       i18next:
         specifier: ^23.15.1
         version: 23.15.1
@@ -61,7 +61,7 @@ importers:
         version: 9.1.2(@types/react@18.3.4)(react@18.3.1)(redux@5.0.1)
       react-router-dom:
         specifier: ^6.26.1
-        version: 6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.26.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-type-animation:
         specifier: ^3.2.0
         version: 3.2.0(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6408,7 +6408,7 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.32.0
 
-  vitest@2.0.5(@types/node@20.16.2)(terser@5.32.0):
+  vitest@2.0.5(@types/node@18.19.50)(terser@5.31.6):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.5
