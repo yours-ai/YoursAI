@@ -2,7 +2,7 @@ import { PromptTemplate } from "@/domain/chat/models.ts";
 import { fetchDescriptionImgBlob } from "./descriptionImg.ts";
 import { Db } from "@/domain/db.ts";
 
-export const DefaultPromptTemplateUUID = "69a20bb6-b091-44a4-85cd-f52f0b19f531";
+export const DefaultPromptTemplateUUID = "a9a20bb6-b091-44a4-85cd-f52f0b19f531";
 
 export const getInitialPromptTemplates = async (): Promise<
   PromptTemplate[]
@@ -36,7 +36,7 @@ export const getInitialPromptTemplates = async (): Promise<
       isInitial: true,
     },
     {
-      uuid: "d5ec1f11-1f44-4ca8-a52b-b7a1eaf6d98c",
+      uuid: "b5ec1f11-1f44-4ca8-a52b-b7a1eaf6d98c",
       metadata: {
         name: {
           en: "Novel",
@@ -62,7 +62,7 @@ export const getInitialPromptTemplates = async (): Promise<
       isInitial: true,
     },
     {
-      uuid: "2a418588-d1f1-4bd3-b52d-25d78564ee51",
+      uuid: "ca418588-d1f1-4bd3-b52d-25d78564ee51",
       metadata: {
         name: {
           ko: "현실형",
