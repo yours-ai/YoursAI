@@ -1,6 +1,6 @@
 import { Theme } from "@/components/themes/models";
 import getTheFruitTheme from "@/components/themes/theFruit";
-import { fetchDescriptionImgBlob } from "@/components/themes/theFruit/descriptionImg.ts";
+import { fetchDescriptionImgBlob } from "./descriptionImg.ts";
 
 export default async function getTheChocolateTheme(): Promise<Theme> {
   const descriptionImgBlob = await fetchDescriptionImgBlob();
