@@ -1,6 +1,6 @@
 import { PromptTemplate } from "@/domain/chat/models.ts";
-import { Transaction } from "dexie";
 import { fetchDescriptionImgBlob } from "./descriptionImg.ts";
+import { Db } from "@/domain/db.ts";
 
 export const DefaultPromptTemplateUUID = "69a20bb6-b091-44a4-85cd-f52f0b19f531";
 
@@ -90,7 +90,7 @@ export const getInitialPromptTemplates = async (): Promise<
   ];
 };
 
-export const chatPopulate = async (tx: Transaction) => {
+export const chatPopulate = async (db: Db) => {
   const initialPromptTemplates = await getInitialPromptTemplates();
-  await tx.table("promptTemplates").bulkPut(initialPromptTemplates);
+  await db.promptTemplates.bulkPut(initialPromptTemplates);
 };

@@ -1,6 +1,6 @@
 import { GlobalConfig } from "./models.ts";
-import { Transaction } from "dexie";
 import { DefaultPromptTemplateUUID } from "@/domain/chat/populate.ts";
+import { Db } from "@/domain/db.ts";
 
 export const initialGlobalConfig: GlobalConfig = {
   id: "oneAndOnly",
@@ -22,6 +22,6 @@ export const initialGlobalConfig: GlobalConfig = {
   hasDoneSetup: false,
 };
 
-export const configPopulate = async (tx: Transaction) => {
-  await tx.table("globalConfigs").put(initialGlobalConfig);
+export const configPopulate = async (db: Db) => {
+  await db.globalConfigs.put(initialGlobalConfig);
 };
