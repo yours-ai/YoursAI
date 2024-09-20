@@ -10,16 +10,18 @@ export interface SegmentedControlBarProps<T> {
   options: Option<T>[];
   value: T;
   onChange: React.Dispatch<SetStateAction<T>>;
+  flexible?: boolean;
 }
 
 export default function SegmentedControlBar<T>({
   options,
   value,
   onChange,
+  flexible,
 }: SegmentedControlBarProps<T>) {
   return (
     <div
-      className="flex h-[22px] w-full max-w-[400px] justify-around rounded-[6px] p-px"
+      className={`flex w-full justify-around rounded-[6px] p-px ${flexible ? "h-[28px] max-w-[900px]" : "h-[22px] max-w-[400px]"}`}
       style={{
         backgroundColor: "rgba(0, 0, 0, 0.01)",
         boxShadow:
@@ -32,7 +34,7 @@ export default function SegmentedControlBar<T>({
           onClick={() => {
             onChange(option.value);
           }}
-          className={`relative flex size-full items-center justify-center rounded-[5px] text-13p leading-[16px] ${value === option.value ? "selected-button" : "unselected-button"} cursor-pointer select-none duration-200`}
+          className={`${flexible ? "text-14p" : "text-13p"} relative flex size-full items-center justify-center rounded-[5px] leading-[16px] ${value === option.value ? "selected-button" : "unselected-button"} cursor-pointer select-none`}
           style={{ zIndex: value === option.value ? 10 : 1 }}
         >
           {option.label}

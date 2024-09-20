@@ -13,7 +13,8 @@
     "fruit": {"name": "\"The\" Fruit", "description": "The most basic and clean"},
     "chocolate": {"name": "Chocolate", "description": "Sweet and warm like chocolate"},
     "navy": {"name": "Navy", "description": "We love RisuAI!"},
-    "custom": {"name": "Custom", "upload": "Upload custom theme"}
+    "custom": {"name": "Custom", "upload": "Upload custom theme"},
+    "change": "Change theme"
   },
   "conversation": {
     "title": "Customize Chat",
