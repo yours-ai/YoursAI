@@ -3,6 +3,7 @@ import { Message } from "@/components/themes/chocolate/MessageList.tsx";
 import MessageBubble from "@/components/themes/chocolate/MessageBubble.tsx";
 import { IoMenuOutline } from "react-icons/io5";
 import TopBar from "@/components/themes/chocolate/TopBar.tsx";
+import MessageInput from "@/components/themes/chocolate/MessageInput.tsx";
 
 const messages: Message[] = [
   {
@@ -116,6 +117,7 @@ export default function MessageRoom({ messageRoomId }: MessageRoomProps) {
           ))}
         </div>
       </div>
+      <MessageInput />
     </div>
   );
 }
