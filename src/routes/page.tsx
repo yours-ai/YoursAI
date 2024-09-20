@@ -1,13 +1,13 @@
-import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 import { useLiveQuery } from "dexie-react-hooks";
-import { makeGlobalConfigService } from "@/domain/config/services.ts";
+import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 import { useDb } from "@/contexts/DbContext.ts";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function Component() {
   const globalConfig = useLiveQuery(
-    makeGlobalConfigService(useDb()).getGlobalConfig,
+    makeGlobalConfigRepository(useDb()).getGlobalConfig,
   );
   const navigate = useNavigate();
 

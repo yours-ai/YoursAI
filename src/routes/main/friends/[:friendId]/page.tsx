@@ -1,6 +1,6 @@
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 import { Link, useParams } from "react-router-dom";
-import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 
 export function Component() {
   const { friendId } = useParams();

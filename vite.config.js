@@ -4,6 +4,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  test: {
+    setupFiles: "./src/contrib/vitest/setup.ts",
+  },
   plugins: [
     react(),
     tsconfigPaths(),
@@ -15,6 +18,9 @@ export default defineConfig({
         short_name: "YoursAI",
         description:
           "Simple yet fully customizable character role-playing frontend.",
+        display: "standalone",
+        orientation: "portrait",
+        background_color: "#ffffff",
         theme_color: "#ffffff",
         icons: [
           {

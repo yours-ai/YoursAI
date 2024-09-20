@@ -1,7 +1,7 @@
 import { Outlet, useOutletContext } from "react-router-dom";
 import SplitViewPage from "@/routes/main/SplitViewPage.tsx";
 import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
-import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 import { useTheme } from "@/hooks/useTheme.ts";
 
 export function Component() {

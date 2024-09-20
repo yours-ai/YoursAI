@@ -69,8 +69,8 @@
     "name": {
       "label": "Name",
       "placeholder": {
-        "first": "First name",
-        "second": "Last name"
+        "firstName": "First name",
+        "lastName": "Last name"
       }
     },
     "intro": {
@@ -81,10 +81,20 @@
   "themeContent": {
     "title": "Themes",
     "themes": {
-      "fruit": {"name": "\"The\" Fruit", "description": "The most basic and clean"},
-      "chocolate": {"name": "Chocolate", "description": "Sweet and warm like chocolate"},
-      "navy": {"name": "Navy", "description": "We love RisuAI!"},
       "custom": {"name": "Custom", "upload": "Upload custom theme"}
+    }
+  },
+  "translateContent": {
+    "title": "",
+    "choices": {
+      "no": {
+        "label": "",
+        "description": ""
+      },
+      "yes": {
+        "label": "",
+        "description": ""
+      }
     }
   },
   "typingSimulationContent": {
@@ -99,5 +109,8 @@
         "description": "It shows the character's lines ASAP.<1></1>Feels a bit robotic, but keeps the conversation flow quick."
       }
     }
+  },
+  "sheet": {
+    "startWithDefault": "Start with defaults"
   }
 }
