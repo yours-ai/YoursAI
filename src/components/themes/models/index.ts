@@ -4,6 +4,8 @@ import chocolateTheme from "@/components/themes/chocolate";
 import { AvailableBundledThemeId } from "@/domain/config/models.ts";
 import { TranslatableString } from "@/locales/models.ts";
 import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
+import { MessageRoomSettingsProps } from "@/components/themes/models/MessageRoomSettings.ts";
+import { MessageRoomSettingsCustomProps } from "@/components/themes/models/MessageRoomSettingsCustom.ts";
 
 export interface Theme {
   id: string;
@@ -16,6 +18,8 @@ export interface Theme {
     EmptyPane: React.ComponentType;
     MessageList: React.ComponentType;
     MessageRoom: React.ComponentType<MessageRoomProps>;
+    MessageRoomSettings: React.ComponentType<MessageRoomSettingsProps>;
+    MessageRoomSettingsCustom: React.ComponentType<MessageRoomSettingsCustomProps>;
   };
 }
 

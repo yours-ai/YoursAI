@@ -1,4 +1,6 @@
 /* eslint-disable */
+import daisyui from "daisyui";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -17,8 +19,8 @@ export default {
         "25p": "25px",
       },
       screens: {
-        'tablet': '926px',
-        'desktop': '1276px',
+        tablet: "926px",
+        desktop: "1276px",
       },
       fontFamily: {
         sans: [
@@ -38,5 +40,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [daisyui],
 };

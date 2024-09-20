@@ -2,8 +2,7 @@ import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
 import { Message } from "@/components/themes/chocolate/MessageList.tsx";
 import MessageBubble from "@/components/themes/chocolate/MessageBubble.tsx";
 import { IoMenuOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import { PiCaretLeft } from "react-icons/pi";
+import TopBar from "@/components/themes/chocolate/TopBar.tsx";
 
 const messages: Message[] = [
   {
@@ -104,21 +103,12 @@ export default function MessageRoom({ messageRoomId }: MessageRoomProps) {
   console.log(messageRoomId); // TODO <- 삭제
   return (
     <div className={`relative size-full bg-[#ABC1D1]`}>
-      <div
-        className={`sticky top-0 z-50 flex h-[90px] w-full flex-row items-end justify-between bg-[#ABC1D1]/90 px-4 pb-2`}
-      >
-        <Link className={`flex flex-row items-center`} to={"../"}>
-          <PiCaretLeft className={`size-8 text-opacity-100`} />
-          {/* TODO : 아래 동적으로*/}
-          <div className={`text-[18px]`}>4</div>
-        </Link>
-        <div className={`text-20p font-medium text-opacity-100`}>
-          멋쟁이와 대화를 해봐요
-        </div>
-        <Link to={"./setting"}>
-          <IoMenuOutline className={`size-6 text-opacity-100`} />
-        </Link>
-      </div>
+      <TopBar
+        title={"멋쟁이와 대화를 해봐요"}
+        backLink={"../"}
+        leftProps={4}
+        action={<IoMenuOutline className={`size-7 text-opacity-100`} />}
+      />
       <div className="flex-1 overflow-y-scroll">
         <div className="flex flex-col items-stretch gap-2 py-4">
           {messages.map((message) => (

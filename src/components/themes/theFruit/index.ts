@@ -4,6 +4,8 @@ import EmptyPane from "./EmptyPane.tsx";
 import { Theme } from "@/components/themes/models";
 import MessageList from "@/components/themes/chocolate/MessageList.tsx";
 import MessageRoom from "@/components/themes/chocolate/MessageRoom.tsx";
+import MessageRoomSettings from "@/components/themes/chocolate/MessageRoomSettings.tsx";
+import MessageRoomSettingsCustom from "@/components/themes/chocolate/MessageRoomSettingsCustom.tsx";
 
 const theFruitTheme: Theme = {
   id: "theFruit",
@@ -21,6 +23,8 @@ const theFruitTheme: Theme = {
     EmptyPane,
     MessageList, // TODO: Change to theFruitMessageList
     MessageRoom, // TODO: Change to theFruitMessageRoom
+    MessageRoomSettings, // TODO: Change to theFruitMessageRoomSettings
+    MessageRoomSettingsCustom, // TODO: Change to theFruitMessageRoomSettingsCustom
   },
 };
 
