@@ -2,7 +2,14 @@ import { getBundledThemes, Theme } from "@/components/themes/models";
 import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useDb } from "@/contexts/DbContext.ts";
-import { useQuery } from "@tanstack/react-query";
+import { QueryClient, useQuery } from "@tanstack/react-query";
+
+export const prefetchBundledThemes = async (queryClient: QueryClient) => {
+  await queryClient.prefetchQuery({
+    queryKey: ["bundledThemes"],
+    queryFn: getBundledThemes,
+  });
+};
 
 export const useBundledThemes = () => {
   const { data } = useQuery({

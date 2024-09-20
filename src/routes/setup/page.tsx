@@ -15,6 +15,8 @@ import PersonaSheet from "@/routes/setup/sheets/PersonaSheet.tsx";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useDb } from "@/contexts/DbContext.ts";
 import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
+import { prefetchBundledThemes } from "@/hooks/useTheme.ts";
+import { useQueryClient } from "@tanstack/react-query";
 
 export function Component() {
   const currentLanguage = useCurrentLanguage();
@@ -24,6 +26,7 @@ export function Component() {
   const needAPIKeySetup = useLiveQuery(
     makeGlobalConfigRepository(db).needAPIKeySetup,
   );
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     if (config?.language === "en" && config.conversationConfig.doTranslation) {
@@ -32,6 +35,10 @@ export function Component() {
       });
     }
   }, [config, db]);
+
+  useEffect(() => {
+    void prefetchBundledThemes(queryClient);
+  }, [queryClient]);
 
   const steps = useMemo(() => {
     const stepsLength = [
