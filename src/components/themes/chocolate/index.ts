@@ -5,6 +5,7 @@ import MessageRoom from "@/components/themes/chocolate/MessageRoom.tsx";
 import MessageList from "@/components/themes/chocolate/MessageList.tsx";
 import MessageRoomSettings from "@/components/themes/chocolate/MessageRoomSettings.tsx";
 import MessageRoomSettingsCustom from "@/components/themes/chocolate/MessageRoomSettingsCustom.tsx";
+import TabNavigation from "@/components/themes/chocolate/TabNavigation.tsx";
 
 const chocolateTheme: Theme = {
   id: "chocolate",
@@ -18,6 +19,7 @@ const chocolateTheme: Theme = {
   },
   components: {
     ...theFruitTheme.components, // TODO: implement it
+    TabNavigation,
     EmptyPane,
     MessageList,
     MessageRoom,
