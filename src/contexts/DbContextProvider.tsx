@@ -8,5 +8,5 @@ export interface Props {
 
 export default function DbContextProvider({ children }: Props) {
   const [db] = useState(() => getDb());
-  return <DbContext.Provider value={db}>{children}</DbContext.Provider>;
+  return <DbContext.Provider value={db}>{db && children}</DbContext.Provider>;
 }

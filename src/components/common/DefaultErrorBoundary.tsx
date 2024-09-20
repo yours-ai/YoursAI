@@ -1,4 +1,4 @@
-import ErrorText from "@/components/ErrorText.tsx";
+import ErrorText from "@/components/common/ErrorText.tsx";
 import { useRouteError } from "react-router-dom";
 
 export default function DefaultErrorBoundary() {

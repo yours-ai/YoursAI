@@ -1,7 +1,7 @@
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 import { Link } from "react-router-dom";
 import { PiCaretLeftBold, PiCaretRight, PiListBold } from "react-icons/pi";
-import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 
 export function Component() {
   useRightPrimaryPage();

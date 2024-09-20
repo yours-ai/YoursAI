@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { translatableStringSchema } from "@/locales/models.ts";
+import { pkSchema, translatableBlobSchema } from "@/contrib/zod/schemas.ts";
 
 export const promptItemSchema = z.object({
   type: z.enum(["user", "assistant"]),
@@ -20,7 +21,8 @@ export const llmSettingsSchema = z.object({
 export const metadataSchema = z.object({
   name: translatableStringSchema,
   creator: z.string().optional(),
-  creatorDescription: translatableStringSchema.optional(),
+  description: translatableStringSchema.optional(),
+  descriptionImg: translatableBlobSchema.optional(),
 });
 
 export const promptConfigSchema = z.object({
@@ -30,9 +32,10 @@ export const promptConfigSchema = z.object({
 });
 
 export const promptTemplateSchema = z.object({
-  uuid: z.string(),
+  uuid: pkSchema,
   metadata: metadataSchema,
   promptConfig: promptConfigSchema,
+  isInitial: z.boolean().optional(),
 });
 
 export type PromptItem = z.infer<typeof promptItemSchema>;

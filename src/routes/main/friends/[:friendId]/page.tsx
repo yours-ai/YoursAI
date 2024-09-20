@@ -8,7 +8,7 @@ import {
 import { Dialog, DialogButton } from "konsta/react";
 import { Link, useParams } from "react-router-dom";
 import { Trans, useTranslation } from "react-i18next";
-import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 
 const FriendsButton = ({
   icon,

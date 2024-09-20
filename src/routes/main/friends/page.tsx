@@ -7,7 +7,7 @@ import TabAction from "@/components/TabAction.tsx";
 import { useState } from "react";
 import { Button } from "konsta/react";
 import { useTranslation } from "react-i18next";
-import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
+import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 
 export interface Character {
   name: string;

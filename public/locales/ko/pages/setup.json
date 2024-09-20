@@ -69,8 +69,8 @@
     "name": {
       "label": "이름",
       "placeholder": {
-        "first": "성",
-        "second": "이름"
+        "firstName": "이름",
+        "lastName": "성"
       }
     },
     "intro": {
@@ -81,10 +81,20 @@
   "themeContent": {
     "title": "테마 고르기",
     "themes": {
-      "fruit": {"name": "\"그\" 과일 테마", "description": "가장 기본적이고, 깔끔한 느낌"},
-      "chocolate": {"name": "초콜릿 테마", "description": "설빙 오레오 초코 빙수"},
-      "navy": {"name": "Navy 테마", "description": "선배님 멋져용"},
       "custom": {"name": "커스텀 테마", "upload": "커스텀 테마 파일 업로드하기"}
+    }
+  },
+  "translateContent": {
+    "title": "이중 번역 기능을 사용할까요?",
+    "choices": {
+      "no": {
+        "label": "아니요 (권장)",
+        "description": "따로 번역 기능을 사용하지 않습니다. 대화 내용이 그대로 LLM에 전달되어, 자연스러운 말투 구현에 도움을 줍니다. 토큰을 조금 더 사용하며, 덜 똑똑할 수 있습니다."
+      },
+      "yes": {
+        "label": "네",
+        "description": "번역 기능을 제공합니다. Google Translate로 번역이 이뤄집니다. 토큰을 덜 사용하지만 번역이 부자연스러울 수 있습니다."
+      }
     }
   },
   "typingSimulationContent": {
@@ -99,5 +109,8 @@
         "description": "가능한 빠르게 캐릭터의 말을 보여줍니다.<1></1>다소 기계적이지만 빠르게 대화를 이어나갈 수 있습니다."
       }
     }
+  },
+  "sheet": {
+    "startWithDefault": "모두 기본값으로 시작"
   }
 }
