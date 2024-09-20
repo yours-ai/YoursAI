@@ -22,7 +22,7 @@ export default function SplitView({
   const [primary, setPrimary] = useState<"left" | "right">("left");
 
   return (
-    <div className="relative flex">
+    <div className="relative flex bg-white text-black">
       <div
         className={`sticky top-0 min-w-[337px] tablet:basis-2/6 desktop:basis-1/4 ${primary === "left" ? "grow tablet:grow-0" : "hidden tablet:block"}`}
         style={{ height: height ?? undefined }}
