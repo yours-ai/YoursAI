@@ -1,5 +1,9 @@
 import { useCallback, useEffect } from "react";
-import { AvailableLanguage, Translatable } from "@/locales/models.ts";
+import {
+  AvailableLanguage,
+  DefaultLanguage,
+  Translatable,
+} from "@/locales/models.ts";
 import { useTranslation } from "react-i18next";
 import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 import { useDb } from "@/contexts/DbContext.ts";
@@ -10,7 +14,7 @@ export const useDynamicTranslation = () => {
   return {
     t: useCallback(
       <T>(translatable: Translatable<T>) => {
-        return translatable[language] as T;
+        return (translatable[language] ?? translatable[DefaultLanguage]) as T;
       },
       [language],
     ),
