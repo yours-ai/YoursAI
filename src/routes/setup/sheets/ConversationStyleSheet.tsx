@@ -94,7 +94,7 @@ export default function ConversationStyleSheet({ config, setStep }: Props) {
                     </Trans>
                   </p>
                 }
-                placement="top-start"
+                place="top"
               >
                 <PiQuestionBold className="text-black/50" />
               </Tooltip>

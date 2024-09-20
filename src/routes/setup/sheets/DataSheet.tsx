@@ -53,7 +53,7 @@ export default function DataSheet({ setStep, goToLastStep }: Props) {
             />
             <Tooltip
               content={t("dataContent.options.noSupport")}
-              placement="bottom-start"
+              place="bottom-start"
             >
               <DataOption
                 isSelected={selectedOption === "cloud"}
