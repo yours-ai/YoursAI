@@ -1,20 +1,21 @@
-import { Link, Outlet, useOutletContext } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
 import SplitViewPage from "@/routes/main/SplitViewPage.tsx";
 import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
 import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
+import { useTheme } from "@/hooks/useTheme.ts";
 
 export function Component() {
   useLeftPrimaryPage("/main/settings");
   const outletContext = useOutletContext();
+  const theme = useTheme();
+  if (!theme) return null;
+  const {
+    components: { SettingList },
+  } = theme;
 
   return (
     <SplitViewPage
-      leftPane={
-        <div>
-          <div className="mt-10 pl-4 text-2xl font-bold">설정</div>
-          <Link to="/main/settings/1">세팅 1</Link>
-        </div>
-      }
+      leftPane={<SettingList />}
       rightPane={<Outlet context={outletContext} />}
     />
   );

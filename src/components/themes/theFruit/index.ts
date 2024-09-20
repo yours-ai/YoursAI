@@ -7,6 +7,7 @@ import MessageList from "@/components/themes/chocolate/MessageList.tsx";
 import MessageRoom from "@/components/themes/chocolate/MessageRoom.tsx";
 import MessageRoomSettings from "@/components/themes/chocolate/MessageRoomSettings.tsx";
 import MessageRoomSettingsCustom from "@/components/themes/chocolate/MessageRoomSettingsCustom.tsx";
+import { SettingList } from "@/components/themes/chocolate/SettingList.tsx";
 
 export default async function getTheFruitTheme(): Promise<Theme> {
   const descriptionImgBlob = await fetchDescriptionImgBlob();
@@ -33,6 +34,7 @@ export default async function getTheFruitTheme(): Promise<Theme> {
       MessageRoom,
       MessageRoomSettings,
       MessageRoomSettingsCustom,
+      SettingList,
     },
   };
 }

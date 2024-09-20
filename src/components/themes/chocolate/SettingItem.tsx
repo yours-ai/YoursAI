@@ -5,12 +5,19 @@ interface Props {
   title: ReactNode;
   action?: ReactNode;
   onClick?: () => void;
+  bgColor?: string;
 }
 
-export default function SettingItem({ icon, title, action, onClick }: Props) {
+export default function SettingItem({
+  icon,
+  title,
+  action,
+  onClick,
+  bgColor = "bg-white",
+}: Props) {
   return (
     <div
-      className={`flex w-full flex-row items-center justify-stretch border-b-[0.25px] border-[#F5F5F5] p-5`}
+      className={`${bgColor} flex w-full flex-row items-center justify-stretch border-b-[0.25px] border-[#F5F5F5] px-5 py-2 transition-colors duration-100 ease-in-out`}
       onClick={onClick}
     >
       <div
@@ -19,7 +26,7 @@ export default function SettingItem({ icon, title, action, onClick }: Props) {
         {icon}
       </div>
       <div className={`flex grow flex-row items-center justify-between`}>
-        <div className={`font-medium`}>{title}</div>
+        <div className={`font-normal`}>{title}</div>
         <div>{action}</div>
       </div>
     </div>
