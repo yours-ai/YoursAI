@@ -42,7 +42,7 @@ function FriendCard({ name, image, description, slug }: Character) {
             />
           </div>
           <div
-            className="flex h-2/5 flex-col items-center justify-center rounded-b-[8px] p-4"
+            className="flex h-2/5 flex-col items-center justify-center overflow-hidden text-ellipsis rounded-b-[8px] p-4"
             style={{ background: gradient }}
           >
             <span className="text-heading-4 font-semibold">{name}</span>

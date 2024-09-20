@@ -1,9 +1,35 @@
 import FriendCard from "@/routes/main/friends/FriendCard.tsx";
 import { Character } from "@/routes/main/friends/page.tsx";
+import { useEffect, useRef, useState } from "react";
 
 function FriendsList({ characters }: { characters: Character[] }) {
+  const divRef = useRef<HTMLDivElement | null>(null);
+  const [divWidth, setDivWidth] = useState<number | undefined>(
+    divRef.current?.offsetWidth,
+  );
+  const [changeToSingleColumn, setChangeToSingleColumn] =
+    useState<boolean>(false);
+  useEffect(() => {
+    const updateDivWidth = () => {
+      if (divRef.current) {
+        setDivWidth(divRef.current.offsetWidth);
+      }
+    };
+    updateDivWidth();
+    window.addEventListener("resize", updateDivWidth);
+  }, []);
+  useEffect(() => {
+    if (divWidth && divWidth < 340) {
+      setChangeToSingleColumn(true);
+    } else {
+      setChangeToSingleColumn(false);
+    }
+  }, [divWidth, setChangeToSingleColumn]);
   return (
-    <div className="grid w-full grid-cols-2 gap-[10px]">
+    <div
+      ref={divRef}
+      className={`grid w-full gap-[10px] ${changeToSingleColumn ? "grid-cols-1" : "grid-cols-2"}`}
+    >
       {characters.map((character, index) => (
         <FriendCard
           key={index}
