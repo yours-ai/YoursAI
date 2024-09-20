@@ -1,11 +1,12 @@
 import { expect, test } from "vitest";
 import OpenAI from "openai";
-import { getTestDb } from "@/domain/utils/testDb.ts";
-import { initialPromptTemplates } from "@/domain/chat/populate.ts";
+import { getTestDb } from "@/contrib/vitest/testDb.ts";
+import { getInitialPromptTemplates } from "@/domain/chat/populate.ts";
 
 const { getDbInstance } = getTestDb();
 
 test("initial loading from db success", async () => {
+  const initialPromptTemplates = await getInitialPromptTemplates();
   const db = getDbInstance();
   const openai = new OpenAI({
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,

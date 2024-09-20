@@ -4,7 +4,7 @@ import DbContextProvider from "@/contexts/DbContextProvider.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SyncLocale from "@/locales/SyncLocale.tsx";
 import toast, { Toaster } from "react-hot-toast";
-import ErrorText from "@/components/ErrorText.tsx";
+import ErrorText from "@/components/common/ErrorText.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,7 +26,7 @@ export default function Providers({ children }: Props) {
       <DbContextProvider>
         <QueryClientProvider client={queryClient}>
           <SyncLocale>
-            <div className="relative font-sans">{children}</div>
+            <div className="relative size-full font-sans">{children}</div>
             <Toaster />
           </SyncLocale>
         </QueryClientProvider>

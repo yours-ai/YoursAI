@@ -17,8 +17,9 @@ export const getDb = () => {
     globalConfigs: "id",
   });
 
-  db.on("populate", async (tx) => {
-    await Promise.all([chatPopulate(tx), configPopulate(tx)]);
+  db.on("populate", async (_tx) => {
+    // MARK: do not use transaction to prevent transaction inactive error
+    await Promise.all([chatPopulate(db), configPopulate(db)]);
   });
 
   return db;
