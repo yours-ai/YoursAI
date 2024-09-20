@@ -19,7 +19,10 @@ export default function MessageRoomSettingsCustom({
       />
       <div className="flex-1 overflow-y-scroll">
         <div className="flex flex-col items-stretch py-5">
-          <SettingItem title={"대화 스타일"} action={`소설형`} />
+          <SettingItem
+            title={"대화 스타일"}
+            action={<div className={`font-normal text-[#B9BCBF]`}>소설형</div>}
+          />
           {/* TODO: 아래의 daisy ui 없애고 커스텀 만들기*/}
           <SettingItem
             title={"이중 번역"}

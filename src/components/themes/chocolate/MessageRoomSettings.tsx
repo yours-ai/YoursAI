@@ -22,7 +22,7 @@ export default function MessageRoomSettings({
         backLink={`../${messageRoomId}`}
         bgColor={"bg-white"}
       />
-      <div className="flex-1 overflow-y-scroll">
+      <div className="flex-1 overflow-y-scroll ">
         <div className="flex flex-col items-stretch py-5">
           <SettingItem
             icon={<PiGearSix className={`size-5`} />}
