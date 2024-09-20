@@ -1,6 +1,6 @@
 import { GlobalConfig } from "./models.ts";
 import { Transaction } from "dexie";
-import { initialPromptTemplates } from "@/domain/chat/populate.ts";
+import { DefaultPromptTemplateUUID } from "@/domain/chat/populate.ts";
 
 export const initialGlobalConfig: GlobalConfig = {
   id: "oneAndOnly",
@@ -12,7 +12,7 @@ export const initialGlobalConfig: GlobalConfig = {
   conversationConfig: {
     doTranslation: false,
     doTypingSimulation: true,
-    promptTemplateId: initialPromptTemplates[0].uuid,
+    promptTemplateId: DefaultPromptTemplateUUID,
     persona: {
       firstName: "",
       lastName: "",

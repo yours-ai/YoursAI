@@ -7,7 +7,6 @@ import { Trans, useTranslation } from "react-i18next";
 import SetupForm from "@/components/macos/SetupForm.tsx";
 import Tooltip from "@/components/macos/Tooltip.tsx";
 import Sheet from "@/components/macos/Sheet.tsx";
-import { initialPromptTemplates } from "@/domain/chat/populate.ts";
 import { useMutation } from "@tanstack/react-query";
 import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 import { useDb } from "@/contexts/DbContext.ts";
@@ -35,6 +34,13 @@ export default function ConversationStyleSheet({ config, setStep }: Props) {
   });
   const { t: dynamicT } = useDynamicTranslation();
   const db = useDb();
+  const initialPromptTemplates = useLiveQuery(
+    () =>
+      db.promptTemplates
+        .filter((template) => Boolean(template.isInitial))
+        .toArray(),
+    [],
+  );
   const promptTemplate = useLiveQuery(
     () => db.promptTemplates.get(value),
     [value],
@@ -102,20 +108,22 @@ export default function ConversationStyleSheet({ config, setStep }: Props) {
           </div>
 
           <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
-            <SegmentedControlBar
-              options={[
-                ...initialPromptTemplates.map((template) => ({
-                  value: template.uuid,
-                  label: dynamicT(template.metadata.name),
-                })),
-                {
-                  value: "custom",
-                  label: t("conversationStyleContent.styles.custom.name"),
-                },
-              ]}
-              value={value}
-              onChange={setValue}
-            />
+            {initialPromptTemplates && (
+              <SegmentedControlBar
+                options={[
+                  ...initialPromptTemplates.map((template) => ({
+                    value: template.uuid,
+                    label: dynamicT(template.metadata.name),
+                  })),
+                  {
+                    value: "custom",
+                    label: t("conversationStyleContent.styles.custom.name"),
+                  },
+                ]}
+                value={value}
+                onChange={setValue}
+              />
+            )}
             {value !== "custom" ? (
               <>
                 <SegmentBoard

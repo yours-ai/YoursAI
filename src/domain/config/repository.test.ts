@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { getTestDb } from "@/domain/utils/testDb.ts";
+import { getTestDb } from "@/contrib/vitest/testDb.ts";
 import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 import { globalConfigSchema } from "@/domain/config/models.ts";
 
