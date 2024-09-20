@@ -1,6 +1,7 @@
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 import { Link } from "react-router-dom";
 import { PiCaretLeftBold, PiCaretRight, PiListBold } from "react-icons/pi";
+import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
 
 export function Component() {
   useRightPrimaryPage();
@@ -34,3 +35,5 @@ export function Component() {
 }
 
 Component.displayName = "ChatroomPage";
+
+export const ErrorBoundary = DefaultErrorBoundary;

@@ -6,6 +6,7 @@ import TabAction from "@/components/TabAction.tsx";
 import { List, ListItem } from "konsta/react";
 import NavLinkListItem from "@/components/NavLinkListItem.tsx";
 import { useTranslation } from "react-i18next";
+import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
 
 export function Component() {
   const { t } = useTranslation("pages/settings");
@@ -61,3 +62,5 @@ export function Component() {
 }
 
 Component.displayName = "SettingsPage";
+
+export const ErrorBoundary = DefaultErrorBoundary;

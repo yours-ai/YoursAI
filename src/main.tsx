@@ -8,7 +8,7 @@ import {
 import "./index.css";
 import "pretendard/dist/web/static/pretendard.css";
 import Providers from "@/Providers.tsx";
-import "@/contrib/i18next/i18n.ts";
+import "@/locales/i18n.ts";
 import { App } from "konsta/react";
 
 const router = createBrowserRouter([

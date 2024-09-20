@@ -4,6 +4,7 @@ import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
 import TabTitle from "@/components/TabTitle.tsx";
 import MessageItemList from "@/routes/main/messages/MessageItemList.tsx";
 import TabAction from "@/components/TabAction.tsx";
+import DefaultErrorBoundary from "@/components/DefaultErrorBoundary.tsx";
 import { useTranslation } from "react-i18next";
 
 export interface Message {
@@ -172,3 +173,5 @@ export function Component() {
 }
 
 Component.displayName = "MessagesPage";
+
+export const ErrorBoundary = DefaultErrorBoundary;

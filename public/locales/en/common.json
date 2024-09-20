@@ -12,5 +12,8 @@
     "friends": "Friends",
     "messages": "Messages",
     "settings": "Settings"
+  },
+  "errorText": {
+    "text": "Unexpected error occurred.<1>{{error}}</1>If the problem persists, please contact dev at discord."
   }
 }
