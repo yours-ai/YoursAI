@@ -1,6 +1,12 @@
 {
+  "title": "Settings",
   "language": {
-    "title": "Language"
+    "title": "Language",
+    "needRestart": "Program restart is necessary.",
+    "no": "No",
+    "yes": "Yes",
+    "changeToEn": "Change language to English?",
+    "changeToKo": "Change language to Korean?"
   },
   "themes": {
     "title": "Themes",
@@ -11,7 +17,7 @@
   },
   "conversation": {
     "title": "Customize Chat",
-    "description":"This is global chat setting. It can be overridden separately by settings in characters or chat rooms.”",
+    "description":"This is global chat setting. It can be overridden separately by settings in characters or chat rooms.",
     "options": {
       "style": {
         "label": "Conversation Style",
@@ -27,13 +33,25 @@
   },
   "data": {
     "title": "Data Management",
-    "import": "Import data",
+    "import": {
+      "label": "Import data",
+      "title": "Proceed import of new data?",
+      "description": "Local chat data can be deleted.",
+      "no": "No",
+      "yes": "Yes"
+    },
     "export": "Export data",
-    "reset": "Delete all data and reset"
+    "reset": {
+      "label": "Delete all data and reset",
+      "title": "Proceed data deletion?",
+      "description": "All chat data and settings will get<1></1>deleted permanently.",
+      "no": "No",
+      "yes": "Yes"
+    }
   },
   "dev": "What are the devs doing?",
   "discord": "Discord Community",
-  "email": "E-mail",
+  "email": "Email",
   "sponsor": "Sponsor",
   "reset": "Reset all as default"
 }

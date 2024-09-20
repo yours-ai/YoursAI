@@ -3,14 +3,16 @@ import ListContainer from "@/components/ListContainer.tsx";
 import { Dialog, DialogButton, ListItem } from "konsta/react";
 import { useState } from "react";
 import { PiCheckBold } from "react-icons/pi";
+import { useTranslation } from "react-i18next";
 
 export function Component() {
+  const { t } = useTranslation("pages/settings");
   const [selectedLanguage, setSelectedLanguage] = useState<"ko" | "en">("ko"); // 추후 dynamic하게 바꿔야함
   const [koOpened, setKoOpened] = useState<boolean>(false);
   const [enOpened, setEnOpened] = useState<boolean>(false);
   return (
     <div className="size-full bg-emptyBackground">
-      <SettingTopBar title="언어" />
+      <SettingTopBar title={t("language.title")} />
       <div className="flex w-full flex-col gap-[20px] px-[190px] pt-[32px]">
         <ListContainer>
           <ListItem
@@ -50,16 +52,16 @@ export function Component() {
         onBackdropClick={() => setKoOpened(false)}
         title={
           <p className="text-16p font-semibold leading-[22px]">
-            언어를 한국어로 변경하시겠어요?
+            {t("language.changeToKo")}
           </p>
         }
         content={
-          <p className="text-13p leading-[18px]">재시작이 필요합니다.</p>
+          <p className="text-13p leading-[18px]">{t("language.needRestart")}</p>
         }
         buttons={
           <>
             <DialogButton onClick={() => setKoOpened(false)}>
-              아니요
+              {t("language.no")}
             </DialogButton>
             <DialogButton
               onClick={() => {
@@ -68,7 +70,7 @@ export function Component() {
               }}
               className="font-semibold"
             >
-              네
+              {t("language.yes")}
             </DialogButton>
           </>
         }
@@ -78,14 +80,16 @@ export function Component() {
         onBackdropClick={() => setEnOpened(false)}
         title={
           <p className="text-16p font-semibold leading-[22px]">
-            언어를 English로 변경하시겠어요?
+            {t("language.changeToEn")}
           </p>
         }
-        content={<p className="text-13p leading-[18x]">재시작이 필요합니다.</p>}
+        content={
+          <p className="text-13p leading-[18x]">{t("language.needRestart")}</p>
+        }
         buttons={
           <>
             <DialogButton onClick={() => setEnOpened(false)}>
-              아니요
+              {t("language.no")}
             </DialogButton>
             <DialogButton
               onClick={() => {
@@ -94,7 +98,7 @@ export function Component() {
               }}
               className="font-semibold"
             >
-              네
+              {t("language.yes")}
             </DialogButton>
           </>
         }

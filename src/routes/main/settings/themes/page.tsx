@@ -3,31 +3,33 @@ import SegmentedControlBar from "@/components/SegmentedControlBar.tsx";
 import SegmentBoard from "@/components/SegmentBoard.tsx";
 import { useState } from "react";
 import { Button } from "konsta/react";
+import { useTranslation } from "react-i18next";
 
 export function Component() {
+  const { t } = useTranslation("pages/settings");
   const [index, setIndex] = useState(0);
   const themes = [
     {
-      title: '"그" 과일 테마',
+      title: t("themes.fruit.name"),
       content: <SegmentBoard big />,
-      description: "가장 기본적이고, 깔끔한 느낌",
+      description: t("themes.fruit.description"),
     },
     {
-      title: "초콜릿 테마",
+      title: t("themes.chocolate.name"),
       content: <SegmentBoard big />,
-      description: "설빙 오레오 초코 빙수",
+      description: t("themes.chocolate.description"),
     },
     {
-      title: "Navy 테마",
+      title: t("themes.navy.name"),
       content: <SegmentBoard big />,
-      description: "선배님 멋져용",
+      description: t("themes.navy.description"),
     },
     {
-      title: "커스텀",
+      title: t("themes.custom.name"),
       content: (
         <div>
           <Button className="mt-[60px] rounded-[12px] px-[20px] py-[21px]">
-            커스텀 테마 파일 업로드하기
+            {t("themes.custom.upload")}
           </Button>
         </div>
       ),
@@ -36,7 +38,7 @@ export function Component() {
 
   return (
     <div className="size-full bg-emptyBackground">
-      <SettingTopBar title="테마" />
+      <SettingTopBar title={t("themes.title")} />
       <div className="flex w-full flex-col items-center gap-[20px] px-[140px] pt-[32px]">
         <SegmentedControlBar segments={themes} setIndex={setIndex} flexible />
         {themes[index].content}
