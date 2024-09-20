@@ -23,7 +23,7 @@ export default function MessageBubbleText({
         className={`${!needBubbleTail ? "hidden" : ""} ${isFromUser ? "right-[8px]" : "left-[8px]"} absolute top-0 z-20 size-[30px] rounded-[17px] bg-white`}
       />
       <div
-        className={`top-0 z-50 mx-2 rounded-[17px] bg-white p-3 text-16p text-black`}
+        className={`top-0 z-40 mx-2 rounded-[17px] bg-white p-3 text-16p text-black`}
       >
         {message}
       </div>
