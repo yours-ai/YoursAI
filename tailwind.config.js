@@ -43,6 +43,7 @@ export default konstaConfig({
         sm: "14px",
       },
       screens: {
+        phone: "500px",
         tablet: "926px",
         cardSplit: "1100px",
         desktop: "1276px",

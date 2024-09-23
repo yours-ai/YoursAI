@@ -1,8 +1,10 @@
 import { PiCaretLeftBold } from "react-icons/pi";
 import { List, ListItem } from "konsta/react";
 import { useTranslation } from "react-i18next";
+import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 
 export function Component() {
+  useRightPrimaryPage();
   const { t } = useTranslation("pages/msg");
   return (
     <div className="size-full bg-emptyBackground">
@@ -21,7 +23,7 @@ export function Component() {
         </span>
       </div>
 
-      <div className="flex w-full flex-col gap-[20px] px-[190px]">
+      <div className="flex w-full flex-col gap-[20px] px-[30px] tablet:px-[80px] desktop:px-[190px]">
         <div className="mt-[20px] pl-[15px] text-16p leading-[22px] text-black/50">
           {t("settings.custom.description")}
         </div>
