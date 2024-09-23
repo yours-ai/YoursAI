@@ -26,6 +26,7 @@ export default konstaConfig({
       fontSize: {
         "10p": "10px",
         "11p": "11px",
+        "12p": "12px",
         "13p": "13px",
         "14p": "14px",
         "15p": "15px",

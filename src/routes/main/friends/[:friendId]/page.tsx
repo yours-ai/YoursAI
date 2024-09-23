@@ -1,6 +1,7 @@
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 import { ReactNode, useState } from "react";
 import {
+  PiCaretLeftBold,
   PiChatCircleFill,
   PiGearSixFill,
   PiPlusCircleFill,
@@ -21,10 +22,10 @@ const FriendsButton = ({
 }) => {
   return (
     <div
-      className={`flex w-[132px] flex-col items-center justify-center gap-[6px] rounded-[8px] bg-black/40 py-[10px] ${disabled ? "text-white/25" : "cursor-pointer text-white hover:bg-black/50"} text-white duration-150`}
+      className={`flex w-[100px] flex-col items-center justify-center gap-[6px] rounded-[8px] bg-black/40 py-[10px] phone:w-[132px] ${disabled ? "text-white/25" : "cursor-pointer text-white hover:bg-black/50"} text-white duration-150`}
     >
-      <div className="text-34p ">{icon}</div>
-      <span className="text-14p leading-[18px]">{label}</span>
+      <div className="text-[30px] phone:text-34p">{icon}</div>
+      <span className="text-12p leading-[18px] phone:text-14p">{label}</span>
     </div>
   );
 };
@@ -37,7 +38,7 @@ const ContactItem = ({
   content: string;
 }) => {
   return (
-    <div className="w-[417px] border-b border-border p-[10px]">
+    <div className="w-full border-b  border-border p-[10px] phone:w-[417px]">
       <div className="text-14p">{label}</div>
       <div className="text-16p text-accentBlue">{content}</div>
     </div>
@@ -52,7 +53,12 @@ export function Component() {
 
   return (
     <div className="size-full">
-      <div className="flex items-center justify-center bg-tabUnselected pb-[30px] pt-[50px]">
+      <div className="relative flex items-center justify-center bg-tabUnselected pb-[30px] pt-[50px]">
+        <Link to="../">
+          <div className="absolute left-[10px] top-[10px] text-24p text-accentBlue">
+            <PiCaretLeftBold />
+          </div>
+        </Link>
         <div className="flex flex-col items-center gap-[18px]">
           <img
             src="/sena.png"
@@ -79,17 +85,16 @@ export function Component() {
           </div>
         </div>
       </div>
-      <div className="mt-[22px] flex flex-col items-center">
+      <div className="mt-[22px] flex flex-col items-center px-[10px] phone:px-0">
         <ContactItem label={t("contactItem.creator")} content="narayo9" />
         <ContactItem
           label={t("contactItem.creatorIntro")}
           content="조용하고 따듯한 마음을 가진, 독서를 즐기는 소녀입니다."
         />
-        <div
-          className="w-[417px] cursor-pointer p-[10px] text-14p text-red duration-150 hover:text-redHover"
-          onClick={() => setDeleteDialogOpened(true)}
-        >
-          {t("delete.label")}
+        <div className="w-full cursor-pointer p-[10px] text-14p text-red duration-150 hover:text-redHover phone:w-[417px]">
+          <span onClick={() => setDeleteDialogOpened(true)}>
+            {t("delete.label")}
+          </span>
         </div>
       </div>
       <Dialog
