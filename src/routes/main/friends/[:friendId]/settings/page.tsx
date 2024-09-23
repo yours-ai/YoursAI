@@ -3,10 +3,12 @@ import ListContainer from "@/components/ListContainer.tsx";
 import { ListItem } from "konsta/react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 
 export function Component() {
-  const { t } = useTranslation("pages/friends");
+  useRightPrimaryPage();
   const { friendId } = useParams();
+  const { t } = useTranslation("pages/friends");
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title={`${friendId} ${t("settings.title")}`} enableBack />

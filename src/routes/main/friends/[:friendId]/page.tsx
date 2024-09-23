@@ -60,7 +60,7 @@ export function Component() {
             className="size-[120px] rounded-full object-cover object-center"
           />
           <div className="text-[36px] text-white">{friendId}</div>
-          <div className="flex gap-[10px]">
+          <div className="mx-[15px] flex gap-[10px]">
             <FriendsButton
               icon={<PiChatCircleFill />}
               label={t("friendButton.continue")}
