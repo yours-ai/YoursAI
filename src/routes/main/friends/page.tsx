@@ -41,6 +41,30 @@ const characters = [
     image: "/yui.jpg",
     description: "수업째고 너 보러왔어",
   },
+  {
+    name: "세나",
+    slug: "sena",
+    image: "/sena.png",
+    description: "오늘도 꽃처럼 빛나는 하루🌸",
+  },
+  {
+    name: "김지아",
+    slug: "jia",
+    image: "/jia.png",
+    description: "생각이 많아지는 날, 잠시 멍하니...🙃",
+  },
+  {
+    name: "애린",
+    slug: "aerin",
+    image: "/aerin.jpg",
+    description: "사천짜파게티가 땡기는 날🤤",
+  },
+  {
+    name: "유이",
+    slug: "yui",
+    image: "/yui.jpg",
+    description: "수업째고 너 보러왔어",
+  },
 ];
 
 export function Component() {

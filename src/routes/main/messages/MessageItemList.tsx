@@ -3,7 +3,7 @@ import { Message } from "@/routes/main/messages/page.tsx";
 
 function MessageItemList({ messages }: { messages: Message[] }) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pb-[10px]">
       {messages.map((message) => (
         <MessageItem
           name={message.name}
