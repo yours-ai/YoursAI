@@ -20,7 +20,12 @@ function TabAction({
       typeof targetRef === "string"
         ? document.querySelector(targetRef)
         : targetRef;
-    setPopoverOpened(true);
+    if (popoverOpened) {
+      setPopoverOpened(false);
+    } else {
+      setPopoverOpened(true);
+    }
+    // setPopoverOpened(true);
   };
   return (
     <>
@@ -37,9 +42,13 @@ function TabAction({
       <Popover
         opened={popoverOpened}
         target={popoverTargetRef.current}
+        backdrop={false}
         onBackdropClick={() => setPopoverOpened(false)}
         size={"w-[250px]"}
-        className="!left-[16px]"
+        className="!left-[16px] rounded-xl"
+        style={{
+          boxShadow: "0px 0px 32px 0px rgba(0, 0, 0, 0.20)",
+        }}
       >
         <List nested>
           <ListItem

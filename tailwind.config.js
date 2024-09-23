@@ -49,6 +49,9 @@ export default konstaConfig({
         cardSplit: "1100px",
         desktop: "1276px",
       },
+      zIndex: {
+        999: 999,
+      },
       fontFamily: {
         sans: [
           "Pretendard",

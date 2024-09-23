@@ -75,7 +75,7 @@ export function Component() {
 
   const FileAddModal = () => {
     return (
-      <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+      <div className="absolute inset-0 z-999 flex items-center justify-center bg-black/50">
         <div className="w-[540px] rounded-[13px] bg-white">
           <div className="flex items-center justify-between border-b border-border px-[18px] py-[11px]">
             <span
