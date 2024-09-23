@@ -27,8 +27,8 @@ function ThemeSelector({ config }: { config: GlobalConfig }) {
   );
   return (
     <div className="size-full bg-emptyBackground">
-      <SettingTopBar title={v("themes.title")} />
-      <div className="flex w-full flex-col items-center gap-[20px] px-[140px] pt-[32px]">
+      <SettingTopBar title={v("themes.title")} enableBack />
+      <div className="flex w-full flex-col items-center gap-[20px] px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[160px]">
         {bundledThemes && (
           <SegmentedControlBar
             flexible

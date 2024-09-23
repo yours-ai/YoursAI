@@ -3,15 +3,17 @@ import ListContainer from "@/components/ListContainer.tsx";
 import { Dialog, DialogButton, ListItem } from "konsta/react";
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 
 export function Component() {
+  useRightPrimaryPage();
   const { t } = useTranslation("pages/settings");
   const [fetchDialogOpened, setFetchDialogOpened] = useState<boolean>(false);
   const [resetDialogOpened, setResetDialogOpened] = useState<boolean>(false);
   return (
     <div className="size-full bg-emptyBackground">
-      <SettingTopBar title={t("data.title")} />
-      <div className="flex w-full flex-col gap-[38px] px-[190px] pt-[32px]">
+      <SettingTopBar title={t("data.title")} enableBack />
+      <div className="flex w-full flex-col gap-[38px] px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[190px] ">
         <ListContainer>
           <ListItem
             title={t("data.import.label")}
