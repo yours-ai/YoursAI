@@ -12,7 +12,7 @@ export function Component() {
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title={`${friendId} ${t("settings.title")}`} enableBack />
-      <div className="flex w-full flex-col gap-[20px] px-[190px]">
+      <div className="flex w-full flex-col gap-[20px] px-[30px] tablet:px-[80px] desktop:px-[190px]">
         <div className="mt-[20px] pl-[15px] text-16p leading-[22px] text-black/50">
           {t("settings.description")}
         </div>
