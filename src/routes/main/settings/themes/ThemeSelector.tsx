@@ -19,7 +19,6 @@ function ThemeSelector({ config }: { config: GlobalConfig }) {
   const [value, setValue] = useState<AvailableBundledThemeId | "custom">(
     config.theme.type === "bundled" ? config.theme.id : "custom",
   );
-  console.log("value:", value);
   const bundledThemes = useBundledThemes();
   const selectedTheme = useMemo(
     () => (bundledThemes && value !== "custom" ? bundledThemes[value] : null),

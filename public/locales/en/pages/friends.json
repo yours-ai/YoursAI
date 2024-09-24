@@ -49,7 +49,10 @@
       },
       "typing": {
         "label": "Typing Simulation",
-        "choices": "Active"
+        "choices": {
+          "on": "On",
+          "off": "Off"
+        }
       },
       "self-intro": "Persona",
       "default": "Reset all as default (global settings)"

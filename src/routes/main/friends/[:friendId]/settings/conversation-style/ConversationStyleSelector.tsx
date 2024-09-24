@@ -17,7 +17,6 @@ function ConversationStyleSelector({ config }: { config: GlobalConfig }) {
   const [value, setValue] = useState<string>(
     config.conversationConfig.promptTemplateId,
   );
-  console.log("지금 value:", value);
   const { t: dynamicT } = useDynamicTranslation();
 
   const initialPromptTemplates = useLiveQuery(
@@ -28,12 +27,10 @@ function ConversationStyleSelector({ config }: { config: GlobalConfig }) {
     [],
   );
 
-  console.log("initialPromptTemplates:", initialPromptTemplates);
   const promptTemplate = useLiveQuery(
     () => db.promptTemplates.get(value),
     [value],
   );
-  console.log("promptTemplate", promptTemplate);
 
   const CustomStyleFormRows = [
     {

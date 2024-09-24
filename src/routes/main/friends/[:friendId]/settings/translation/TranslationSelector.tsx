@@ -7,7 +7,6 @@ import { useState } from "react";
 function TranslationSelector({ config }: { config: GlobalConfig }) {
   const doTranslation = config.conversationConfig.doTranslation;
   const [isChecked, setIsChecked] = useState<boolean>(doTranslation);
-  console.log("doTranslation:", doTranslation);
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title="이중 번역" enableBack />

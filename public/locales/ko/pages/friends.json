@@ -49,7 +49,10 @@
       },
       "typing": {
         "label": "타이핑 시뮬레이션",
-        "choices": "사용"
+        "choices": {
+          "on": "사용",
+          "off": "끔"
+        }
       },
       "self-intro": "내 소개",
       "default": "모두 기본값(글로벌 설정)으로 설정하기"
