@@ -30,7 +30,7 @@ const SetupFormRow = ({ rowTitle, rowDescription, action }: SetupFormRow) => {
 function SetupForm({ setupFormRows, flexible }: SetupForm) {
   return (
     <div
-      className={`rounded-[6px] px-[10px] ${flexible ? "w-full" : "w-[396px]"}`}
+      className={`w-full rounded-[6px] px-[10px] ${flexible ? "max-w-[900px]" : "max-w-[421px]"}`}
       style={{
         backgroundColor: "rgba(0, 0, 0, 0.015)",
         border: "1px solid rgba(0, 0, 0, 0.04)",

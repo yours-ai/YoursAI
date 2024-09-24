@@ -50,7 +50,7 @@ function ConversationStyleSelector({ config }: { config: GlobalConfig }) {
   ];
   return (
     <div className="size-full bg-emptyBackground">
-      <SettingTopBar title="대화 스타일" enableBack />
+      <SettingTopBar title={t("conversationStyleContent.title")} enableBack />
       <div className="flex w-full flex-col items-center gap-[20px] px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
         {initialPromptTemplates && (
           <SegmentedControlBar
@@ -93,7 +93,7 @@ function ConversationStyleSelector({ config }: { config: GlobalConfig }) {
             ) : null}
           </>
         ) : (
-          <div className="mt-[14px] w-full">
+          <div className="mt-[14px] flex w-full justify-center">
             <SetupForm flexible setupFormRows={CustomStyleFormRows} />
           </div>
         )}

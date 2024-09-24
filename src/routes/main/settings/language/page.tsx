@@ -15,7 +15,7 @@ export function Component() {
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title={t("language.title")} enableBack />
-      <div className="flex w-full flex-col gap-[20px] px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
+      <div className="flex w-full flex-col items-center gap-[20px] px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
         <ListContainer>
           <ListItem
             link

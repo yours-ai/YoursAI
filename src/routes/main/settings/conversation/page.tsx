@@ -10,11 +10,11 @@ export function Component() {
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title={t("conversation.title")} enableBack />
-      <div className="flex w-full flex-col gap-[20px] px-[190px]">
-        <div className="mt-[20px] pl-[15px] text-16p leading-[22px] text-black/50">
+      <div className="flex w-full flex-col items-center gap-[20px] px-[30px] tablet:px-[80px] desktop:px-[190px]">
+        <div className="mt-[20px] w-full max-w-[900px] pl-[15px] text-16p leading-[22px] text-black/50">
           {t("conversation.description")}
         </div>
-        <div className="flex flex-col gap-[38px] px-[30px] tablet:px-[80px] desktop:px-[190px]">
+        <div className="flex w-full flex-col items-center gap-[38px]">
           <ListContainer>
             <ListItem
               title={t("conversation.options.style.label")}
