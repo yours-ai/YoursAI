@@ -1,18 +1,15 @@
-import { Dispatch, SetStateAction, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { List, ListItem, Popover } from "konsta/react";
 import { PiImages, PiPenNib } from "react-icons/pi";
 import toast, { Toaster } from "react-hot-toast";
 import { Trans, useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { openModal } from "@/redux/features/showModal/slice.ts";
 
-function TabAction({
-  action,
-  setFileModalOpened,
-}: {
-  action: string;
-  setFileModalOpened?: Dispatch<SetStateAction<boolean>>;
-}) {
+function TabAction({ action }: { action: string }) {
   const [popoverOpened, setPopoverOpened] = useState<boolean>(false);
   const { t } = useTranslation("pages/friends");
+  const dispatch = useDispatch();
 
   const popoverTargetRef = useRef<HTMLElement | null>(null);
   const openPopover = (targetRef: HTMLElement | string | null) => {
@@ -25,7 +22,6 @@ function TabAction({
     } else {
       setPopoverOpened(true);
     }
-    // setPopoverOpened(true);
   };
   return (
     <>
@@ -57,9 +53,7 @@ function TabAction({
             after={<PiImages className="text-20p text-black" />}
             onClick={() => {
               setPopoverOpened(false);
-              if (setFileModalOpened) {
-                setFileModalOpened(true);
-              }
+              dispatch(openModal("fileAdd"));
             }}
           />
           <ListItem
