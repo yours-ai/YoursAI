@@ -28,13 +28,13 @@ export default function SegmentedControlBar<T>({
           "inset 0px 0px 2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 4px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 2px 0px rgba(0, 0, 0, 0.05)",
       }}
     >
-      {options.map((option) => (
+      {options.map((option, index) => (
         <div
           key={String(option.value)}
           onClick={() => {
             onChange(option.value);
           }}
-          className={`${flexible ? "text-14p" : "text-13p"} relative flex size-full items-center justify-center rounded-[5px] leading-[16px] ${value === option.value ? "selected-button" : "unselected-button"} cursor-pointer select-none`}
+          className={`${flexible ? "text-14p" : "text-13p"} relative flex size-full items-center justify-center rounded-[5px] leading-[16px] ${value === option.value ? "selected-button" : index !== 0 ? "unselected-button" : ""} cursor-pointer select-none`}
           style={{ zIndex: value === option.value ? 10 : 1 }}
         >
           {option.label}

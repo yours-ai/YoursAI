@@ -34,6 +34,13 @@ const router = createBrowserRouter([
               import("@/routes/main/friends/[:friendId]/settings/page.tsx"),
           },
           {
+            path: "/main/friends/:friendId/settings/conversation-style",
+            lazy: () =>
+              import(
+                "@/routes/main/friends/[:friendId]/settings/conversation-style/page.tsx"
+              ),
+          },
+          {
             path: "/main/friends",
             lazy: () => import("./routes/main/empty.tsx"),
           },

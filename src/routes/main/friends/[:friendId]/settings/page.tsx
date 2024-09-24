@@ -4,6 +4,7 @@ import { ListItem } from "konsta/react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
+import ListLinkItem from "@/components/ListLinkItem.tsx";
 
 export function Component() {
   useRightPrimaryPage();
@@ -18,9 +19,9 @@ export function Component() {
         </div>
         <div className="flex flex-col gap-[38px]">
           <ListContainer>
-            <ListItem
+            <ListLinkItem
               title={t("settings.options.style.label")}
-              link
+              link="conversation-style"
               after={t("settings.options.style.choices")}
             />
             <ListItem title="이중 번역" link after="사용" />
