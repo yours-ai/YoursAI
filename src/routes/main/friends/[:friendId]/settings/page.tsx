@@ -24,10 +24,10 @@ export function Component() {
               link="conversation-style"
               after={t("settings.options.style.choices")}
             />
-            <ListItem title="이중 번역" link after="사용" />
-            <ListItem
+            <ListLinkItem link="translation" title="이중 번역" after="사용" />
+            <ListLinkItem
               title={t("settings.options.typing.label")}
-              link
+              link="typing-simulation"
               after={t("settings.options.typing.choices")}
             />
             <ListItem title={t("settings.options.self-intro")} link />

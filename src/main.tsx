@@ -41,6 +41,20 @@ const router = createBrowserRouter([
               ),
           },
           {
+            path: "/main/friends/:friendId/settings/translation",
+            lazy: () =>
+              import(
+                "@/routes/main/friends/[:friendId]/settings/translation/page.tsx"
+              ),
+          },
+          {
+            path: "/main/friends/:friendId/settings/typing-simulation",
+            lazy: () =>
+              import(
+                "@/routes/main/friends/[:friendId]/settings/typing-simulation/page.tsx"
+              ),
+          },
+          {
             path: "/main/friends",
             lazy: () => import("./routes/main/empty.tsx"),
           },
