@@ -36,7 +36,7 @@ export default function LanguageSheet({ setStep }: Props) {
               />
             ))}
           </div>
-          <div className="absolute top-[521px] text-center text-[18px] font-semibold leading-[25px] tablet:text-20p tablet:text-white">
+          <div className="absolute top-[521px] px-[20px] text-center text-16p font-semibold leading-[25px] phone:text-18p tablet:text-20p tablet:text-white">
             <Trans i18nKey="languageContent.description" t={t}>
               계속한다고 해서 무슨 약관에 동의하는 건 아닙니다.
               <br />
