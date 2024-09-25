@@ -18,7 +18,7 @@ export const FileAddModal = () => {
       <div className="absolute inset-0 bg-white phone:static phone:w-[540px] phone:rounded-[13px]">
         <div className="flex items-center justify-between border-b border-border px-[18px] py-[11px]">
           <span
-            className="cursor-pointer text-16p text-accentBlue hover:text-accentBlueHover"
+            className="cursor-pointer select-none text-16p text-accentBlue hover:text-accentBlueHover"
             onClick={() => dispatch(closeModal())}
           >
             {t("tabAction.addFileModal.cancel")}
@@ -26,7 +26,7 @@ export const FileAddModal = () => {
           <span className="text-18p font-semibold leading-[22px]">
             {t("tabAction.addFileModal.title")}
           </span>
-          <span className="cursor-pointer text-16p text-accentBlue/30 hover:text-accentBlueHover">
+          <span className="select-none text-16p text-accentBlue/30">
             {t("tabAction.addFileModal.done")}
           </span>
         </div>
