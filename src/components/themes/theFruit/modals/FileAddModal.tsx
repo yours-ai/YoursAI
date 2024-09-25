@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "konsta/react";
+import { Button, Navbar, Page, Popup } from "konsta/react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store.ts";
 import { closeModal } from "@/redux/features/showModal/slice.ts";
@@ -14,23 +14,29 @@ export const FileAddModal = () => {
   if (!isOpen || modalName !== "fileAdd") return null;
 
   return (
-    <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/50 px-[50px]">
-      <div className="absolute inset-0 bg-white phone:static phone:w-[540px] phone:rounded-[13px]">
-        <div className="flex items-center justify-between border-b border-border px-[18px] py-[11px]">
-          <span
-            className="cursor-pointer select-none text-16p text-accentBlue hover:text-accentBlueHover"
-            onClick={() => dispatch(closeModal())}
-          >
-            {t("tabAction.addFileModal.cancel")}
-          </span>
-          <span className="text-18p font-semibold leading-[22px]">
-            {t("tabAction.addFileModal.title")}
-          </span>
-          <span className="select-none text-16p text-accentBlue/30">
-            {t("tabAction.addFileModal.done")}
-          </span>
-        </div>
-        <div className="mt-[28px] flex flex-col gap-[28px] px-[46px] pb-[24px]">
+    <Popup
+      opened={isOpen}
+      onBackdropClick={() => dispatch(closeModal())}
+      size="w-screen h-screen tablet:w-160 tablet:h-[370px]"
+    >
+      <Page>
+        <Navbar
+          title={t("tabAction.addFileModal.title")}
+          left={
+            <span
+              className="ml-2 cursor-pointer select-none text-16p text-accentBlue hover:text-accentBlueHover"
+              onClick={() => dispatch(closeModal())}
+            >
+              {t("tabAction.addFileModal.cancel")}
+            </span>
+          }
+          right={
+            <span className="mr-2 select-none text-16p text-accentBlue/30">
+              {t("tabAction.addFileModal.done")}
+            </span>
+          }
+        />
+        <div className="mt-[28px] flex flex-col gap-[28px] px-[20px] phone:px-[46px]">
           <span className="text-center text-16p leading-[20px]">
             {t("tabAction.addFileModal.content.one")}
           </span>
@@ -52,7 +58,7 @@ export const FileAddModal = () => {
                 아카라이브 AI 채팅 채널
               </a>
               <a className="hover:text-accentBlueHover" href="#">
-                https://aicharactercads.com
+                https://aicharactercards.com
               </a>
               <a className="hover:text-accentBlueHover" href="#">
                 https://character-tavern.com/character/catalog
@@ -64,7 +70,7 @@ export const FileAddModal = () => {
             <span>{t("tabAction.addFileModal.content.four")}</span>
           </div>
         </div>
-      </div>
-    </div>
+      </Page>
+    </Popup>
   );
 };
