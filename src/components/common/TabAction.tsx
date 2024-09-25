@@ -8,7 +8,15 @@ import { openModal } from "@/redux/features/globalModal/slice.ts";
 import "./popover.css";
 import FileAddModalContent from "@/components/common/modal-contents/fileAddModalContent.tsx";
 
-export default function TabAction({ action }: { action: string }) {
+export default function TabAction({
+  action,
+  addCharacter = false,
+  edit = false,
+}: {
+  action: string;
+  addCharacter?: boolean;
+  edit?: boolean;
+}) {
   const [popoverOpened, setPopoverOpened] = useState<boolean>(false);
   const { t } = useTranslation("pages/friends");
   const dispatch = useDispatch();
@@ -23,7 +31,11 @@ export default function TabAction({ action }: { action: string }) {
         <span
           className={`${action === "none" ? "text-transparent" : "cursor-pointer text-accentBlue hover:text-accentBlueHover"} select-none text-16p leading-[22px]  duration-150 phone:text-18p`}
           onClick={() => {
-            togglePopover();
+            if (addCharacter) {
+              togglePopover();
+            } else if (edit) {
+              // TODO: edit 클릭 시 로직 필요
+            }
           }}
           ref={popoverTargetRef}
         >

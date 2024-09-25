@@ -74,7 +74,7 @@ export function Component() {
     <SplitViewPage
       leftPane={
         <div>
-          <TabAction action={t("tabAction.title")} />
+          <TabAction action={t("tabAction.title")} addCharacter />
           <TabTitle title={t("tabTitle")} />
           <div className="mt-[12px] w-full px-4">
             {characters.length > 0 ? (
