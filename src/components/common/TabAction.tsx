@@ -14,17 +14,13 @@ export default function TabAction({ action }: { action: string }) {
 
   const popoverTargetRef = useRef<HTMLElement | null>(null);
   const togglePopover = () => {
-    if (popoverOpened) {
-      setPopoverOpened(false);
-    } else {
-      setPopoverOpened(true);
-    }
+    setPopoverOpened((prev) => !prev);
   };
   return (
     <>
       <div className="w-full py-[14px] pl-4 phone:py-[19px]">
         <span
-          className={`${action === "none" ? "text-transparent" : "cursor-pointer text-accentBlue hover:text-accentBlueHover"} popover-target  select-none text-16p leading-[22px]  duration-150 phone:text-18p`}
+          className={`${action === "none" ? "text-transparent" : "cursor-pointer text-accentBlue hover:text-accentBlueHover"} select-none text-16p leading-[22px]  duration-150 phone:text-18p`}
           onClick={() => {
             togglePopover();
           }}
