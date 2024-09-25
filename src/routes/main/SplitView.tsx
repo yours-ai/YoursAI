@@ -1,7 +1,7 @@
 import { use100vh } from "react-div-100vh";
 import { Outlet } from "react-router-dom";
 import { useRef, useState } from "react";
-import { FileAddModal } from "@/components/themes/theFruit/modals/FileAddModal.tsx";
+import GlobalModal from "@/components/themes/theFruit/modals/FileAddModal.tsx";
 
 export interface SplitViewProps {
   leftNav?: React.ReactNode;
@@ -45,7 +45,7 @@ export default function SplitView({
         </div>
       </div>
 
-      <FileAddModal />
+      <GlobalModal />
     </>
   );
 }

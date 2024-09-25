@@ -4,7 +4,7 @@ import { PiImages, PiPenNib } from "react-icons/pi";
 import toast, { Toaster } from "react-hot-toast";
 import { Trans, useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
-import { openModal } from "@/redux/features/showModal/slice.ts";
+import { openModal } from "@/redux/features/globalModal/slice.ts";
 import "./popover.css";
 import FileAddModalContent from "@/components/common/modal-contents/fileAddModalContent.tsx";
 
@@ -52,6 +52,8 @@ export default function TabAction({ action }: { action: string }) {
                 openModal({
                   title: t("tabAction.addFileModal.title"),
                   content: <FileAddModalContent />,
+                  left: t("tabAction.addFileModal.cancel"),
+                  right: t("tabAction.addFileModal.done"),
                 }),
               );
             }}

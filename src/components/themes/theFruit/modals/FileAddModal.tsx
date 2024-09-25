@@ -1,16 +1,13 @@
-import { useTranslation } from "react-i18next";
 import { Navbar, Page, Popup } from "konsta/react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store.ts";
-import { closeModal } from "@/redux/features/showModal/slice.ts";
+import { closeModal } from "@/redux/features/globalModal/slice.ts";
 
-export const FileAddModal = () => {
+export default function GlobalModal() {
   const dispatch = useDispatch();
-  const { t } = useTranslation("pages/friends");
-  const { isOpen, title, content } = useSelector(
-    (state: RootState) => state.showModal,
+  const { isOpen, title, content, left, right } = useSelector(
+    (state: RootState) => state.globalModal,
   );
-  console.log("모달 open 여부", isOpen);
 
   return (
     <Popup
@@ -27,12 +24,12 @@ export const FileAddModal = () => {
               className="ml-2 cursor-pointer select-none text-16p text-accentBlue hover:text-accentBlueHover"
               onClick={() => dispatch(closeModal())}
             >
-              {t("tabAction.addFileModal.cancel")}
+              {left}
             </span>
           }
           right={
             <span className="mr-2 select-none text-16p text-accentBlue/30">
-              {t("tabAction.addFileModal.done")}
+              {right}
             </span>
           }
         />
@@ -42,4 +39,4 @@ export const FileAddModal = () => {
       </Page>
     </Popup>
   );
-};
+}
