@@ -33,7 +33,7 @@ function FriendsList({ characters }: { characters: Character[] }) {
   return (
     <div
       ref={divRef}
-      className={`grid w-full gap-[10px] pb-[20px] ${changeToSingleColumn ? "grid-cols-1" : "grid-cols-2"}`}
+      className={`grid w-full gap-[10px] pb-[calc(20px+env(safe-area-inset-bottom))] ${changeToSingleColumn ? "grid-cols-1" : "grid-cols-2"}`}
     >
       {isWidthInitialized && (
         <>

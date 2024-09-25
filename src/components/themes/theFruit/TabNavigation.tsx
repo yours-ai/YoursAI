@@ -9,7 +9,10 @@ export default function TabNavigation() {
   const { pathname } = useLocation();
   const { t } = useTranslation("common");
   return (
-    <div className="flex h-[60px] border-t-[0.5px] border-black/30 phone:h-[72px]">
+    <div
+      className="flex h-[calc(60px+env(safe-area-inset-bottom))] border-t-[0.5px] border-black/30 bg-white pt-[5px] phone:h-[72px]"
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+    >
       <Link
         className={`${pathname.startsWith("/main/friends") ? "text-accentBlue" : "text-tabUnselected hover:text-tabHovered"} ${tabLinkClass}`}
         to="/main/friends"

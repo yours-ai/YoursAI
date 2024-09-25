@@ -47,7 +47,7 @@ function ThemeSelector({ config }: { config: GlobalConfig }) {
           />
         )}
         {value === "custom" ? (
-          <div className="flex h-[223px] w-[421px] items-center justify-center">
+          <div className="flex h-[223px] w-full items-center justify-center phone:w-[421px]">
             <Button className="max-w-fit rounded-[12px] px-[18px] py-[21px] text-18p leading-[22px]">
               {t("themeContent.themes.custom.upload")}
             </Button>
