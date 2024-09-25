@@ -1,5 +1,5 @@
-import SettingTopBar from "@/components/SettingTopBar.tsx";
-import ListContainer from "@/components/ListContainer.tsx";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
+import ListContainer from "@/components/common/ListContainer.tsx";
 import { ListItem, Toggle } from "konsta/react";
 import { useState } from "react";
 import { GlobalConfig } from "@/domain/config/models.ts";

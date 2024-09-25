@@ -1,5 +1,5 @@
-import SettingTopBar from "@/components/SettingTopBar.tsx";
-import ListContainer from "@/components/ListContainer.tsx";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
+import ListContainer from "@/components/common/ListContainer.tsx";
 import { ListItem } from "konsta/react";
 import { useTranslation } from "react-i18next";
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";

@@ -1,5 +1,5 @@
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
-import SettingTopBar from "@/components/SettingTopBar.tsx";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 
 export function Component() {
   useRightPrimaryPage();

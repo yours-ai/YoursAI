@@ -1,4 +1,4 @@
-import SettingTopBar from "@/components/SettingTopBar.tsx";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 import { useTranslation } from "react-i18next";
 
 export function Component() {

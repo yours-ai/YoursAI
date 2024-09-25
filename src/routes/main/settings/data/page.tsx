@@ -1,5 +1,5 @@
-import SettingTopBar from "@/components/SettingTopBar.tsx";
-import ListContainer from "@/components/ListContainer.tsx";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
+import ListContainer from "@/components/common/ListContainer.tsx";
 import { Dialog, DialogButton, ListItem } from "konsta/react";
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";

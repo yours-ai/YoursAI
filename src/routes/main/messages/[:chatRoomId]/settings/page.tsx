@@ -1,9 +1,9 @@
 import { ListItem, Toggle } from "konsta/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import ListContainer from "@/components/ListContainer.tsx";
+import ListContainer from "@/components/common/ListContainer.tsx";
 import { useTranslation } from "react-i18next";
-import SettingTopBar from "@/components/SettingTopBar.tsx";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 
 export function Component() {

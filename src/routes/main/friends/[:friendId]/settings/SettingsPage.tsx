@@ -1,6 +1,6 @@
-import SettingTopBar from "@/components/SettingTopBar.tsx";
-import ListContainer from "@/components/ListContainer.tsx";
-import ListLinkItem from "@/components/ListLinkItem.tsx";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
+import ListContainer from "@/components/common/ListContainer.tsx";
+import ListLinkItem from "@/components/common/ListLinkItem.tsx";
 import { ListItem } from "konsta/react";
 import { useDb } from "@/contexts/DbContext.ts";
 import { useParams } from "react-router-dom";

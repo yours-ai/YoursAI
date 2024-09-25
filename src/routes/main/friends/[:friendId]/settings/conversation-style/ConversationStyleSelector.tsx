@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { useLiveQuery } from "dexie-react-hooks";
 import SetupControlButton from "@/components/macos/SetupControlButton.tsx";
-import SettingTopBar from "@/components/SettingTopBar.tsx";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 import SegmentedControlBar from "@/components/macos/SegmentedControlBar.tsx";
 import SegmentBoard from "@/components/macos/SegmentBoard.tsx";
 import SetupForm from "@/components/macos/SetupForm.tsx";

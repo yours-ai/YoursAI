@@ -1,9 +1,9 @@
 import { Outlet, useOutletContext } from "react-router-dom";
 import SplitViewPage from "@/routes/main/SplitViewPage.tsx";
 import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
-import TabTitle from "@/components/TabTitle.tsx";
+import TabTitle from "@/components/common/TabTitle.tsx";
 import MessageItemList from "@/routes/main/messages/MessageItemList.tsx";
-import TabAction from "@/components/TabAction.tsx";
+import TabAction from "@/components/common/TabAction.tsx";
 import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 import { useTranslation } from "react-i18next";
 

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import SettingTopBar from "@/components/SettingTopBar.tsx";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 import SegmentedControlBar from "@/components/macos/SegmentedControlBar.tsx";
 import {
   AvailableBundledThemeId,

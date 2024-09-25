@@ -1,10 +1,10 @@
 import { Outlet, useOutletContext } from "react-router-dom";
 import SplitViewPage from "@/routes/main/SplitViewPage.tsx";
 import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
-import TabTitle from "@/components/TabTitle.tsx";
-import TabAction from "@/components/TabAction.tsx";
+import TabTitle from "@/components/common/TabTitle.tsx";
+import TabAction from "@/components/common/TabAction.tsx";
 import { List, ListItem } from "konsta/react";
-import NavLinkListItem from "@/components/NavLinkListItem.tsx";
+import NavLinkListItem from "@/components/common/NavLinkListItem.tsx";
 import { useTranslation } from "react-i18next";
 import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 
