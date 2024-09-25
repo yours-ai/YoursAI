@@ -13,11 +13,7 @@ export default function TabAction({ action }: { action: string }) {
   const dispatch = useDispatch();
 
   const popoverTargetRef = useRef<HTMLElement | null>(null);
-  const openPopover = (targetRef: HTMLElement | string | null) => {
-    popoverTargetRef.current =
-      typeof targetRef === "string"
-        ? document.querySelector(targetRef)
-        : targetRef;
+  const togglePopover = () => {
     if (popoverOpened) {
       setPopoverOpened(false);
     } else {
@@ -30,8 +26,9 @@ export default function TabAction({ action }: { action: string }) {
         <span
           className={`${action === "none" ? "text-transparent" : "cursor-pointer text-accentBlue hover:text-accentBlueHover"} popover-target  select-none text-16p leading-[22px]  duration-150 phone:text-18p`}
           onClick={() => {
-            openPopover(".popover-target");
+            togglePopover();
           }}
+          ref={popoverTargetRef}
         >
           {action}
         </span>
