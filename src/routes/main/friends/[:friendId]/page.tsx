@@ -22,7 +22,7 @@ const FriendsButton = ({
 }) => {
   return (
     <div
-      className={`flex w-[100px] flex-col items-center justify-center gap-[6px] rounded-[8px] bg-black/40 py-[10px] phone:w-[132px] ${disabled ? "text-white/25" : "cursor-pointer text-white hover:bg-black/50"} text-white duration-150`}
+      className={`flex w-[100px] flex-col items-center justify-center gap-[6px] rounded-[8px] bg-black/40 py-[10px] phone:w-[132px] ${disabled ? "text-white/25" : "cursor-pointer text-white hover:bg-black/50"} text-white backdrop-blur-sm duration-150`}
     >
       <div className="text-[30px] phone:text-34p">{icon}</div>
       <span className="text-12p leading-[18px] phone:text-14p">{label}</span>
@@ -54,18 +54,34 @@ export function Component() {
   return (
     <div className="size-full">
       <div className="relative flex items-center justify-center bg-tabUnselected pb-[30px] pt-[50px]">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src="/sena-background.jpg"
+            alt="sena-background"
+            className="size-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/10" />
+        </div>
         <Link to="../">
           <div className="absolute left-[10px] top-[10px] text-24p text-accentBlue">
             <PiCaretLeftBold />
           </div>
         </Link>
-        <div className="flex flex-col items-center gap-[18px]">
+        <div className="relative z-10 flex flex-col items-center gap-[18px]">
           <img
             src="/sena.png"
             alt="sena-profile-image"
             className="size-[120px] rounded-full object-cover object-center"
+            style={{
+              boxShadow: "4px 4px 13.5px 0px rgba(0, 0, 0, 0.25)",
+            }}
           />
-          <div className="text-[36px] text-white">{friendId}</div>
+          <div
+            className="text-[36px] text-white"
+            style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
+          >
+            {friendId}
+          </div>
           <div className="mx-[15px] flex gap-[10px]">
             <FriendsButton
               icon={<PiChatCircleFill />}
