@@ -2,14 +2,14 @@ import React from "react";
 import { ListItem } from "konsta/react";
 import { NavLink } from "react-router-dom";
 
-interface Props {
+export interface Props {
   title: string | React.ReactNode;
   link: string;
   after?: string | React.ReactNode;
   isLast?: boolean;
 }
 
-const NavLinkListItem = ({ title, link, after, isLast }: Props) => {
+export default function NavLinkListItem({ title, link, after, isLast }: Props) {
   return (
     <NavLink
       to={link}
@@ -29,6 +29,4 @@ const NavLinkListItem = ({ title, link, after, isLast }: Props) => {
       )}
     </NavLink>
   );
-};
-
-export default NavLinkListItem;
+}

@@ -2,7 +2,11 @@ import FriendCard from "@/routes/main/friends/FriendCard.tsx";
 import { Character } from "@/routes/main/friends/page.tsx";
 import { useEffect, useRef, useState } from "react";
 
-function FriendsList({ characters }: { characters: Character[] }) {
+export default function FriendsList({
+  characters,
+}: {
+  characters: Character[];
+}) {
   const divRef = useRef<HTMLDivElement | null>(null);
   const [divWidth, setDivWidth] = useState<number | undefined>(
     divRef.current?.offsetWidth,
@@ -51,5 +55,3 @@ function FriendsList({ characters }: { characters: Character[] }) {
     </div>
   );
 }
-
-export default FriendsList;

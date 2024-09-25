@@ -11,7 +11,11 @@ import { useDb } from "@/contexts/DbContext.ts";
 import { useDynamicTranslation } from "@/locales/hooks.ts";
 import { Button } from "konsta/react";
 
-function ConversationStyleSelector({ config }: { config: GlobalConfig }) {
+export default function ConversationStyleSelector({
+  config,
+}: {
+  config: GlobalConfig;
+}) {
   const { t } = useTranslation("pages/setup");
   const db = useDb();
   const [value, setValue] = useState<string>(
@@ -101,5 +105,3 @@ function ConversationStyleSelector({ config }: { config: GlobalConfig }) {
     </div>
   );
 }
-
-export default ConversationStyleSelector;

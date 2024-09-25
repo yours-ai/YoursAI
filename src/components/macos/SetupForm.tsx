@@ -27,7 +27,7 @@ const SetupFormRow = ({ rowTitle, rowDescription, action }: SetupFormRow) => {
   );
 };
 
-function SetupForm({ setupFormRows, flexible }: SetupForm) {
+export default function SetupForm({ setupFormRows, flexible }: SetupForm) {
   return (
     <div
       className={`w-full rounded-[6px] px-[10px] ${flexible ? "max-w-[900px]" : "max-w-[421px]"}`}
@@ -54,5 +54,3 @@ function SetupForm({ setupFormRows, flexible }: SetupForm) {
     </div>
   );
 }
-
-export default SetupForm;

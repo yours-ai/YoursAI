@@ -5,7 +5,11 @@ import { useState } from "react";
 import { GlobalConfig } from "@/domain/config/models.ts";
 import { useTranslation } from "react-i18next";
 
-function TypingSimulationSelector({ config }: { config: GlobalConfig }) {
+export default function TypingSimulationSelector({
+  config,
+}: {
+  config: GlobalConfig;
+}) {
   const { t } = useTranslation("pages/friends");
   const [isChecked, setIsChecked] = useState<boolean>(
     config.conversationConfig.doTypingSimulation,
@@ -30,5 +34,3 @@ function TypingSimulationSelector({ config }: { config: GlobalConfig }) {
     </div>
   );
 }
-
-export default TypingSimulationSelector;

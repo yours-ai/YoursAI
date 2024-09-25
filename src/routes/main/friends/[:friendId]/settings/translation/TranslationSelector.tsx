@@ -4,7 +4,11 @@ import { ListItem, Toggle } from "konsta/react";
 import { GlobalConfig } from "@/domain/config/models.ts";
 import { useState } from "react";
 
-function TranslationSelector({ config }: { config: GlobalConfig }) {
+export default function TranslationSelector({
+  config,
+}: {
+  config: GlobalConfig;
+}) {
   const doTranslation = config.conversationConfig.doTranslation;
   const [isChecked, setIsChecked] = useState<boolean>(doTranslation);
   return (
@@ -27,5 +31,3 @@ function TranslationSelector({ config }: { config: GlobalConfig }) {
     </div>
   );
 }
-
-export default TranslationSelector;

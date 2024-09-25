@@ -1,11 +1,11 @@
 import { PiCaretLeftBold } from "react-icons/pi";
 
-interface Props {
+export interface Props {
   title: string;
   enableBack?: boolean;
 }
 
-function SettingTopBar({ title, enableBack }: Props) {
+export default function SettingTopBar({ title, enableBack }: Props) {
   return (
     <div className="relative flex w-full items-center justify-center border-b border-border py-[18px]">
       {enableBack && (
@@ -26,5 +26,3 @@ function SettingTopBar({ title, enableBack }: Props) {
     </div>
   );
 }
-
-export default SettingTopBar;

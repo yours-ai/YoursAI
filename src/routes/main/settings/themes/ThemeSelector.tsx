@@ -11,7 +11,7 @@ import { useBundledThemes } from "@/hooks/useTheme.ts";
 import { useDynamicTranslation } from "@/locales/hooks.ts";
 import { Button } from "konsta/react";
 
-function ThemeSelector({ config }: { config: GlobalConfig }) {
+export default function ThemeSelector({ config }: { config: GlobalConfig }) {
   const { t } = useTranslation("pages/setup");
   const { t: v } = useTranslation("pages/settings");
   const { t: dynamicT } = useDynamicTranslation();
@@ -82,5 +82,3 @@ function ThemeSelector({ config }: { config: GlobalConfig }) {
     </div>
   );
 }
-
-export default ThemeSelector;

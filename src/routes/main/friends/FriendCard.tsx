@@ -3,7 +3,12 @@ import ColorThief from "colorthief";
 import { Character } from "@/routes/main/friends/page.tsx";
 import { NavLink } from "react-router-dom";
 
-function FriendCard({ name, image, description, slug }: Character) {
+export default function FriendCard({
+  name,
+  image,
+  description,
+  slug,
+}: Character) {
   const imgRef = useRef<HTMLImageElement | null>(null);
   const [gradient, setGradient] = useState("");
 
@@ -55,5 +60,3 @@ function FriendCard({ name, image, description, slug }: Character) {
     </NavLink>
   );
 }
-
-export default FriendCard;

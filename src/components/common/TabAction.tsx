@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { openModal } from "@/redux/features/showModal/slice.ts";
 import "./popover.css";
 
-function TabAction({ action }: { action: string }) {
+export default function TabAction({ action }: { action: string }) {
   const [popoverOpened, setPopoverOpened] = useState<boolean>(false);
   const { t } = useTranslation("pages/friends");
   const dispatch = useDispatch();
@@ -78,5 +78,3 @@ function TabAction({ action }: { action: string }) {
     </>
   );
 }
-
-export default TabAction;

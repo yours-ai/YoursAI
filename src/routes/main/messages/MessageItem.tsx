@@ -1,7 +1,7 @@
 import { Message } from "@/routes/main/messages/page.tsx";
 import { Link } from "react-router-dom";
 
-function MessageItem({ name, image, message, time }: Message) {
+export default function MessageItem({ name, image, message, time }: Message) {
   return (
     <Link to={"/main/messages/123"}>
       <div className="flex w-full rounded-[10px] pl-[26px] pr-[16px] duration-150 hover:bg-[#C6C6C8]/60">
@@ -31,5 +31,3 @@ function MessageItem({ name, image, message, time }: Message) {
     </Link>
   );
 }
-
-export default MessageItem;

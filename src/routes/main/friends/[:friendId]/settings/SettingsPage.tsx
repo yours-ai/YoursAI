@@ -9,7 +9,7 @@ import { useDynamicTranslation } from "@/locales/hooks.ts";
 import { useLiveQuery } from "dexie-react-hooks";
 import { GlobalConfig } from "@/domain/config/models.ts";
 
-function SettingsPage({ config }: { config: GlobalConfig }) {
+export default function SettingsPage({ config }: { config: GlobalConfig }) {
   const db = useDb();
   const { friendId } = useParams();
   const { t } = useTranslation("pages/friends");
@@ -74,5 +74,3 @@ function SettingsPage({ config }: { config: GlobalConfig }) {
     </>
   );
 }
-
-export default SettingsPage;
