@@ -12,8 +12,8 @@ export function Component() {
   const [resetDialogOpened, setResetDialogOpened] = useState<boolean>(false);
   return (
     <div className="size-full bg-emptyBackground">
-      <SettingTopBar title={t("data.title")} enableBack />
-      <div className="flex w-full flex-col items-center gap-[38px] px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[190px] ">
+      <SettingTopBar title={t("data.title")} enableHome />
+      <div className="flex w-full flex-col items-center gap-[38px] px-[15px] pt-[32px] tablet:px-[80px] desktop:px-[190px] ">
         <ListContainer>
           <ListItem
             title={t("data.import.label")}

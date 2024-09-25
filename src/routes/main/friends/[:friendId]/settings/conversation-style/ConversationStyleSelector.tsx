@@ -55,7 +55,7 @@ export default function ConversationStyleSelector({
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title={t("conversationStyleContent.title")} enableBack />
-      <div className="flex w-full flex-col items-center gap-[20px] px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
+      <div className="flex w-full flex-col items-center gap-[20px] px-[15px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
         {initialPromptTemplates && (
           <SegmentedControlBar
             flexible

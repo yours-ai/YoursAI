@@ -14,7 +14,7 @@ export default function TranslationSelector({
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title="이중 번역" enableBack />
-      <div className="flex w-full flex-col items-center px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
+      <div className="flex w-full flex-col items-center px-[15px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
         <ListContainer>
           <ListItem
             title="이중 번역"

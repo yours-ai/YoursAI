@@ -1,10 +1,10 @@
 import { ListItem, Toggle } from "konsta/react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import ListContainer from "@/components/common/ListContainer.tsx";
 import { useTranslation } from "react-i18next";
 import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
+import ListLinkItem from "@/components/common/ListLinkItem.tsx";
 
 export function Component() {
   useRightPrimaryPage();
@@ -13,11 +13,9 @@ export function Component() {
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title={t("settings.title")} enableBack />
-      <div className="flex w-full flex-col gap-[20px] px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
+      <div className="flex w-full flex-col items-center gap-[20px] px-[15px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
         <ListContainer>
-          <Link to="custom">
-            <ListItem title={t("settings.custom.label")} link />
-          </Link>
+          <ListLinkItem title={t("settings.custom.label")} link="custom" />
           <ListItem
             title={t("settings.jailbreak")}
             after={

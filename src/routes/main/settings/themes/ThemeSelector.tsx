@@ -26,7 +26,7 @@ export default function ThemeSelector({ config }: { config: GlobalConfig }) {
   );
   return (
     <div className="size-full bg-emptyBackground">
-      <SettingTopBar title={v("themes.title")} enableBack />
+      <SettingTopBar title={v("themes.title")} enableHome />
       <div className="flex w-full flex-col items-center gap-[20px] px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[160px]">
         {bundledThemes && (
           <SegmentedControlBar

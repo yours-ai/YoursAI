@@ -10,3 +10,5 @@ export function Component() {
   const config = useLiveQuery(makeGlobalConfigRepository(db).getGlobalConfig);
   return <>{config && <TypingSimulationSelector config={config} />}</>;
 }
+
+Component.displayName = "TypingSimulationGlobalSettingPage";

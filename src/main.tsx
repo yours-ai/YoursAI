@@ -88,6 +88,34 @@ const router = createBrowserRouter([
               ),
           },
           {
+            path: "/main/messages/:chatRoomId/settings/custom/conversation-style",
+            lazy: () =>
+              import(
+                "@/routes/main/messages/[:chatRoomId]/settings/custom/conversation-style/page.tsx"
+              ),
+          },
+          {
+            path: "/main/messages/:chatRoomId/settings/custom/translation",
+            lazy: () =>
+              import(
+                "@/routes/main/messages/[:chatRoomId]/settings/custom/translation/page.tsx"
+              ),
+          },
+          {
+            path: "/main/messages/:chatRoomId/settings/custom/typing-simulation",
+            lazy: () =>
+              import(
+                "@/routes/main/messages/[:chatRoomId]/settings/custom/typing-simulation/page.tsx"
+              ),
+          },
+          {
+            path: "/main/messages/:chatRoomId/settings/custom/persona",
+            lazy: () =>
+              import(
+                "@/routes/main/messages/[:chatRoomId]/settings/custom/persona/page.tsx"
+              ),
+          },
+          {
             path: "/main/messages",
             lazy: () => import("./routes/main/empty.tsx"),
           },
@@ -106,8 +134,35 @@ const router = createBrowserRouter([
             lazy: () => import("@/routes/main/settings/themes/page.tsx"),
           },
           {
-            path: "/main/settings/conversation",
-            lazy: () => import("@/routes/main/settings/conversation/page.tsx"),
+            path: "/main/settings/chat-customize",
+            lazy: () =>
+              import("@/routes/main/settings/chat-customize/page.tsx"),
+          },
+          {
+            path: "/main/settings/chat-customize/conversation-style",
+            lazy: () =>
+              import(
+                "@/routes/main/settings/chat-customize/conversation-style/page.tsx"
+              ),
+          },
+          {
+            path: "/main/settings/chat-customize/translation",
+            lazy: () =>
+              import(
+                "@/routes/main/settings/chat-customize/translation/page.tsx"
+              ),
+          },
+          {
+            path: "/main/settings/chat-customize/typing-simulation",
+            lazy: () =>
+              import(
+                "@/routes/main/settings/chat-customize/typing-simulation/page.tsx"
+              ),
+          },
+          {
+            path: "/main/settings/chat-customize/persona",
+            lazy: () =>
+              import("@/routes/main/settings/chat-customize/persona/page.tsx"),
           },
           {
             path: "/main/settings/data",

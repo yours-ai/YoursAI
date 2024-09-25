@@ -17,7 +17,7 @@ export default function TypingSimulationSelector({
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title={t("settings.options.typing.label")} enableBack />
-      <div className="flex w-full flex-col items-center px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
+      <div className="flex w-full flex-col items-center px-[15px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
         <ListContainer>
           <ListItem
             title={t("settings.options.typing.label")}

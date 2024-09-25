@@ -5,7 +5,7 @@ export function Component() {
   useRightPrimaryPage();
   return (
     <div className="size-full bg-emptyBackground">
-      <SettingTopBar title={"Sponsors"} enableBack />
+      <SettingTopBar title={"Sponsors"} enableHome />
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 import { useTranslation } from "react-i18next";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
 
 export function Component() {
@@ -13,4 +13,4 @@ export function Component() {
   );
 }
 
-Component.displayName = "PersonaSettingPage";
+Component.displayName = "PersonaGlobalSettingPage";

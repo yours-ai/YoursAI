@@ -46,9 +46,9 @@ const ContactItem = ({
 };
 
 export function Component() {
+  useRightPrimaryPage();
   const { friendId } = useParams();
   const { t } = useTranslation("pages/friends");
-  useRightPrimaryPage();
   const [deleteDialogOpened, setDeleteDialogOpened] = useState<boolean>(false);
 
   return (

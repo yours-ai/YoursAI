@@ -1,9 +1,7 @@
-import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 import { useTranslation } from "react-i18next";
-import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
+import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 
 export function Component() {
-  useRightPrimaryPage();
   const { t } = useTranslation("pages/friends");
   return (
     <div className="size-full bg-emptyBackground">
@@ -13,4 +11,4 @@ export function Component() {
   );
 }
 
-Component.displayName = "PersonaSettingPage";
+Component.displayName = "PersonaSessionSettingPage";

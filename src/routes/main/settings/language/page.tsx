@@ -14,8 +14,8 @@ export function Component() {
   const [enOpened, setEnOpened] = useState<boolean>(false);
   return (
     <div className="size-full bg-emptyBackground">
-      <SettingTopBar title={t("language.title")} enableBack />
-      <div className="flex w-full flex-col items-center gap-[20px] px-[30px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
+      <SettingTopBar title={t("language.title")} enableHome />
+      <div className="flex w-full flex-col items-center gap-[20px] px-[15px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
         <ListContainer>
           <ListItem
             link

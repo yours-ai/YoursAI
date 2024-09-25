@@ -1,7 +1,9 @@
 import { PiCaretLeftBold } from "react-icons/pi";
-import { List, ListItem } from "konsta/react";
+import { ListItem } from "konsta/react";
 import { useTranslation } from "react-i18next";
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
+import ListContainer from "@/components/common/ListContainer.tsx";
+import ListLinkItem from "@/components/common/ListLinkItem.tsx";
 
 export function Component() {
   useRightPrimaryPage();
@@ -23,32 +25,36 @@ export function Component() {
         </span>
       </div>
 
-      <div className="flex w-full flex-col gap-[20px] px-[30px] tablet:px-[80px] desktop:px-[190px]">
-        <div className="mt-[20px] pl-[15px] text-16p leading-[22px] text-black/50">
+      <div className="flex w-full flex-col items-center gap-[20px] px-[15px] tablet:px-[80px] desktop:px-[190px]">
+        <div className="mt-[20px] w-full max-w-[900px] pl-[15px] text-16p leading-[22px] text-black/50">
           {t("settings.custom.description")}
         </div>
-        <List strong inset dividers className="!m-0 bg-white">
-          <ListItem
+        <ListContainer>
+          <ListLinkItem
             title={t("settings.custom.options.style.label")}
-            link
+            link="conversation-style"
             after={t("settings.custom.options.style.choices")}
           />
-          <ListItem title="이중 번역" link after="사용" />
-          <ListItem
+          <ListLinkItem title="이중 번역" link="translation" after="사용" />
+          <ListLinkItem
             title={t("settings.custom.options.typing.label")}
-            link
+            link="typing-simulation"
             after={t("settings.custom.options.typing.choices")}
           />
-          <ListItem title={t("settings.custom.options.self-intro")} link />
-        </List>
-        <List strong inset className="!m-0 bg-white">
+          <ListLinkItem
+            title={t("settings.custom.options.self-intro")}
+            link="persona"
+            isLast
+          />
+        </ListContainer>
+        <ListContainer>
           <ListItem
             title={
               <p className="text-red">{t("settings.custom.options.default")}</p>
             }
             link
           />
-        </List>
+        </ListContainer>
       </div>
     </div>
   );

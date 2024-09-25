@@ -19,7 +19,7 @@ export function Component() {
         <div className="h-full bg-emptyBackground">
           <TabAction action="none" />
           <TabTitle title={t("title")} />
-          <div className="mt-[12px] flex flex-col gap-[36px] px-8">
+          <div className="mt-[12px] flex flex-col gap-[36px] px-[15px] phone:px-8">
             <List strong inset dividers className="!m-0 bg-white">
               <NavLinkListItem
                 link="language"
@@ -35,7 +35,7 @@ export function Component() {
             </List>
             <List strong inset dividers className="!m-0 bg-white">
               <NavLinkListItem
-                link="conversation"
+                link="chat-customize"
                 title={t("conversation.title")}
                 after={t("conversation.options.style.choices")}
                 isLast
