@@ -5,6 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Trans, useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { openModal } from "@/redux/features/showModal/slice.ts";
+import "./popover.css";
 
 function TabAction({ action }: { action: string }) {
   const [popoverOpened, setPopoverOpened] = useState<boolean>(false);
@@ -41,7 +42,7 @@ function TabAction({ action }: { action: string }) {
         backdrop={false}
         onBackdropClick={() => setPopoverOpened(false)}
         size={"w-[250px]"}
-        className="!left-[16px] rounded-xl"
+        className="popover !left-[16px] !top-[55px] rounded-xl"
         style={{
           boxShadow: "0px 0px 32px 0px rgba(0, 0, 0, 0.20)",
         }}
