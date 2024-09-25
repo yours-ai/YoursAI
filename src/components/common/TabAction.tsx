@@ -36,7 +36,7 @@ export default function TabAction({ action }: { action: string }) {
         backdrop={false}
         onBackdropClick={() => setPopoverOpened(false)}
         size={"w-[250px]"}
-        className="popover !left-[16px] !top-[55px] rounded-xl"
+        className="popover !left-[16px] !top-[50px] rounded-xl phone:!top-[55px]"
         style={{
           boxShadow: "0px 0px 32px 0px rgba(0, 0, 0, 0.20)",
         }}
