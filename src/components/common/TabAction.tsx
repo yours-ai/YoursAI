@@ -6,6 +6,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { openModal } from "@/redux/features/showModal/slice.ts";
 import "./popover.css";
+import FileAddModalContent from "@/components/common/modal-contents/fileAddModalContent.tsx";
 
 export default function TabAction({ action }: { action: string }) {
   const [popoverOpened, setPopoverOpened] = useState<boolean>(false);
@@ -47,7 +48,12 @@ export default function TabAction({ action }: { action: string }) {
             after={<PiImages className="text-20p text-black" />}
             onClick={() => {
               setPopoverOpened(false);
-              dispatch(openModal("fileAdd"));
+              dispatch(
+                openModal({
+                  title: t("tabAction.addFileModal.title"),
+                  content: <FileAddModalContent />,
+                }),
+              );
             }}
           />
           <ListItem

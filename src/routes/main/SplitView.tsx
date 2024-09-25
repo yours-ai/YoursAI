@@ -45,7 +45,6 @@ export default function SplitView({
         </div>
       </div>
 
-      {/*modals*/}
       <FileAddModal />
     </>
   );

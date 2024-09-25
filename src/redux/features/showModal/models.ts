@@ -1,9 +1,19 @@
+import { ReactNode } from "react";
+
 export interface ModalState {
   isOpen: boolean;
-  modalName: string | null;
+  title: string | null;
+  content: ReactNode | null;
 }
 
 export const initialState: ModalState = {
   isOpen: false,
-  modalName: null,
+  title: null,
+  content: null,
 };
+
+export interface ModalActionPayload {
+  // modalName: string;
+  title: string;
+  content: ReactNode;
+}
