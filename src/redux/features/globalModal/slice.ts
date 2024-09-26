@@ -17,10 +17,6 @@ export const globalModalSlice = createSlice({
     },
     closeModal: (state) => {
       state.isOpen = false;
-      state.title = null;
-      state.content = null;
-      state.left = null;
-      state.right = null;
     },
   },
 });
