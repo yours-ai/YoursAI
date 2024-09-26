@@ -1,0 +1,58 @@
+{
+  "title": "Settings",
+  "language": {
+    "title": "Language",
+    "needRestart": "Program restart is necessary.",
+    "no": "No",
+    "yes": "Yes",
+    "changeToEn": "Change language to English?",
+    "changeToKo": "Change language to Korean?"
+  },
+  "themes": {
+    "title": "Themes",
+    "fruit": {"name": "\"The\" Fruit", "description": "The most basic and clean"},
+    "chocolate": {"name": "Chocolate", "description": "Sweet and warm like chocolate"},
+    "navy": {"name": "Navy", "description": "We love RisuAI!"},
+    "custom": {"name": "Custom", "upload": "Upload custom theme"},
+    "change": "Change theme"
+  },
+  "conversation": {
+    "title": "Customize Chat",
+    "description":"This is global chat setting. It can be overridden separately by settings in characters or chat rooms.",
+    "options": {
+      "style": {
+        "label": "Conversation Style",
+        "choices": "Novel"
+      },
+      "typing": {
+        "label": "Typing Simulation",
+        "choices": "Active"
+      },
+      "self-intro": "Persona",
+      "default": "Reset all as default"
+    }
+  },
+  "data": {
+    "title": "Data Management",
+    "import": {
+      "label": "Import data",
+      "title": "Proceed import of new data?",
+      "description": "Local chat data can be deleted.",
+      "no": "No",
+      "yes": "Yes"
+    },
+    "export": "Export data",
+    "reset": {
+      "label": "Delete all data and reset",
+      "title": "Proceed data deletion?",
+      "description": "All chat data and settings will get<1></1>deleted permanently.",
+      "no": "No",
+      "yes": "Yes"
+    }
+  },
+  "dev": "What are the devs doing?",
+  "discord": "Discord Community",
+  "email": "Email",
+  "sponsor": "Sponsor",
+  "reset": "Reset all as default"
+}

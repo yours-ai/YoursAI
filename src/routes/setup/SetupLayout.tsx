@@ -2,7 +2,11 @@ import React from "react";
 import { createPortal } from "react-dom";
 import { use100vh } from "react-div-100vh";
 
-function SetupLayout({ children }: { children: React.ReactNode }) {
+export default function SetupLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const vh = use100vh();
   return (
     <div className="relative w-full" style={{ minHeight: vh ?? undefined }}>
@@ -23,5 +27,3 @@ function SetupLayout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-
-export default SetupLayout;

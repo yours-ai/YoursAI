@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SyncLocale from "@/locales/SyncLocale.tsx";
 import toast, { Toaster } from "react-hot-toast";
 import ErrorText from "@/components/common/ErrorText.tsx";
+import DevPopup from "@/components/common/DevPopup.tsx";
+import { App } from "konsta/react";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,8 +28,13 @@ export default function Providers({ children }: Props) {
       <DbContextProvider>
         <QueryClientProvider client={queryClient}>
           <SyncLocale>
-            <div className="relative size-full font-sans">{children}</div>
-            <Toaster />
+            <App style={{ minHeight: "auto" }} theme="ios">
+              <div className="relative size-full font-sans">
+                {children}
+                {import.meta.env.VERCEL_ENV !== "production" && <DevPopup />}
+              </div>
+              <Toaster />
+            </App>
           </SyncLocale>
         </QueryClientProvider>
       </DbContextProvider>

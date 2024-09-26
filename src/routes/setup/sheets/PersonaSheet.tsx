@@ -79,9 +79,9 @@ export default function PersonaSheet({ setStep, config }: Props) {
             }
           />
           <div className="mt-[56px] flex w-[263px] flex-col gap-[21px] overflow-visible text-13p leading-[16px]">
-            <div className="relative flex w-full gap-[22px]">
+            <div className="relative flex w-full flex-col gap-[10px] phone:flex-row phone:gap-0">
               <div
-                className="absolute bottom-[3px] right-0 text-13p leading-[16px]"
+                className="absolute bottom-[3px] right-0 hidden text-13p leading-[16px] phone:block"
                 style={{
                   transform: "translateX(-280px)",
                   whiteSpace: "nowrap",
@@ -89,26 +89,32 @@ export default function PersonaSheet({ setStep, config }: Props) {
               >
                 {t("nameContent.name.label")}:
               </div>
+              <div className="text-13p leading-[16px] phone:hidden">
+                {t("nameContent.name.label")}:
+              </div>
               {currentLanguage === "ko" ? (
-                <>
+                <div className="flex gap-[22px]">
                   {lastNameInput}
                   {firstNameInput}
-                </>
+                </div>
               ) : (
-                <>
+                <div className="flex gap-[22px]">
                   {firstNameInput}
                   {lastNameInput}
-                </>
+                </div>
               )}
             </div>
-            <div className="relative">
+            <div className="relative flex flex-col gap-[10px] phone:flex-row phone:gap-0">
               <div
-                className="absolute right-0 top-[3px] text-13p leading-[16px]"
+                className="absolute right-0 top-[3px] hidden text-13p leading-[16px] phone:block"
                 style={{
                   transform: "translateX(-280px)",
                   whiteSpace: "nowrap",
                 }}
               >
+                {t("nameContent.intro.label")}:
+              </div>
+              <div className="text-13p leading-[16px] phone:hidden">
                 {t("nameContent.intro.label")}:
               </div>
               <textarea

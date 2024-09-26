@@ -4,13 +4,21 @@ export interface Props {
   imgBlob?: Blob;
   imgSrc?: string;
   alt?: string;
+  flexible?: boolean;
 }
 
-export default function SegmentBoard({ imgBlob, imgSrc, alt }: Props) {
+export default function SegmentBoard({
+  imgBlob,
+  imgSrc,
+  alt,
+  flexible,
+}: Props) {
   const imgURL = useImgBlob(imgBlob);
 
   return (
-    <div className="relative h-[223px] w-full max-w-[421px] overflow-hidden rounded-lg bg-[#D9D9D9]">
+    <div
+      className={`relative  w-full ${flexible ? "h-[350px] max-w-[900px]" : "h-[223px] max-w-[421px]"} overflow-hidden rounded-lg bg-[#D9D9D9]`}
+    >
       {(imgURL || imgSrc) && (
         <img
           src={imgURL ?? imgSrc}

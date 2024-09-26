@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-function SetupControlButton({
+export default function SetupControlButton({
   onClick,
   goBack,
   start,
@@ -77,5 +77,3 @@ function SetupControlButton({
     </div>
   );
 }
-
-export default SetupControlButton;

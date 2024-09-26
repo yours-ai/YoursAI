@@ -1,0 +1,32 @@
+{
+  "tabAction": {
+    "title": "Edit"
+  },
+  "tabTitle": "Messages",
+  "empty": {
+    "one": "No conversations yet...",
+    "two": "Start a new chat from friends tab!"
+  },
+  "settings": {
+    "title": "Chat with 세나 (started at 7/11 6:48AM)",
+    "custom": {
+      "label": "Customize chat settings",
+      "title": "Chat with 세나 (started at 7/11 6:48AM) - Customize chat settings",
+      "description":"Settings edited here is only applied to this current chat.",
+      "options": {
+        "style": {
+          "label": "Conversation Style",
+          "choices": "Novel"
+        },
+        "typing": {
+          "label": "Typing Simulation",
+          "choices": "Active"
+        },
+        "self-intro": "Persona",
+        "default": "Set all as default"
+      }
+    },
+    "jailbreak": "Jailbreak",
+    "delete": "Delete chat"
+  }
+}
