@@ -12,5 +12,10 @@
   },
   "errorText": {
     "text": "Unexpected error occurred.<1>{{error}}</1>If the problem persists, please contact dev at discord."
+  },
+  "devPopup": {
+    "title": "Developer tools",
+    "reset": "Remove all data and refresh",
+    "close": "Close"
   }
 }

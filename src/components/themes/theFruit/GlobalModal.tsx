@@ -1,7 +1,8 @@
-import { Navbar, Page, Popup } from "konsta/react";
+import { Navbar, Page } from "konsta/react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store.ts";
 import { closeModal } from "@/redux/features/globalModal/slice.ts";
+import Popup from "@/contrib/konsta/Popup";
 
 export default function GlobalModal() {
   const dispatch = useDispatch();
@@ -14,7 +15,6 @@ export default function GlobalModal() {
       opened={isOpen}
       onBackdropClick={() => dispatch(closeModal())}
       size="w-screen h-screen tablet:w-160 tablet:h-[370px]"
-      className={`${!isOpen ? "!translate-y-[200%]" : ""}`}
     >
       <Page>
         <Navbar
