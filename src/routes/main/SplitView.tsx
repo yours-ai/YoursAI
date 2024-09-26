@@ -1,7 +1,7 @@
 import { use100vh } from "react-div-100vh";
 import { Outlet } from "react-router-dom";
 import { useRef, useState } from "react";
-import GlobalModal from "@/components/themes/theFruit/modals/GlobalModal.tsx";
+import { useTheme } from "@/hooks/useTheme.ts";
 
 export interface SplitViewProps {
   leftNav?: React.ReactNode;
@@ -21,6 +21,13 @@ export default function SplitView({
   const height = use100vh();
   const leftPaneDiv = useRef<HTMLDivElement>(null);
   const [primary, setPrimary] = useState<"left" | "right">("left");
+  const theme = useTheme();
+
+  if (!theme) return null;
+
+  const {
+    components: { GlobalModal },
+  } = theme;
 
   return (
     <>

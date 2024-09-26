@@ -1,6 +1,7 @@
 import Button from "./Button.tsx";
 import TabNavigation from "./TabNavigation.tsx";
 import EmptyPane from "./EmptyPane.tsx";
+import GlobalModal from "./GlobalModal.tsx";
 import { Theme } from "@/components/themes/models";
 import { fetchDescriptionImgBlob } from "./descriptionImg.ts";
 
@@ -24,6 +25,7 @@ export default async function getTheFruitTheme(): Promise<Theme> {
       Button,
       TabNavigation,
       EmptyPane,
+      GlobalModal,
     },
   };
 }
