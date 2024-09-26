@@ -107,7 +107,7 @@ export default function ConversationStyleSheet({ config, setStep }: Props) {
             </div>
           </div>
 
-          <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
+          <div className="mt-[24px] flex w-full flex-col items-center gap-[17px] px-[20px] phone:px-0">
             {initialPromptTemplates && (
               <SegmentedControlBar
                 options={[

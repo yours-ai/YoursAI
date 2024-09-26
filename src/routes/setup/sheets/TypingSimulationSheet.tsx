@@ -33,7 +33,7 @@ export default function TypingSimulationSheet({ setStep, config }: Props) {
       content={
         <>
           <SettingTitle title={t("typingSimulationContent.title")} />
-          <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
+          <div className="mt-[24px] flex w-full flex-col items-center gap-[17px] px-[20px] phone:px-0">
             <SegmentedControlBar
               value={value}
               onChange={setValue}

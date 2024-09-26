@@ -1,3 +1,4 @@
+import React from "react";
 import { type ButtonProps } from "./Button.ts";
 import getTheFruitTheme from "@/components/themes/theFruit";
 import getChocolateTheme from "@/components/themes/chocolate";
@@ -14,6 +15,7 @@ export interface Theme {
     Button: React.ComponentType<ButtonProps>;
     TabNavigation: React.ComponentType;
     EmptyPane: React.ComponentType;
+    GlobalModal: React.ComponentType;
   };
 }
 

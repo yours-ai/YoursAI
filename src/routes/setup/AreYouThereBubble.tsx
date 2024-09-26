@@ -3,7 +3,11 @@ import { TypeAnimation } from "react-type-animation";
 import { useTranslation } from "react-i18next";
 import Tooltip from "@/components/macos/Tooltip.tsx";
 
-function AreYouThereBubble({ children }: { children: React.ReactNode }) {
+export default function AreYouThereBubble({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const { t } = useTranslation("pages/setup");
   const [isPrompt, setIsPrompt] = useState<boolean>(false);
   const [animationComplete, setAnimationComplete] = useState<boolean>(false);
@@ -16,7 +20,7 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
       place="bottom"
       content={
         <>
-          <div className={`${isPrompt ? "italic text-red-500" : ""}`}>
+          <div className={`${isPrompt ? "text-red-500 italic" : ""}`}>
             {!animationComplete ? (
               <TypeAnimation
                 sequence={[
@@ -53,5 +57,3 @@ function AreYouThereBubble({ children }: { children: React.ReactNode }) {
     </Tooltip>
   );
 }
-
-export default AreYouThereBubble;

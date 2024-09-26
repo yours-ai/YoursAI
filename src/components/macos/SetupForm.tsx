@@ -8,6 +8,7 @@ interface SetupFormRow {
 
 interface SetupForm {
   setupFormRows: SetupFormRow[];
+  flexible?: boolean;
 }
 
 const SetupFormRow = ({ rowTitle, rowDescription, action }: SetupFormRow) => {
@@ -26,10 +27,10 @@ const SetupFormRow = ({ rowTitle, rowDescription, action }: SetupFormRow) => {
   );
 };
 
-function SetupForm({ setupFormRows }: SetupForm) {
+export default function SetupForm({ setupFormRows, flexible }: SetupForm) {
   return (
     <div
-      className="w-[396px] rounded-[6px] px-[10px]"
+      className={`w-full rounded-[6px] px-[10px] ${flexible ? "max-w-[900px]" : "max-w-[421px]"}`}
       style={{
         backgroundColor: "rgba(0, 0, 0, 0.015)",
         border: "1px solid rgba(0, 0, 0, 0.04)",
@@ -53,5 +54,3 @@ function SetupForm({ setupFormRows }: SetupForm) {
     </div>
   );
 }
-
-export default SetupForm;

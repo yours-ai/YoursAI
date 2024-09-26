@@ -1,4 +1,4 @@
-function AlertButton({
+export default function AlertButton({
   isBlank = false,
   label,
   onClick,
@@ -16,5 +16,3 @@ function AlertButton({
     </div>
   );
 }
-
-export default AlertButton;
