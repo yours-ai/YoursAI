@@ -23,7 +23,7 @@ export default function SettingsPage({ config }: { config: GlobalConfig }) {
       {conversationStyle && (
         <div className="size-full bg-emptyBackground">
           <SettingTopBar
-            title={`${friendId} ${t("settings.title")}`}
+            title={`${t("settings.title")} - ${friendId}`}
             enableBack
           />
           <div className="flex w-full flex-col items-center gap-[20px] px-[15px] tablet:px-[80px] desktop:px-[190px]">
