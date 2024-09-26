@@ -33,7 +33,7 @@ export const functionSchema = z.object({
 
 export const promptTemplateSchema = modelSchema.extend({
   metadata: metadataSchema,
-  model: z.string(),
+  model: z.string().min(1),
   maxContextTokens: z.number().positive(),
   function: functionSchema,
   messageItems: z.array(messageItemSchema),

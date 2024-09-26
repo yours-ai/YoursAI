@@ -30,11 +30,11 @@ export type ModelSchemaDto<T extends ModelSchema> = MakeFieldsOptional<
 >;
 
 const propertiesSchema = z.record(
-  z.string(),
+  z.string().min(1),
   z.object({
     type: z.enum(["string", "number", "boolean", "integer"]),
     description: z.string().min(1),
-    enum: z.array(z.string()).optional(),
+    enum: z.array(z.string().min(1)).optional(),
   }),
 );
 

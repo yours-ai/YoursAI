@@ -4,4 +4,9 @@ export {
   type LlmSettings,
 } from "./promptTemplate.ts";
 
-export { messageItemSchema, type MessageItem } from "./messageItem.ts";
+export {
+  contextDtoSchema,
+  messageItemSchema,
+  type MessageItem,
+  type Context,
+} from "./messageItem.ts";

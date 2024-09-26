@@ -1,6 +1,6 @@
 import { Db } from "@/domain/db.ts";
 import { GlobalConfig, GlobalConfigId } from "@/domain/config/models.ts";
-import { needAPIKeySetup } from "@/domain/chatGenerate/services.ts";
+import { needAPIKeySetup } from "@/domain/chatGenerate/services/model.ts";
 
 export const makeGlobalConfigRepository = (db: Db) => {
   const getGlobalConfig = async (): Promise<GlobalConfig> => {

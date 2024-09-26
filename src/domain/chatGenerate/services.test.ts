@@ -1,5 +1,5 @@
-import { test, expect } from "vitest";
-import { getInitialPromptTemplates } from "@/domain/promptTemplate/populate.ts";
+import { expect, test } from "vitest";
+import { getInitialPromptTemplates } from "@/domain/chatGenerate/populate.ts";
 import OpenAI from "openai";
 import ajv from "@/contrib/ajv.ts";
 

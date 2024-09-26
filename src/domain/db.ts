@@ -4,7 +4,7 @@ import { GlobalConfig } from "@/domain/config/models.ts";
 import { Character, Session } from "@/domain/character/models.ts";
 import { characterPopulate } from "@/domain/character/populate.ts";
 import { PromptTemplate } from "@/domain/chatGenerate/models";
-import { Chat, LLMChat } from "@/domain/chatData/models.ts";
+import { Chat } from "@/domain/chatData/models.ts";
 import { chatGeneratePopulate } from "@/domain/chatGenerate/populate.ts";
 
 export type Db = Dexie & {
@@ -13,7 +13,6 @@ export type Db = Dexie & {
   characters: EntityTable<Character, "pk">;
   sessions: EntityTable<Session, "pk">;
   chats: EntityTable<Chat, "pk">;
-  llmChats: EntityTable<LLMChat, "pk">;
 };
 
 export const getDb = () => {
@@ -25,7 +24,6 @@ export const getDb = () => {
     characters: "pk,created",
     sessions: "pk,created",
     chats: "pk,created,sessionPk",
-    llmChats: "pk,created,sessionPk",
   });
 
   db.on("populate", async (_tx) => {

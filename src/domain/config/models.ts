@@ -11,7 +11,7 @@ export const bundledThemeConfigSchema = z.object({
 
 export const uploadedThemeConfigSchema = z.object({
   type: z.literal("uploaded"),
-  script: z.string(),
+  script: z.string().min(1),
 });
 
 export const themeConfigSchema = z.union([
@@ -21,8 +21,8 @@ export const themeConfigSchema = z.union([
 
 export const personaSchema = z.object({
   firstName: z.string().min(1),
-  lastName: z.string(),
-  description: z.string(),
+  lastName: z.string().optional(),
+  description: z.string().optional(),
 });
 
 export const conversationConfigSchema = z.object({

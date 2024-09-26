@@ -2,19 +2,16 @@ import { z } from "zod";
 import { modelSchema } from "@/contrib/zod/schemas.ts";
 
 const roleSchema = z.enum(["user", "assistant", "system"]);
+const contentValueSchema = z.union([z.string(), z.number(), z.boolean()]);
 
-export const llmChatSchema = modelSchema.extend({
+export const chatDtoSchema = z.object({
   role: roleSchema,
-  sessionPk: z.string().uuid(),
-  content: z.object({}),
+  content: z.record(z.string(), contentValueSchema),
 });
 
-export const chatSchema = modelSchema.extend({
-  role: roleSchema,
+export const chatSchema = chatDtoSchema.merge(modelSchema).extend({
   sessionPk: z.string().uuid(),
-  content: z.object({}),
-  llmChatPk: z.string().uuid().optional(),
 });
 
-export type LLMChat = z.infer<typeof llmChatSchema>;
+export type ChatDto = z.infer<typeof chatDtoSchema>;
 export type Chat = z.infer<typeof chatSchema>;
