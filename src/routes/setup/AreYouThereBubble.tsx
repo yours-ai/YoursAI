@@ -20,7 +20,7 @@ export default function AreYouThereBubble({
       place="bottom"
       content={
         <>
-          <div className={`${isPrompt ? "text-red-500 italic" : ""}`}>
+          <div className={`${isPrompt ? "italic text-red" : ""}`}>
             {!animationComplete ? (
               <TypeAnimation
                 sequence={[
