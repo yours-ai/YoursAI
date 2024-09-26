@@ -1,6 +1,7 @@
-import { PromptTemplate, promptTemplateSchema } from "@/domain/chat/models";
+import { PromptTemplate, promptTemplateSchema } from "./models";
 import { fetchDescriptionImgBlob } from "./descriptionImg.ts";
 import { Db } from "@/domain/db.ts";
+import { PromptTemplateDto } from "@/domain/chatGenerate/models/promptTemplate.ts";
 
 export const DefaultPromptTemplateUUID = "a9a20bb6-b091-44a4-85cd-f52f0b19f531";
 
@@ -8,7 +9,7 @@ export const getInitialPromptTemplates = async (): Promise<
   PromptTemplate[]
 > => {
   const descriptionImgBlob = await fetchDescriptionImgBlob();
-  const defaultPromptTemplate: PromptTemplate = {
+  const defaultPromptTemplate: PromptTemplateDto = {
     pk: DefaultPromptTemplateUUID,
     metadata: {
       name: {
@@ -97,7 +98,7 @@ export const getInitialPromptTemplates = async (): Promise<
   ].map((instance) => promptTemplateSchema.parse(instance));
 };
 
-export const chatPopulate = async (db: Db) => {
+export const chatGeneratePopulate = async (db: Db) => {
   const initialPromptTemplates = await getInitialPromptTemplates();
   await db.promptTemplates.bulkPut(initialPromptTemplates);
 };

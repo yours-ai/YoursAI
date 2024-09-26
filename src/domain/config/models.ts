@@ -42,5 +42,6 @@ export const globalConfigSchema = z.object({
   hasDoneSetup: z.boolean(),
 });
 
+export type Persona = z.infer<typeof personaSchema>;
 export type ThemeConfig = z.infer<typeof themeConfigSchema>;
 export type GlobalConfig = z.infer<typeof globalConfigSchema>;

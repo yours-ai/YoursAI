@@ -11,16 +11,23 @@ export const translatableBlobSchema = z.object({
   ko: blobSchema.optional(),
 });
 
-export const pkSchema = z.string().uuid().default(uuidv4).optional();
-export const createdSchema = z
-  .date()
-  .default(() => new Date())
-  .optional();
+export const pkSchema = z.string().uuid().default(uuidv4);
+export const createdSchema = z.date().default(() => new Date());
 
 export const modelSchema = z.object({
   pk: pkSchema,
   created: createdSchema,
 });
+
+export type ModelSchema = z.infer<typeof modelSchema>;
+
+type MakeFieldsOptional<T extends ModelSchema, K extends keyof T> = Omit<T, K> &
+  Partial<Pick<T, K>>;
+
+export type ModelSchemaDto<T extends ModelSchema> = MakeFieldsOptional<
+  T,
+  "pk" | "created"
+>;
 
 const propertiesSchema = z.record(
   z.string(),

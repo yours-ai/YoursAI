@@ -3,13 +3,10 @@ import { translatableStringSchema } from "@/locales/models.ts";
 import {
   flatJsonSchemaSchema,
   modelSchema,
+  ModelSchemaDto,
   translatableBlobSchema,
 } from "@/contrib/zod/schemas.ts";
-
-export const messageItems = z.object({
-  type: z.enum(["user", "assistant"]),
-  template: z.string(),
-});
+import { messageItemSchema } from "./messageItem.ts";
 
 export const optionalParamsSchema = z.object({
   frequency_penalty: z.number().min(-2).max(2).optional(),
@@ -39,11 +36,11 @@ export const promptTemplateSchema = modelSchema.extend({
   model: z.string(),
   maxContextTokens: z.number().positive(),
   function: functionSchema,
-  messageItems: z.array(messageItems),
+  messageItems: z.array(messageItemSchema),
   optionalParams: optionalParamsSchema.optional(),
   isInitial: z.boolean().optional(),
 });
 
-export type PromptItem = z.infer<typeof messageItems>;
 export type LlmSettings = z.infer<typeof optionalParamsSchema>;
 export type PromptTemplate = z.infer<typeof promptTemplateSchema>;
+export type PromptTemplateDto = ModelSchemaDto<PromptTemplate>;

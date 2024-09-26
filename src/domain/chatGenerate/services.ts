@@ -1,4 +1,4 @@
-import { PromptTemplate } from "@/domain/chat/models";
+import { PromptTemplate } from "./models";
 
 export const needAPIKeySetup = async (_promptTemplate: PromptTemplate) => {
   // TODO: check if cannot proxied.

@@ -1,5 +1,5 @@
 import { GlobalConfig } from "./models.ts";
-import { DefaultPromptTemplateUUID } from "@/domain/chat/populate.ts";
+import { DefaultPromptTemplateUUID } from "@/domain/chatGenerate/populate.ts";
 import { Db } from "@/domain/db.ts";
 
 export const initialGlobalConfig: GlobalConfig = {
