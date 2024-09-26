@@ -6,7 +6,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { openModal } from "@/redux/features/globalModal/slice.ts";
 import "./popover.css";
-import FileAddModalContent from "@/components/common/modal-contents/fileAddModalContent.tsx";
+import FileAddModalContent from "@/components/common/modalContents/fileAddModalContent.tsx";
 
 export default function TabAction({
   action,
