@@ -4,5 +4,5 @@ export {
   type PromptItem,
   optionalParamsSchema,
   promptTemplateSchema,
-  promptItemSchema,
+  messageItems,
 } from "./promptTemplate.ts";

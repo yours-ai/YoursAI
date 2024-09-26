@@ -6,9 +6,9 @@ import {
   translatableBlobSchema,
 } from "@/contrib/zod/schemas.ts";
 
-export const promptItemSchema = z.object({
+export const messageItems = z.object({
   type: z.enum(["user", "assistant"]),
-  content: z.string(),
+  template: z.string(),
 });
 
 export const optionalParamsSchema = z.object({
@@ -39,11 +39,11 @@ export const promptTemplateSchema = modelSchema.extend({
   model: z.string(),
   maxContextTokens: z.number().positive(),
   function: functionSchema,
-  messageItems: z.array(promptItemSchema),
+  messageItems: z.array(messageItems),
   optionalParams: optionalParamsSchema.optional(),
   isInitial: z.boolean().optional(),
 });
 
-export type PromptItem = z.infer<typeof promptItemSchema>;
+export type PromptItem = z.infer<typeof messageItems>;
 export type LlmSettings = z.infer<typeof optionalParamsSchema>;
 export type PromptTemplate = z.infer<typeof promptTemplateSchema>;

@@ -61,7 +61,7 @@ export default function ConversationStyleSelector({
             flexible
             options={[
               ...initialPromptTemplates.map((template) => ({
-                value: template.uuid,
+                value: template.pk!,
                 label: dynamicT(template.metadata.name),
               })),
               {

@@ -16,5 +16,5 @@ export const chatSchema = modelSchema.extend({
   llmChatPk: z.string().uuid().optional(),
 });
 
-export type LlmChat = z.infer<typeof llmChatSchema>;
+export type LLMChat = z.infer<typeof llmChatSchema>;
 export type Chat = z.infer<typeof chatSchema>;
