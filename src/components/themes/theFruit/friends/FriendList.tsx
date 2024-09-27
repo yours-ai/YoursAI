@@ -10,7 +10,7 @@ export interface Character {
   description: string;
 }
 
-const characters = [
+const characters: Character[] = [
   {
     name: "세나",
     slug: "sena",

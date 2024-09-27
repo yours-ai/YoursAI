@@ -1,57 +1,77 @@
 import TopTitle from "@/components/themes/chocolate/TopTitle.tsx";
-import CharacterListItem from "@/components/themes/chocolate/CharacterListItem.tsx";
 import { PiUserPlusBold } from "react-icons/pi";
-
-export interface Character {
-  id: number;
-  profileImage: string;
-  name: string;
-  creator: string;
-  creatorInfo: string;
-}
+import FriendListColumn from "@/components/themes/theFruit/FriendListColumn.tsx";
+import { Character } from "@/components/themes/theFruit/friends/FriendList.tsx";
+import { useTranslation } from "react-i18next";
 
 const characters: Character[] = [
   {
-    id: 1,
-    profileImage: "/mock/jiah.jpg",
-    name: "지아",
-    creator: "키리코",
-    creatorInfo: "키리코의 친구",
-  },
-  {
-    id: 2,
-    profileImage: "/mock/kiriko.jpg",
-    name: "키리코",
-    creator: "지아",
-    creatorInfo: "지아의 친구",
-  },
-  {
-    id: 3,
-    profileImage: "/mock/sena.jpg",
     name: "세나",
-    creator: "유나",
-    creatorInfo: "유나의 친구",
+    slug: "sena",
+    image: "/sena.png",
+    description: "오늘도 꽃처럼 빛나는 하루🌸",
   },
   {
-    id: 4,
-    profileImage: "/mock/yuna.jpg",
-    name: "유나",
-    creator: "세나",
-    creatorInfo: "세나의 친구",
+    name: "김지아",
+    slug: "jia",
+    image: "/jia.png",
+    description: "생각이 많아지는 날, 잠시 멍하니...🙃",
+  },
+  {
+    name: "애린",
+    slug: "aerin",
+    image: "/aerin.jpg",
+    description: "사천짜파게티가 땡기는 날🤤",
+  },
+  {
+    name: "유이",
+    slug: "yui",
+    image: "/yui.jpg",
+    description: "수업째고 너 보러왔어",
+  },
+  {
+    name: "세나",
+    slug: "sena",
+    image: "/sena.png",
+    description: "오늘도 꽃처럼 빛나는 하루🌸",
+  },
+  {
+    name: "김지아",
+    slug: "jia",
+    image: "/jia.png",
+    description: "생각이 많아지는 날, 잠시 멍하니...🙃",
+  },
+  {
+    name: "애린",
+    slug: "aerin",
+    image: "/aerin.jpg",
+    description: "사천짜파게티가 땡기는 날🤤",
+  },
+  {
+    name: "유이",
+    slug: "yui",
+    image: "/yui.jpg",
+    description: "수업째고 너 보러왔어",
   },
 ];
 
 export default function FriendList() {
+  const { t } = useTranslation("pages/friends");
   return (
     <div className="w-full">
       <TopTitle
-        title="친구"
+        title={t("tabTitle")}
         action={<PiUserPlusBold className="size-[22px]" />}
       />
-      <div className="flex w-full flex-col justify-center">
-        {characters.map((character) => (
-          <CharacterListItem character={character} />
-        ))}
+      <div className="mt-[12px] w-full px-4">
+        {characters.length > 0 ? (
+          <FriendListColumn characters={characters} />
+        ) : (
+          <div className="mt-[50px] w-full text-center text-16p">
+            <span className="text-black/50">{t("empty")}</span>
+            🥲
+          </div>
+        )}
       </div>
     </div>
   );
