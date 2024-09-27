@@ -44,6 +44,48 @@ const chats: ChatProps[] = [
   { isSystem: true, time: true },
   { content: "대답 좀 빨리 쳐줄 수 없을까?" },
   { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isCharacter: true, content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isSystem: true, time: true },
+  { content: "안녕 나는 세나라고 해!" },
+  { isCharacter: true, content: "만나서 반가워!" },
+  {
+    isSystem: true,
+    content:
+      "세나는 약간 비웃는 표정이다. 표정을 정상화 시킬 필요가 있어보인다.",
+  },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isSystem: true, content: "세나는... 웃고 있었다..." },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isCharacter: true, content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isSystem: true, time: true },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isSystem: true, content: "세나는... 웃고 있었다..." },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isCharacter: true, content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isSystem: true, time: true },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isCharacter: true, content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isSystem: true, time: true },
+  { content: "안녕 나는 세나라고 해!" },
+  { isCharacter: true, content: "만나서 반가워!" },
+  {
+    isSystem: true,
+    content:
+      "세나는 약간 비웃는 표정이다. 표정을 정상화 시킬 필요가 있어보인다.",
+  },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isSystem: true, content: "세나는... 웃고 있었다..." },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isCharacter: true, content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { isSystem: true, time: true },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
+  { content: "대답 좀 빨리 쳐줄 수 없을까?" },
 ];
 
 export function Component() {
@@ -98,7 +140,7 @@ export function Component() {
         </div>
       </div>
       <div className="fixed inset-x-0 bottom-0 flex h-[calc(60px+env(safe-area-inset-bottom))] items-center justify-center bg-white/70 px-[15px] pb-[env(safe-area-inset-bottom)] backdrop-blur-3xl phone:h-[72px] phone:pb-0 tablet:px-[80px] desktop:px-[190px]">
-        <div className="flex w-full items-center gap-[13px]">
+        <div className="flex w-full max-w-[900px] items-center gap-[13px]">
           <div className="relative top-[7px] flex justify-center phone:top-[4px]">
             <span className="absolute top-[-23px] text-12p text-black/50">
               탈옥 토글
