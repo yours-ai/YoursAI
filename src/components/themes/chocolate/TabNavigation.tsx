@@ -20,7 +20,7 @@ function NavItem({ isActive, icon, label, path }: NavItemProps) {
       <div className={`flex flex-col items-center justify-center gap-1`}>
         {icon}
         <div
-          className={`${isActive !== null ? "text-[#2F363E]" : "text-[#B9BCBF]"} text-[10px]`}
+          className={`${isActive !== null ? "text-[#2F363E]" : "text-[#B9BCBF]"} text-10p`}
         >
           {label}
         </div>
@@ -34,7 +34,7 @@ export default function TabNavigation() {
   const matchMessagesTab = useMatch(navigationPaths.messages + "/*");
   const matchSettingsTab = useMatch(navigationPaths.settings + "/*");
   return (
-    <div className="flex h-[58px] border-t-2 bg-[#F9F9FA]">
+    <div className="mobile:h-[58px] flex h-[calc(62px+env(safe-area-inset-bottom))] border-t-2 bg-[#F9F9FA]">
       <NavItem
         icon={
           <BsPersonFill
