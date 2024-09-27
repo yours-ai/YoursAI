@@ -3,15 +3,15 @@ import { useParams } from "react-router-dom";
 import { useTheme } from "@/hooks/useTheme.ts";
 
 export function Component() {
-  const { messageRoomId } = useParams();
+  const { chatRoomId } = useParams();
   useRightPrimaryPage();
   const theme = useTheme();
   if (!theme) return null;
   const {
-    components: { MessageRoomSettingsCustom },
+    components: { ChatRoomSettingsCustom },
   } = theme;
 
-  return <MessageRoomSettingsCustom messageRoomId={messageRoomId} />;
+  return <ChatRoomSettingsCustom chatRoomId={chatRoomId} />;
 }
 
 Component.displayName = "ConversationCustomSettingPage";

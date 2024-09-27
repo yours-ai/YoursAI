@@ -10,12 +10,12 @@ export function Component() {
   const theme = useTheme();
   if (!theme) return null;
   const {
-    components: { MessageList },
+    components: { ChatList },
   } = theme;
 
   return (
     <SplitViewPage
-      leftPane={<MessageList />}
+      leftPane={<ChatList />}
       rightPane={<Outlet context={outletContext} />}
     />
   );

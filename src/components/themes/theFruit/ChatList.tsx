@@ -138,7 +138,7 @@ const messages = [
   },
 ];
 
-export default function MessageList() {
+export default function ChatList() {
   const { t } = useTranslation("pages/msg");
   return (
     <div>

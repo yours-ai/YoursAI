@@ -6,9 +6,9 @@ import { AvailableBundledThemeId } from "@/domain/config/models.ts";
 import { Translatable, TranslatableString } from "@/locales/models.ts";
 import { FriendDetailProps } from "@/components/themes/models/FriendDetail.ts";
 import { SettingsProps } from "@/components/themes/models/Settings.ts";
-import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
-import { MessageRoomSettingsProps } from "@/components/themes/models/MessageRoomSettings.ts";
-import { MessageRoomSettingsCustomProps } from "@/components/themes/models/MessageRoomSettingsCustom.ts";
+import { ChatRoomProps } from "@/components/themes/models/ChatRoom.ts";
+import { ChatRoomSettingsProps } from "@/components/themes/models/ChatRoomSettings.ts";
+import { ChatRoomSettingsCustomProps } from "@/components/themes/models/ChatRoomSettingsCustom.ts";
 
 export interface Theme {
   id: string;
@@ -24,10 +24,10 @@ export interface Theme {
     FriendList: React.ComponentType;
     FriendDetail: React.ComponentType<FriendDetailProps>;
     FriendSettings: React.ComponentType<SettingsProps>;
-    MessageList: React.ComponentType;
-    MessageRoom: React.ComponentType<MessageRoomProps>;
-    MessageRoomSettings: React.ComponentType<MessageRoomSettingsProps>;
-    MessageRoomSettingsCustom: React.ComponentType<MessageRoomSettingsCustomProps>;
+    ChatList: React.ComponentType;
+    ChatRoom: React.ComponentType<ChatRoomProps>;
+    ChatRoomSettings: React.ComponentType<ChatRoomSettingsProps>;
+    ChatRoomSettingsCustom: React.ComponentType<ChatRoomSettingsCustomProps>;
     SettingList: React.ComponentType;
     SettingLanguage: React.ComponentType;
     SettingConversation: React.ComponentType;

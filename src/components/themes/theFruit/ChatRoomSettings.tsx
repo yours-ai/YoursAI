@@ -1,4 +1,4 @@
-import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
+import { ChatRoomProps } from "@/components/themes/models/ChatRoom.ts";
 import SettingTopBar from "@/components/common/SettingTopBar.tsx";
 import ListContainer from "@/components/common/ListContainer.tsx";
 import ListLinkItem from "@/components/common/ListLinkItem.tsx";
@@ -6,10 +6,8 @@ import { ListItem, Toggle } from "konsta/react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function MessageRoomSettings({
-  messageRoomId,
-}: MessageRoomProps) {
-  console.log(messageRoomId); // TODO <- 삭제
+export default function ChatRoomSettings({ chatRoomId }: ChatRoomProps) {
+  console.log(chatRoomId); // TODO <- 삭제
   const [checked, setChecked] = useState(false);
   const { t } = useTranslation("pages/msg");
   return (

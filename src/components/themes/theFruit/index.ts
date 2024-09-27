@@ -12,10 +12,10 @@ import { SettingConversation } from "@/components/themes/theFruit/SettingConvers
 import { SettingData } from "@/components/themes/theFruit/SettingData.tsx";
 import { SettingLanguage } from "@/components/themes/theFruit/SettingLanguage.tsx";
 import { SettingList } from "@/components/themes/theFruit/SettingList.tsx";
-import MessageRoomSettingsCustom from "@/components/themes/theFruit/MessageRoomSettingsCustom.tsx";
-import MessageRoomSettings from "@/components/themes/theFruit/MessageRoomSettings.tsx";
-import MessageRoom from "@/components/themes/theFruit/MessageRoom.tsx";
-import MessageList from "@/components/themes/theFruit/MessageList.tsx";
+import ChatRoomSettingsCustom from "@/components/themes/theFruit/ChatRoomSettingsCustom.tsx";
+import ChatRoomSettings from "@/components/themes/theFruit/ChatRoomSettings.tsx";
+import ChatRoom from "@/components/themes/theFruit/ChatRoom.tsx";
+import ChatList from "@/components/themes/theFruit/ChatList.tsx";
 import ConversationStyleSelector from "@/components/themes/theFruit/ConversationStyleSelector.tsx";
 import TranslationSelector from "@/components/themes/theFruit/TranslationSelector.tsx";
 import TypingSimulationSelector from "@/components/themes/theFruit/TypingSimulationSelector.tsx";
@@ -43,10 +43,10 @@ export default async function getTheFruitTheme(): Promise<Theme> {
       TabNavigation,
       EmptyPane,
       GlobalModal,
-      MessageList,
-      MessageRoom,
-      MessageRoomSettings,
-      MessageRoomSettingsCustom,
+      ChatList,
+      ChatRoom,
+      ChatRoomSettings,
+      ChatRoomSettingsCustom,
       SettingList,
       SettingLanguage,
       SettingData,

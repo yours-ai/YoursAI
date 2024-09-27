@@ -1,14 +1,12 @@
-import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
+import { ChatRoomProps } from "@/components/themes/models/ChatRoom.ts";
 import { PiCaretLeftBold } from "react-icons/pi";
 import ListContainer from "@/components/common/ListContainer.tsx";
 import ListLinkItem from "@/components/common/ListLinkItem.tsx";
 import { ListItem } from "konsta/react";
 import { useTranslation } from "react-i18next";
 
-export default function MessageRoomSettingsCustom({
-  messageRoomId,
-}: MessageRoomProps) {
-  console.log(messageRoomId); // TODO <- 삭제
+export default function ChatRoomSettingsCustom({ chatRoomId }: ChatRoomProps) {
+  console.log(chatRoomId); // TODO <- 삭제
   const { t } = useTranslation("pages/msg");
   return (
     <div className="size-full bg-emptyBackground">
