@@ -22,7 +22,7 @@ export default function MessageItem({ name, image, message, time }: Message) {
                 {time}
               </span>
             </div>
-            <div className="text-16p line-clamp-2 text-ellipsis leading-[20px] text-black/50">
+            <div className="line-clamp-2 text-ellipsis text-16p leading-[20px] text-black/50">
               {message}
             </div>
           </div>

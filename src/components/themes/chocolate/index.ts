@@ -1,25 +1,29 @@
 import { Theme } from "@/components/themes/models";
-import getTheFruitTheme from "@/components/themes/theFruit";
 import { fetchDescriptionImgBlob } from "./descriptionImg.ts";
 import TabNavigation from "@/components/themes/chocolate/TabNavigation.tsx";
 import EmptyPane from "@/components/themes/chocolate/EmptyPane.tsx";
-import MessageList from "@/components/themes/chocolate/MessageList.tsx";
-import MessageRoom from "@/components/themes/chocolate/MessageRoom.tsx";
-import MessageRoomSettings from "@/components/themes/chocolate/MessageRoomSettings.tsx";
-import MessageRoomSettingsCustom from "@/components/themes/chocolate/MessageRoomSettingsCustom.tsx";
 import { SettingList } from "@/components/themes/chocolate/SettingList.tsx";
 import { SettingLanguage } from "@/components/themes/chocolate/SettingLanguage.tsx";
-import { SettingThemes } from "@/components/themes/chocolate/SettingThemes.tsx";
 import { SettingData } from "@/components/themes/chocolate/SettingData.tsx";
 import { SettingConversation } from "@/components/themes/chocolate/SettingConversation.tsx";
 import { SettingSponsor } from "@/components/themes/chocolate/SettingSponsor.tsx";
 import FriendDetail from "@/components/themes/chocolate/FriendDetail.tsx";
 import FriendSettings from "@/components/themes/chocolate/FriendSettings.tsx";
 import FriendList from "@/components/themes/chocolate/FriendList.tsx";
+import Button from "@/components/themes/theFruit/Button.tsx";
+import GlobalModal from "@/components/themes/theFruit/GlobalModal.tsx";
+import ChatList from "@/components/themes/chocolate/ChatList.tsx";
+import ChatRoom from "@/components/themes/chocolate/ChatRoom.tsx";
+import ChatRoomSettings from "@/components/themes/chocolate/ChatRoomSettings.tsx";
+import ChatRoomSettingsCustom from "@/components/themes/chocolate/ChatRoomSettingsCustom.tsx";
+import ConversationStyleSelector from "@/components/themes/theFruit/ConversationStyleSelector.tsx";
+import TranslationSelector from "@/components/themes/theFruit/settings/TranslationSelector.tsx";
+import TypingSimulationSelector from "@/components/themes/theFruit/settings/TypingSimulationSelector.tsx";
+import PersonalSettings from "@/components/themes/theFruit/settings/PersonalSettings.tsx";
+import ThemeSelector from "@/components/themes/theFruit/settings/ThemeSelector.tsx";
 
 export default async function getTheChocolateTheme(): Promise<Theme> {
   const descriptionImgBlob = await fetchDescriptionImgBlob();
-  const theFruitTheme = await getTheFruitTheme();
   return {
     id: "chocolate",
     name: {
@@ -35,22 +39,28 @@ export default async function getTheChocolateTheme(): Promise<Theme> {
       ko: descriptionImgBlob,
     },
     components: {
-      ...theFruitTheme.components, // TODO: implement it
-      TabNavigation,
+      Button,
+      GlobalModal,
+      ConversationStyleSelector,
+      TranslationSelector,
+      TypingSimulationSelector,
+      PersonalSettings,
+      ThemeSelector,
+      // TODO: 위는초콜릿으로 바꿔야함
       EmptyPane,
-      MessageList,
-      MessageRoom,
-      MessageRoomSettings,
-      MessageRoomSettingsCustom,
-      SettingList,
-      SettingLanguage,
-      SettingThemes,
-      SettingData,
-      SettingConversation,
-      SettingSponsor,
+      TabNavigation,
       FriendList,
       FriendDetail,
       FriendSettings,
+      ChatList,
+      ChatRoom,
+      ChatRoomSettings,
+      ChatRoomSettingsCustom,
+      SettingList,
+      SettingLanguage,
+      SettingConversation,
+      SettingData,
+      SettingSponsor,
     },
   };
 }

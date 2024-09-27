@@ -1,5 +1,5 @@
-import { Message } from "./MessageList";
-import MessageBubbleText from "@/components/themes/chocolate/MessageBubbleText.tsx";
+import { Message } from "./ChatList.tsx";
+import ChatBubbleText from "@/components/themes/chocolate/ChatBubbleText.tsx";
 
 interface Props {
   message: Message;
@@ -8,7 +8,7 @@ interface Props {
   isFromUser?: boolean;
 }
 
-export default function MessageBubble({
+export default function ChatBubble({
   message,
   needProfile = false,
   needBubbleTail = false,
@@ -33,13 +33,13 @@ export default function MessageBubble({
         <div
           className={`${isFromUser ? "ml-2 flex-row-reverse" : "mr-2 flex-row"} flex items-end`}
         >
-          <MessageBubbleText
+          <ChatBubbleText
             message={message.message}
             needBubbleTail={needBubbleTail}
             isFromUser={isFromUser}
           />
           <div
-            className={`${isFromUser ? "text-end" : "text-start"} min-w-16 text-[12px] text-[#535C62]`}
+            className={`${isFromUser ? "text-end" : "text-start"} min-w-16 text-12p text-[#535C62]`}
           >
             {message.time}
           </div>

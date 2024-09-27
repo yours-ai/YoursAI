@@ -4,7 +4,7 @@ interface Props {
   isFromUser: boolean;
 }
 
-export default function MessageBubbleText({
+export default function ChatBubbleText({
   message,
   needBubbleTail,
   isFromUser,

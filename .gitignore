@@ -27,3 +27,4 @@ dev-dist/
 
 .env
 .env*
+/tsconfig.app.tsbuildinfo

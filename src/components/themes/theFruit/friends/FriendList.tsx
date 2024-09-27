@@ -1,6 +1,6 @@
 import TabAction from "@/components/common/TabAction.tsx";
 import TabTitle from "@/components/common/TabTitle.tsx";
-import FriendListColumn from "@/routes/main/friends/FriendListColumn.tsx";
+import FriendListColumn from "@/components/themes/theFruit/FriendListColumn.tsx";
 import { useTranslation } from "react-i18next";
 
 export interface Character {
@@ -72,7 +72,7 @@ export default function FriendList() {
         {characters.length > 0 ? (
           <FriendListColumn characters={characters} />
         ) : (
-          <div className="text-16p mt-[50px] w-full text-center">
+          <div className="mt-[50px] w-full text-center text-16p">
             <span className="text-black/50">{t("empty")}</span>
             🥲
           </div>

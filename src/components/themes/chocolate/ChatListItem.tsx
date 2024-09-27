@@ -1,4 +1,4 @@
-import { Assignment } from "@/components/themes/chocolate/MessageList.tsx";
+import { Assignment } from "@/components/themes/chocolate/ChatList.tsx";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
   onClick: () => void;
 }
 
-export default function MessageListItem({
+export default function ChatListItem({
   isSelected = false,
   assignment,
   onClick,
@@ -31,7 +31,7 @@ export default function MessageListItem({
           {assignment.lastMessage.message}
         </div>
       </div>
-      <div className="h-full pt-6 text-[12px] font-light text-[#A3A3A3]">
+      <div className="h-full pt-6 text-12p font-light text-[#A3A3A3]">
         {assignment.lastMessage.time}
       </div>
     </Link>

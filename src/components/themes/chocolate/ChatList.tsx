@@ -1,6 +1,6 @@
 import TopTitle from "@/components/themes/chocolate/TopTitle.tsx";
 import { TbEdit } from "react-icons/tb";
-import MessageListItem from "@/components/themes/chocolate/MessageListItem.tsx";
+import ChatListItem from "@/components/themes/chocolate/ChatListItem.tsx";
 import { useState } from "react";
 
 export interface Assignment {
@@ -69,7 +69,7 @@ const assignments: Assignment[] = [
   },
 ];
 
-export default function MessageList() {
+export default function ChatList() {
   const [selectedAssignment, setSelectedAssignment] =
     useState<Assignment | null>(null);
   return (
@@ -77,7 +77,7 @@ export default function MessageList() {
       <TopTitle title="메시지" action={<TbEdit className="size-[22px]" />} />
       <div className="flex w-full flex-col justify-center">
         {assignments.map((assignment) => (
-          <MessageListItem
+          <ChatListItem
             isSelected={assignment === selectedAssignment}
             assignment={assignment}
             onClick={() => {

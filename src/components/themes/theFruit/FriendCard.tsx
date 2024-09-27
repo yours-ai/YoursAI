@@ -51,7 +51,7 @@ export default function FriendCard({
             style={{ background: gradient }}
           >
             <span className="text-heading-4 font-semibold">{name}</span>
-            <span className="text-body text-center text-[#5D5D5D]">
+            <span className="text-center text-body text-[#5D5D5D]">
               {description}
             </span>
           </div>

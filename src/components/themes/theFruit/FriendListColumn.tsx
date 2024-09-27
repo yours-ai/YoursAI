@@ -1,4 +1,4 @@
-import FriendCard from "@/routes/main/friends/FriendCard.tsx";
+import FriendCard from "@/components/themes/theFruit/FriendCard.tsx";
 import { useEffect, useRef, useState } from "react";
 import { Character } from "@/components/themes/theFruit/friends/FriendList.tsx";
 

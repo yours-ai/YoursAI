@@ -1,6 +1,6 @@
 import TabAction from "@/components/common/TabAction.tsx";
 import TabTitle from "@/components/common/TabTitle.tsx";
-import MessageItemList from "@/routes/main/messages/MessageItemList.tsx";
+import MessageItemList from "@/components/themes/theFruit/messages/MessageItemList.tsx";
 import { useTranslation } from "react-i18next";
 
 export interface Message {
@@ -148,7 +148,7 @@ export default function ChatList() {
         {messages.length > 0 ? (
           <MessageItemList messages={messages} />
         ) : (
-          <div className="text-16p mt-[50px] w-full text-center">
+          <div className="mt-[50px] w-full text-center text-16p">
             <span className="text-black/50">{t("empty.one")}</span>
             🥲
             <br />

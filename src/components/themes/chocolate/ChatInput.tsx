@@ -1,4 +1,4 @@
-export default function MessageInput() {
+export default function ChatInput() {
   return (
     <div
       className={`sticky bottom-0 z-50 flex h-[84px] w-full flex-row justify-stretch gap-3 bg-white px-3 pb-[30px] pt-[5px]`}

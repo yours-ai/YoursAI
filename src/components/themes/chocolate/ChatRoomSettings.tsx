@@ -1,4 +1,3 @@
-import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
 import TopBar from "@/components/themes/chocolate/TopBar.tsx";
 import SettingItem from "@/components/themes/chocolate/SettingItem.tsx";
 import { PiGearSix } from "react-icons/pi";
@@ -6,11 +5,12 @@ import SettingItemDivider from "@/components/themes/chocolate/SettingItemDivider
 import { FaRegTrashAlt } from "react-icons/fa";
 import { GrDetach } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
+import { ChatRoomSettingsProps } from "@/components/themes/models/ChatRoomSettings.ts";
 
-export default function MessageRoomSettings({
-  messageRoomId,
-}: MessageRoomProps) {
-  console.log(messageRoomId); // TODO <- 삭제
+export default function ChatRoomSettings({
+  chatRoomId,
+}: ChatRoomSettingsProps) {
+  console.log(chatRoomId); // TODO <- 삭제
   const navigate = useNavigate();
   return (
     <div
@@ -19,7 +19,7 @@ export default function MessageRoomSettings({
       {/* TODO: 동적으로 */}
       <TopBar
         title={"세나와 7월 11일 오전 6:48에 시작한 대화"}
-        backLink={`../${messageRoomId}`}
+        backLink={`../${chatRoomId}`}
         bgColor={"bg-white"}
       />
       <div className="flex-1 overflow-y-scroll ">

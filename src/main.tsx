@@ -71,9 +71,8 @@ const router = createBrowserRouter([
         lazy: () => import("./routes/main/messages/page.tsx"),
         children: [
           {
-            path: "/main/messages/:messageRoomId",
-            lazy: () =>
-              import("@/routes/main/messages/[:messageRoomId]/page.tsx"),
+            path: "/main/messages/:chatRoomId",
+            lazy: () => import("@/routes/main/messages/[:chatRoomId]/page.tsx"),
           },
           {
             path: "/main/messages/:chatRoomId/settings",
@@ -118,20 +117,6 @@ const router = createBrowserRouter([
           {
             path: "/main/messages",
             lazy: () => import("./routes/main/empty.tsx"),
-          },
-          {
-            path: "/main/messages/:messageRoomId/settings",
-            lazy: () =>
-              import(
-                "@/routes/main/messages/[:messageRoomId]/settings/page.tsx"
-              ),
-          },
-          {
-            path: "/main/messages/:messageRoomId/settings/custom",
-            lazy: () =>
-              import(
-                "@/routes/main/messages/[:messageRoomId]/settings/custom/page.tsx"
-              ),
           },
         ],
       },
@@ -197,10 +182,6 @@ const router = createBrowserRouter([
           {
             path: "/main/settings/themes",
             lazy: () => import("./routes/main/settings/themes/page.tsx"),
-          },
-          {
-            path: "/main/settings/conversation",
-            lazy: () => import("./routes/main/settings/conversation/page.tsx"),
           },
           {
             path: "/main/settings/data",

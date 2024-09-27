@@ -1,9 +1,9 @@
-import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
-import { Message } from "@/components/themes/chocolate/MessageList.tsx";
-import MessageBubble from "@/components/themes/chocolate/MessageBubble.tsx";
+import { Message } from "@/components/themes/chocolate/ChatList.tsx";
+import ChatBubble from "@/components/themes/chocolate/ChatBubble.tsx";
 import { IoMenuOutline } from "react-icons/io5";
 import TopBar from "@/components/themes/chocolate/TopBar.tsx";
-import MessageInput from "@/components/themes/chocolate/MessageInput.tsx";
+import ChatInput from "@/components/themes/chocolate/ChatInput.tsx";
+import { ChatRoomProps } from "@/components/themes/models/ChatRoom.ts";
 
 const messages: Message[] = [
   {
@@ -100,8 +100,8 @@ const messages: Message[] = [
   },
 ];
 
-export default function MessageRoom({ messageRoomId }: MessageRoomProps) {
-  console.log(messageRoomId); // TODO <- 삭제
+export default function ChatRoom({ chatRoomId }: ChatRoomProps) {
+  console.log(chatRoomId); // TODO <- 삭제
   return (
     <div className={`relative size-full bg-[#ABC1D1]`}>
       <TopBar
@@ -113,11 +113,11 @@ export default function MessageRoom({ messageRoomId }: MessageRoomProps) {
       <div className="flex-1 overflow-y-scroll">
         <div className="flex flex-col items-stretch gap-2 py-4">
           {messages.map((message) => (
-            <MessageBubble key={message.message} message={message} /> //  TODO: 적절한 needProfile, needBubbleTail를 넘겨주는 로직이 필요함
+            <ChatBubble key={message.message} message={message} /> //  TODO: 적절한 needProfile, needBubbleTail를 넘겨주는 로직이 필요함
           ))}
         </div>
       </div>
-      <MessageInput />
+      <ChatInput />
     </div>
   );
 }
