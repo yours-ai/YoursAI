@@ -1,20 +1,21 @@
-import { Link, Outlet, useOutletContext } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
 import SplitViewPage from "@/routes/main/SplitViewPage.tsx";
 import { useLeftPrimaryPage } from "@/routes/main/hooks.ts";
 import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
+import { useTheme } from "@/hooks/useTheme.ts";
 
 export function Component() {
   useLeftPrimaryPage("/main/friends");
   const outletContext = useOutletContext();
+  const theme = useTheme();
+  if (!theme) return null;
+  const {
+    components: { FriendList },
+  } = theme;
 
   return (
     <SplitViewPage
-      leftPane={
-        <div>
-          <div className="mt-10 pl-4 text-2xl font-bold">친구</div>
-          <Link to="/main/friends/1">친구 1</Link>
-        </div>
-      }
+      leftPane={<FriendList />}
       rightPane={<Outlet context={outletContext} />}
     />
   );

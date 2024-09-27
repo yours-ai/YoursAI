@@ -19,6 +19,7 @@ export interface Theme {
     Button: React.ComponentType<ButtonProps>;
     TabNavigation: React.ComponentType;
     EmptyPane: React.ComponentType;
+    FriendList: React.ComponentType;
     FriendDetail: React.ComponentType<FriendDetailProps>;
     FriendSettings: React.ComponentType<FriendSettingsProps>;
     MessageList: React.ComponentType;

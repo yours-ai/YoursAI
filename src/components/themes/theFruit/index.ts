@@ -15,6 +15,7 @@ import { SettingConversation } from "@/components/themes/chocolate/SettingConver
 import { SettingSponsor } from "@/components/themes/chocolate/SettingSponsor.tsx";
 import FriendDetail from "@/components/themes/chocolate/FriendDetail.tsx";
 import FriendSettings from "@/components/themes/chocolate/FriendSettings.tsx";
+import FriendList from "@/components/themes/chocolate/FriendList.tsx";
 
 export default async function getTheFruitTheme(): Promise<Theme> {
   const descriptionImgBlob = await fetchDescriptionImgBlob();
@@ -49,6 +50,7 @@ export default async function getTheFruitTheme(): Promise<Theme> {
       SettingSponsor,
       FriendDetail,
       FriendSettings,
+      FriendList,
     },
   };
 }
