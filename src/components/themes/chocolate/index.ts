@@ -20,7 +20,7 @@ import ConversationStyleSelector from "@/components/themes/theFruit/Conversation
 import TranslationSelector from "@/components/themes/theFruit/settings/TranslationSelector.tsx";
 import TypingSimulationSelector from "@/components/themes/theFruit/settings/TypingSimulationSelector.tsx";
 import PersonalSettings from "@/components/themes/theFruit/settings/PersonalSettings.tsx";
-import ThemeSelector from "@/components/themes/theFruit/settings/ThemeSelector.tsx";
+import ThemeSelector from "@/components/themes/chocolate/settings/ThemeSelector.tsx";
 
 export default async function getTheChocolateTheme(): Promise<Theme> {
   const descriptionImgBlob = await fetchDescriptionImgBlob();
@@ -45,8 +45,8 @@ export default async function getTheChocolateTheme(): Promise<Theme> {
       TranslationSelector,
       TypingSimulationSelector,
       PersonalSettings,
-      ThemeSelector,
       // TODO: 위는초콜릿으로 바꿔야함
+      ThemeSelector,
       EmptyPane,
       TabNavigation,
       FriendList,
