@@ -7,9 +7,9 @@ import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useDynamicTranslation } from "@/locales/hooks.ts";
 import { useLiveQuery } from "dexie-react-hooks";
-import { GlobalConfig } from "@/domain/config/models.ts";
+import { SettingsProps } from "@/components/themes/models/Settings.ts";
 
-export default function SettingsPage({ config }: { config: GlobalConfig }) {
+export default function FriendSettings({ config }: SettingsProps) {
   const db = useDb();
   const { friendId } = useParams();
   const { t } = useTranslation("pages/friends");

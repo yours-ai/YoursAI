@@ -1,14 +1,18 @@
-import { useTranslation } from "react-i18next";
-import SettingTopBar from "@/components/common/SettingTopBar.tsx";
+import { useDb } from "@/contexts/DbContext.ts";
+import { useLiveQuery } from "dexie-react-hooks";
+import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
+import { useTheme } from "@/hooks/useTheme.ts";
 
 export function Component() {
-  const { t } = useTranslation("pages/friends");
-  return (
-    <div className="size-full bg-emptyBackground">
-      <SettingTopBar title={t("settings.options.self-intro")} enableBack />
-      <div className="flex w-full flex-col items-center px-[15px] tablet:px-[80px] desktop:px-[190px]"></div>
-    </div>
-  );
+  const db = useDb();
+  const config = useLiveQuery(makeGlobalConfigRepository(db).getGlobalConfig);
+  const theme = useTheme();
+  if (!theme || !config) return null;
+  const {
+    components: { PersonalSettings },
+  } = theme;
+
+  return <PersonalSettings config={config} />;
 }
 
 Component.displayName = "PersonaSessionSettingPage";

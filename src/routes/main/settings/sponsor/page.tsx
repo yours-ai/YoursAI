@@ -1,13 +1,14 @@
 import { useRightPrimaryPage } from "@/routes/main/hooks.ts";
-import SettingTopBar from "@/components/common/SettingTopBar.tsx";
+import { useTheme } from "@/hooks/useTheme.ts";
 
 export function Component() {
   useRightPrimaryPage();
-  return (
-    <div className="size-full bg-emptyBackground">
-      <SettingTopBar title={"Sponsors"} enableHome />
-    </div>
-  );
+  const theme = useTheme();
+  if (!theme) return null;
+  const {
+    components: { SettingSponsor },
+  } = theme;
+  return <SettingSponsor />;
 }
 
 Component.displayName = "SponsorSettingPage";
