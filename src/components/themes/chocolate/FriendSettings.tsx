@@ -1,26 +1,24 @@
-import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
 import TopBar from "@/components/themes/chocolate/TopBar.tsx";
 import SettingItem from "@/components/themes/chocolate/SettingItem.tsx";
 import SettingItemDivider from "@/components/themes/chocolate/SettingItemDivider.tsx";
+import { FriendDetailProps } from "@/components/themes/models/FriendDetail.ts";
 
-export default function MessageRoomSettingsCustom({
-  messageRoomId,
-}: MessageRoomProps) {
-  console.log(messageRoomId); // TODO <- 삭제
+export default function FriendSettings({ friendId }: FriendDetailProps) {
+  console.log(friendId); // TODO <- 삭제
   return (
     <div
       className={`relative size-full border-l-[0.5px] border-[#C6C6C8] bg-white`}
     >
       {/* TODO: 동적으로 */}
       <TopBar
-        title={"세나와 7월 11일 오전 6:48에 시작한 대화 - 대화 설정 커스텀"}
-        backLink={`../${messageRoomId}/settings`}
+        title={"세나 대화 설정 커스텀"}
+        backLink={`../${friendId}`}
         bgColor={"bg-white"}
       />
       <div className="flex-1 overflow-y-scroll">
         <div className="flex flex-col items-stretch py-5">
           <div className={`px-5 text-[12px] font-light`}>
-            여기서 수정한 대화 설정은 이 대화에만 적용됩니다.
+            여기서 수정한 대화 설정은 세나와의 모든 대화에 기본으로 적용됩니다.
           </div>
           <SettingItem
             title={"대화 스타일"}
@@ -49,7 +47,7 @@ export default function MessageRoomSettingsCustom({
           />
           <SettingItem title={"내 소개"} />
           <SettingItemDivider />
-          <SettingItem title={"모두 기본값(캐릭터 설정)으로 설정하기"} />
+          <SettingItem title={"모두 기본값(글로벌 설정)으로 설정하기"} />
         </div>
       </div>
     </div>
