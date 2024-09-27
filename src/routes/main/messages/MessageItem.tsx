@@ -1,5 +1,5 @@
-import { Message } from "@/routes/main/messages/page.tsx";
 import { Link } from "react-router-dom";
+import { Message } from "@/components/themes/theFruit/ChatList.tsx";
 
 export default function MessageItem({ name, image, message, time }: Message) {
   return (
