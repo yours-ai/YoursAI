@@ -45,7 +45,7 @@ export default function FriendSettings({ friendId }: FriendDetailProps) {
               />
             }
           />
-          <SettingItem title={"내 소개"} />
+          <SettingItem title={"내 소개"} isLastItem={true} />
           <SettingItemDivider />
           <SettingItem title={"모두 기본값(글로벌 설정)으로 설정하기"} />
         </div>

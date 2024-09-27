@@ -40,6 +40,7 @@ export default function MessageRoomSettings({
                 defaultChecked
               />
             }
+            isLastItem={true}
           />
           <SettingItemDivider />
           <SettingItem

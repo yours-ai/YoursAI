@@ -33,6 +33,7 @@ export function SettingList() {
           icon={<CgTemplate className={`size-6`} />}
           onClick={() => navigate(settingPaths.themes)}
           bgColor={matchTheme ? "bg-[#F5F5F5]" : "bg-white"}
+          isLastItem={true}
         />
         <SettingItemDivider />
         <SettingItem
@@ -40,6 +41,7 @@ export function SettingList() {
           icon={<IoChatbubbleOutline className={`size-6`} />}
           onClick={() => navigate(settingPaths.conversation)}
           bgColor={matchConversation ? "bg-[#F5F5F5]" : "bg-white"}
+          isLastItem={true}
         />
         <SettingItemDivider />
         <SettingItem
@@ -47,6 +49,7 @@ export function SettingList() {
           icon={<RiDatabase2Line className={`size-6`} />}
           onClick={() => navigate(settingPaths.data)}
           bgColor={matchData ? "bg-[#F5F5F5]" : "bg-white"}
+          isLastItem={true}
         />
         <SettingItemDivider />
         <SettingItem
@@ -66,6 +69,7 @@ export function SettingList() {
           icon={<BiDonateHeart className={`size-6`} />}
           onClick={() => navigate(settingPaths.sponsor)}
           bgColor={matchSponsor ? "bg-[#F5F5F5]" : "bg-white"}
+          isLastItem={true}
         />
         <SettingItemDivider />
         <SettingItem

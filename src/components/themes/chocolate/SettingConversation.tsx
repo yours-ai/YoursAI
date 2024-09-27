@@ -39,7 +39,7 @@ export function SettingConversation() {
               />
             }
           />
-          <SettingItem title={"내 소개"} />
+          <SettingItem title={"내 소개"} isLastItem={true} />
           <SettingItemDivider />
           <SettingItem title={"모두 초기값으로 설정하기"} />
         </div>

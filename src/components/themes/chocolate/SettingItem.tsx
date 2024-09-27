@@ -6,6 +6,7 @@ interface Props {
   action?: ReactNode;
   onClick?: () => void;
   bgColor?: string;
+  isLastItem?: boolean;
 }
 
 export default function SettingItem({
@@ -14,10 +15,11 @@ export default function SettingItem({
   action,
   onClick,
   bgColor = "bg-white",
+  isLastItem = false,
 }: Props) {
   return (
     <div
-      className={`${bgColor} flex w-full flex-row items-center justify-stretch border-b-[0.25px] border-[#F5F5F5] px-5 py-2 transition-colors duration-100 ease-in-out`}
+      className={`${bgColor} ${isLastItem ? "" : "border-b-[0.25px] border-[#F5F5F5]"} flex w-full cursor-pointer flex-row items-center justify-stretch px-5 py-2 transition-colors duration-100 ease-in-out hover:bg-[#F5F5F5]`}
       onClick={onClick}
     >
       <div
