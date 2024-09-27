@@ -1,5 +1,5 @@
 import { Message } from "./ChatList.tsx";
-import ChatBubbleText from "@/components/themes/chocolate/ChatBubbleText.tsx";
+import ChatBubbleText from "@/components/themes/chocolate/messages/ChatBubbleText.tsx";
 
 interface Props {
   message: Message;

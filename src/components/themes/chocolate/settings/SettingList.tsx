@@ -1,7 +1,7 @@
 import TopTitle from "@/components/themes/chocolate/TopTitle.tsx";
 import { useMatch, useNavigate } from "react-router-dom";
-import SettingItem from "@/components/themes/chocolate/SettingItem.tsx";
-import SettingItemDivider from "@/components/themes/chocolate/SettingItemDivider.tsx";
+import SettingItem from "@/components/themes/chocolate/settings/SettingItem.tsx";
+import SettingItemDivider from "@/components/themes/chocolate/settings/SettingItemDivider.tsx";
 import { MdLanguage, MdOutlineEmail } from "react-icons/md";
 import { CgTemplate } from "react-icons/cg";
 import { IoChatbubbleOutline, IoLogoGithub } from "react-icons/io5";

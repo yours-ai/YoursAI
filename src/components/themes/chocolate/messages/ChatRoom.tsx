@@ -1,8 +1,8 @@
-import { Message } from "@/components/themes/chocolate/ChatList.tsx";
-import ChatBubble from "@/components/themes/chocolate/ChatBubble.tsx";
+import { Message } from "@/components/themes/chocolate/messages/ChatList.tsx";
+import ChatBubble from "@/components/themes/chocolate/messages/ChatBubble.tsx";
 import { IoMenuOutline } from "react-icons/io5";
 import TopBar from "@/components/themes/chocolate/TopBar.tsx";
-import ChatInput from "@/components/themes/chocolate/ChatInput.tsx";
+import ChatInput from "@/components/themes/chocolate/messages/ChatInput.tsx";
 import { ChatRoomProps } from "@/components/themes/models/ChatRoom.ts";
 
 const messages: Message[] = [

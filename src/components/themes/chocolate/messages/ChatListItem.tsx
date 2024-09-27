@@ -1,4 +1,4 @@
-import { Assignment } from "@/components/themes/chocolate/ChatList.tsx";
+import { Assignment } from "@/components/themes/chocolate/messages/ChatList.tsx";
 import { Link } from "react-router-dom";
 
 interface Props {

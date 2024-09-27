@@ -1,6 +1,6 @@
 import TopBar from "@/components/themes/chocolate/TopBar.tsx";
-import SettingItem from "@/components/themes/chocolate/SettingItem.tsx";
-import SettingItemDivider from "@/components/themes/chocolate/SettingItemDivider.tsx";
+import SettingItem from "@/components/themes/chocolate/settings/SettingItem.tsx";
+import SettingItemDivider from "@/components/themes/chocolate/settings/SettingItemDivider.tsx";
 
 export function SettingData() {
   return (

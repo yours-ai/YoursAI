@@ -1,7 +1,7 @@
 import TopBar from "@/components/themes/chocolate/TopBar.tsx";
-import SettingItem from "@/components/themes/chocolate/SettingItem.tsx";
+import SettingItem from "@/components/themes/chocolate/settings/SettingItem.tsx";
 import { PiGearSix } from "react-icons/pi";
-import SettingItemDivider from "@/components/themes/chocolate/SettingItemDivider.tsx";
+import SettingItemDivider from "@/components/themes/chocolate/settings/SettingItemDivider.tsx";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { GrDetach } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";

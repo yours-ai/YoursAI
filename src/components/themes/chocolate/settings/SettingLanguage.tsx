@@ -1,5 +1,5 @@
 import TopBar from "@/components/themes/chocolate/TopBar.tsx";
-import SettingItem from "@/components/themes/chocolate/SettingItem.tsx";
+import SettingItem from "@/components/themes/chocolate/settings/SettingItem.tsx";
 
 export function SettingLanguage() {
   return (

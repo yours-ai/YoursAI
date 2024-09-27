@@ -33,7 +33,7 @@ export default function SplitView({
     <>
       <div className="relative flex">
         <div
-          className={`border-border tablet:basis-2/6 desktop:basis-1/4 sticky top-0 border-r ${primary === "left" ? "tablet:grow-0 grow" : "tablet:block hidden"}`}
+          className={`sticky top-0 border-r border-border tablet:basis-2/6 desktop:basis-1/4 ${primary === "left" ? "grow tablet:grow-0" : "hidden tablet:block"}`}
           style={{ height: height ?? undefined }}
         >
           <div className="relative size-full">
@@ -46,7 +46,7 @@ export default function SplitView({
           </div>
         </div>
         <div
-          className={`min-h-screen grow ${primary === "right" ? "" : "tablet:block hidden"}`}
+          className={`min-h-screen grow ${primary === "right" ? "" : "hidden tablet:block"}`}
         >
           <Outlet context={{ leftPaneDiv, primary, setPrimary }} />
         </div>

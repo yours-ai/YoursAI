@@ -1,6 +1,6 @@
 import TopTitle from "@/components/themes/chocolate/TopTitle.tsx";
 import { TbEdit } from "react-icons/tb";
-import ChatListItem from "@/components/themes/chocolate/ChatListItem.tsx";
+import ChatListItem from "@/components/themes/chocolate/messages/ChatListItem.tsx";
 import { useState } from "react";
 
 export interface Assignment {
