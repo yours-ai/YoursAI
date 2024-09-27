@@ -14,7 +14,7 @@ export function SettingList() {
   const navigate = useNavigate();
   const matchLanguage = useMatch(`${settingPaths.language}/*`);
   const matchTheme = useMatch(`${settingPaths.themes}/*`);
-  const matchConversation = useMatch(`${settingPaths.conversation}/*`);
+  const matchChatCustomize = useMatch(`${settingPaths.chatCustomize}/*`);
   const matchData = useMatch(`${settingPaths.data}/*`);
   const matchSponsor = useMatch(`${settingPaths.sponsor}/*`);
 
@@ -39,8 +39,8 @@ export function SettingList() {
         <SettingItem
           title={"대화 설정"}
           icon={<IoChatbubbleOutline className={`size-6`} />}
-          onClick={() => navigate(settingPaths.conversation)}
-          bgColor={matchConversation ? "bg-[#F5F5F5]" : "bg-white"}
+          onClick={() => navigate(settingPaths.chatCustomize)}
+          bgColor={matchChatCustomize ? "bg-[#F5F5F5]" : "bg-white"}
           isLastItem={true}
         />
         <SettingItemDivider />

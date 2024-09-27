@@ -8,7 +8,7 @@ import FriendSettings from "@/components/themes/theFruit/friends/FriendSettings.
 import FriendDetail from "@/components/themes/theFruit/friends/FriendDetail.tsx";
 import FriendList from "@/components/themes/theFruit/friends/FriendList.tsx";
 import { SettingSponsor } from "@/components/themes/theFruit/settings/SettingSponsor.tsx";
-import { SettingConversation } from "@/components/themes/theFruit/settings/SettingConversation.tsx";
+import { SettingChatCustomize } from "@/components/themes/theFruit/settings/SettingChatCustomize.tsx";
 import { SettingData } from "@/components/themes/theFruit/settings/SettingData.tsx";
 import { SettingLanguage } from "@/components/themes/theFruit/settings/SettingLanguage.tsx";
 import { SettingList } from "@/components/themes/theFruit/settings/SettingList.tsx";
@@ -50,7 +50,7 @@ export default async function getTheFruitTheme(): Promise<Theme> {
       SettingList,
       SettingLanguage,
       SettingData,
-      SettingConversation,
+      SettingChatCustomize,
       SettingSponsor,
       FriendList,
       FriendDetail,

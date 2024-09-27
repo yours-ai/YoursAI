@@ -30,7 +30,7 @@ export interface Theme {
     ChatRoomSettingsCustom: React.ComponentType<ChatRoomSettingsCustomProps>;
     SettingList: React.ComponentType;
     SettingLanguage: React.ComponentType;
-    SettingConversation: React.ComponentType;
+    SettingChatCustomize: React.ComponentType;
     SettingData: React.ComponentType;
     SettingSponsor: React.ComponentType;
     ConversationStyleSelector: React.ComponentType<SettingsProps>;

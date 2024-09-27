@@ -7,7 +7,7 @@ export const navigationPaths = {
 export const settingPaths = {
   language: "/main/settings/language",
   themes: "/main/settings/themes",
-  conversation: "/main/settings/conversation",
+  chatCustomize: "/main/settings/chat-customize",
   data: "/main/settings/data",
   sponsor: "/main/settings/sponsor",
 };

@@ -4,13 +4,13 @@ import ListContainer from "@/components/common/ListContainer.tsx";
 import ListLinkItem from "@/components/common/ListLinkItem.tsx";
 import { ListItem } from "konsta/react";
 
-export function SettingConversation() {
+export function SettingChatCustomize() {
   const { t } = useTranslation("pages/settings");
   return (
-    <div className="bg-emptyBackground size-full">
+    <div className="size-full bg-emptyBackground">
       <SettingTopBar title={t("conversation.title")} enableHome />
-      <div className="tablet:px-[80px] desktop:px-[190px] flex w-full flex-col items-center gap-[20px] px-[15px]">
-        <div className="text-16p mt-[20px] w-full max-w-[900px] pl-[15px] leading-[22px] text-black/50">
+      <div className="flex w-full flex-col items-center gap-[20px] px-[15px] tablet:px-[80px] desktop:px-[190px]">
+        <div className="mt-[20px] w-full max-w-[900px] pl-[15px] text-16p leading-[22px] text-black/50">
           {t("conversation.description")}
         </div>
         <div className="flex w-full flex-col items-center gap-[38px]">

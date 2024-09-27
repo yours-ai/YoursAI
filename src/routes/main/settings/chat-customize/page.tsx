@@ -6,9 +6,9 @@ export function Component() {
   const theme = useTheme();
   if (!theme) return null;
   const {
-    components: { SettingConversation },
+    components: { SettingChatCustomize },
   } = theme;
-  return <SettingConversation />;
+  return <SettingChatCustomize />;
 }
 
 Component.displayName = "ChatCustomizeSettingPage";

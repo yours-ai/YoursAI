@@ -5,7 +5,7 @@ import EmptyPane from "@/components/themes/chocolate/EmptyPane.tsx";
 import { SettingList } from "@/components/themes/chocolate/SettingList.tsx";
 import { SettingLanguage } from "@/components/themes/chocolate/SettingLanguage.tsx";
 import { SettingData } from "@/components/themes/chocolate/SettingData.tsx";
-import { SettingConversation } from "@/components/themes/chocolate/SettingConversation.tsx";
+import { SettingChatCustomize } from "@/components/themes/chocolate/SettingChatCustomize.tsx";
 import { SettingSponsor } from "@/components/themes/chocolate/SettingSponsor.tsx";
 import FriendDetail from "@/components/themes/chocolate/FriendDetail.tsx";
 import FriendSettings from "@/components/themes/chocolate/FriendSettings.tsx";
@@ -58,7 +58,7 @@ export default async function getTheChocolateTheme(): Promise<Theme> {
       ChatRoomSettingsCustom,
       SettingList,
       SettingLanguage,
-      SettingConversation,
+      SettingChatCustomize,
       SettingData,
       SettingSponsor,
     },
