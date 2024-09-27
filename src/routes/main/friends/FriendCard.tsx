@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import ColorThief from "colorthief";
 import { NavLink } from "react-router-dom";
-import { Character } from "@/components/themes/theFruit/FriendList.tsx";
+import { Character } from "@/components/themes/theFruit/friends/FriendList.tsx";
 
 export default function FriendCard({
   name,

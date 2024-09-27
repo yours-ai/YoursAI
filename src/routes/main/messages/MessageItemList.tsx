@@ -1,5 +1,5 @@
 import MessageItem from "@/routes/main/messages/MessageItem.tsx";
-import { Message } from "@/components/themes/theFruit/ChatList.tsx";
+import { Message } from "@/components/themes/theFruit/messages/ChatList.tsx";
 
 export default function MessageItemList({ messages }: { messages: Message[] }) {
   return (

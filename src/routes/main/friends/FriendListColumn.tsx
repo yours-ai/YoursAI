@@ -1,6 +1,6 @@
 import FriendCard from "@/routes/main/friends/FriendCard.tsx";
 import { useEffect, useRef, useState } from "react";
-import { Character } from "@/components/themes/theFruit/FriendList.tsx";
+import { Character } from "@/components/themes/theFruit/friends/FriendList.tsx";
 
 export default function FriendListColumn({
   characters,
