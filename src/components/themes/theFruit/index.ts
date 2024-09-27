@@ -1,21 +1,26 @@
 import Button from "./Button.tsx";
 import TabNavigation from "./TabNavigation.tsx";
 import EmptyPane from "./EmptyPane.tsx";
+import GlobalModal from "./GlobalModal.tsx";
 import { Theme } from "@/components/themes/models";
 import { fetchDescriptionImgBlob } from "./descriptionImg.ts";
-import MessageList from "@/components/themes/chocolate/MessageList.tsx";
-import MessageRoom from "@/components/themes/chocolate/MessageRoom.tsx";
-import MessageRoomSettings from "@/components/themes/chocolate/MessageRoomSettings.tsx";
-import MessageRoomSettingsCustom from "@/components/themes/chocolate/MessageRoomSettingsCustom.tsx";
-import { SettingList } from "@/components/themes/chocolate/SettingList.tsx";
-import { SettingLanguage } from "@/components/themes/chocolate/SettingLanguage.tsx";
-import { SettingThemes } from "@/components/themes/chocolate/SettingThemes.tsx";
-import { SettingData } from "@/components/themes/chocolate/SettingData.tsx";
-import { SettingConversation } from "@/components/themes/chocolate/SettingConversation.tsx";
-import { SettingSponsor } from "@/components/themes/chocolate/SettingSponsor.tsx";
-import FriendDetail from "@/components/themes/chocolate/FriendDetail.tsx";
-import FriendSettings from "@/components/themes/chocolate/FriendSettings.tsx";
-import FriendList from "@/components/themes/chocolate/FriendList.tsx";
+import FriendSettings from "@/components/themes/theFruit/friends/FriendSettings.tsx";
+import FriendDetail from "@/components/themes/theFruit/friends/FriendDetail.tsx";
+import FriendList from "@/components/themes/theFruit/friends/FriendList.tsx";
+import { SettingSponsor } from "@/components/themes/theFruit/settings/SettingSponsor.tsx";
+import { SettingConversation } from "@/components/themes/theFruit/settings/SettingConversation.tsx";
+import { SettingData } from "@/components/themes/theFruit/settings/SettingData.tsx";
+import { SettingLanguage } from "@/components/themes/theFruit/settings/SettingLanguage.tsx";
+import { SettingList } from "@/components/themes/theFruit/settings/SettingList.tsx";
+import ChatRoomSettingsCustom from "@/components/themes/theFruit/messages/ChatRoomSettingsCustom.tsx";
+import ChatRoomSettings from "@/components/themes/theFruit/messages/ChatRoomSettings.tsx";
+import ChatRoom from "@/components/themes/theFruit/messages/ChatRoom.tsx";
+import ChatList from "@/components/themes/theFruit/messages/ChatList.tsx";
+import ConversationStyleSelector from "@/components/themes/theFruit/ConversationStyleSelector.tsx";
+import TranslationSelector from "@/components/themes/theFruit/settings/TranslationSelector.tsx";
+import TypingSimulationSelector from "@/components/themes/theFruit/settings/TypingSimulationSelector.tsx";
+import PersonalSettings from "@/components/themes/theFruit/settings/PersonalSettings.tsx";
+import ThemeSelector from "@/components/themes/theFruit/settings/ThemeSelector.tsx";
 
 export default async function getTheFruitTheme(): Promise<Theme> {
   const descriptionImgBlob = await fetchDescriptionImgBlob();
@@ -37,20 +42,24 @@ export default async function getTheFruitTheme(): Promise<Theme> {
       Button,
       TabNavigation,
       EmptyPane,
-      // TODO: implement under components
-      MessageList,
-      MessageRoom,
-      MessageRoomSettings,
-      MessageRoomSettingsCustom,
+      GlobalModal,
+      ChatList,
+      ChatRoom,
+      ChatRoomSettings,
+      ChatRoomSettingsCustom,
       SettingList,
       SettingLanguage,
-      SettingThemes,
       SettingData,
       SettingConversation,
       SettingSponsor,
+      FriendList,
       FriendDetail,
       FriendSettings,
-      FriendList,
+      ConversationStyleSelector,
+      TranslationSelector,
+      TypingSimulationSelector,
+      PersonalSettings,
+      ThemeSelector,
     },
   };
 }

@@ -4,13 +4,14 @@ import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
 import { useTheme } from "@/hooks/useTheme.ts";
 
 export function Component() {
-  const { friendId } = useParams();
   useRightPrimaryPage();
+  const { friendId } = useParams();
   const theme = useTheme();
   if (!theme) return null;
   const {
     components: { FriendDetail },
   } = theme;
+
   return <FriendDetail friendId={friendId} />;
 }
 

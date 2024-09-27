@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-function SetupControlButton({
+export default function SetupControlButton({
   onClick,
   goBack,
   start,
@@ -64,7 +64,7 @@ function SetupControlButton({
         </span>
       </div>
       {fileName && (
-        <div className="relative top-[2px] text-11p leading-[16px] text-black/50">
+        <div className="text-11p relative top-[2px] leading-[16px] text-black/50">
           {fileName}
         </div>
       )}
@@ -77,5 +77,3 @@ function SetupControlButton({
     </div>
   );
 }
-
-export default SetupControlButton;

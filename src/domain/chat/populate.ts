@@ -70,7 +70,7 @@ export const getInitialPromptTemplates = async (): Promise<
         },
         creator: "narayo9",
         description: {
-          en: "It’s like a real conversation—hard to know what the character is really thinking.",
+          en: "It’s like a real conversation — hard to know what the character is really thinking.",
           ko: "현실의 대화와 비슷합니다. 캐릭터의 속마음을 알기는 어렵습니다.",
         },
         descriptionImg: {

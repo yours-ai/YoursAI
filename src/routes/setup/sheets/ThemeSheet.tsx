@@ -45,7 +45,7 @@ export default function ThemeSheet({ config, setStep }: Props) {
       content={
         <>
           <SettingTitle title={t("themeContent.title")} />
-          <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
+          <div className="phone:px-0 mt-[24px] flex w-full flex-col items-center gap-[17px] px-[20px]">
             {bundledThemes && (
               <SegmentedControlBar
                 value={value}

@@ -1,6 +1,6 @@
 import { PiArrowRightBold } from "react-icons/pi";
 
-function NextSetupArrow({ onClick }: { onClick: () => void }) {
+export default function NextSetupArrow({ onClick }: { onClick: () => void }) {
   return (
     <>
       <div />
@@ -8,10 +8,8 @@ function NextSetupArrow({ onClick }: { onClick: () => void }) {
         className="mr-[10px] cursor-pointer text-black/50 hover:text-black/70"
         onClick={onClick}
       >
-        <PiArrowRightBold className="text-[24px] " />
+        <PiArrowRightBold className="text-24p " />
       </div>
     </>
   );
 }
-
-export default NextSetupArrow;

@@ -1,13 +1,14 @@
+import React from "react";
 import { type ButtonProps } from "./Button.ts";
 import getTheFruitTheme from "@/components/themes/theFruit";
 import getChocolateTheme from "@/components/themes/chocolate";
 import { AvailableBundledThemeId } from "@/domain/config/models.ts";
 import { Translatable, TranslatableString } from "@/locales/models.ts";
-import { MessageRoomProps } from "@/components/themes/models/MessageRoom.ts";
-import { MessageRoomSettingsProps } from "@/components/themes/models/MessageRoomSettings.ts";
-import { MessageRoomSettingsCustomProps } from "@/components/themes/models/MessageRoomSettingsCustom.ts";
 import { FriendDetailProps } from "@/components/themes/models/FriendDetail.ts";
-import { FriendSettingsProps } from "@/components/themes/models/FriendSettings.ts";
+import { SettingsProps } from "@/components/themes/models/Settings.ts";
+import { ChatRoomProps } from "@/components/themes/models/ChatRoom.ts";
+import { ChatRoomSettingsProps } from "@/components/themes/models/ChatRoomSettings.ts";
+import { ChatRoomSettingsCustomProps } from "@/components/themes/models/ChatRoomSettingsCustom.ts";
 
 export interface Theme {
   id: string;
@@ -19,19 +20,24 @@ export interface Theme {
     Button: React.ComponentType<ButtonProps>;
     TabNavigation: React.ComponentType;
     EmptyPane: React.ComponentType;
+    GlobalModal: React.ComponentType;
     FriendList: React.ComponentType;
     FriendDetail: React.ComponentType<FriendDetailProps>;
-    FriendSettings: React.ComponentType<FriendSettingsProps>;
-    MessageList: React.ComponentType;
-    MessageRoom: React.ComponentType<MessageRoomProps>;
-    MessageRoomSettings: React.ComponentType<MessageRoomSettingsProps>;
-    MessageRoomSettingsCustom: React.ComponentType<MessageRoomSettingsCustomProps>;
+    FriendSettings: React.ComponentType<SettingsProps>;
+    ChatList: React.ComponentType;
+    ChatRoom: React.ComponentType<ChatRoomProps>;
+    ChatRoomSettings: React.ComponentType<ChatRoomSettingsProps>;
+    ChatRoomSettingsCustom: React.ComponentType<ChatRoomSettingsCustomProps>;
     SettingList: React.ComponentType;
     SettingLanguage: React.ComponentType;
-    SettingThemes: React.ComponentType;
     SettingConversation: React.ComponentType;
     SettingData: React.ComponentType;
     SettingSponsor: React.ComponentType;
+    ConversationStyleSelector: React.ComponentType<SettingsProps>;
+    TranslationSelector: React.ComponentType<SettingsProps>;
+    TypingSimulationSelector: React.ComponentType<SettingsProps>;
+    PersonalSettings: React.ComponentType<SettingsProps>;
+    ThemeSelector: React.ComponentType<SettingsProps>;
   };
 }
 

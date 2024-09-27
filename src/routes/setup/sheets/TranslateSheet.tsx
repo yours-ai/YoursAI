@@ -33,7 +33,7 @@ export default function TranslateSheet({ setStep, config }: Props) {
       content={
         <>
           <SettingTitle title={t("translateContent.title")} />
-          <div className="mt-[24px] flex flex-col items-center gap-[17px]">
+          <div className="phone:px-0 mt-[24px] flex flex-col items-center gap-[17px] px-[20px]">
             <SegmentedControlBar
               value={value}
               options={[
@@ -49,7 +49,7 @@ export default function TranslateSheet({ setStep, config }: Props) {
               onChange={setValue}
             />
             <SegmentBoard imgSrc="/mocks/google-translation.png" />
-            <div className="max-w-[450px] text-center text-13p leading-[16px]">
+            <div className="text-13p max-w-[450px] text-center leading-[16px]">
               {value
                 ? t("translateContent.choices.yes.description")
                 : t("translateContent.choices.no.description")}

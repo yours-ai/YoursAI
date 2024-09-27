@@ -5,7 +5,17 @@
     "upload": "업로드",
     "next": "계속하기"
   },
+  "tabNavigation": {
+    "friends": "친구",
+    "messages": "메시지",
+    "settings": "설정"
+  },
   "errorText": {
     "text": "에러가 발생했습니다.<1>{{error}}</1>문제가 계속되면 디스코드에서 개발자에게 문의해주세요."
+  },
+  "devPopup": {
+    "title": "개발자 도구",
+    "reset": "모든 데이터 삭제 및 새로고침",
+    "close": "닫기"
   }
 }

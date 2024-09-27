@@ -33,7 +33,7 @@ export default function TypingSimulationSheet({ setStep, config }: Props) {
       content={
         <>
           <SettingTitle title={t("typingSimulationContent.title")} />
-          <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
+          <div className="phone:px-0 mt-[24px] flex w-full flex-col items-center gap-[17px] px-[20px]">
             <SegmentedControlBar
               value={value}
               onChange={setValue}
@@ -52,7 +52,7 @@ export default function TypingSimulationSheet({ setStep, config }: Props) {
               imgSrc="/mocks/typing-simulation.png"
               alt="typing simulation image"
             />
-            <div className="text-center text-13p leading-[16px]">
+            <div className="text-13p text-center leading-[16px]">
               {value ? (
                 <Trans
                   i18nKey="typingSimulationContent.choices.yes.description"

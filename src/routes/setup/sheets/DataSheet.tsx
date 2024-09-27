@@ -62,7 +62,7 @@ export default function DataSheet({ setStep, goToLastStep }: Props) {
               />
             </Tooltip>
           </div>
-          <div className="absolute top-[521px] text-center text-[18px] font-semibold leading-[25px] tablet:text-20p tablet:text-white">
+          <div className="text-16p phone:text-18p tablet:text-20p tablet:text-white absolute top-[521px] px-[20px] text-center font-semibold leading-[25px]">
             <Trans i18nKey="dataContent.description" t={t}>
               채팅 내역, 설정 등 모든 데이터는<br></br>언제든지 파일로 백업하고
               되돌릴 수 있습니다.
@@ -72,7 +72,7 @@ export default function DataSheet({ setStep, goToLastStep }: Props) {
       }
       leftActions={
         <div
-          className="cursor-pointer px-[7px] text-13p leading-[16px] text-accentBlue"
+          className="text-13p text-accentBlue cursor-pointer px-[7px] leading-[16px]"
           onClick={() => setAllDefaultStartModalOpen(true)}
         >
           {t("sheet.startWithDefault")}

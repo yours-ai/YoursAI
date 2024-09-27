@@ -107,7 +107,7 @@ export default function ConversationStyleSheet({ config, setStep }: Props) {
             </div>
           </div>
 
-          <div className="mt-[24px] flex w-full flex-col items-center gap-[17px]">
+          <div className="phone:px-0 mt-[24px] flex w-full flex-col items-center gap-[17px] px-[20px]">
             {initialPromptTemplates && (
               <SegmentedControlBar
                 options={[
@@ -134,7 +134,7 @@ export default function ConversationStyleSheet({ config, setStep }: Props) {
                   }
                   alt={`description image for ${value}`}
                 />
-                <div className="text-center text-13p leading-[16px]">
+                <div className="text-13p text-center leading-[16px]">
                   {promptTemplate?.metadata.description &&
                     dynamicT(promptTemplate?.metadata.description)}
                 </div>

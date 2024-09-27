@@ -15,10 +15,9 @@ export default function Sheet({
 }: Props) {
   return (
     <div
-      className="size-full bg-menuBackground tablet:h-[500px] tablet:w-[700px] tablet:rounded-[10px]"
+      className="bg-menuBackground tablet:h-[500px] tablet:w-[700px] tablet:rounded-[10px] size-full"
       style={{
-        padding:
-          "env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)",
+        paddingBottom: "env(safe-area-inset-bottom)",
       }}
     >
       <div className="relative flex size-full flex-col items-center justify-between px-[9px] pt-[9px]">
