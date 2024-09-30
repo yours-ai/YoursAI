@@ -184,6 +184,10 @@ const router = createBrowserRouter([
     lazy: () => import("./routes/setup/page.tsx"),
   },
   {
+    path: "/chat",
+    lazy: () => import("./routes/chat/page.tsx"),
+  },
+  {
     path: "*",
     element: <Navigate to="/" />,
   },
