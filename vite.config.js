@@ -38,7 +38,10 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
+      injectRegister: "auto",
       workbox: {
+        clientsClaim: true,
+        skipWaiting: true,
         runtimeCaching: [
           {
             urlPattern: ({ request }) => request.destination === "script",
