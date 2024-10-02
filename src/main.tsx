@@ -9,7 +9,6 @@ import "./index.css";
 import "pretendard/dist/web/static/pretendard.css";
 import Providers from "@/Providers.tsx";
 import "@/locales/i18n.ts";
-import { App } from "konsta/react";
 
 const router = createBrowserRouter([
   {
@@ -193,9 +192,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Providers>
-      <App style={{ minHeight: "auto" }} theme="ios">
-        <RouterProvider router={router} />
-      </App>
+      <RouterProvider router={router} />
     </Providers>
   </StrictMode>,
 );
