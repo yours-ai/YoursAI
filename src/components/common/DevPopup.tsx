@@ -20,7 +20,7 @@ export default function DevPopup() {
   return (
     <>
       <Fab
-        className="fixed right-5 top-5 z-20 bg-emerald-600"
+        className="fixed right-5 top-20 z-50 bg-emerald-600"
         icon={<PiBugBeetleFill />}
         onClick={() => setPopupOpened(true)}
       />
