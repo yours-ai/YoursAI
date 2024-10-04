@@ -1,9 +1,11 @@
 import { Toggle } from "konsta/react";
 import { GlobalConfig } from "@/domain/config/models.ts";
-import { useState } from "react";
 import TopBar from "@/components/themes/chocolate/TopBar.tsx";
 import SettingItem from "@/components/themes/chocolate/settings/SettingItem.tsx";
 import { useTranslation } from "react-i18next";
+import { useDb } from "@/contexts/DbContext.ts";
+import { useMutation } from "@tanstack/react-query";
+import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 
 export default function TranslationSelector({
   config,
@@ -11,8 +13,15 @@ export default function TranslationSelector({
   config: GlobalConfig;
 }) {
   const { t } = useTranslation("pages/friends");
-  const doTranslation = config.conversationConfig.doTranslation;
-  const [isChecked, setIsChecked] = useState<boolean>(doTranslation);
+  const db = useDb();
+  const mutation = useMutation({
+    mutationFn: makeGlobalConfigRepository(db).updateGlobalConversationConfig,
+  });
+  const changeTranslation = async (doTranslation: boolean) => {
+    await mutation.mutateAsync({
+      doTranslation,
+    });
+  };
   return (
     <div
       className={`relative size-full border-l-[0.5px] border-[#C6C6C8] bg-white`}
@@ -25,8 +34,10 @@ export default function TranslationSelector({
         title={t("settings.options.translation.label")}
         action={
           <Toggle
-            checked={isChecked}
-            onChange={() => setIsChecked((prev) => !prev)}
+            checked={config.conversationConfig.doTranslation}
+            onChange={() =>
+              changeTranslation(!config.conversationConfig.doTranslation)
+            }
             className="k-color-yellow"
           />
         }

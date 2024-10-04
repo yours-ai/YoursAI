@@ -4,6 +4,7 @@ import { FaCirclePlus, FaGear } from "react-icons/fa6";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { PiCaretLeft } from "react-icons/pi";
+import { useTranslation } from "react-i18next";
 
 interface ActionButtonProps {
   icon: React.ReactNode;
@@ -25,6 +26,7 @@ function ActionButton({ icon, title, onClick }: ActionButtonProps) {
 
 export default function FriendDetail({ friendId }: FriendDetailProps) {
   console.log(friendId); // TODO: Remove this line
+  const { t } = useTranslation("pages/friends");
   const navigate = useNavigate();
   return (
     <div className="flex size-full bg-[#798490] text-white">
@@ -53,9 +55,10 @@ export default function FriendDetail({ friendId }: FriendDetailProps) {
             <div>마키짱</div>
             <div>
               <div className={`text-center`}>
-                제작자: narayo
+                {t("contactItem.creator")}: narayo
                 <br />
-                제작자 한줄소개: 안녕하세요 반갑습니다. 저는 사람입니다.
+                {t("contactItem.creatorIntro")}: 안녕하세요 반갑습니다. 저는
+                사람입니다.
               </div>
             </div>
           </div>
@@ -64,17 +67,17 @@ export default function FriendDetail({ friendId }: FriendDetailProps) {
           >
             <ActionButton
               icon={<IoChatbubble className={`size-6 text-white`} />}
-              title={"이어서 대화"}
+              title={t("friendButton.continue")}
               onClick={() => null}
             />
             <ActionButton
               icon={<FaCirclePlus className={`size-6 text-white`} />}
-              title={"처음부터 대화"}
+              title={t("friendButton.restart")}
               onClick={() => null}
             />
             <ActionButton
               icon={<FaGear className={`size-6 text-white`} />}
-              title={"대화 설정 커스텀"}
+              title={t("friendButton.custom")}
               onClick={() => navigate(`./settings`)}
             />
           </div>

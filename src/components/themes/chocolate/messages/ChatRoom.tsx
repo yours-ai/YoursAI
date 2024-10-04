@@ -104,8 +104,9 @@ export default function ChatRoom({ chatRoomId }: ChatRoomProps) {
   console.log(chatRoomId); // TODO <- 삭제
   return (
     <div className={`relative size-full bg-[#ABC1D1]`}>
+      {/* TODO: 밑에 동적으로 이름 박아야됨 */}
       <TopBar
-        title={"멋쟁이와 대화를 해봐요"}
+        title={"세나"}
         leftProps={4}
         action={<IoMenuOutline className={`size-7 text-opacity-100`} />}
       />

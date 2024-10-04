@@ -3,6 +3,7 @@ import { BsPersonFill } from "react-icons/bs";
 import { IoChatbubble } from "react-icons/io5";
 import { FaGear } from "react-icons/fa6";
 import { navigationPaths } from "@/constants.ts";
+import { useTranslation } from "react-i18next";
 
 interface NavItemProps {
   isActive: PathMatch<string> | null;
@@ -33,6 +34,7 @@ export default function TabNavigation() {
   const matchFriendsTab = useMatch(navigationPaths.friends + "/*");
   const matchMessagesTab = useMatch(navigationPaths.messages + "/*");
   const matchSettingsTab = useMatch(navigationPaths.settings + "/*");
+  const { t } = useTranslation("common");
   return (
     <div className="mobile:h-[58px] flex h-[calc(62px+env(safe-area-inset-bottom))] border-t-2 bg-[#F9F9FA]">
       <NavItem
@@ -42,7 +44,7 @@ export default function TabNavigation() {
           />
         }
         isActive={matchFriendsTab}
-        label={"친구"}
+        label={t("tabNavigation.friends")}
         path={navigationPaths.friends}
       />
       <NavItem
@@ -52,7 +54,7 @@ export default function TabNavigation() {
           />
         }
         isActive={matchMessagesTab}
-        label={"메시지"}
+        label={t("tabNavigation.messages")}
         path={navigationPaths.messages}
       />
       <NavItem
@@ -62,7 +64,7 @@ export default function TabNavigation() {
           />
         }
         isActive={matchSettingsTab}
-        label={"설정"}
+        label={t("tabNavigation.settings")}
         path={navigationPaths.settings}
       />
     </div>

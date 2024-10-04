@@ -2,6 +2,7 @@ import TopTitle from "@/components/themes/chocolate/TopTitle.tsx";
 import { TbEdit } from "react-icons/tb";
 import ChatListItem from "@/components/themes/chocolate/messages/ChatListItem.tsx";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export interface Assignment {
   id: number;
@@ -72,9 +73,13 @@ const assignments: Assignment[] = [
 export default function ChatList() {
   const [selectedAssignment, setSelectedAssignment] =
     useState<Assignment | null>(null);
+  const { t } = useTranslation("pages/msg");
   return (
     <div className="w-full">
-      <TopTitle title="메시지" action={<TbEdit className="size-[22px]" />} />
+      <TopTitle
+        title={t("tabTitle")}
+        action={<TbEdit className="size-[22px]" />}
+      />
       <div className="flex w-full flex-col justify-center">
         {assignments.map((assignment) => (
           <ChatListItem

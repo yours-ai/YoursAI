@@ -2,6 +2,7 @@ import { Toggle } from "konsta/react";
 import { useEffect, useRef, useState } from "react";
 import { PiArrowUpBold } from "react-icons/pi";
 import "./chat-input.css";
+import { useTranslation } from "react-i18next";
 
 const maxRows = 3;
 const defaultHeight = 40;
@@ -11,6 +12,7 @@ export default function ChatInput() {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [value, setValue] = useState<string>("");
   const [isChecked, setIsChecked] = useState<boolean>(false);
+  const { t } = useTranslation("pages/msg");
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(event.target.value);
@@ -38,7 +40,7 @@ export default function ChatInput() {
         className={`relative flex shrink flex-col items-center justify-start`}
       >
         <div className={`text-[14px] font-normal text-[#535C62]`}>
-          탈옥 토글
+          {t("settings.jailbreak")}
         </div>
         <Toggle
           checked={isChecked}

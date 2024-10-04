@@ -8,32 +8,32 @@ import { useNavigate } from "react-router-dom";
 import { ChatRoomSettingsProps } from "@/components/themes/models/ChatRoomSettings.ts";
 import { Toggle } from "konsta/react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function ChatRoomSettings({
   chatRoomId,
 }: ChatRoomSettingsProps) {
   console.log(chatRoomId); // TODO <- 삭제
+  const { t } = useTranslation("pages/msg");
   const navigate = useNavigate();
   const [didJailbreak, setDidJailbreak] = useState<boolean>(false);
   return (
     <div
       className={`relative size-full border-l-[0.5px] border-[#C6C6C8] bg-white`}
     >
-      {/* TODO: 동적으로 */}
-      <TopBar
-        title={"세나와 7월 11일 오전 6:48에 시작한 대화"}
-        bgColor={"bg-white"}
-      />
+      {/* TODO: 동적으로 jailbreak */}
+      <TopBar title={t("settings.title")} bgColor={"bg-white"} />
       <div className="flex-1 overflow-y-scroll ">
         <div className="flex flex-col items-stretch py-5">
           <SettingItem
             icon={<PiGearSix className={`size-5`} />}
-            title={"대화 설정 커스텀"}
+            title={t("settings.custom.label")}
             onClick={() => navigate("./custom")}
           />
+          {/* TODO: 동적으로 */}
           <SettingItem
             icon={<GrDetach className={`size-5`} />}
-            title={"탈옥 토글"}
+            title={t("settings.jailbreak")}
             action={
               <Toggle
                 checked={didJailbreak}
@@ -46,7 +46,8 @@ export default function ChatRoomSettings({
           <SettingItemDivider />
           <SettingItem
             icon={<FaRegTrashAlt className={`size-4`} />}
-            title={"이 대화 지우기"}
+            title={t("settings.delete")}
+            isLastItem
           />
         </div>
       </div>

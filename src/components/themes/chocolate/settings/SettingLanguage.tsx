@@ -5,8 +5,10 @@ import { useDb } from "@/contexts/DbContext.ts";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useMutation } from "@tanstack/react-query";
 import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
+import { useTranslation } from "react-i18next";
 
 export function SettingLanguage() {
+  const { t } = useTranslation("pages/settings");
   const db = useDb();
   const selectedLanguage = useLiveQuery(
     () => db.globalConfigs.toArray().then((configs) => configs[0].language),
@@ -24,7 +26,7 @@ export function SettingLanguage() {
     <div
       className={`relative size-full border-l-[0.5px] border-[#C6C6C8] bg-white`}
     >
-      <TopBar title={"언어"} bgColor={"bg-white"} />
+      <TopBar title={t("language.title")} bgColor={"bg-white"} />
       <div className="flex-1 ">
         <div className="flex flex-col items-stretch py-5">
           <SettingItem
@@ -41,6 +43,7 @@ export function SettingLanguage() {
             title={"日本語"}
             action={<CheckButton selected={false} />}
             onClick={() => alert("아직 안됨요")} // TODO: 쌈뽕하게 띄우기
+            isLastItem
           />
         </div>
       </div>
