@@ -6,12 +6,15 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { GrDetach } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import { ChatRoomSettingsProps } from "@/components/themes/models/ChatRoomSettings.ts";
+import { Toggle } from "konsta/react";
+import { useState } from "react";
 
 export default function ChatRoomSettings({
   chatRoomId,
 }: ChatRoomSettingsProps) {
   console.log(chatRoomId); // TODO <- 삭제
   const navigate = useNavigate();
+  const [didJailbreak, setDidJailbreak] = useState<boolean>(false);
   return (
     <div
       className={`relative size-full border-l-[0.5px] border-[#C6C6C8] bg-white`}
@@ -28,15 +31,14 @@ export default function ChatRoomSettings({
             title={"대화 설정 커스텀"}
             onClick={() => navigate("./custom")}
           />
-          {/* TODO: 아래의 daisy ui 없애고 커스텀 만들기*/}
           <SettingItem
             icon={<GrDetach className={`size-5`} />}
             title={"탈옥 토글"}
             action={
-              <input
-                type="checkbox"
-                className="toggle border-none bg-white [--tglbg:#FEE500] "
-                defaultChecked
+              <Toggle
+                checked={didJailbreak}
+                onChange={() => setDidJailbreak((prev) => !prev)}
+                className="k-color-yellow"
               />
             }
             isLastItem={true}

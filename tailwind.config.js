@@ -2,7 +2,6 @@
 
 /** @type {import('tailwindcss').Config} */
 import konstaConfig from "konsta/config";
-import daisyui from "daisyui";
 
 export default konstaConfig({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -74,5 +73,4 @@ export default konstaConfig({
       },
     },
   },
-  plugins: [daisyui],
 });

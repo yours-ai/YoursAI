@@ -21,7 +21,6 @@ export function SettingChatCustomize() {
             action={<div className={`font-normal text-[#B9BCBF]`}>소설형</div>}
             onClick={() => navigate("./conversation-style")}
           />
-          {/* TODO: 아래의 daisy ui 없애고 커스텀 만들기*/}
           <SettingItem
             title={"이중 번역"}
             action={<div className={`font-normal text-[#B9BCBF]`}>사용</div>}
