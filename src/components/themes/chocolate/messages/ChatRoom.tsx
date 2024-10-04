@@ -109,12 +109,10 @@ export default function ChatRoom({ chatRoomId }: ChatRoomProps) {
         leftProps={4}
         action={<IoMenuOutline className={`size-7 text-opacity-100`} />}
       />
-      <div className="flex-1 overflow-y-scroll">
-        <div className="flex flex-col items-stretch gap-2 py-4">
-          {messages.map((message) => (
-            <ChatBubble key={message.message} message={message} /> //  TODO: 적절한 needProfile, needBubbleTail를 넘겨주는 로직이 필요함
-          ))}
-        </div>
+      <div className="flex w-full flex-1 flex-col items-stretch gap-2 overflow-y-hidden py-4">
+        {messages.map((message) => (
+          <ChatBubble key={message.message} message={message} /> //  TODO: 적절한 needProfile, needBubbleTail를 넘겨주는 로직이 필요함
+        ))}
       </div>
       <ChatInput />
     </div>
