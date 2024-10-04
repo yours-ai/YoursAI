@@ -9,10 +9,10 @@ export default function ChatRoomSettingsCustom({ chatRoomId }: ChatRoomProps) {
   console.log(chatRoomId); // TODO <- 삭제
   const { t } = useTranslation("pages/msg");
   return (
-    <div className="bg-emptyBackground size-full">
-      <div className="border-border relative flex w-full items-center justify-center border-b py-[18px]">
+    <div className="size-full bg-emptyBackground">
+      <div className="relative flex w-full items-center justify-center border-b border-border py-[18px]">
         <div
-          className="text-24p text-accentBlue absolute left-[9px] cursor-pointer"
+          className="absolute left-[9px] cursor-pointer text-24p text-accentBlue"
           onClick={(e) => {
             e.preventDefault();
             window.history.back();
@@ -25,8 +25,8 @@ export default function ChatRoomSettingsCustom({ chatRoomId }: ChatRoomProps) {
         </span>
       </div>
 
-      <div className="tablet:px-[80px] desktop:px-[190px] flex w-full flex-col items-center gap-[20px] px-[15px]">
-        <div className="text-16p mt-[20px] w-full max-w-[900px] pl-[15px] leading-[22px] text-black/50">
+      <div className="flex w-full flex-col items-center gap-[20px] px-[15px] tablet:px-[80px] desktop:px-[190px]">
+        <div className="mt-[20px] w-full max-w-[900px] pl-[15px] text-16p leading-[22px] text-black/50">
           {t("settings.custom.description")}
         </div>
         <ListContainer>
@@ -39,7 +39,7 @@ export default function ChatRoomSettingsCustom({ chatRoomId }: ChatRoomProps) {
           <ListLinkItem
             title={t("settings.custom.options.typing.label")}
             link="typing-simulation"
-            after={t("settings.custom.options.typing.choices")}
+            after={t("settings.custom.options.typing.choices.on")}
           />
           <ListLinkItem
             title={t("settings.custom.options.self-intro")}

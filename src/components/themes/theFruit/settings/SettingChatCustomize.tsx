@@ -24,7 +24,7 @@ export function SettingChatCustomize() {
             <ListLinkItem
               title={t("conversation.options.typing.label")}
               link="typing-simulation"
-              after={t("conversation.options.typing.choices")}
+              after={t("conversation.options.typing.choices.on")}
             />
             <ListLinkItem
               title={t("conversation.options.self-intro")}
