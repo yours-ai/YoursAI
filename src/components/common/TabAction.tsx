@@ -27,9 +27,9 @@ export default function TabAction({
   };
   return (
     <>
-      <div className="w-full py-[14px] pl-4 phone:py-[19px]">
+      <div className="phone:py-[19px] w-full py-[14px] pl-4">
         <span
-          className={`${action === "none" ? "text-transparent" : "cursor-pointer text-accentBlue hover:text-accentBlueHover"} select-none text-16p leading-[22px]  duration-150 phone:text-18p`}
+          className={`${action === "none" ? "text-transparent" : "text-accentBlue hover:text-accentBlueHover cursor-pointer"} text-16p phone:text-18p select-none  leading-[22px] duration-150`}
           onClick={() => {
             if (addCharacter) {
               togglePopover();
@@ -48,7 +48,7 @@ export default function TabAction({
         backdrop={false}
         onBackdropClick={() => setPopoverOpened(false)}
         size={"w-[250px]"}
-        className="popover !left-[16px] !top-[50px] rounded-xl phone:!top-[55px]"
+        className="popover phone:!top-[55px] !left-[16px] !top-[50px] rounded-xl"
         style={{
           boxShadow: "0px 0px 32px 0px rgba(0, 0, 0, 0.20)",
         }}

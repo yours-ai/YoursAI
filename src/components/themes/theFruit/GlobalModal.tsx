@@ -21,19 +21,19 @@ export default function GlobalModal() {
           title={title}
           left={
             <span
-              className="ml-2 cursor-pointer select-none text-16p text-accentBlue hover:text-accentBlueHover"
+              className="text-16p text-accentBlue hover:text-accentBlueHover ml-2 cursor-pointer select-none"
               onClick={() => dispatch(closeModal())}
             >
               {left}
             </span>
           }
           right={
-            <span className="mr-2 select-none text-16p text-accentBlue/30">
+            <span className="text-16p text-accentBlue/30 mr-2 select-none">
               {right}
             </span>
           }
         />
-        <div className="mt-[28px] flex flex-col gap-[28px] px-[20px] phone:px-[46px]">
+        <div className="phone:px-[46px] mt-[28px] flex flex-col gap-[28px] px-[20px]">
           {content}
         </div>
       </Page>

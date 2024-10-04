@@ -64,7 +64,7 @@ export default function SetupControlButton({
         </span>
       </div>
       {fileName && (
-        <div className="relative top-[2px] text-11p leading-[16px] text-black/50">
+        <div className="text-11p relative top-[2px] leading-[16px] text-black/50">
           {fileName}
         </div>
       )}

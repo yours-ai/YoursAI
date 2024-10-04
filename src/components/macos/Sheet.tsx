@@ -15,7 +15,7 @@ export default function Sheet({
 }: Props) {
   return (
     <div
-      className="size-full bg-menuBackground tablet:h-[500px] tablet:w-[700px] tablet:rounded-[10px]"
+      className="bg-menuBackground tablet:h-[500px] tablet:w-[700px] tablet:rounded-[10px] size-full"
       style={{
         paddingBottom: "env(safe-area-inset-bottom)",
       }}

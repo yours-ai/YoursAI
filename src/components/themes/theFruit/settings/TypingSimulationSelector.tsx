@@ -15,9 +15,9 @@ export default function TypingSimulationSelector({
     config.conversationConfig.doTypingSimulation,
   );
   return (
-    <div className="size-full bg-emptyBackground">
+    <div className="bg-emptyBackground size-full">
       <SettingTopBar title={t("settings.options.typing.label")} enableBack />
-      <div className="flex w-full flex-col items-center px-[15px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
+      <div className="tablet:px-[80px] desktop:px-[190px] flex w-full flex-col items-center px-[15px] pt-[32px]">
         <ListContainer>
           <ListItem
             title={t("settings.options.typing.label")}
@@ -25,7 +25,7 @@ export default function TypingSimulationSelector({
               <Toggle
                 checked={isChecked}
                 onChange={() => setIsChecked((prev) => !prev)}
-                className="-my-1 k-color-green"
+                className="k-color-green -my-1"
               />
             }
           />

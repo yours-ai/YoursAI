@@ -10,6 +10,9 @@ import { useTranslation } from "react-i18next";
 import { useBundledThemes } from "@/hooks/useTheme.ts";
 import { useDynamicTranslation } from "@/locales/hooks.ts";
 import { Button } from "konsta/react";
+import { useMutation } from "@tanstack/react-query";
+import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
+import { useDb } from "@/contexts/DbContext.ts";
 
 export default function ThemeSelector({ config }: { config: GlobalConfig }) {
   const { t } = useTranslation("pages/setup");
@@ -24,6 +27,20 @@ export default function ThemeSelector({ config }: { config: GlobalConfig }) {
     () => (bundledThemes && value !== "custom" ? bundledThemes[value] : null),
     [value, bundledThemes],
   );
+  const db = useDb();
+  const mutation = useMutation({
+    mutationFn: makeGlobalConfigRepository(db).updateGlobalConfig,
+  });
+  const changeTheme = async () => {
+    if (!selectedTheme) return;
+
+    await mutation.mutateAsync({
+      theme: {
+        type: "bundled",
+        id: selectedTheme.id as AvailableBundledThemeId,
+      },
+    });
+  };
   return (
     <div className="size-full bg-emptyBackground">
       <SettingTopBar title={v("themes.title")} enableHome />
@@ -72,7 +89,10 @@ export default function ThemeSelector({ config }: { config: GlobalConfig }) {
                 dynamicT(selectedTheme.description)}
             </div>
             {config.theme.type === "bundled" && config.theme.id !== value && (
-              <Button className="max-w-fit rounded-[12px] px-[18px] py-[21px] text-18p leading-[22px]">
+              <Button
+                className="max-w-fit rounded-[12px] px-[18px] py-[21px] text-18p leading-[22px]"
+                onClick={changeTheme}
+              >
                 {v("themes.change")}
               </Button>
             )}

@@ -8,8 +8,8 @@ export interface Props {
 export default function SettingTitle({ icon, title }: Props) {
   return (
     <div className="mt-[38px] flex flex-col items-center gap-[15px]">
-      {icon ? <div className="text-[60px] text-accentBlue">{icon}</div> : null}
-      <div className="text-center text-25p font-bold leading-[30px]">
+      {icon ? <div className="text-accentBlue text-[60px]">{icon}</div> : null}
+      <div className="text-25p text-center font-bold leading-[30px]">
         {title}
       </div>
     </div>

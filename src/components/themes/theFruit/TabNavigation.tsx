@@ -10,7 +10,7 @@ export default function TabNavigation() {
   const { t } = useTranslation("common");
   return (
     <div
-      className="flex h-[calc(60px+env(safe-area-inset-bottom))] border-t-[0.5px] border-black/30 bg-white phone:h-[72px]"
+      className="phone:h-[72px] flex h-[calc(60px+env(safe-area-inset-bottom))] border-t-[0.5px] border-black/30 bg-white"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <Link

@@ -5,23 +5,23 @@ export default function FileAddModalContent() {
   const { t } = useTranslation("pages/friends");
   return (
     <>
-      <span className="text-center text-16p leading-[20px]">
+      <span className="text-16p text-center leading-[20px]">
         {t("tabAction.addFileModal.content.one")}
       </span>
       <div className="flex justify-center">
-        <Button className="h-[50px] w-fit rounded-[12px] px-[20px] duration-150 hover:bg-accentBlueHover">
+        <Button className="hover:bg-accentBlueHover h-[50px] w-fit rounded-[12px] px-[20px] duration-150">
           <span className="text-18p leading-[22px]">
             {t("tabAction.addFileModal.upload")}
           </span>
         </Button>
       </div>
 
-      <div className="flex flex-col text-14p">
+      <div className="text-14p flex flex-col">
         <span className="font-bold">
           {t("tabAction.addFileModal.content.two")}
         </span>
         <span>{t("tabAction.addFileModal.content.three")}</span>
-        <div className="flex flex-col text-accentBlue underline duration-150 ">
+        <div className="text-accentBlue flex flex-col underline duration-150 ">
           <a className="hover:text-accentBlueHover" href="#">
             아카라이브 AI 채팅 채널
           </a>

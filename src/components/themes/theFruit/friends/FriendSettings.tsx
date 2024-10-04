@@ -7,9 +7,9 @@ import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useDynamicTranslation } from "@/locales/hooks.ts";
 import { useLiveQuery } from "dexie-react-hooks";
-import { GlobalConfig } from "@/domain/config/models.ts";
+import { SettingsProps } from "@/components/themes/models/Settings.ts";
 
-export default function SettingsPage({ config }: { config: GlobalConfig }) {
+export default function FriendSettings({ config }: SettingsProps) {
   const db = useDb();
   const { friendId } = useParams();
   const { t } = useTranslation("pages/friends");
@@ -21,13 +21,13 @@ export default function SettingsPage({ config }: { config: GlobalConfig }) {
   return (
     <>
       {conversationStyle && (
-        <div className="size-full bg-emptyBackground">
+        <div className="bg-emptyBackground size-full">
           <SettingTopBar
             title={`${t("settings.title")} - ${friendId}`}
             enableBack
           />
-          <div className="flex w-full flex-col items-center gap-[20px] px-[15px] tablet:px-[80px] desktop:px-[190px]">
-            <div className="mt-[20px] w-full max-w-[900px] pl-[15px] text-16p leading-[22px] text-black/50">
+          <div className="tablet:px-[80px] desktop:px-[190px] flex w-full flex-col items-center gap-[20px] px-[15px]">
+            <div className="text-16p mt-[20px] w-full max-w-[900px] pl-[15px] leading-[22px] text-black/50">
               {t("settings.description")}
             </div>
             <div className="flex w-full flex-col items-center gap-[38px]">

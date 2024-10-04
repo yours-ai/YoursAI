@@ -13,9 +13,9 @@ export default function SettingTopBar({
   enableHome,
 }: Props) {
   return (
-    <div className="relative flex w-full items-center justify-center border-b border-border py-[18px]">
+    <div className="border-border relative flex w-full items-center justify-center border-b py-[18px]">
       {(enableBack || enableHome) && (
-        <div className="absolute left-[10px] cursor-pointer text-24p text-accentBlue">
+        <div className="text-24p text-accentBlue absolute left-[10px] cursor-pointer">
           {enableBack ? (
             <div
               onClick={(e) => {
@@ -33,7 +33,7 @@ export default function SettingTopBar({
         </div>
       )}
 
-      <span className="text-16p font-semibold leading-[22px] phone:text-20p">
+      <span className="text-16p phone:text-20p font-semibold leading-[22px]">
         {title}
       </span>
     </div>

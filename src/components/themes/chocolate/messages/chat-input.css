@@ -1,0 +1,8 @@
+/* tailwind.css */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+.scrollbar-hide {
+    -ms-overflow-style: none; /* for Internet Explorer and Edge */
+    scrollbar-width: none; /* for Firefox */
+}

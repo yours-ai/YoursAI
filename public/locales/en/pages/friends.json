@@ -47,6 +47,13 @@
         "label": "Conversation Style",
         "choices": "Novel"
       },
+        "translation" : {
+            "label": "Translation",
+            "choices": {
+            "on": "On",
+            "off": "Off"
+            }
+        },
       "typing": {
         "label": "Typing Simulation",
         "choices": {

@@ -24,9 +24,19 @@
         "label": "대화 스타일",
         "choices": "소설형"
       },
+      "translation" : {
+        "label": "이중 번역",
+        "choices": {
+          "on": "사용",
+          "off": "끔"
+        }
+      },
       "typing": {
         "label": "타이핑 시뮬레이션",
-        "choices": "사용"
+        "choices": {
+            "on": "사용",
+            "off": "끔"
+        }
       },
       "self-intro": "내 소개",
       "default": "모두 초기값으로 설정하기"

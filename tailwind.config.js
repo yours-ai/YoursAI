@@ -1,11 +1,14 @@
 /* eslint-disable */
+
 /** @type {import('tailwindcss').Config} */
 import konstaConfig from "konsta/config";
+
 export default konstaConfig({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   konsta: {
     colors: {
       green: "#4CD963",
+      yellow: "#FEE500",
     },
   },
   theme: {
@@ -70,5 +73,4 @@ export default konstaConfig({
       },
     },
   },
-  plugins: [],
 });

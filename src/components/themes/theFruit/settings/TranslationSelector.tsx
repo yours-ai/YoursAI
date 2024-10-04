@@ -12,9 +12,9 @@ export default function TranslationSelector({
   const doTranslation = config.conversationConfig.doTranslation;
   const [isChecked, setIsChecked] = useState<boolean>(doTranslation);
   return (
-    <div className="size-full bg-emptyBackground">
+    <div className="bg-emptyBackground size-full">
       <SettingTopBar title="이중 번역" enableBack />
-      <div className="flex w-full flex-col items-center px-[15px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
+      <div className="tablet:px-[80px] desktop:px-[190px] flex w-full flex-col items-center px-[15px] pt-[32px]">
         <ListContainer>
           <ListItem
             title="이중 번역"
@@ -22,7 +22,7 @@ export default function TranslationSelector({
               <Toggle
                 checked={isChecked}
                 onChange={() => setIsChecked((prev) => !prev)}
-                className="-my-1 k-color-green"
+                className="k-color-green -my-1"
               />
             }
           />
