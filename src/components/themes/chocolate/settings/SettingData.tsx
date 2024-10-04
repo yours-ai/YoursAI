@@ -7,7 +7,7 @@ export function SettingData() {
     <div
       className={`relative size-full border-l-[0.5px] border-[#C6C6C8] bg-white`}
     >
-      <TopBar title={"데이터 설정"} backLink={`../`} bgColor={"bg-white"} />
+      <TopBar title={"데이터 설정"} bgColor={"bg-white"} />
       <div className="flex-1 overflow-y-scroll">
         <div className="flex flex-col items-stretch py-5">
           <SettingItem title={"데이터 가져오기"} />

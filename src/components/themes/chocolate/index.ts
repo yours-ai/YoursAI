@@ -16,10 +16,10 @@ import ChatList from "@/components/themes/chocolate/messages/ChatList.tsx";
 import ChatRoom from "@/components/themes/chocolate/messages/ChatRoom.tsx";
 import ChatRoomSettings from "@/components/themes/chocolate/messages/ChatRoomSettings.tsx";
 import ChatRoomSettingsCustom from "@/components/themes/chocolate/messages/ChatRoomSettingsCustom.tsx";
-import ConversationStyleSelector from "@/components/themes/theFruit/ConversationStyleSelector.tsx";
-import TranslationSelector from "@/components/themes/theFruit/settings/TranslationSelector.tsx";
-import TypingSimulationSelector from "@/components/themes/theFruit/settings/TypingSimulationSelector.tsx";
-import PersonalSettings from "@/components/themes/theFruit/settings/PersonalSettings.tsx";
+import ConversationStyleSelector from "@/components/themes/chocolate/settings/ConversationStyleSelector.tsx";
+import TranslationSelector from "@/components/themes/chocolate/settings/TranslationSelector.tsx";
+import TypingSimulationSelector from "@/components/themes/chocolate/settings/TypingSimulationSelector.tsx";
+import PersonalSettings from "@/components/themes/chocolate/settings/PersonalSettings.tsx";
 import ThemeSelector from "@/components/themes/chocolate/settings/ThemeSelector.tsx";
 
 export default async function getTheChocolateTheme(): Promise<Theme> {
@@ -41,11 +41,11 @@ export default async function getTheChocolateTheme(): Promise<Theme> {
     components: {
       Button,
       GlobalModal,
+      // TODO: 위는초콜릿으로 바꿔야함
       ConversationStyleSelector,
       TranslationSelector,
       TypingSimulationSelector,
       PersonalSettings,
-      // TODO: 위는초콜릿으로 바꿔야함
       ThemeSelector,
       EmptyPane,
       TabNavigation,

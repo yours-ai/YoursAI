@@ -16,7 +16,7 @@ import ChatRoomSettingsCustom from "@/components/themes/theFruit/messages/ChatRo
 import ChatRoomSettings from "@/components/themes/theFruit/messages/ChatRoomSettings.tsx";
 import ChatRoom from "@/components/themes/theFruit/messages/ChatRoom.tsx";
 import ChatList from "@/components/themes/theFruit/messages/ChatList.tsx";
-import ConversationStyleSelector from "@/components/themes/theFruit/ConversationStyleSelector.tsx";
+import ConversationStyleSelector from "@/components/themes/theFruit/settings/ConversationStyleSelector.tsx";
 import TranslationSelector from "@/components/themes/theFruit/settings/TranslationSelector.tsx";
 import TypingSimulationSelector from "@/components/themes/theFruit/settings/TypingSimulationSelector.tsx";
 import PersonalSettings from "@/components/themes/theFruit/settings/PersonalSettings.tsx";

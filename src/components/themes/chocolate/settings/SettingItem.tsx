@@ -7,6 +7,7 @@ interface Props {
   onClick?: () => void;
   bgColor?: string;
   isLastItem?: boolean;
+  hoverOff?: boolean;
 }
 
 export default function SettingItem({
@@ -16,10 +17,11 @@ export default function SettingItem({
   onClick,
   bgColor = "bg-white",
   isLastItem = false,
+  hoverOff = false,
 }: Props) {
   return (
     <div
-      className={`${bgColor} ${isLastItem ? "" : "border-b-[0.25px] border-[#F5F5F5]"} flex w-full cursor-pointer flex-row items-center justify-stretch px-5 py-2 transition-colors duration-100 ease-in-out hover:bg-[#F5F5F5]`}
+      className={`${bgColor} ${hoverOff ? "" : "cursor-pointer hover:bg-[#F5F5F5]"} ${isLastItem ? "" : "border-b-[0.25px] border-[#F5F5F5]"} flex w-full flex-row items-center justify-stretch px-5 py-2 transition-colors duration-100 ease-in-out`}
       onClick={onClick}
     >
       <div

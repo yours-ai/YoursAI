@@ -53,9 +53,9 @@ export default function ConversationStyleSelector({
     },
   ];
   return (
-    <div className="bg-emptyBackground size-full">
+    <div className="size-full bg-emptyBackground">
       <SettingTopBar title={t("conversationStyleContent.title")} enableBack />
-      <div className="tablet:px-[80px] desktop:px-[190px] flex w-full flex-col items-center gap-[20px] px-[15px] pt-[32px]">
+      <div className="flex w-full flex-col items-center gap-[20px] px-[15px] pt-[32px] tablet:px-[80px] desktop:px-[190px]">
         {initialPromptTemplates && (
           <SegmentedControlBar
             flexible
@@ -84,14 +84,14 @@ export default function ConversationStyleSelector({
               }
               alt={`description image for ${value}`}
             />
-            <div className="text-16p text-center leading-[18px]">
+            <div className="text-center text-16p leading-[18px]">
               {promptTemplate?.metadata.description &&
                 dynamicT(promptTemplate?.metadata.description)}
             </div>
             {promptTemplate &&
             initialPromptTemplates &&
             config.conversationConfig.promptTemplateId !== value ? (
-              <Button className="text-18p max-w-fit rounded-[12px] px-[18px] py-[21px] leading-[22px]">
+              <Button className="max-w-fit rounded-[12px] px-[18px] py-[21px] text-18p leading-[22px]">
                 바꾸기
               </Button>
             ) : null}

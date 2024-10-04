@@ -19,7 +19,6 @@ export default function ChatRoomSettings({
       {/* TODO: 동적으로 */}
       <TopBar
         title={"세나와 7월 11일 오전 6:48에 시작한 대화"}
-        backLink={`../${chatRoomId}`}
         bgColor={"bg-white"}
       />
       <div className="flex-1 overflow-y-scroll ">

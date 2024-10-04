@@ -106,7 +106,6 @@ export default function ChatRoom({ chatRoomId }: ChatRoomProps) {
     <div className={`relative size-full bg-[#ABC1D1]`}>
       <TopBar
         title={"멋쟁이와 대화를 해봐요"}
-        backLink={"../"}
         leftProps={4}
         action={<IoMenuOutline className={`size-7 text-opacity-100`} />}
       />

@@ -33,7 +33,7 @@ export default function ThemeItem({
 
   return (
     <div
-      className={`flex w-full flex-row items-center justify-stretch px-5`}
+      className={`flex w-full flex-row items-center justify-stretch p-5`}
       onClick={onClick}
     >
       {imgURL && (
