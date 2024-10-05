@@ -4,9 +4,16 @@ import { PiImages, PiPenNib } from "react-icons/pi";
 import toast, { Toaster } from "react-hot-toast";
 import { Trans, useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
-import { openModal } from "@/redux/features/globalModal/slice.ts";
+import {
+  closeModal,
+  enableDone,
+  goBackToPreviousModal,
+  openModal,
+  resetModal,
+} from "@/redux/features/globalModal/slice.ts";
 import "./popover.css";
 import FileAddModalContent from "@/components/modalContents/fileAddModalContent.tsx";
+import CharCardModalContent from "@/components/modalContents/CharCardModalContent.tsx";
 
 export default function TabAction({
   action,
@@ -66,6 +73,29 @@ export default function TabAction({
                   content: <FileAddModalContent />,
                   left: t("tabAction.addFileModal.cancel"),
                   right: t("tabAction.addFileModal.done"),
+                  leftAction: () => {
+                    dispatch(enableDone(false));
+                    dispatch(closeModal());
+                    setTimeout(() => dispatch(resetModal()), 1000);
+                  },
+                  rightAction: () => {
+                    dispatch(
+                      openModal({
+                        title: "캐릭터 파일로 추가",
+                        content: <CharCardModalContent />,
+                        left: "뒤로",
+                        right: "완료",
+                        leftAction: () => {
+                          dispatch(enableDone(false));
+                          dispatch(goBackToPreviousModal());
+                        },
+                        rightAction: () => {
+                          dispatch(enableDone(false));
+                          dispatch(closeModal());
+                        },
+                      }),
+                    );
+                  },
                 }),
               );
             }}

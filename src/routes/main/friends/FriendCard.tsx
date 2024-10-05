@@ -1,30 +1,46 @@
 import { useEffect, useRef, useState } from "react";
 import ColorThief from "colorthief";
-import { Character } from "@/routes/main/friends/page.tsx";
 import { NavLink } from "react-router-dom";
+import { Character } from "@/domain/character/models.ts";
+
+export type FriendCard = Omit<
+  Character,
+  "creator" | "bio" | "age" | "pk" | "bgImage"
+>;
 
 export default function FriendCard({
   name,
   image,
   description,
   slug,
-}: Character) {
+}: FriendCard) {
   const imgRef = useRef<HTMLImageElement | null>(null);
   const [gradient, setGradient] = useState("");
 
   useEffect(() => {
     const img = imgRef.current;
     const colorThief = new ColorThief();
+    console.log("image:", img);
+    console.log("불러와졌나요?", img?.complete);
     if (img) {
-      img.addEventListener("load", () => {
-        const colors = colorThief.getPalette(img, 2);
-        if (colors && colors.length >= 2) {
-          const gradientStyle = `linear-gradient(to right, rgb(${colors[0].join(",")}, 0.3), rgb(${colors[1].join(",")}, 0.3))`;
-          setGradient(gradientStyle);
-        }
-      });
+      console.log("inside if!!");
+      const colors = colorThief.getPalette(img, 2);
+      if (colors && colors.length >= 2) {
+        const gradientStyle = `linear-gradient(to right, rgb(${colors[0].join(",")}, 0.3), rgb(${colors[1].join(",")}, 0.3))`;
+        setGradient(gradientStyle);
+      }
+      // img.addEventListener("load", () => {
+      //   console.log("event called!");
+      //   const colors = colorThief.getPalette(img, 2);
+      //   if (colors && colors.length >= 2) {
+      //     const gradientStyle = `linear-gradient(to right, rgb(${colors[0].join(",")}, 0.3), rgb(${colors[1].join(",")}, 0.3))`;
+      //     setGradient(gradientStyle);
+      //   }
+      // });
     }
   }, []);
+
+  // console.log("gradient:", gradient);
 
   return (
     <NavLink
@@ -41,7 +57,7 @@ export default function FriendCard({
             <img
               ref={imgRef}
               src={image}
-              alt="sena"
+              alt="card-image"
               className="size-full rounded-t-[8px] object-cover object-center"
               draggable={false}
             />

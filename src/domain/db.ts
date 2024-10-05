@@ -3,10 +3,13 @@ import { type PromptTemplate } from "@/domain/chat/models.ts";
 import { chatPopulate } from "@/domain/chat/populate.ts";
 import { configPopulate } from "@/domain/config/populate.ts";
 import { GlobalConfig } from "@/domain/config/models.ts";
+import { Character } from "@/domain/character/models.ts";
+import { charactersPopulate } from "@/domain/character/populate.ts";
 
 export type Db = Dexie & {
   promptTemplates: EntityTable<PromptTemplate, "uuid">;
   globalConfigs: EntityTable<GlobalConfig, "id">;
+  characters: EntityTable<Character, "pk">;
 };
 
 export const getDb = () => {
@@ -15,11 +18,16 @@ export const getDb = () => {
   db.version(1).stores({
     promptTemplates: "uuid",
     globalConfigs: "id",
+    characters: "pk, slug",
   });
 
   db.on("populate", async (_tx) => {
     // MARK: do not use transaction to prevent transaction inactive error
-    await Promise.all([chatPopulate(db), configPopulate(db)]);
+    await Promise.all([
+      chatPopulate(db),
+      configPopulate(db),
+      charactersPopulate(db),
+    ]);
   });
 
   return db;

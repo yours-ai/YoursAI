@@ -10,7 +10,7 @@ export default function Popup({
   return (
     <BasePopup
       opened={opened}
-      className={`${className} ${!opened ? "!translate-y-[200%]" : ""}`}
+      className={`${className} ${!opened ? "!translate-y-[1000%]" : ""}`}
       {...props}
     />
   );

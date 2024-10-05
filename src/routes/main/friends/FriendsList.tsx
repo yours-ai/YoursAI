@@ -1,6 +1,6 @@
 import FriendCard from "@/routes/main/friends/FriendCard.tsx";
-import { Character } from "@/routes/main/friends/page.tsx";
 import { useEffect, useRef, useState } from "react";
+import { Character } from "@/domain/character/models.ts";
 
 export default function FriendsList({
   characters,
@@ -41,9 +41,9 @@ export default function FriendsList({
     >
       {isWidthInitialized && (
         <>
-          {characters.map((character, index) => (
+          {characters.map((character) => (
             <FriendCard
-              key={index}
+              key={character.pk}
               name={character.name}
               slug={character.slug}
               image={character.image}

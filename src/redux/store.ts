@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { characterChatGenerateSlice } from "@/redux/features/characterChatGenerate/slice.ts";
 import { globalModalSlice } from "@/redux/features/globalModal/slice.ts";
+import { characterCardSlice } from "@/redux/features/characterCard/slice.ts";
 
 export const store = configureStore({
   reducer: {
     characterChatGenerate: characterChatGenerateSlice.reducer,
     globalModal: globalModalSlice.reducer,
+    characterCard: characterCardSlice.reducer,
   },
 });
 
