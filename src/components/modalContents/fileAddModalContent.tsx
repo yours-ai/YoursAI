@@ -23,16 +23,10 @@ export default function FileAddModalContent() {
         <span>{t("tabAction.addFileModal.content.three")}</span>
         <div className="flex flex-col text-accentBlue underline duration-150 ">
           <a className="hover:text-accentBlueHover" href="#">
-            아카라이브 AI 채팅 채널
-          </a>
-          <a className="hover:text-accentBlueHover" href="#">
             https://aicharactercards.com
           </a>
           <a className="hover:text-accentBlueHover" href="#">
             https://character-tavern.com/character/catalog
-          </a>
-          <a className="hover:text-accentBlueHover" href="#">
-            https://realm.risuai.net/
           </a>
         </div>
         <span>{t("tabAction.addFileModal.content.four")}</span>
