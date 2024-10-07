@@ -22,6 +22,8 @@ export default konstaConfig({
         red: "#FF3B30",
         redHover: "#FF0E00",
         green: "#4CD963",
+        charMsgBubble: "#E6E5EB",
+        separator: "#C6C6C8",
       },
       fontSize: {
         "10p": "10px",

@@ -17,6 +17,7 @@ import { useDb } from "@/contexts/DbContext.ts";
 import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
 import { prefetchBundledThemes } from "@/hooks/useTheme.ts";
 import { useQueryClient } from "@tanstack/react-query";
+import InstallSheet from "@/routes/setup/sheets/InstallSheet.tsx";
 
 export function Component() {
   const currentLanguage = useCurrentLanguage();
@@ -45,6 +46,7 @@ export function Component() {
       true,
       true,
       true,
+      true,
       Boolean(config),
       Boolean(config),
       Boolean(needAPIKeySetup),
@@ -55,23 +57,24 @@ export function Component() {
     return [
       <SetupStart key={0} setStep={setStep} />,
       <LanguageSheet key={1} setStep={setStep} />,
+      <InstallSheet key={2} setStep={setStep} />,
       <DataSheet
-        key={2}
+        key={3}
         setStep={setStep}
         goToLastStep={() => setStep(stepsLength - 1)}
       />,
-      config && <ThemeSheet config={config} key={3} setStep={setStep} />,
+      config && <ThemeSheet config={config} key={4} setStep={setStep} />,
       config && (
-        <ConversationStyleSheet key={4} config={config} setStep={setStep} />
+        <ConversationStyleSheet key={5} config={config} setStep={setStep} />
       ),
-      needAPIKeySetup && <ApiKeySheet key={5} setStep={setStep} />,
+      needAPIKeySetup && <ApiKeySheet key={6} setStep={setStep} />,
       config && currentLanguage !== DefaultLanguage && (
-        <TranslateSheet config={config} key={6} setStep={setStep} />
+        <TranslateSheet config={config} key={7} setStep={setStep} />
       ),
       config && (
-        <TypingSimulationSheet key={7} setStep={setStep} config={config} />
+        <TypingSimulationSheet key={8} setStep={setStep} config={config} />
       ),
-      config && <PersonaSheet config={config} key={8} setStep={setStep} />,
+      config && <PersonaSheet config={config} key={9} setStep={setStep} />,
     ].filter(Boolean);
   }, [config, currentLanguage, needAPIKeySetup]);
 
