@@ -3,11 +3,11 @@
 
 # YoursAI
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="TODO">
-  <img src="TODO" alt="Thumbnail">
-</picture>
+## Notice
+Currently under active development and will be released at the end of November.
+We are currently accepting pre-registrations at the [pre-registration link](https://tally.so/r/nWMPWv).
 
+## Introduction
 Simple yet fully customizable character role-playing frontend.
 
 ## Dependencies
