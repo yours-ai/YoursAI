@@ -1,4 +1,4 @@
-[Korean](README.md) | [**English**](/READMEs/en.md)
+[한국어](README.md) | [**English**](/READMEs/en.md)
 
 # YoursAI
 
