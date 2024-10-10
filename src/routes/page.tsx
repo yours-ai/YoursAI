@@ -11,6 +11,11 @@ export function Component() {
   );
   const navigate = useNavigate();
 
+  window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    window.promptEvent = event;
+  });
+
   useEffect(() => {
     if (globalConfig?.hasDoneSetup != null) {
       if (!globalConfig.hasDoneSetup) {

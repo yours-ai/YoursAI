@@ -1,0 +1,26 @@
+.user-bubble::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/user-bubble-tail.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+}
+
+.character-bubble::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/char-bubble-tail.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -5px;
+  bottom: -6px;
+}
+
