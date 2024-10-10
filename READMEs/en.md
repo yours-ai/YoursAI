@@ -3,7 +3,7 @@
 # YoursAI
 
 ## Announcements
-The project is currently under active development, with a planned release at the end of November. We are accepting sign-ups for the waitlist through the [waitlist link](https://tally.so/r/nWMPWv).
+The project is currently under active development, with a planned release at the end of November. We are accepting sign-ups for the waitlist through the [waitlist link](https://form.yoursai.app/waitlist).
 
 - We are not officially monitoring other communities at this time. If you need to contact us for suggestions or feedback, please reach out via one of the following methods:
     - Email ([contact@yoursai.app](mailto:contact@yoursai.app))

@@ -5,7 +5,7 @@
 
 ## 공지
 현재 활발히 개발중이며, 11월 말 공개 예정입니다.
-[사전 예약 링크](https://tally.so/r/nWMPWv) 에서 사전 예약을 받고 있습니다.
+[사전 예약 링크](https://form.yoursai.app/waitlist) 에서 사전 예약을 받고 있습니다.
 
 - 현재 공식적으로 다른 채널을 체크하고 있지 않습니다. 의견 제시 등 연락이 필요하시다면 다음 방법 중 하나로 연락주세요.
     - 이메일([contact@yoursai.app](mailto:contact@yoursai.app))
