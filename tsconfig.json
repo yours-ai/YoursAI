@@ -2,5 +2,9 @@
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "moduleResolution": "Bundler",
+    "types": ["dom-chromium-installation-events", "web-app-manifest"]
+  },
 }

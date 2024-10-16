@@ -64,6 +64,16 @@
     "title": "Languages",
     "description": "Just so you know, continuing doesn't mean you're agreeing to any terms.<1 />All your data stays local."
   },
+  "installContent": {
+    "title": "Install as an App",
+    "description": "App experience via PWA is supported.<1></1>Install as an app and enjoy a fully local experience!",
+    "install": "Install",
+    "skip": "Skip",
+    "modal": {
+      "title": "Install YoursAI App",
+      "description": "Install as an app and enjoy a fully local experience!"
+    }
+  },
   "nameContent": {
     "title": "All set!<1></1>Lastly, how should we call you?",
     "name": {

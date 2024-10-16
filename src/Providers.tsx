@@ -7,6 +7,7 @@ import toast, { Toaster } from "react-hot-toast";
 import ErrorText from "@/components/common/ErrorText.tsx";
 import DevPopup from "@/components/common/DevPopup.tsx";
 import { App } from "konsta/react";
+import { PwaInstallProvider } from "@/contexts/PwaProvider.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,15 +28,17 @@ export default function Providers({ children }: Props) {
     <Provider store={store}>
       <DbContextProvider>
         <QueryClientProvider client={queryClient}>
-          <SyncLocale>
-            <App style={{ minHeight: "auto" }} theme="ios">
-              <div className="relative size-full font-sans">
-                {children}
-                {import.meta.env.VERCEL_ENV !== "production" && <DevPopup />}
-              </div>
-              <Toaster />
-            </App>
-          </SyncLocale>
+          <PwaInstallProvider>
+            <SyncLocale>
+              <App style={{ minHeight: "auto" }} theme="ios">
+                <div className="relative size-full font-sans">
+                  {children}
+                  {import.meta.env.VERCEL_ENV !== "production" && <DevPopup />}
+                </div>
+                <Toaster />
+              </App>
+            </SyncLocale>
+          </PwaInstallProvider>
         </QueryClientProvider>
       </DbContextProvider>
     </Provider>

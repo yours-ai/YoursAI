@@ -23,5 +23,8 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "node_modules/.pnpm/@types+dom-chromium-installation-events@101.0.4/node_modules/@types/dom-chromium-installation-events/index.d.ts"
+  ]
 }

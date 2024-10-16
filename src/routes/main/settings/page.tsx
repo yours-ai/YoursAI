@@ -7,11 +7,24 @@ import { List, ListItem } from "konsta/react";
 import NavLinkListItem from "@/components/common/NavLinkListItem.tsx";
 import { useTranslation } from "react-i18next";
 import DefaultErrorBoundary from "@/components/common/DefaultErrorBoundary.tsx";
+import ListContainer from "@/components/common/ListContainer.tsx";
+import { useEffect, useRef } from "react";
+import { PWAInstallElement } from "@khmyznikov/pwa-install";
+import { useIsPwa } from "@/hooks/useIsPwa.ts";
+import { PwaInstallModal } from "@/components/common/PwaInstallModal.tsx";
 
 export function Component() {
   const { t } = useTranslation("pages/settings");
   useLeftPrimaryPage("/main/settings");
   const outletContext = useOutletContext();
+  const pwaInstallRef = useRef<PWAInstallElement>(null);
+  const isPwa = useIsPwa();
+
+  useEffect(() => {
+    if (pwaInstallRef.current) {
+      pwaInstallRef.current.hideDialog();
+    }
+  }, []);
 
   return (
     <SplitViewPage
@@ -53,7 +66,17 @@ export function Component() {
             <List strong inset dividers className="!m-0 bg-white">
               <ListItem title={<p className="text-red">{t("reset")}</p>} link />
             </List>
+            {!isPwa ? (
+              <ListContainer>
+                <ListItem
+                  title="홈화면에 추가하기"
+                  link
+                  onClick={() => pwaInstallRef.current?.showDialog(true)}
+                />
+              </ListContainer>
+            ) : null}
           </div>
+          <PwaInstallModal ref={pwaInstallRef} />
         </div>
       }
       rightPane={<Outlet context={outletContext} />}
