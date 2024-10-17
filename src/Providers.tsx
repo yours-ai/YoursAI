@@ -33,7 +33,9 @@ export default function Providers({ children }: Props) {
               <App style={{ minHeight: "auto" }} theme="ios">
                 <div className="relative size-full font-sans">
                   {children}
-                  {import.meta.env.VERCEL_ENV !== "production" && <DevPopup />}
+                  {import.meta.env.VITE_VERCEL_ENV !== "production" && (
+                    <DevPopup />
+                  )}
                 </div>
                 <Toaster />
               </App>
