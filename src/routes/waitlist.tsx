@@ -39,19 +39,19 @@ export function Component() {
             <h1>YoursAI</h1>
             <div className="flex justify-center gap-2">
               <a href="https://blog.yoursai.app/">
-                <button className="btn btn-md">
+                <button className="btn btn-sm lg:btn-lg">
                   <PiRssSimpleBold />
                   {t("blog")}
                 </button>
               </a>
               <a href="https://form.yoursai.app/waitlist">
-                <button className="btn btn-md">
+                <button className="btn btn-sm lg:btn-lg">
                   <PiNotePencilFill />
                   {t("waitlist")}
                 </button>
               </a>
               <a href="https://github.com/yours-ai/YoursAI">
-                <button className="btn btn-md">
+                <button className="btn btn-sm lg:btn-lg">
                   <PiGithubLogoFill />
                   Github
                 </button>
