@@ -39,16 +39,10 @@ export default function ConversationStyleSelector({
   const CustomStyleFormRows = [
     {
       rowTitle: t("conversationStyleContent.styles.custom.styleFile.name"),
-      rowDescription: t(
-        "conversationStyleContent.styles.custom.styleFile.description",
-      ),
       action: <SetupControlButton upload />,
     },
     {
       rowTitle: t("conversationStyleContent.styles.custom.moduleFile.name"),
-      rowDescription: t(
-        "conversationStyleContent.styles.custom.moduleFile.description",
-      ),
       action: <SetupControlButton upload />,
     },
   ];

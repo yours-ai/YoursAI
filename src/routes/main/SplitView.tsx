@@ -46,7 +46,7 @@ export default function SplitView({
           </div>
         </div>
         <div
-          className={`min-h-screen grow ${primary === "right" ? "" : "hidden tablet:block"}`}
+          className={`h-dvh grow ${primary === "right" ? "" : "hidden tablet:block"}`}
         >
           <Outlet context={{ leftPaneDiv, primary, setPrimary }} />
         </div>

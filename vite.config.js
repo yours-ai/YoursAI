@@ -47,7 +47,7 @@ export default defineConfig({
               cacheName: "js-cache",
               expiration: {
                 maxEntries: 30,
-                maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
+                maxAgeSeconds: 60 * 60 * 24 * 7,
               },
             },
           },

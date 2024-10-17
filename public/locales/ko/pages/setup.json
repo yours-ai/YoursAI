@@ -23,7 +23,6 @@
   },
   "conversationStyleContent": {
     "title": "대화 스타일 고르기",
-    "info": "RisuAI에 익숙하다면,<1></1>기존의 프롬프트 템플릿과 같습니다",
     "styles": {
       "balanced": {
         "name": "밸런스 (권장)",
@@ -40,12 +39,10 @@
       "custom": {
         "name": "커스텀",
         "styleFile" : {
-          "name": "대화 스타일 파일",
-          "description": "Risu 스타일의 프롬프트 템플릿도 지원합니다."
+          "name": "대화 스타일 파일"
         },
         "moduleFile": {
-          "name": "(선택) 모듈 파일",
-          "description": "Risu 스타일의 모듈 파일도 지원합니다."
+          "name": "(선택) 모듈 파일"
         }
       }
     }
@@ -63,6 +60,16 @@
   "languageContent": {
     "title": "언어 선택",
     "description": "계속한다고 해서 무슨 약관에 동의하는 건 아닙니다.<1 />어차피 모든 데이터는 로컬에만 저장됩니다."
+  },
+  "installContent": {
+    "title": "앱으로 설치하기",
+    "description": "PWA를 통한 앱 경험을 지원합니다.<1></1>앱으로 설치하고 완전한 로컬 경험을 즐겨보세요!",
+    "install": "설치하기",
+    "skip": "건너뛰기",
+    "modal": {
+      "title": "YoursAI 앱으로 설치",
+      "description": "앱으로 설치하고 완전한 로컬 경험을 즐겨보세요."
+    }
   },
   "nameContent": {
     "title": "설정이 모두 끝났어요!<1></1>마지막으로, 어떻게 불러드릴까요?",

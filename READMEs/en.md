@@ -18,17 +18,11 @@ The project is currently under active development, with a planned release at the
 
 ## Introduction
 
-YoursAI is not another AI chat service like Character.AI or JanitorAI; instead, it is an open-source local chat frontend inspired by projects like SillyTavern and RisuAI.
-
-[![First 5 minutes released](./0.png)](https://www.youtube.com/watch?v=-pbDnYQ9tgU)
+YoursAI is not another AI chat service like Character.AI or JanitorAI; instead, it is an open-source local chat frontend inspired by projects like SillyTavern.
 
 ## Features
 
 ### 1. Fully customizable, yet simple
-
-<p align="center">
-<img src="https://github.com/yours-ai/YoursAI/raw/dev/READMEs/1.png" width="600" alt="Screenshot 1"/>
-</p>
 
 - The quality of prompt templates, lore books, and character cards currently shared online is astonishingly high.
     - However, for people who just want to enjoy high-quality character chats, this can become unnecessarily complicated.
