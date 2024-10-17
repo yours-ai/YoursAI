@@ -1,9 +1,59 @@
 /* eslint-disable */
 /** @type {import('tailwindcss').Config} */
-export default {
+import konstaConfig from "konsta/config";
+export default konstaConfig({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  konsta: {
+    colors: {
+      green: "#4CD963",
+    },
+  },
   theme: {
     extend: {
+      colors: {
+        menuBackground: "#E0E0E0",
+        accentBlue: "#007AFF",
+        accentBlueHover: "#005CC1",
+        blankAlert: "rgba(0,0,0,0.015)",
+        emptyBackground: "#F2F2F7",
+        tabUnselected: "#999999",
+        tabHovered: "#7B7B7B",
+        border: "rgba(198,198,200,0.6)",
+        red: "#FF3B30",
+        redHover: "#FF0E00",
+        green: "#4CD963",
+        charMsgBubble: "#E6E5EB",
+        separator: "#C6C6C8",
+      },
+      fontSize: {
+        "10p": "10px",
+        "11p": "11px",
+        "12p": "12px",
+        "13p": "13px",
+        "14p": "14px",
+        "15p": "15px",
+        "16p": "16px",
+        "17p": "17px",
+        "18p": "18px",
+        "20p": "20px",
+        "24p": "24px",
+        "25p": "25px",
+        "34p": "34px",
+        "heading-1": ["36px", "41px"],
+        "heading-4": "18px",
+        lg: ["18px", "22px"],
+        body: ["16px", "22px"],
+        sm: "14px",
+      },
+      screens: {
+        phone: "500px",
+        tablet: "926px",
+        cardSplit: "1100px",
+        desktop: "1276px",
+      },
+      zIndex: {
+        999: 999,
+      },
       fontFamily: {
         sans: [
           "Pretendard",
@@ -22,5 +72,8 @@ export default {
       },
     },
   },
-  plugins: [require("daisyui"), require('@tailwindcss/typography')],
-};
+  plugins: [
+    require('daisyui'),
+    require('@tailwindcss/typography'),
+  ],
+});

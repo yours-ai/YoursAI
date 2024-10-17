@@ -1,0 +1,61 @@
+{
+  "tabAction": {
+    "title": "Add New Character",
+    "options": {
+      "option1": "Add via File",
+      "option2": "Create"
+    },
+    "addFileModal": {
+      "title": "Add via Character File",
+      "cancel": "Cancel",
+      "done": "Done",
+      "upload": "Upload",
+      "content":{
+        "one": "We support Character Card formats from other sites (.png, .json).",
+        "two": "Where can I download Character Files?",
+        "three": "User-created character card files are being shared across various communities.",
+        "four": "Download and Enjoy!"
+      }
+    },
+    "noSupportToast": "Not supported yet.<1></1>Studio page is in development!"
+  },
+  "tabTitle": "Friends",
+  "empty": "No friends yet...",
+  "friendButton": {
+    "continue": "Continue Chat",
+    "restart": "Restart Chat",
+    "custom": "Customize"
+  },
+  "contactItem": {
+    "creator": "Creator",
+    "creatorIntro": "Profile"
+  },
+  "delete": {
+    "label": "Delete character",
+    "dialog": {
+      "title": "Proceed Deletion?",
+      "content": "Chat history will be<1></1>permanently deleted.",
+      "no": "No",
+      "yes": "Yes, proceed"
+    }
+  },
+  "settings": {
+    "title": "Chat Customization",
+    "description":"Any changes made here will be applied to all conversations with current character by default.",
+    "options": {
+      "style": {
+        "label": "Conversation Style",
+        "choices": "Novel"
+      },
+      "typing": {
+        "label": "Typing Simulation",
+        "choices": {
+          "on": "On",
+          "off": "Off"
+        }
+      },
+      "self-intro": "Persona",
+      "default": "Reset all as default (global settings)"
+    }
+  }
+}

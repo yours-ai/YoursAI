@@ -1,0 +1,123 @@
+{
+  "setupStart": {
+    "text": "Start",
+    "bubble": {
+      "systemPrompt": "*...said with a blushing face*",
+      "systemPromptItalics": "...said with a blushing face",
+      "conversation": "Hey, are you there?"
+    }
+  },
+  "allDefaultStart": {
+    "title": "Start with defaults",
+    "description": "Only recommended for experienced users.<1></1>Would you like to proceed?",
+    "alertButton" : {
+      "left": "Cancel",
+      "right": "Yes"
+    }
+  },
+  "apiKeyContent": {
+    "title": "LLM API Key",
+    "leftText": "The uploaded",
+    "rightText": "requires an OpenAI API Key.",
+    "keyInputPlaceholder": "Type your API Key"
+  },
+  "conversationStyleContent": {
+    "title": "Conversation Style",
+    "styles": {
+      "balanced": {
+        "name": "Balanced(Rec)",
+        "description": "The character adjusts conversation length<1></1>and occasionally uses and omniscient perspective.<"
+      },
+      "novel": {
+        "name": "Novel",
+        "description": "Your short replies get long responses,<1></1>often with an omniscient touch.<"
+      },
+      "realistic": {
+        "name": "Realistic",
+        "description": "It’s like a real conversation,<1></1>hard to know what the character is really thinking."
+      },
+      "custom": {
+        "name": "Custom",
+        "styleFile" : {
+          "name": "Converation style file"
+        },
+        "moduleFile": {
+          "name": "(optional) Module file"
+        }
+      }
+    }
+  },
+  "dataContent": {
+    "title": "Have any data to load?",
+    "options": {
+      "default": "No, I will setup from scratch",
+      "local": "Yes, I will load it from local storage",
+      "cloud": "Yes, I will load it from cloud",
+      "noSupport": "Not supported yet"
+    },
+    "description": "All data, including chat history and settings,<1></1>can be backed up and restored from a file at any time."
+  },
+  "languageContent": {
+    "title": "Languages",
+    "description": "Just so you know, continuing doesn't mean you're agreeing to any terms.<1 />All your data stays local."
+  },
+  "installContent": {
+    "title": "Install as an App",
+    "description": "App experience via PWA is supported.<1></1>Install as an app and enjoy a fully local experience!",
+    "install": "Install",
+    "skip": "Skip",
+    "modal": {
+      "title": "Install YoursAI App",
+      "description": "Install as an app and enjoy a fully local experience!"
+    }
+  },
+  "nameContent": {
+    "title": "All set!<1></1>Lastly, how should we call you?",
+    "name": {
+      "label": "Name",
+      "placeholder": {
+        "firstName": "First name",
+        "lastName": "Last name"
+      }
+    },
+    "intro": {
+      "label": "Intro(optional)",
+      "placeholder": "Things you’d like the character to know about you"
+    }
+  },
+  "themeContent": {
+    "title": "Themes",
+    "themes": {
+      "custom": {"name": "Custom", "upload": "Upload custom theme"}
+    }
+  },
+  "translateContent": {
+    "title": "",
+    "choices": {
+      "no": {
+        "label": "",
+        "description": ""
+      },
+      "yes": {
+        "label": "",
+        "description": ""
+      }
+    }
+  },
+  "typingSimulationContent": {
+    "title": "Wanna use Typing Simulation?",
+    "choices": {
+      "yes": {
+        "label": "Yes (Recommended)",
+        "description": "It shows the character's dialogue<1></1>as if written by a real person - easy to read and realistic."
+      },
+      "no": {
+        "label": "No",
+        "description": "It shows the character's lines ASAP.<1></1>Feels a bit robotic, but keeps the conversation flow quick."
+      }
+    }
+  },
+  "sheet": {
+    "startWithDefault": "Start with defaults"
+  }
+}
