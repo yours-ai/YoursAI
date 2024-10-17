@@ -124,7 +124,7 @@ export function Component() {
                   <a href="mailto:contact@yoursai.app">contact@yoursai.app</a>
                 </Trans>
               </small>
-              <div className="h-5" />
+              <div className="h-10" />
             </p>
           </article>
         </div>
