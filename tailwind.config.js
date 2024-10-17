@@ -72,5 +72,8 @@ export default konstaConfig({
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+    require('@tailwindcss/typography'),
+  ],
 });
