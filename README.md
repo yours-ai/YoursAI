@@ -16,6 +16,11 @@
   - 피그말리온팀은 과몰입(!) AI 연인을 만드는 것을 목표로 하는 팀입니다.
   - 같은 꿈을 꾸고 싶으시다면 자유 형태의 이력서와 함께 이메일([contact@yoursai.app](mailto:contact@yoursai.app))로 지원주세요!
 
+## 블로그
+
+- [YoursAI 블로그](https://blog.yoursai.app)
+- Posts
+  - [YoursAI 정상 영업합니다](https://blog.yoursai.app/yoursai-first-post/)
 
 ---
 
