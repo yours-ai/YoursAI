@@ -8,6 +8,9 @@ export default konstaConfig({
       green: "#4CD963",
     },
   },
+  daisyui: {
+    themes: ['light'],
+  },
   theme: {
     extend: {
       colors: {
