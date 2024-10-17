@@ -23,7 +23,6 @@
   },
   "conversationStyleContent": {
     "title": "Conversation Style",
-    "info": "Same as<1></1>RisuAI's prompt template",
     "styles": {
       "balanced": {
         "name": "Balanced(Rec)",
@@ -40,12 +39,10 @@
       "custom": {
         "name": "Custom",
         "styleFile" : {
-          "name": "Converation style file",
-          "description": "Supports Risu-style prompt templates as well."
+          "name": "Converation style file"
         },
         "moduleFile": {
-          "name": "(optional) Module file",
-          "description": "Supports Risu-style modules as well."
+          "name": "(optional) Module file"
         }
       }
     }

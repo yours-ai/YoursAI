@@ -23,7 +23,6 @@
   },
   "conversationStyleContent": {
     "title": "대화 스타일 고르기",
-    "info": "RisuAI에 익숙하다면,<1></1>기존의 프롬프트 템플릿과 같습니다",
     "styles": {
       "balanced": {
         "name": "밸런스 (권장)",
@@ -40,12 +39,10 @@
       "custom": {
         "name": "커스텀",
         "styleFile" : {
-          "name": "대화 스타일 파일",
-          "description": "Risu 스타일의 프롬프트 템플릿도 지원합니다."
+          "name": "대화 스타일 파일"
         },
         "moduleFile": {
-          "name": "(선택) 모듈 파일",
-          "description": "Risu 스타일의 모듈 파일도 지원합니다."
+          "name": "(선택) 모듈 파일"
         }
       }
     }

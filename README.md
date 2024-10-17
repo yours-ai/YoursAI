@@ -28,17 +28,11 @@
 
 YoursAI는 Zeta, Character.AI 등의 AI 채팅 서비스가 아닌, 
 
-RisuAI, SillyTavern의 영향을 받은 오픈소스 로컬 채팅 프론트엔드입니다.
-
-[![첫 5분 공개](./READMEs/0.png)](https://www.youtube.com/watch?v=-pbDnYQ9tgU)
+SillyTavern의 영향을 받은 오픈소스 로컬 채팅 프론트엔드입니다.
 
 ## 특징
 
 ### 1. 완전 커스터마이징 가능한, 그러나 쉬운
-
-<p align="center">
-<img src="https://github.com/yours-ai/YoursAI/raw/dev/READMEs/1.png" width="600" alt="스크린샷 1"/>
-</p>
 
 - 현재 온라인에서 공유되는 프롬프트 템플릿, 로어북, 캐릭터 카드의 퀄리티가 놀라울 정도로 좋음
   - 하지만 그냥 고퀄리티의 캐릭터 채팅을 즐기고 싶은 일반인들에게는 과하게 어려워짐

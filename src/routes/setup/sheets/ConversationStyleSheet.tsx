@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import SettingTitle from "@/routes/setup/sheets/SettingTitle.tsx";
 import SegmentBoard from "@/components/macos/SegmentBoard.tsx";
 import SetupControlButton from "@/components/macos/SetupControlButton.tsx";
-import { PiQuestionBold } from "react-icons/pi";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import SetupForm from "@/components/macos/SetupForm.tsx";
-import Tooltip from "@/components/macos/Tooltip.tsx";
 import Sheet from "@/components/macos/Sheet.tsx";
 import { useMutation } from "@tanstack/react-query";
 import { makeGlobalConfigRepository } from "@/domain/config/repository.ts";
@@ -49,16 +47,10 @@ export default function ConversationStyleSheet({ config, setStep }: Props) {
   const CustomStyleFormRows = [
     {
       rowTitle: t("conversationStyleContent.styles.custom.styleFile.name"),
-      rowDescription: t(
-        "conversationStyleContent.styles.custom.styleFile.description",
-      ),
       action: <SetupControlButton upload />,
     },
     {
       rowTitle: t("conversationStyleContent.styles.custom.moduleFile.name"),
-      rowDescription: t(
-        "conversationStyleContent.styles.custom.moduleFile.description",
-      ),
       action: <SetupControlButton upload />,
     },
   ];
@@ -90,21 +82,6 @@ export default function ConversationStyleSheet({ config, setStep }: Props) {
         <>
           <div className="relative z-40 flex items-center">
             <SettingTitle title={t("conversationStyleContent.title")} />
-            <div className="absolute bottom-[8px] right-[-30px]">
-              <Tooltip
-                content={
-                  <p className="relative z-20">
-                    <Trans i18nKey="conversationStyleContent.info" t={t}>
-                      RisuAI에 익숙하다면,<br></br>기존의 프롬프트 템플릿과
-                      같습니다
-                    </Trans>
-                  </p>
-                }
-                place="top"
-              >
-                <PiQuestionBold className="text-black/50" />
-              </Tooltip>
-            </div>
           </div>
 
           <div className="mt-[24px] flex w-full flex-col items-center gap-[17px] px-[20px] phone:px-0">
