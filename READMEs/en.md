@@ -27,7 +27,7 @@
 
 ## Introduction
 
-We believe that current AI chat services in the market are not fun enough.
+Current AI chat services in the market are not fun enough.
 Although many AI chat services inspired by Character.AI are emerging with diverse and engaging characters,
 we don't think they truly serve the purpose of creating immersive experiences for an AI companion as envisioned.
 
