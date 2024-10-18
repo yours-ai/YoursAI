@@ -1,68 +1,67 @@
 
 [**한국어**](README.md) | [English](/READMEs/en.md)
 
+<div align="center">
+
+<img src="READMEs/logo.png" width="200" height="200">
+
 # YoursAI
 
-## 공지
-현재 활발히 개발중이며, 11월 말 공개 예정입니다.
-[사전 예약 링크](https://form.yoursai.app/waitlist) 에서 사전 예약을 받고 있습니다.
 
-- 현재 공식적으로 다른 채널을 체크하고 있지 않습니다. 의견 제시 등 연락이 필요하시다면 다음 방법 중 하나로 연락주세요.
-    - 이메일([contact@yoursai.app](mailto:contact@yoursai.app))
-    - 공개적인 창구에서 얘기하고 싶으시다면 해당 레포지토리에 이슈를 추가해주세요.
-  
-- 현재 코드는 10월 10일까지의 개발본이며, 출시 이전까지 타 private repository에서 작업 예정입니다.
+<p align="center">
+  <img src='https://img.shields.io/badge/frontend framework-react-orange.svg?style=shields' alt="frontend framework"/>
+  <img alt='language' src='https://img.shields.io/badge/language-typescript-brightgreen.svg?style=shields'/>
+  <img alt="bundler" src="https://img.shields.io/badge/bundler-vite-darkblue.svg?style=shields"/>
+  <img alt="database" src="https://img.shields.io/badge/database-dexie-yellow.svg?style=shields"/>
+  <img alt="application" src="https://img.shields.io/badge/application-pwa ready-blue.svg?style=shields"/>
+  <img alt="eta" src="https://img.shields.io/badge/ETA-end of november-red.svg?style=shields"/>
+</p>
+
+<p align="center">
+  <a href="https://blog.yoursai.app">블로그</a> - <a href="https://form.yoursai.app/waitlist">사전 예약</a> - <a href="https://yoursai.app">웹 앱 접속 (WIP)</a> 
+</p>
+
+(개발중) AI 채팅 팬들을 위한 모던한 커스텀 AI 채팅 프론트엔드. (SillyTavern의 영향을 받음)
+
+</div>
+
+
+
+## 소개
+
+저희는 현재 시장의 AI 채팅이 충분히 재밌지 않다고 생각합니다. 
+Character.AI 스타일의 많은 AI 채팅 서비스가 나오고 있고, 다양하고 자극적인 캐릭터들로 충분히 매력적이지만, 
+당초 AI 연인에 대해 생각하는 비전: 하나의 대상에 충분히 몰입할 수 있는 목적의 서비스들은 아니라고 생각합니다.
+
+일부 AI 채팅 팬들은 [SillyTavern](https://github.com/SillyTavern/SillyTavern/tree/release/src) 등의 프로젝트를 통해 커스텀 로컬 채팅 프론트엔드 방식으로 채팅을 즐기고 있습니다.
+스스로 원하는 방식으로 프롬프트를 다듬고, 자체적으로 UI를 커스텀해 이미 시장의 AI 채팅 서비스들보다 훨씬 더 뛰어난 수준의 AI 채팅을 즐기고 있습니다.
+저희는 이러한 오픈 소스 커뮤니티 방식으로 조금 더 몰입감있고 의미있게 "재미있는" AI 연인 경험을 만들어나갈 수 있다고 생각합니다.
+
+YoursAI는 이러한 커뮤니티 방식의 커스텀 AI 채팅 프론트엔드 문화를 지원하고, 더욱 확장하기 위해서 개발중입니다.
+Character Role-playing 보다는 LLM Frontend에 가까웠던 기존 프로젝트들은 투박한 UI에 다소 어려운 UX를 가지고 있는 경우가 많았습니다.
+YoursAI는 완전 커스텀 가능한 기존 프로젝트들의 장점을 유지하면서도, 상용 수준의 깔끔하고 빠릿한 유저 경험을 제공하는 것을 목표로 합니다.
+
+## 특징
+
+- **🎨 깔끔하고 쉬운 UI/UX**: 기본적으로 Apple style의 테마를 지원하며, 커스텀 테마를 개발하기 쉽도록 설계되었습니다.
+- **📱 [PWA](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Tutorials/js13kGames)를 통한 네이티브 어플리케이션 경험**: 모바일, 데스크톱에서의 어플리케이션 경험을 지원합니다.
+- **💾 로컬 데이터 저장**: 데이터는 로컬에만 저장되며, 언제든지 export 및 완전 삭제할 수 있습니다.
+- **📩 선톡 기능**: 캐릭터에게서 먼저 연락이 오도록 하는 선톡 기능을 지원합니다. PWA 경험을 통해 앱 알림을 받을 수 있습니다.
+- **🧠 [Function calling](https://platform.openai.com/docs/guides/function-calling)을 통한 구조화된 채팅 데이터 지원**: 캐릭터의 채팅을 plain text가 아닌 structured data 구조로 받을 수 있습니다. 노출되지 않는 chain of thought, 캐릭터의 표정, 호감도 상태 등으로 활용해보세요.
+
+
+## 공지
+- 개발 과정에서의 불필요한 이슈를 최소화하기 위해 private repo에서 개발중이며, 서비스 공개와 함께 open source로 전환할 예정입니다.
 - 이 프로젝트는 서울에 위치한 한국 스타트업 피그말리온팀이 운영하고 있습니다.
   - 피그말리온팀은 과몰입(!) AI 연인을 만드는 것을 목표로 하는 팀입니다.
   - 같은 꿈을 꾸고 싶으시다면 자유 형태의 이력서와 함께 이메일([contact@yoursai.app](mailto:contact@yoursai.app))로 지원주세요!
 
-## 블로그
+## 최근 소식
 
-- [YoursAI 블로그](https://blog.yoursai.app)
-- Posts
-  - [YoursAI 정상 영업합니다](https://blog.yoursai.app/yoursai-first-post/)
-
----
-
-## 소개
-
-YoursAI는 Zeta, Character.AI 등의 AI 채팅 서비스가 아닌, 
-
-SillyTavern의 영향을 받은 오픈소스 로컬 채팅 프론트엔드입니다.
-
-## 특징
-
-### 1. 완전 커스터마이징 가능한, 그러나 쉬운
-
-- 현재 온라인에서 공유되는 프롬프트 템플릿, 로어북, 캐릭터 카드의 퀄리티가 놀라울 정도로 좋음
-  - 하지만 그냥 고퀄리티의 캐릭터 채팅을 즐기고 싶은 일반인들에게는 과하게 어려워짐
-- YoursAI 프로젝트는 개발, AI 지식이 없는 사람도 모든 설정을 쉽게 이해하고, 가장 고퀄리티의 채팅을 즐길 수 있도록 하는 것이 목표
-- 이를 쉬운 개념 변경, 충실한 UX Writing으로 해결할 예정.
+- [YoursAI 정상 영업합니다](https://blog.yoursai.app/yoursai-first-post/) - 10월 14일, 2024 [@narayo9](https://github.com/narayo9)
 
 
+## License
 
-### 2. 모던하고 깔끔한 UI
-
-<p align="center">
-<img src="https://github.com/yours-ai/YoursAI/raw/dev/READMEs/2.png" width="600" alt="스크린샷 2" style="margin: 0 auto;"/>
-</p>
-
-- AI 채팅 또한 상용 메신저 앱의 UX/UI 만큼 깔끔하고 편해야 한다고 믿음.
-- 세 가지 테마가 기본 제공될 예정: "그 과일" style, "초콜릿맛" style, 미연시 style
-  - 커스텀 테마를 쉽게 만들 수 있도록 개발 중
-- PWA를 이용한 어플리케이션 경험 지원
-- 최신 프론트엔드 기술을 활용해 빠릿한 경험
-
-
-
-### 3. For hackers: 데이터를 완전히 소유 가능한
-
-<p align="center">
-<img src="https://github.com/yours-ai/YoursAI/raw/dev/READMEs/3.png" width="600" alt="스크린샷 3" style="margin: 0 auto;"/>
-</p>
-
-- AI 채팅의 가능성이 어떤 규제와 정치적 올바름에 제한받아서는 안된다고 믿음
-- 완전 오픈 소스, zero 약관: 모든 코드는 해당 repository에 공개됨
-- 완전 로컬 저장: 채팅, 설정값을 포함한 모든 데이터는 로컬에만 저장되며, 언제든지 export 가능하고 완전 삭제 가능
-
+[GPL-3.0 License](LICENSE)
 

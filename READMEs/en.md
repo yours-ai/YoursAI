@@ -1,54 +1,64 @@
 [한국어](README.md) | [**English**](/READMEs/en.md)
 
+<div align="center">
+
+<img src="./logo.png" width="200" height="200">
+
 # YoursAI
 
-## Announcements
-The project is currently under active development, with a planned release at the end of November. We are accepting sign-ups for the waitlist through the [waitlist link](https://form.yoursai.app/waitlist).
+<p align="center">
+  <img src='https://img.shields.io/badge/frontend framework-react-orange.svg?style=shields' alt="frontend framework"/>
+  <img alt='language' src='https://img.shields.io/badge/language-typescript-brightgreen.svg?style=shields'/>
+  <img alt="bundler" src="https://img.shields.io/badge/bundler-vite-darkblue.svg?style=shields"/>
+  <img alt="database" src="https://img.shields.io/badge/database-dexie-yellow.svg?style=shields"/>
+  <img alt="application" src="https://img.shields.io/badge/application-pwa ready-blue.svg?style=shields"/>
+  <img alt="eta" src="https://img.shields.io/badge/ETA-end of november-red.svg?style=shields"/>
+</p>
 
-- We are not officially monitoring other communities at this time. If you need to contact us for suggestions or feedback, please reach out via one of the following methods:
-    - Email ([contact@yoursai.app](mailto:contact@yoursai.app))
-    - If you'd prefer a public discussion, feel free to add an issue in this repository.
+<p align="center">
+  <a href="https://blog.yoursai.app">Blog</a> - <a href="https://form.yoursai.app/waitlist">Waitlist</a> - <a href="https://yoursai.app">Web App (WIP)</a> 
+</p>
 
-- The current code reflects the development progress as of October 10, and we will continue working on it in a private repository until the official release.
-- This project is run by the Pygmalion team, a startup based in Seoul, South Korea.
-    - The Pygmalion team is dedicated to creating an hyper-immersive (!) AI girlfriend experience.
-    - If you share this vision, feel free to apply by sending an informal resume to [contact@yoursai.app](mailto:contact@yoursai.app).
+(WIP) Modern, customizable AI companion frontend for enthusiasts. (Inspired by SillyTavern)
 
----
+</div>
+
+
 
 ## Introduction
 
-YoursAI is not another AI chat service like Character.AI or JanitorAI; instead, it is an open-source local chat frontend inspired by projects like SillyTavern.
+We believe that current AI chat services in the market are not fun enough.
+Although many AI chat services inspired by Character.AI are emerging with diverse and engaging characters,
+we don't think they truly serve the purpose of creating immersive experiences for an AI companion as envisioned.
+
+Some AI chat enthusiasts enjoy using custom local chat frontends through projects like [SillyTavern](https://github.com/SillyTavern/SillyTavern/tree/release/src).
+By refining their own prompts and customizing the UI, they are experiencing AI chats that surpass many market services.
+We believe that an immersive and meaningful AI companion experience can be developed through this open-source community-driven approach.
+
+YoursAI is currently being developed to support and expand this community-driven custom AI companion frontend culture.
+Because many existing projects have a more LLM frontends orientation but not character role-playing orientation, 
+they often feature clunky UIs and challenging user experiences.
+YoursAI aims to offer a sleek and responsive user experience akin to a commercial-grade application, maintaining customization of existing projects.
 
 ## Features
 
-### 1. Fully customizable, yet simple
+- **🎨 Clean and Easy UI/UX**: By default, it supports an Apple-style theme and is designed to make custom theme development easy.
+- **📱 [PWA](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Tutorials/js13kGames) Native Application Experience**: Supports application-like experiences on both mobile and desktop platforms.
+- **💾 Local Data Storage**: Data is stored locally and can be exported or completely deleted at any time.
+- **📩 First Message Feature**: Supports a feature where the character reaches out first. Receive app notifications through the PWA experience.
+- **🧠 Structured Chat Data via [Function Calling](https://platform.openai.com/docs/guides/function-calling)**: Receive structured data instead of plain text for character chat, including chain of thought, character expressions, and affinity status.
 
-- The quality of prompt templates, lore books, and character cards currently shared online is astonishingly high.
-    - However, for people who just want to enjoy high-quality character chats, this can become unnecessarily complicated.
-- The goal of the YoursAI project is to make it easy for anyone, even those without development or AI knowledge, to fully understand all settings and enjoy the highest quality chats.
-- This will be achieved through simple concept changes and thorough UX writing.
+## Notice
+- To minimize unnecessary issues during development, we are developing in a private repository and plan to transition to open source with the service launch.
+- This project is operated by the Pygmalion team, a startup based in Seoul, South Korea.
+  - The Pygmalion team is aiming to create an intensely immersive(!) AI companion.
+  - If you share the same vision, feel free to send your resume via email ([contact@yoursai.app](mailto:contact@yoursai.app)) and apply!
+  
+## Recent News
 
-
-### 2. Modern and clean UI
-
-<p align="center">
-<img src="https://github.com/yours-ai/YoursAI/raw/dev/READMEs/2.png" width="600" alt="Screenshot 2" style="margin: 0 auto;"/>
-</p>
-
-- We believe that AI chat should be as clean and convenient as commercial messenger app UX/UI.
-- Three default themes will be available: "That Fruit" style, "Chocolate Flavor" style, and Visual Novel style.
-    - Custom themes will be easy to create.
-- Supports a native app experience through PWA.
-- Built using modern frontend technology for a smooth and fast experience.
+- [YoursAI is Open for Business](https://blog.yoursai.app/yoursai-first-post/) - October 14, 2024 [@narayo9](https://github.com/narayo9)
 
 
-### 3. For hackers: Complete ownership of your data
+## License
 
-<p align="center">
-<img src="https://github.com/yours-ai/YoursAI/raw/dev/READMEs/3.png" width="600" alt="Screenshot 3" style="margin: 0 auto;"/>
-</p>
-
-- We believe the potential of AI chat should not be restricted by regulations or political correctness.
-- Fully open source with zero terms of service: all code is publicly available in this repository.
-- Full local storage: all data, including chats and settings, are stored locally and can be exported or completely deleted at any time.
+[GPL-3.0 License](../LICENSE)
