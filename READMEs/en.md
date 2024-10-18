@@ -36,9 +36,9 @@ By refining their own prompts and customizing the UI, they are experiencing AI c
 We believe that an immersive and meaningful AI companion experience can be developed through this open-source community-driven approach.
 
 YoursAI is currently being developed to support and expand this community-driven custom AI companion frontend culture.
-While many existing projects have a more character role-playing orientation or act as LLM frontends,
+Because many existing projects have a more LLM frontends orientation but not character role-playing orientation, 
 they often feature clunky UIs and challenging user experiences.
-YoursAI aims to maintain the flexibility of existing custom projects while offering a sleek and responsive user experience akin to a commercial-grade application.
+YoursAI aims to offer a sleek and responsive user experience akin to a commercial-grade application, maintaining customization of existing projects.
 
 ## Features
 
@@ -53,7 +53,7 @@ YoursAI aims to maintain the flexibility of existing custom projects while offer
 - This project is operated by the Pygmalion team, a startup based in Seoul, South Korea.
   - The Pygmalion team is aiming to create an **intensely immersive**(!) AI companion.
   - If you share the same vision, feel free to send your resume via email ([contact@yoursai.app](mailto:contact@yoursai.app)) and apply!
-
+  
 ## Recent News
 
 - [YoursAI is Open for Business](https://blog.yoursai.app/yoursai-first-post/) - October 14, 2024 [@narayo9](https://github.com/narayo9)
