@@ -51,7 +51,7 @@ YoursAI aims to offer a sleek and responsive user experience akin to a commercia
 ## Notice
 - To minimize unnecessary issues during development, we are developing in a private repository and plan to transition to open source with the service launch.
 - This project is operated by the Pygmalion team, a startup based in Seoul, South Korea.
-  - The Pygmalion team is aiming to create an **intensely immersive**(!) AI companion.
+  - The Pygmalion team is aiming to create an intensely immersive(!) AI companion.
   - If you share the same vision, feel free to send your resume via email ([contact@yoursai.app](mailto:contact@yoursai.app)) and apply!
   
 ## Recent News
