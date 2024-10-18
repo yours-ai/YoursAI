@@ -31,7 +31,7 @@ Current AI chat services in the market are not fun enough.
 Although many AI chat services inspired by Character.AI are emerging with diverse and engaging characters,
 we don't think they truly serve the purpose of creating immersive experiences where users can form a deep attachment to a individual AI companion, as originally envisioned.
 
-Some AI chat enthusiasts enjoy using custom local chat frontends through projects like [SillyTavern](https://github.com/SillyTavern/SillyTavern/tree/release/src).
+Some AI chat enthusiasts enjoy using customizable local chat frontends through projects like [SillyTavern](https://github.com/SillyTavern/SillyTavern/tree/release/src).
 By refining their own prompts and customizing the UI, they are experiencing AI chats that surpass many market services.
 We believe that an immersive and meaningful AI companion experience can be developed through this open-source community-driven approach.
 
