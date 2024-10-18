@@ -38,7 +38,7 @@ We believe that an immersive and meaningful AI companion experience can be devel
 YoursAI is currently being developed to support and expand this community-driven custom AI companion frontend culture.
 Because many existing projects have a more LLM frontends orientation but not character role-playing orientation, 
 they often feature clunky UIs and challenging user experiences.
-YoursAI aims to offer a sleek and responsive user experience akin to a commercial-grade application, maintaining customization of existing projects.
+YoursAI aims to offer a sleek and responsive user experience akin to a commercial-grade application, while maintaining a wide range of prompt customization that existing projects offer.
 
 ## Features
 
