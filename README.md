@@ -1,4 +1,4 @@
-[**English**](/README) | [한국어](READMEs/ko) 
+[**English**](./README.md) | [한국어](READMEs/ko.md) 
 
 <div align="center">
 
