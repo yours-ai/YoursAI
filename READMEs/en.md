@@ -6,8 +6,6 @@
 
 # YoursAI
 
----
-
 <p align="center">
   <img src='https://img.shields.io/badge/frontend framework-react-orange.svg?style=shields' alt="frontend framework"/>
   <img alt='language' src='https://img.shields.io/badge/language-typescript-brightgreen.svg?style=shields'/>
